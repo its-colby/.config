@@ -1,0 +1,45 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1730769930908
+	},
+	"usage": true,
+	"analytics-uuid": "816cf0a7-3f05-45d8-8a38-549f1e776af0",
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "109819259792393570291",
+		"email": "itscolbya@gmail.com",
+		"email_verified": true,
+		"at_hash": "OblBr5vkQ9z0b8nippWMjQ",
+		"iat": 1730770004,
+		"exp": 1730773604
+	},
+	"tokens": {
+		"expires_at": 1730786875272,
+		"refresh_token": "1//06KWOKzPWaqaTCgYIARAAGAYSNwF-L9IrWPTT0b0E1iHKUkUrAbupg90rd2uQTKR1YxCcwkE5o_YiZVFBlE6t0_n5fcn5x7ceS9w",
+		"scopes": [],
+		"access_token": "ya29.a0AeDClZA4oMW6JC3brdRYkxB44Z1z6ACWvT5ZmJqxlqqA6lQPpX1xzHQBKueS_mVmTKD-YjX_X09TbPBrK-m4b6xOipzjSzTSg9mM8dg3xe_d7AESu9SggOYpVn8GTstgaf1Fy7y83Uqefecaa9X97SxJ6ttVg6uJZirh57TC1MhGshoaCgYKAZISARESFQHGX2Mig6ff_hHGBziQlGAfB4rJYQ0182",
+		"expires_in": 3599,
+		"scope": "https://www.googleapis.com/auth/cloud-platform openid https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU4NjNmZTI5MmZhMmEyOTY3Y2Q3NTUxYzQyYTEyMTFiY2FjNTUwNzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA5ODE5MjU5NzkyMzkzNTcwMjkxIiwiZW1haWwiOiJpdHNjb2xieWFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJhN0pXeEtWNFE0MzFreVpSVGRiMldnIiwiaWF0IjoxNzMwNzgzMjc2LCJleHAiOjE3MzA3ODY4NzZ9.ZocF2nljR2jtgqc3Lc_NACfebNRhWQH-ns56MJ9-y1bwQWz0THgxwU5z9Of3-qUQZbOmLM1LwzCQ31o8kgSV-VaTgf5IqMTPgp4WhOhYInzolC8ZN5mqglclk4j5UceDBfaqRMzrRZCXW4Gn-AHGobCIGwPMfan5sJpUond3Lj0tEaES6HWp_yOOgfFejXJ2k5aCEwTrGBNEXyyG0vDTC_1TUihcFqxFespI7UMROESsTLqftR7xZ10qexYUzKHFk5bVs-zATqCjgtc9VKMN2wCNBXn0IjYwt0PzbLw0ljkwyvNus0bglcg4bl4S9lRZrYSNhhBk034Ee1wlWtewuQ"
+	},
+	"activeProjects": {
+		"/Users/colby/Desktop/dictionary_demo": "dictionary-35da2"
+	},
+	"emulator-analytics-clientId": "ddf04786-70c8-4c69-8b78-efbd45bfe082",
+	"adminsdkconfig": {
+		"dictionary-35da2": {
+			"projectId": "dictionary-35da2",
+			"storageBucket": "dictionary-35da2.firebasestorage.app"
+		}
+	}
+}

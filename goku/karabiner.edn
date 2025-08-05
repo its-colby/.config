@@ -1,0 +1,484 @@
+{
+    :profiles {
+        :Default {
+            :default true
+            :sim     200
+            :delay   300
+            :alone   300
+            :held    700
+        }
+    }
+
+    :templates {
+        :paste "osascript -e '
+        set prev to the clipboard
+        set the clipboard to \"%s\"
+        tell application \"System Events\"
+            keystroke \"v\" using command down
+            delay 0.1
+        end tell
+        set the clipboard to prev
+        '"
+        :paste-left "osascript -e '
+        set prev to the clipboard
+        set the clipboard to \"%s\"
+        tell application \"System Events\"
+            keystroke \"v\" using command down
+            key code 123
+            delay 0.1
+        end tell
+        set the clipboard to prev
+        '"
+   }
+
+    :simlayers {
+        :f-modifier-text-insertion {:key :f}
+        :d-modifier-dual-punctuation {:key :d}
+        :s-modifier-solo-punctuation {:key :s}
+
+        :j-modifier-cursor-navigation {:key :j}
+        :k-modifier-text-selection {:key :k}
+        :l-modifier-file-management {:key :l}
+
+        :a-modifier-5-through-9 {:key :a}
+        :semicolon-modifier-0-through-4 {:key :semicolon}
+
+        :g-modifier-left-shift {:key :g}
+        :h-modifier-right-shift {:key :h}
+
+        :w-modifier-logic {:key :w}
+        :e-modifier-operators {:key :e}
+        :r-modifier-relations {:key :r}
+        ; more symbols → ↔
+        ; refresh, previous next track, dictation, screen scrolling
+
+        :u-modifier-tile-management {:key :u}
+        :i-modifier-app-navigation {:key :i} ; change to browser management
+        :o-modifier-audio-visual-controls {:key :o}
+
+        
+    }
+
+    :main [
+        ;; {
+        ;;     :des "text-navigation-layer-toggle"
+        ;;     :rules [
+        ;;         [:!Cj ["text-navigation-layer" 0] :text-navigation-layer]
+        ;;         [:!Cj ["text-navigation-layer" 1]]
+        ;;     ]
+        ;; }
+
+        ;; {
+        ;;     :des "text-navigation-layer"
+        ;;     :rules [
+        ;;         :text-navigation-layer
+
+        ;;         [:f :right_arrow] ; moves cursor right
+        ;;         [:d :left_arrow] ; moves cursor left
+        ;;         [:s :up_arrow] ; moves cursor up
+        ;;         [:a :down_arrow] ; moves cursor down
+                
+        ;;     ]
+        ;; }
+
+        {
+            :des "f-modifier-text-insertion"
+            :rules [
+                :f-modifier-text-insertion
+
+                [:j :delete_or_backspace] ; delete character before cursor
+                [:k :return_or_enter] ; return
+                [:l :tab] ; tab
+                [:semicolon :!Fdelete_or_backspace] ; delete character after cursor 
+                [:h :!Sreturn_or_enter] ; enter
+
+                [:u :!Cz] ; undo
+                [:i :!CSz] ; redo
+                [:o :!Cslash] ; comment/uncomment
+
+                [:m :!Odelete_or_backspace] ; delete word (respects app-configured word-seperators) before cursor
+                [:comma :!OFdelete_or_backspace] ; delete word (respects app-configured word-seperators) after cursor
+                [:period :!Cdelete_or_backspace] ; delete to beg. of line
+                [:slash :!CFdelete_or_backspace] ; delete to end of line
+
+            ]
+        }
+
+        {
+            :des "d-modifier-dual-punctuation"
+            :rules [
+                :d-modifier-dual-punctuation
+
+                [:j [:!S9 :!S0 :left_arrow]] ; (cursor)
+                [:k [:open_bracket :close_bracket :left_arrow]] ; [cursor]
+                [:l [:!Sopen_bracket :!Sclose_bracket :left_arrow]] ; {cursor}
+                [:semicolon [:paste-left "⟨⟩"]] ; ⟨cursor⟩
+
+                [:h [
+                    :grave_accent_and_tilde
+                    :grave_accent_and_tilde 
+                    :left_arrow
+                ]] ; `cursor`
+
+                [:u [:!Squote :!Squote :left_arrow]] ; “cursor”
+                [:i :!Squote] ; "
+                [:o [:quote :quote :left_arrow]] ; 'cursor'
+                [:p :quote] ; '
+
+            ]
+        }
+
+        {
+            :des "s-modifier-solo-punctuation"
+            :rules [
+                :s-modifier-solo-punctuation
+                
+                [:j :hyphen] ; - hyphen
+                [:k :!Shyphen] ; _ underscore
+                [:l :slash] ; /
+                [:semicolon :backslash] ; \
+
+                [:u :!Sgrave_accent_and_tilde] ; ~
+                [:i :!S4] ; $
+                [:o :!S5] ; %
+                [:p :!S6] ; ^
+
+                [:m :!S7] ; &
+                [:comma :!S8] ; *
+                [:period :!Sbackslash] ; |
+            ]
+        }
+
+        {
+            :des "j-modifier-cursor-navigation"
+            :rules [
+                :j-modifier-cursor-navigation
+
+                [:f :right_arrow] ; moves cursor right
+                [:d :left_arrow] ; moves cursor left
+                [:s :up_arrow] ; moves cursor up
+                [:a :down_arrow] ; moves cursor down
+
+                [:r :!Oright_arrow] ; moves cursor right by one word
+                [:e :!Oleft_arrow] ; moves cursor left by one word
+                [:w :!Cright_arrow] ; moves cursor to end of line
+                [:q :!Cleft_arrow] ; moves cursor to beg. of line
+            ]
+        }
+
+        {
+            :des "k-modifier-text-selection"
+            :rules [
+                :k-modifier-text-selection
+
+                [:f :!SOright_arrow] ; adds/removes next word to selected text
+                [:d :!SOleft_arrow] ; adds/removes prev. word to selected text
+                [:s :!SCright_arrow] ; adds (from end of line) to selected text
+                [:a :!SCleft_arrow] ; adds (from beg. of line) to selected text
+
+                [:g :!Ca] ; adds/removes all text to selected text
+
+                [:r :!Sright_arrow] ; adds/removes next char to selected text
+                [:e :!Sleft_arrow] ; adds/removes previous char to selected text
+                [:w :!Sup_arrow] ; adds/removes previous line to selected text
+                [:q :!Sdown_arrow] ; adds/removes next line to selected text
+
+                [:v :!Cv] ; pastes text from clipboard with formatting
+                [:c :!Cx] ; removes selected text and saves it to clipboard
+                [:x :!Cc] ; copies selected text to clipboard
+                [:z :!CSv] ; pastes text from clipboard without formatting
+            ]
+        }
+
+        {
+            :des "l-modifier-file-management"
+            :rules [
+                :l-modifier-file-management
+
+                [:f :!Cf] ; opens a find input box
+                [:d :!Cg] ; moves cursor to next search result
+                [:s :!CSg] ; moves cursor to previous search result
+
+                [:g :!Cs] ; save
+
+                [:r :!COf] ; opens a find and replace input box
+            ]
+        }
+
+        {
+            :des "u-modifier-tile-management"
+            ; The following commands must be additionally specified in tile-management software like aerospace in order to work properly.
+            :rules [
+                :u-modifier-tile-management
+
+                [:f :!SOf] ; focus right tile
+                [:d :!SOd] ; focus left tile
+                [:s :!SOs] ; move tile right
+                [:a :!SOa] ; move tile left
+
+                [:g :!Cw] ; closes focused tile or tab
+
+                [:r :!SOr] ; resize by +50
+                [:e :!SOe] ; resize by -50
+                [:w :!SOw] ; activate side-by-side layout and toggle vertical/horizontal
+                [:q :!SOq] ; activate accordion layout and toggle vertical/horizontal
+
+                [:v :!SOv] ; go to workspace 1
+                [:c :!SOc] ; go to workspace 2
+                [:x :!SOx] ; move current window to workspace 1
+                [:z :!SOz] ; move current window to workspace 2
+            ]
+        }
+
+
+        {
+            :des "g-modifier-left-shift"
+            :rules [
+                :g-modifier-left-shift
+
+                [:j :!Sj]
+                [:k :!Sk]
+                [:l :!Sl]
+                [:semicolon :!Ssemicolon]
+
+                [:h :!Sh]
+
+                [:u :!Su]
+                [:i :!Si]
+                [:o :!So]
+                [:p :!Sp]
+
+                [:m :!Sm]
+                [:comma :!S1]
+                [:period :!Sslash]
+                [:slash :!S2]
+
+                [:n :!Sn]
+                [:y :!Sy]
+            ]
+        }
+
+        {
+            :des "h-modifier-right-shift"
+            :rules [
+                :h-modifier-right-shift
+
+                [:f :!Sf]
+                [:d :!Sd]
+                [:s :!Ss]
+                [:a :!Sa]
+
+                [:g :!Sg]
+
+                [:r :!Sr]
+                [:e :!Se]
+                [:w :!Sw]
+                [:q :!Sq]
+
+                [:v :!Sv]
+                [:c :!Sc]
+                [:x :!Sx]
+                [:z :!Sz]
+
+                [:b :!Sb]
+                [:t :!St]
+            ]
+        }
+
+        {
+            :des "i-modifier-app-navigation"
+            :rules [:i-modifier-app-navigation
+
+                [:f :!SCclose_bracket] ; opens right tab
+                [:d :!SCopen_bracket] ; opens left tab
+                [:s :!Cclose_bracket] ; goes back on safari
+                [:a :!Copen_bracket] ; goes forward on safari
+
+                [:g :!Ct] ; creates new tab
+
+                [:r :page_up] ; scroll up by one screen
+                [:e :page_down] ; scroll down by one screen
+                [:w :!Fleft_arrow] ; scroll to top
+                [:q :!Fright_arrow] ; scroll to bottom
+            ]
+        }
+
+        {
+            :des "o-modifier-audio-visual-controls"
+            :rules [
+                :o-modifier-audio-visual-controls
+
+                [:f :volume_increment]
+                [:d :volume_decrement]
+                [:s :display_brightness_increment]
+                [:a :display_brightness_decrement]
+                
+                [:g :mute]
+
+                [:r :!CS3] ; screenshot full screen
+            ]
+        }
+
+        {
+            :des "a-modifier-5-through-9"
+            :rules [
+                :a-modifier-5-through-9
+
+                [:h :5]
+                [:j :6]
+                [:k :7]
+                [:l :8]
+                [:semicolon :9]
+
+                [:u :!O5]
+            ]
+        }
+
+        {
+            :des "semicolon-modifier-0-through-4"
+            :rules [
+                :semicolon-modifier-0-through-4
+
+                [:a :0]
+                [:s :1]
+                [:d :2]
+                [:f :3]
+                [:g :4]
+
+                [:r :!OSo]
+            ]
+        }
+
+        {
+            :des "r-modifier-relations"
+            :rules [
+                :r-modifier-relations
+
+                [:j :equal_sign]
+                [:k :!Oequal_sign]
+                [:l [:paste "≡"]]
+                [:semicolon [:paste "≢"]]
+
+                [:h [:paste "∼"]]
+
+                [:u :!Ocomma]
+                [:i :!Operiod]
+                [:o :!Scomma]
+                [:p :!Speriod]
+
+                [:m [:paste "∈"]]
+                [:comma [:paste "∉"]]
+                [:period [:paste "⊆"]]
+                [:slash [:paste "⊇"]]
+
+                [:y [:paste "⊄"]]
+                [:n [:paste "⊅"]]
+            ]
+        }
+
+        {
+            :des "e-modifier-operators"
+            :rules [
+                :e-modifier-operators
+
+                [:j :!Sequal_sign]
+                [:k :!OS9]
+                [:l [:paste "∘"]]
+                [:semicolon :!OSequal_sign]
+
+                [:h [:paste "↦"]]
+
+                [:u [:paste "×"]]
+                [:i [:paste "⊕"]]
+                [:o [:paste "⊗"]]
+                [:p [:paste "⊙"]]
+
+                [:m [:paste "→"]]
+                [:comma [:paste "←"]]
+                [:period [:paste "↑"]]
+                [:slash [:paste "↓"]]
+            ]
+        }
+
+        {
+            :des "w-modifier-logic"
+            :rules [
+                :w-modifier-logic
+
+                [:j [:paste "∧"]]
+                [:k [:paste "∨"]]
+                [:l [:paste "∃"]]
+                [:semicolon [:paste "∀"]]
+
+                [:h [:paste "¬"]]
+
+                [:u [:paste "⟹"]]
+                [:i [:paste "⟺"]]
+                [:o [:paste "⊢"]]
+                [:p [:paste "⊨"]]
+
+                [:m [:paste "⊤"]]
+                [:comma [:paste "⊥"]]
+                [:period [:paste "∴"]]
+            ]
+        }
+
+        {
+            :des "all layers"
+            :rules [
+                [:slash :!S3]
+                [:quote []]
+                [:!Squote []]
+                ;; [:return_or_enter []]
+
+                [:open_bracket []]
+                [:!Sopen_bracket []]
+                [:close_bracket []]
+                [:!Sclose_bracket []]
+                [:backslash []]
+                [:!Sbackslash []]
+
+                [:hyphen []]
+                [:!Shyphen []]
+                [:equal_sign []]
+                [:!Sequal_sign []]
+                ;; [:delete_or_backspace []]
+
+                [:tab []]
+                ;[:left_shift []]
+                ;[:right_shift []]
+
+                [:grave_accent_and_tilde []]
+                [:!Sgrave_accent_and_tilde []]
+
+                ;[:escape []]
+
+                ;[:1 []]
+                ;[:!S1 []]
+                ;[:2 []]
+                ;[:!S2 []]
+                ;[:3 []]
+                ;[:!S3 []]
+                ;[:4 []]
+                ;[:!S4 []]
+                ;[:5 []]
+                ;[:!S5 []]
+                ;[:6 []]
+                ;[:!S6 []]
+                ;[:7 []]
+                ;[:!S7 []]
+                ;[:8 []]
+                ;[:!S8 []]
+                ;[:9 []]
+                ;[:!S9 []]
+                ;[:0 []]
+                ;[:!S0 []]
+
+                ;[:left_arrow []]
+                ;[:right_arrow []]
+                ;[:up_arrow []]
+                ;[:down_arrow []]
+            ]
+        }
+    ]
+}

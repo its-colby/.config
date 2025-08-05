@@ -1,0 +1,55 @@
+after-startup-command = []
+
+start-at-login = false
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+    preset = 'qwerty'
+
+[gaps]
+    inner.horizontal = 0
+    inner.vertical =   0
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
+
+[mode.main.binding]
+    alt-shift-f = 'focus right'
+    alt-shift-d = 'focus left'
+    alt-shift-s = 'move right'
+    alt-shift-a = 'move left'
+
+    alt-shift-e = 'resize smart -50'
+    alt-shift-r = 'resize smart +50'
+    alt-shift-w = 'layout tiles horizontal vertical'
+    alt-shift-q = 'layout accordion horizontal vertical'
+
+    alt-shift-v = 'workspace 1'
+    alt-shift-c = 'workspace 2'
+    alt-shift-x = 'move-node-to-workspace 1'
+    alt-shift-z = 'move-node-to-workspace 2'
+
+    alt-shift-semicolon = 'mode service'
+
+    alt-shift-cmd-q = ['flatten-workspace-tree', 'mode main'] # reset layout
+    alt-shift-cmd-w = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    alt-shift-cmd-e = ['close-all-windows-but-current', 'mode main']
+
+
+    cmd-alt-shift-f = ['join-with left', 'mode main']
+    cmd-alt-shift-d = ['join-with down', 'mode main']
+    cmd-alt-shift-s = ['join-with up', 'mode main']
+    cmd-alt-shift-a = ['join-with right', 'mode main']
