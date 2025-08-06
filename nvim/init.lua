@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Increase timeout for leader key sequences
+vim.opt.timeoutlen = 2000  -- Wait 1 second for leader key sequences
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true

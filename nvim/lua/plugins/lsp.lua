@@ -18,7 +18,6 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "pyright",      -- Python
-                    "hls",          -- Haskell Language Server
                     "marksman",     -- Markdown
                     "lua_ls",       -- Lua
                 },
@@ -96,12 +95,6 @@ return {
                 on_attach = on_attach,
             })
             
-            -- Haskell
-            lspconfig.hls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-            
             -- Markdown
             lspconfig.marksman.setup({
                 capabilities = capabilities,
@@ -120,13 +113,7 @@ return {
                     },
                 },
             })
-            
-            -- Lean 4 (manual setup - not in mason)
-            lspconfig.leanls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-            
+
             -- Configure diagnostics
             vim.diagnostic.config({
                 virtual_text = true,
