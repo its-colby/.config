@@ -38,10 +38,10 @@
 
         :j-modifier-cursor-navigation {:key :j}
         :k-modifier-text-selection {:key :k}
-        :l-modifier-file-management {:key :l}
+        :u-modifier-file-management {:key :u}
 
-        :a-modifier-5-through-9 {:key :a}
-        :semicolon-modifier-0-through-4 {:key :semicolon}
+        :a-modifier-6-through-0 {:key :a}
+        :semicolon-modifier-1-through-5 {:key :semicolon}
 
         :g-modifier-left-shift {:key :g}
         :h-modifier-right-shift {:key :h}
@@ -52,7 +52,7 @@
         ; more symbols → ↔
         ; refresh, previous next track, dictation, screen scrolling
 
-        :u-modifier-tile-management {:key :u}
+        :l-modifier-tile-management {:key :l}
         :i-modifier-app-navigation {:key :i} ; change to browser management
         :o-modifier-audio-visual-controls {:key :o}
 
@@ -87,15 +87,17 @@
                 :f-modifier-text-insertion
 
                 [:j :delete_or_backspace] ; delete character before cursor
-                [:k :return_or_enter] ; return
+                [:k :return_or_enter] ; enter
                 [:l :tab] ; tab
                 [:semicolon :!Fdelete_or_backspace] ; delete character after cursor 
-                [:h :!Sreturn_or_enter] ; enter
+                [:h :!Sreturn_or_enter] ; return
 
                 [:u :!Cz] ; undo
                 [:i :!CSz] ; redo
-                [:o :!Cslash] ; comment/uncomment
+                [:o :!Copen_bracket] ; deindent
+                [:p :!Cclose_bracket] ; indent
 
+                [:n :!Cslash] ; comment/uncomment
                 [:m :!Odelete_or_backspace] ; delete word (respects app-configured word-seperators) before cursor
                 [:comma :!OFdelete_or_backspace] ; delete word (respects app-configured word-seperators) after cursor
                 [:period :!Cdelete_or_backspace] ; delete to beg. of line
@@ -159,6 +161,8 @@
                 [:s :up_arrow] ; moves cursor up
                 [:a :down_arrow] ; moves cursor down
 
+                [:g :escape] ; escape key
+
                 [:r :!Oright_arrow] ; moves cursor right by one word
                 [:e :!Oleft_arrow] ; moves cursor left by one word
                 [:w :!Cright_arrow] ; moves cursor to end of line
@@ -171,17 +175,17 @@
             :rules [
                 :k-modifier-text-selection
 
-                [:f :!SOright_arrow] ; adds/removes next word to selected text
-                [:d :!SOleft_arrow] ; adds/removes prev. word to selected text
-                [:s :!SCright_arrow] ; adds (from end of line) to selected text
-                [:a :!SCleft_arrow] ; adds (from beg. of line) to selected text
+                [:r :!SOright_arrow] ; adds/removes next word to selected text
+                [:e :!SOleft_arrow] ; adds/removes prev. word to selected text
+                [:w :!SCright_arrow] ; adds (from end of line) to selected text
+                [:q :!SCleft_arrow] ; adds (from beg. of line) to selected text
 
                 [:g :!Ca] ; adds/removes all text to selected text
 
-                [:r :!Sright_arrow] ; adds/removes next char to selected text
-                [:e :!Sleft_arrow] ; adds/removes previous char to selected text
-                [:w :!Sup_arrow] ; adds/removes previous line to selected text
-                [:q :!Sdown_arrow] ; adds/removes next line to selected text
+                [:f :!Sright_arrow] ; adds/removes next char to selected text
+                [:d :!Sleft_arrow] ; adds/removes previous char to selected text
+                [:s :!Sup_arrow] ; adds/removes previous line to selected text
+                [:a :!Sdown_arrow] ; adds/removes next line to selected text
 
                 [:v :!Cv] ; pastes text from clipboard with formatting
                 [:c :!Cx] ; removes selected text and saves it to clipboard
@@ -191,9 +195,9 @@
         }
 
         {
-            :des "l-modifier-file-management"
+            :des "u-modifier-file-management"
             :rules [
-                :l-modifier-file-management
+                :u-modifier-file-management
 
                 [:f :!Cf] ; opens a find input box
                 [:d :!Cg] ; moves cursor to next search result
@@ -206,10 +210,10 @@
         }
 
         {
-            :des "u-modifier-tile-management"
+            :des "l-modifier-tile-management"
             ; The following commands must be additionally specified in tile-management software like aerospace in order to work properly.
             :rules [
-                :u-modifier-tile-management
+                :l-modifier-tile-management
 
                 [:f :!SOf] ; focus right tile
                 [:d :!SOd] ; focus left tile
@@ -320,32 +324,31 @@
         }
 
         {
-            :des "a-modifier-5-through-9"
+            :des "a-modifier-6-through-0"
             :rules [
-                :a-modifier-5-through-9
+                :a-modifier-6-through-0
 
-                [:h :5]
-                [:j :6]
-                [:k :7]
-                [:l :8]
-                [:semicolon :9]
+                [:h :6]
+                [:j :7]
+                [:k :8]
+                [:l :9]
+                [:semicolon :0]
 
                 [:u :!O5]
+                [:i :!OSo]
             ]
         }
 
         {
-            :des "semicolon-modifier-0-through-4"
+            :des "semicolon-modifier-1-through-5"
             :rules [
-                :semicolon-modifier-0-through-4
+                :semicolon-modifier-1-through-5
 
-                [:a :0]
-                [:s :1]
-                [:d :2]
-                [:f :3]
-                [:g :4]
-
-                [:r :!OSo]
+                [:a :1]
+                [:s :2]
+                [:d :3]
+                [:f :4]
+                [:g :5]
             ]
         }
 

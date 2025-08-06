@@ -342,6 +342,100 @@
             "key_code" : "o"
           },
           "to" : [ {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "name" : "f-modifier-text-insertion",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "f-modifier-text-insertion",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "open_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "o"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "f-modifier-text-insertion",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "name" : "f-modifier-text-insertion",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "f-modifier-text-insertion",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "close_bracket",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "p"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "f-modifier-text-insertion",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "n"
+          },
+          "to" : [ {
             "key_code" : "slash",
             "modifiers" : [ "left_command" ]
           } ],
@@ -369,7 +463,7 @@
             "simultaneous" : [ {
               "key_code" : "f"
             }, {
-              "key_code" : "o"
+              "key_code" : "n"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -1741,6 +1835,51 @@
           }
         }, {
           "from" : {
+            "key_code" : "g"
+          },
+          "to" : [ {
+            "key_code" : "escape"
+          } ],
+          "conditions" : [ {
+            "name" : "j-modifier-cursor-navigation",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "j-modifier-cursor-navigation",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "escape"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "j"
+            }, {
+              "key_code" : "g"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "j-modifier-cursor-navigation",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
             "key_code" : "r"
           },
           "to" : [ {
@@ -1932,7 +2071,7 @@
         "description" : "k-modifier-text-selection",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "f"
+            "key_code" : "r"
           },
           "to" : [ {
             "key_code" : "right_arrow",
@@ -1962,7 +2101,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "f"
+              "key_code" : "r"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -1979,7 +2118,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "d"
+            "key_code" : "e"
           },
           "to" : [ {
             "key_code" : "left_arrow",
@@ -2009,7 +2148,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "d"
+              "key_code" : "e"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2026,7 +2165,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "s"
+            "key_code" : "w"
           },
           "to" : [ {
             "key_code" : "right_arrow",
@@ -2056,7 +2195,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "s"
+              "key_code" : "w"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2073,7 +2212,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "a"
+            "key_code" : "q"
           },
           "to" : [ {
             "key_code" : "left_arrow",
@@ -2103,7 +2242,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "a"
+              "key_code" : "q"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2167,7 +2306,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "r"
+            "key_code" : "f"
           },
           "to" : [ {
             "key_code" : "right_arrow",
@@ -2197,7 +2336,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "r"
+              "key_code" : "f"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2214,7 +2353,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "e"
+            "key_code" : "d"
           },
           "to" : [ {
             "key_code" : "left_arrow",
@@ -2244,7 +2383,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "e"
+              "key_code" : "d"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2261,7 +2400,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "w"
+            "key_code" : "s"
           },
           "to" : [ {
             "key_code" : "up_arrow",
@@ -2291,7 +2430,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "w"
+              "key_code" : "s"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2308,7 +2447,7 @@
           }
         }, {
           "from" : {
-            "key_code" : "q"
+            "key_code" : "a"
           },
           "to" : [ {
             "key_code" : "down_arrow",
@@ -2338,7 +2477,7 @@
             "simultaneous" : [ {
               "key_code" : "k"
             }, {
-              "key_code" : "q"
+              "key_code" : "a"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -2543,7 +2682,7 @@
           }
         } ]
       }, {
-        "description" : "l-modifier-file-management",
+        "description" : "u-modifier-file-management",
         "manipulators" : [ {
           "from" : {
             "key_code" : "f"
@@ -2553,7 +2692,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "name" : "l-modifier-file-management",
+            "name" : "u-modifier-file-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2565,7 +2704,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "l-modifier-file-management",
+              "name" : "u-modifier-file-management",
               "value" : 1
             }
           }, {
@@ -2574,7 +2713,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "l"
+              "key_code" : "u"
             }, {
               "key_code" : "f"
             } ],
@@ -2585,7 +2724,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "l-modifier-file-management",
+                  "name" : "u-modifier-file-management",
                   "value" : 0
                 }
               } ]
@@ -2600,7 +2739,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "name" : "l-modifier-file-management",
+            "name" : "u-modifier-file-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2612,7 +2751,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "l-modifier-file-management",
+              "name" : "u-modifier-file-management",
               "value" : 1
             }
           }, {
@@ -2621,7 +2760,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "l"
+              "key_code" : "u"
             }, {
               "key_code" : "d"
             } ],
@@ -2632,7 +2771,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "l-modifier-file-management",
+                  "name" : "u-modifier-file-management",
                   "value" : 0
                 }
               } ]
@@ -2647,7 +2786,7 @@
             "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "l-modifier-file-management",
+            "name" : "u-modifier-file-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2659,7 +2798,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "l-modifier-file-management",
+              "name" : "u-modifier-file-management",
               "value" : 1
             }
           }, {
@@ -2668,7 +2807,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "l"
+              "key_code" : "u"
             }, {
               "key_code" : "s"
             } ],
@@ -2679,7 +2818,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "l-modifier-file-management",
+                  "name" : "u-modifier-file-management",
                   "value" : 0
                 }
               } ]
@@ -2694,7 +2833,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "name" : "l-modifier-file-management",
+            "name" : "u-modifier-file-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2706,7 +2845,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "l-modifier-file-management",
+              "name" : "u-modifier-file-management",
               "value" : 1
             }
           }, {
@@ -2715,7 +2854,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "l"
+              "key_code" : "u"
             }, {
               "key_code" : "g"
             } ],
@@ -2726,7 +2865,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "l-modifier-file-management",
+                  "name" : "u-modifier-file-management",
                   "value" : 0
                 }
               } ]
@@ -2741,7 +2880,7 @@
             "modifiers" : [ "left_command", "left_option" ]
           } ],
           "conditions" : [ {
-            "name" : "l-modifier-file-management",
+            "name" : "u-modifier-file-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2753,7 +2892,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "l-modifier-file-management",
+              "name" : "u-modifier-file-management",
               "value" : 1
             }
           }, {
@@ -2762,7 +2901,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "l"
+              "key_code" : "u"
             }, {
               "key_code" : "r"
             } ],
@@ -2773,7 +2912,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "l-modifier-file-management",
+                  "name" : "u-modifier-file-management",
                   "value" : 0
                 }
               } ]
@@ -2781,7 +2920,7 @@
           }
         } ]
       }, {
-        "description" : "u-modifier-tile-management",
+        "description" : "l-modifier-tile-management",
         "manipulators" : [ {
           "from" : {
             "key_code" : "f"
@@ -2791,7 +2930,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2803,7 +2942,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -2812,7 +2951,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "f"
             } ],
@@ -2823,7 +2962,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -2838,7 +2977,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2850,7 +2989,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -2859,7 +2998,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "d"
             } ],
@@ -2870,7 +3009,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -2885,7 +3024,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2897,7 +3036,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -2906,7 +3045,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "s"
             } ],
@@ -2917,7 +3056,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -2932,7 +3071,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2944,7 +3083,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -2953,7 +3092,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "a"
             } ],
@@ -2964,7 +3103,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -2979,7 +3118,7 @@
             "modifiers" : [ "left_command" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -2991,7 +3130,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3000,7 +3139,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "g"
             } ],
@@ -3011,7 +3150,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3026,7 +3165,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3038,7 +3177,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3047,7 +3186,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "r"
             } ],
@@ -3058,7 +3197,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3073,7 +3212,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3085,7 +3224,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3094,7 +3233,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "e"
             } ],
@@ -3105,7 +3244,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3120,7 +3259,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3132,7 +3271,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3141,7 +3280,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "w"
             } ],
@@ -3152,7 +3291,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3167,7 +3306,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3179,7 +3318,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3188,7 +3327,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "q"
             } ],
@@ -3199,7 +3338,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3214,7 +3353,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3226,7 +3365,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3235,7 +3374,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "v"
             } ],
@@ -3246,7 +3385,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3261,7 +3400,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3273,7 +3412,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3282,7 +3421,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "c"
             } ],
@@ -3293,7 +3432,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3308,7 +3447,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3320,7 +3459,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3329,7 +3468,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "x"
             } ],
@@ -3340,7 +3479,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -3355,7 +3494,7 @@
             "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "u-modifier-tile-management",
+            "name" : "l-modifier-tile-management",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -3367,7 +3506,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "u-modifier-tile-management",
+              "name" : "l-modifier-tile-management",
               "value" : 1
             }
           }, {
@@ -3376,7 +3515,7 @@
           } ],
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "u"
+              "key_code" : "l"
             }, {
               "key_code" : "z"
             } ],
@@ -3387,7 +3526,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "u-modifier-tile-management",
+                  "name" : "l-modifier-tile-management",
                   "value" : 0
                 }
               } ]
@@ -5508,16 +5647,16 @@
           }
         } ]
       }, {
-        "description" : "a-modifier-5-through-9",
+        "description" : "a-modifier-6-through-0",
         "manipulators" : [ {
           "from" : {
             "key_code" : "h"
           },
           "to" : [ {
-            "key_code" : "5"
+            "key_code" : "6"
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5529,11 +5668,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "5"
+            "key_code" : "6"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5548,7 +5687,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
@@ -5559,10 +5698,10 @@
             "key_code" : "j"
           },
           "to" : [ {
-            "key_code" : "6"
+            "key_code" : "7"
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5574,11 +5713,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "6"
+            "key_code" : "7"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5593,7 +5732,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
@@ -5604,10 +5743,10 @@
             "key_code" : "k"
           },
           "to" : [ {
-            "key_code" : "7"
+            "key_code" : "8"
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5619,11 +5758,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "7"
+            "key_code" : "8"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5638,7 +5777,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
@@ -5649,10 +5788,10 @@
             "key_code" : "l"
           },
           "to" : [ {
-            "key_code" : "8"
+            "key_code" : "9"
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5664,11 +5803,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "8"
+            "key_code" : "9"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5683,7 +5822,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
@@ -5694,10 +5833,10 @@
             "key_code" : "semicolon"
           },
           "to" : [ {
-            "key_code" : "9"
+            "key_code" : "0"
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5709,11 +5848,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "9"
+            "key_code" : "0"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5728,7 +5867,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
@@ -5743,7 +5882,7 @@
             "modifiers" : [ "left_option" ]
           } ],
           "conditions" : [ {
-            "name" : "a-modifier-5-through-9",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5755,7 +5894,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "a-modifier-5-through-9",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
@@ -5775,24 +5914,22 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "a-modifier-5-through-9",
+                  "name" : "a-modifier-6-through-0",
                   "value" : 0
                 }
               } ]
             }
           }
-        } ]
-      }, {
-        "description" : "semicolon-modifier-0-through-4",
-        "manipulators" : [ {
+        }, {
           "from" : {
-            "key_code" : "a"
+            "key_code" : "i"
           },
           "to" : [ {
-            "key_code" : "0"
+            "key_code" : "o",
+            "modifiers" : [ "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
+            "name" : "a-modifier-6-through-0",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5804,11 +5941,60 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
+              "name" : "a-modifier-6-through-0",
               "value" : 1
             }
           }, {
-            "key_code" : "0"
+            "key_code" : "o",
+            "modifiers" : [ "left_option", "left_shift" ]
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "a"
+            }, {
+              "key_code" : "i"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "a-modifier-6-through-0",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        } ]
+      }, {
+        "description" : "semicolon-modifier-1-through-5",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "a"
+          },
+          "to" : [ {
+            "key_code" : "1"
+          } ],
+          "conditions" : [ {
+            "name" : "semicolon-modifier-1-through-5",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "semicolon-modifier-1-through-5",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "1"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5823,7 +6009,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
+                  "name" : "semicolon-modifier-1-through-5",
                   "value" : 0
                 }
               } ]
@@ -5834,10 +6020,10 @@
             "key_code" : "s"
           },
           "to" : [ {
-            "key_code" : "1"
+            "key_code" : "2"
           } ],
           "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
+            "name" : "semicolon-modifier-1-through-5",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5849,11 +6035,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
+              "name" : "semicolon-modifier-1-through-5",
               "value" : 1
             }
           }, {
-            "key_code" : "1"
+            "key_code" : "2"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5868,7 +6054,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
+                  "name" : "semicolon-modifier-1-through-5",
                   "value" : 0
                 }
               } ]
@@ -5879,10 +6065,10 @@
             "key_code" : "d"
           },
           "to" : [ {
-            "key_code" : "2"
+            "key_code" : "3"
           } ],
           "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
+            "name" : "semicolon-modifier-1-through-5",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5894,11 +6080,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
+              "name" : "semicolon-modifier-1-through-5",
               "value" : 1
             }
           }, {
-            "key_code" : "2"
+            "key_code" : "3"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5913,7 +6099,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
+                  "name" : "semicolon-modifier-1-through-5",
                   "value" : 0
                 }
               } ]
@@ -5924,10 +6110,10 @@
             "key_code" : "f"
           },
           "to" : [ {
-            "key_code" : "3"
+            "key_code" : "4"
           } ],
           "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
+            "name" : "semicolon-modifier-1-through-5",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5939,11 +6125,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
+              "name" : "semicolon-modifier-1-through-5",
               "value" : 1
             }
           }, {
-            "key_code" : "3"
+            "key_code" : "4"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -5958,7 +6144,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
+                  "name" : "semicolon-modifier-1-through-5",
                   "value" : 0
                 }
               } ]
@@ -5969,10 +6155,10 @@
             "key_code" : "g"
           },
           "to" : [ {
-            "key_code" : "4"
+            "key_code" : "5"
           } ],
           "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
+            "name" : "semicolon-modifier-1-through-5",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -5984,11 +6170,11 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
+              "name" : "semicolon-modifier-1-through-5",
               "value" : 1
             }
           }, {
-            "key_code" : "4"
+            "key_code" : "5"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -6003,54 +6189,7 @@
               "key_up_when" : "any",
               "to_after_key_up" : [ {
                 "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
-                  "value" : 0
-                }
-              } ]
-            }
-          }
-        }, {
-          "from" : {
-            "key_code" : "r"
-          },
-          "to" : [ {
-            "key_code" : "o",
-            "modifiers" : [ "left_option", "left_shift" ]
-          } ],
-          "conditions" : [ {
-            "name" : "semicolon-modifier-0-through-4",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "type" : "basic",
-          "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "semicolon-modifier-0-through-4",
-              "value" : 1
-            }
-          }, {
-            "key_code" : "o",
-            "modifiers" : [ "left_option", "left_shift" ]
-          } ],
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "semicolon"
-            }, {
-              "key_code" : "r"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : true,
-              "key_down_order" : "strict",
-              "key_up_order" : "strict_inverse",
-              "key_up_when" : "any",
-              "to_after_key_up" : [ {
-                "set_variable" : {
-                  "name" : "semicolon-modifier-0-through-4",
+                  "name" : "semicolon-modifier-1-through-5",
                   "value" : 0
                 }
               } ]
