@@ -1,0 +1,106 @@
+{
+    "Script A": {
+        "shortcut": ["cala"],
+        "body": "𝒜"
+    },
+    "Script B": {
+        "shortcut": ["calb"],
+        "body": "ℬ"
+    },
+    "Script C": {
+        "shortcut": ["calc"],
+        "body": "𝒞"
+    },
+    "Script D": {
+        "shortcut": ["cald"],
+        "body": "𝒟"
+    },
+    "Script E": {
+        "shortcut": ["cale"],
+        "body": "ℰ"
+    },
+    "Script F": {
+        "shortcut": ["calf"],
+        "body": "ℱ"
+    },
+    "Script G": {
+        "shortcut": ["calg"],
+        "body": "𝒢"
+    },
+    "Script H": {
+        "shortcut": ["calh"],
+        "body": "ℋ"
+    },
+    "Script I": {
+        "shortcut": ["cali"],
+        "body": "ℐ"
+    },
+    "Script J": {
+        "shortcut": ["calj"],
+        "body": "𝒥"
+    },
+    "Script K": {
+        "shortcut": ["calk"],
+        "body": "𝒦"
+    },
+    "Script L": {
+        "shortcut": ["call"],
+        "body": "ℒ"
+    },
+    "Script M": {
+        "shortcut": ["calm"],
+        "body": "ℳ"
+    },
+    "Script N": {
+        "shortcut": ["caln"],
+        "body": "𝒩"
+    },
+    "Script O": {
+        "shortcut": ["calo"],
+        "body": "𝒪"
+    },
+    "Script P": {
+        "shortcut": ["calp"],
+        "body": "𝒫"
+    },
+    "Script Q": {
+        "shortcut": ["calq"],
+        "body": "𝒬"
+    },
+    "Script R": {
+        "shortcut": ["calr"],
+        "body": "ℛ"
+    },
+    "Script S": {
+        "shortcut": ["cals"],
+        "body": "𝒮"
+    },
+    "Script T": {
+        "shortcut": ["calt"],
+        "body": "𝒯"
+    },
+    "Script U": {
+        "shortcut": ["calu"],
+        "body": "𝒰"
+    },
+    "Script V": {
+        "shortcut": ["calv"],
+        "body": "𝒱"
+    },
+    "Script W": {
+        "shortcut": ["calw"],
+        "body": "𝒲"
+    },
+    "Script X": {
+        "shortcut": ["calx"],
+        "body": "𝒳"
+    },
+    "Script Y": {
+        "shortcut": ["caly"],
+        "body": "𝒴"
+    },
+    "Script Z": {
+        "shortcut": ["calz"],
+        "body": "𝒵"
+    }
+} 

@@ -1,0 +1,106 @@
+{
+    "Bold Uppercase A": {
+        "shortcut": ["boldupa", "bolduppera", "boldua"],
+        "body": "𝐀"
+    },
+    "Bold Uppercase B": {
+        "shortcut": ["boldupb", "boldupperb", "boldub"],
+        "body": "𝐁"
+    },
+    "Bold Uppercase C": {
+        "shortcut": ["boldupc", "boldupperc", "bolduc"],
+        "body": "𝐂"
+    },
+    "Bold Uppercase D": {
+        "shortcut": ["boldupd", "boldupperd", "boldud"],
+        "body": "𝐃"
+    },
+    "Bold Uppercase E": {
+        "shortcut": ["boldupe", "bolduppere", "boldue"],
+        "body": "𝐄"
+    },
+    "Bold Uppercase F": {
+        "shortcut": ["boldupf", "boldupperf", "bolduf"],
+        "body": "𝐅"
+    },
+    "Bold Uppercase G": {
+        "shortcut": ["boldupg", "boldupperg", "boldug"],
+        "body": "𝐆"
+    },
+    "Bold Uppercase H": {
+        "shortcut": ["bolduph", "boldupperh", "bolduh"],
+        "body": "𝐇"
+    },
+    "Bold Uppercase I": {
+        "shortcut": ["boldupi", "boldupperi", "boldui"],
+        "body": "𝐈"
+    },
+    "Bold Uppercase J": {
+        "shortcut": ["boldupj", "boldupperj", "bolduj"],
+        "body": "𝐉"
+    },
+    "Bold Uppercase K": {
+        "shortcut": ["boldupk", "boldupperk", "bolduk"],
+        "body": "𝐊"
+    },
+    "Bold Uppercase L": {
+        "shortcut": ["boldupl", "boldupperl", "boldul"],
+        "body": "𝐋"
+    },
+    "Bold Uppercase M": {
+        "shortcut": ["boldupm", "boldupperm", "boldum"],
+        "body": "𝐌"
+    },
+    "Bold Uppercase N": {
+        "shortcut": ["boldupn", "bolduppern", "boldun"],
+        "body": "𝐍"
+    },
+    "Bold Uppercase O": {
+        "shortcut": ["boldupo", "bolduppero", "bolduo"],
+        "body": "𝐎"
+    },
+    "Bold Uppercase P": {
+        "shortcut": ["boldupp", "boldupperp", "boldup"],
+        "body": "𝐏"
+    },
+    "Bold Uppercase Q": {
+        "shortcut": ["boldupq", "boldupperq", "bolduq"],
+        "body": "𝐐"
+    },
+    "Bold Uppercase R": {
+        "shortcut": ["boldupr", "boldupperr", "boldur"],
+        "body": "𝐑"
+    },
+    "Bold Uppercase S": {
+        "shortcut": ["boldups", "bolduppers", "boldus"],
+        "body": "𝐒"
+    },
+    "Bold Uppercase T": {
+        "shortcut": ["boldupt", "bolduppert", "boldut"],
+        "body": "𝐓"
+    },
+    "Bold Uppercase U": {
+        "shortcut": ["boldupu", "boldupperu", "bolduu"],
+        "body": "𝐔"
+    },
+    "Bold Uppercase V": {
+        "shortcut": ["boldupv", "boldupperv", "bolduv"],
+        "body": "𝐕"
+    },
+    "Bold Uppercase W": {
+        "shortcut": ["boldupw", "boldupperw", "bolduw"],
+        "body": "𝐖"
+    },
+    "Bold Uppercase X": {
+        "shortcut": ["boldupx", "boldupperx", "boldux"],
+        "body": "𝐗"
+    },
+    "Bold Uppercase Y": {
+        "shortcut": ["boldupy", "bolduppery", "bolduy"],
+        "body": "𝐘"
+    },
+    "Bold Uppercase Z": {
+        "shortcut": ["boldupz", "boldupperz", "bolduz"],
+        "body": "𝐙"
+    }
+} 

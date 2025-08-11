@@ -1,0 +1,38 @@
+{
+    "Plus": {
+        "shortcut": ["plus"],
+        "body": "+"
+    },
+    "Minus": {
+        "shortcut": ["minus", "hyphen"],
+        "body": "-"
+    },
+    "Cross Product": {
+        "shortcut": ["cross", "times"],
+        "body": "×"
+    },
+    "Center Dot": {
+        "shortcut": ["cdot"],
+        "body": "·"
+    },
+    "Circle": {
+        "shortcut": ["circ", "compose"],
+        "body": "∘"
+    },
+    "Plus Minus": {
+        "shortcut": ["pm"],
+        "body": "±"
+    },
+    "Circled Plus": {
+        "shortcut": ["oplus"],
+        "body": "⊕"
+    },
+    "Circled Dot": {
+        "shortcut": ["odot"],
+        "body": "⊙"
+    },
+    "Circled Cross": {
+        "shortcut": ["ocross", "otimes"],
+        "body": "⊗"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "Open Brace": {
+        "shortcut": ["openbrace", "lbrace"],
+        "body": "{"
+    },
+    "Close Brace": {
+        "shortcut": ["closebrace", "rbrace"],
+        "body": "}"
+    },
+    "Open Bracket": {
+        "shortcut": ["openbracket", "lbracket"],
+        "body": "["
+    },
+    "Close Bracket": {
+        "shortcut": ["closebracket", "rbracket"],
+        "body": "]"
+    },
+    "Open Parenthesis": {
+        "shortcut": ["openparen", "lparen"],
+        "body": "("
+    },
+    "Close Parenthesis": {
+        "shortcut": ["closeparen", "rparen"],
+        "body": ")"
+    },
+    "Open Angle Bracket": {
+        "shortcut": ["openangle", "langle"],
+        "body": "⟨"
+    },
+    "Close Angle Bracket": {
+        "shortcut": ["closeangle", "rangle"],
+        "body": "⟩"
+    }
+} 

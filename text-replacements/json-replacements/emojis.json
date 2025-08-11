@@ -1,0 +1,38 @@
+{
+    "Thumbs Up": {
+        "shortcut": ["thumbsup", "thumbup"],
+        "body": "👍"
+    },
+    "Heart": {
+        "shortcut": ["heart"],
+        "body": "❤️"
+    },
+    "Laughing": {
+        "shortcut": ["laugh"],
+        "body": "😂"
+    },
+    "Smile": {
+        "shortcut": ["rosysmile"],
+        "body": "😊"
+    },
+    "Wink": {
+        "shortcut": ["wink"],
+        "body": "😉"
+    },
+    "Fire": {
+        "shortcut": ["fire"],
+        "body": "🔥"
+    },
+    "Thinking": {
+        "shortcut": ["think", "hmm"],
+        "body": "🤔"
+    },
+    "Check Mark": {
+        "shortcut": ["check", "done"],
+        "body": "✅"
+    },
+    "Party": {
+        "shortcut": ["party", "celebrate"],
+        "body": "🎉"
+    }
+} 

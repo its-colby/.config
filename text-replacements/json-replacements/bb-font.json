@@ -1,0 +1,106 @@
+{
+    "Blackboard Bold A": {
+        "shortcut": ["bba"],
+        "body": "𝔸"
+    },
+    "Blackboard Bold B": {
+        "shortcut": ["bbb"],
+        "body": "𝔹"
+    },
+    "Blackboard Bold C": {
+        "shortcut": ["bbc"],
+        "body": "ℂ"
+    },
+    "Blackboard Bold D": {
+        "shortcut": ["bbd"],
+        "body": "𝔻"
+    },
+    "Blackboard Bold E": {
+        "shortcut": ["bbe"],
+        "body": "𝔼"
+    },
+    "Blackboard Bold F": {
+        "shortcut": ["bbf"],
+        "body": "𝔽"
+    },
+    "Blackboard Bold G": {
+        "shortcut": ["bbg"],
+        "body": "𝔾"
+    },
+    "Blackboard Bold H": {
+        "shortcut": ["bbh"],
+        "body": "ℍ"
+    },
+    "Blackboard Bold I": {
+        "shortcut": ["bbi"],
+        "body": "𝕀"
+    },
+    "Blackboard Bold J": {
+        "shortcut": ["bbj"],
+        "body": "𝕁"
+    },
+    "Blackboard Bold K": {
+        "shortcut": ["bbk"],
+        "body": "𝕂"
+    },
+    "Blackboard Bold L": {
+        "shortcut": ["bbl"],
+        "body": "𝕃"
+    },
+    "Blackboard Bold M": {
+        "shortcut": ["bbm"],
+        "body": "𝕄"
+    },
+    "Blackboard Bold N": {
+        "shortcut": ["bbn"],
+        "body": "ℕ"
+    },
+    "Blackboard Bold O": {
+        "shortcut": ["bbo"],
+        "body": "𝕆"
+    },
+    "Blackboard Bold P": {
+        "shortcut": ["bbp"],
+        "body": "ℙ"
+    },
+    "Blackboard Bold Q": {
+        "shortcut": ["bbq"],
+        "body": "ℚ"
+    },
+    "Blackboard Bold R": {
+        "shortcut": ["bbr"],
+        "body": "ℝ"
+    },
+    "Blackboard Bold S": {
+        "shortcut": ["bbs"],
+        "body": "𝕊"
+    },
+    "Blackboard Bold T": {
+        "shortcut": ["bbt"],
+        "body": "𝕋"
+    },
+    "Blackboard Bold U": {
+        "shortcut": ["bbu"],
+        "body": "𝕌"
+    },
+    "Blackboard Bold V": {
+        "shortcut": ["bbv"],
+        "body": "𝕍"
+    },
+    "Blackboard Bold W": {
+        "shortcut": ["bbw"],
+        "body": "𝕎"
+    },
+    "Blackboard Bold X": {
+        "shortcut": ["bbx"],
+        "body": "𝕏"
+    },
+    "Blackboard Bold Y": {
+        "shortcut": ["bby"],
+        "body": "𝕐"
+    },
+    "Blackboard Bold Z": {
+        "shortcut": ["bbz"],
+        "body": "ℤ"
+    }
+}

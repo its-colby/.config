@@ -1,0 +1,50 @@
+{
+    "Equals": {
+        "shortcut": ["equals", "equal"],
+        "body": "="
+    },
+    "Not Equal": {
+        "shortcut": ["neq"],
+        "body": "≠"
+    },
+    "Less Than or Equal": {
+        "shortcut": ["leq"],
+        "body": "≤"
+    },
+    "Greater Than or Equal": {
+        "shortcut": ["geq"],
+        "body": "≥"
+    },
+    "Less Than": {
+        "shortcut": ["lt", "lessthan"],
+        "body": "<"
+    },
+    "Greater Than": {
+        "shortcut": ["gt", "greaterthan"],
+        "body": ">"
+    },
+    "Equivalent": {
+        "shortcut": ["equiv", "equivalent"],
+        "body": "≡"
+    },
+    "Not Equivalent": {
+        "shortcut": ["notequiv"],
+        "body": "≢"
+    },
+    "Approximately": {
+        "shortcut": ["approx", "approximately"],
+        "body": "≈"
+    },
+    "Similar": {
+        "shortcut": ["similar", "sim"],
+        "body": "∼"
+    },
+    "Element Of": {
+        "shortcut": ["in", "isin"],
+        "body": "∈"
+    },
+    "Not Element Of": {
+        "shortcut": ["notin", "isnotin"],
+        "body": "∉"
+    }
+}

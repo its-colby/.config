@@ -1,0 +1,54 @@
+{
+    "Logical AND": {
+        "shortcut": ["and", "land"],
+        "body": "∧"
+    },
+    "Logical OR": {
+        "shortcut": ["or", "lor"],
+        "body": "∨"
+    },
+    "Logical NOT": {
+        "shortcut": ["not"],
+        "body": "¬"
+    },
+    "Implies": {
+        "shortcut": ["implies"],
+        "body": "⇒"
+    },
+    "If and Only If": {
+        "shortcut": ["iff", "ifandonlyif"],
+        "body": "⇔"
+    },
+    "For All": {
+        "shortcut": ["forall", "all"],
+        "body": "∀"
+    },
+    "Exists": {
+        "shortcut": ["exists", "thereexists"],
+        "body": "∃"
+    },
+    "Not Exists": {
+        "shortcut": ["notexists"],
+        "body": "∄"
+    },
+    "Entails": {
+        "shortcut": ["entails"],
+        "body": "⊨"
+    },
+    "Judges": {
+        "shortcut": ["judges"],
+        "body": "⊢"
+    },
+    "True": {
+        "shortcut": ["true"],
+        "body": "⊤"
+    },
+    "False": {
+        "shortcut": ["false"],
+        "body": "⊥"
+    },
+    "Therefore": {
+        "shortcut": ["therefore"],
+        "body": "∴"
+    }
+} 

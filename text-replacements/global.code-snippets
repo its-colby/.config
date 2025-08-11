@@ -1,0 +1,2802 @@
+{
+	"Open Brace": {
+		"scope": "",
+		"prefix": "jopenbrace",
+		"body": [
+			"{"
+		],
+		"description": "Open Brace - {"
+	},
+	"Open Brace (lbrace)": {
+		"scope": "",
+		"prefix": "jlbrace",
+		"body": [
+			"{"
+		],
+		"description": "Open Brace - {"
+	},
+	"Close Brace": {
+		"scope": "",
+		"prefix": "jclosebrace",
+		"body": [
+			"}"
+		],
+		"description": "Close Brace - }"
+	},
+	"Close Brace (rbrace)": {
+		"scope": "",
+		"prefix": "jrbrace",
+		"body": [
+			"}"
+		],
+		"description": "Close Brace - }"
+	},
+	"Open Bracket": {
+		"scope": "",
+		"prefix": "jopenbracket",
+		"body": [
+			"["
+		],
+		"description": "Open Bracket - ["
+	},
+	"Open Bracket (lbracket)": {
+		"scope": "",
+		"prefix": "jlbracket",
+		"body": [
+			"["
+		],
+		"description": "Open Bracket - ["
+	},
+	"Close Bracket": {
+		"scope": "",
+		"prefix": "jclosebracket",
+		"body": [
+			"]"
+		],
+		"description": "Close Bracket - ]"
+	},
+	"Close Bracket (rbracket)": {
+		"scope": "",
+		"prefix": "jrbracket",
+		"body": [
+			"]"
+		],
+		"description": "Close Bracket - ]"
+	},
+	"Open Parenthesis": {
+		"scope": "",
+		"prefix": "jopenparen",
+		"body": [
+			"("
+		],
+		"description": "Open Parenthesis - ("
+	},
+	"Open Parenthesis (lparen)": {
+		"scope": "",
+		"prefix": "jlparen",
+		"body": [
+			"("
+		],
+		"description": "Open Parenthesis - ("
+	},
+	"Close Parenthesis": {
+		"scope": "",
+		"prefix": "jcloseparen",
+		"body": [
+			")"
+		],
+		"description": "Close Parenthesis - )"
+	},
+	"Close Parenthesis (rparen)": {
+		"scope": "",
+		"prefix": "jrparen",
+		"body": [
+			")"
+		],
+		"description": "Close Parenthesis - )"
+	},
+	"Open Angle Bracket": {
+		"scope": "",
+		"prefix": "jopenangle",
+		"body": [
+			"⟨"
+		],
+		"description": "Open Angle Bracket - ⟨"
+	},
+	"Open Angle Bracket (langle)": {
+		"scope": "",
+		"prefix": "jlangle",
+		"body": [
+			"⟨"
+		],
+		"description": "Open Angle Bracket - ⟨"
+	},
+	"Close Angle Bracket": {
+		"scope": "",
+		"prefix": "jcloseangle",
+		"body": [
+			"⟩"
+		],
+		"description": "Close Angle Bracket - ⟩"
+	},
+	"Close Angle Bracket (rangle)": {
+		"scope": "",
+		"prefix": "jrangle",
+		"body": [
+			"⟩"
+		],
+		"description": "Close Angle Bracket - ⟩"
+	},
+	"Equals": {
+		"scope": "",
+		"prefix": "jequals",
+		"body": [
+			"="
+		],
+		"description": "Equals - ="
+	},
+	"Equals (equal)": {
+		"scope": "",
+		"prefix": "jequal",
+		"body": [
+			"="
+		],
+		"description": "Equals - ="
+	},
+	"Not Equal": {
+		"scope": "",
+		"prefix": "jneq",
+		"body": [
+			"≠"
+		],
+		"description": "Not Equal - ≠"
+	},
+	"Less Than or Equal": {
+		"scope": "",
+		"prefix": "jleq",
+		"body": [
+			"≤"
+		],
+		"description": "Less Than or Equal - ≤"
+	},
+	"Greater Than or Equal": {
+		"scope": "",
+		"prefix": "jgeq",
+		"body": [
+			"≥"
+		],
+		"description": "Greater Than or Equal - ≥"
+	},
+	"Less Than": {
+		"scope": "",
+		"prefix": "jlt",
+		"body": [
+			"<"
+		],
+		"description": "Less Than - <"
+	},
+	"Less Than (lessthan)": {
+		"scope": "",
+		"prefix": "jlessthan",
+		"body": [
+			"<"
+		],
+		"description": "Less Than - <"
+	},
+	"Greater Than": {
+		"scope": "",
+		"prefix": "jgt",
+		"body": [
+			">"
+		],
+		"description": "Greater Than - >"
+	},
+	"Greater Than (greaterthan)": {
+		"scope": "",
+		"prefix": "jgreaterthan",
+		"body": [
+			">"
+		],
+		"description": "Greater Than - >"
+	},
+	"Equivalent": {
+		"scope": "",
+		"prefix": "jequiv",
+		"body": [
+			"≡"
+		],
+		"description": "Equivalent - ≡"
+	},
+	"Equivalent (equivalent)": {
+		"scope": "",
+		"prefix": "jequivalent",
+		"body": [
+			"≡"
+		],
+		"description": "Equivalent - ≡"
+	},
+	"Not Equivalent": {
+		"scope": "",
+		"prefix": "jnotequiv",
+		"body": [
+			"≢"
+		],
+		"description": "Not Equivalent - ≢"
+	},
+	"Approximately": {
+		"scope": "",
+		"prefix": "japprox",
+		"body": [
+			"≈"
+		],
+		"description": "Approximately - ≈"
+	},
+	"Approximately (approximately)": {
+		"scope": "",
+		"prefix": "japproximately",
+		"body": [
+			"≈"
+		],
+		"description": "Approximately - ≈"
+	},
+	"Similar": {
+		"scope": "",
+		"prefix": "jsimilar",
+		"body": [
+			"∼"
+		],
+		"description": "Similar - ∼"
+	},
+	"Similar (sim)": {
+		"scope": "",
+		"prefix": "jsim",
+		"body": [
+			"∼"
+		],
+		"description": "Similar - ∼"
+	},
+	"Element Of": {
+		"scope": "",
+		"prefix": "jin",
+		"body": [
+			"∈"
+		],
+		"description": "Element Of - ∈"
+	},
+	"Element Of (isin)": {
+		"scope": "",
+		"prefix": "jisin",
+		"body": [
+			"∈"
+		],
+		"description": "Element Of - ∈"
+	},
+	"Not Element Of": {
+		"scope": "",
+		"prefix": "jnotin",
+		"body": [
+			"∉"
+		],
+		"description": "Not Element Of - ∉"
+	},
+	"Not Element Of (isnotin)": {
+		"scope": "",
+		"prefix": "jisnotin",
+		"body": [
+			"∉"
+		],
+		"description": "Not Element Of - ∉"
+	},
+	"Bold Lowercase a": {
+		"scope": "",
+		"prefix": "jbolda",
+		"body": [
+			"𝐚"
+		],
+		"description": "Bold Lowercase a - 𝐚"
+	},
+	"Bold Lowercase a (boldlowera)": {
+		"scope": "",
+		"prefix": "jboldlowera",
+		"body": [
+			"𝐚"
+		],
+		"description": "Bold Lowercase a - 𝐚"
+	},
+	"Bold Lowercase a (boldlowa)": {
+		"scope": "",
+		"prefix": "jboldlowa",
+		"body": [
+			"𝐚"
+		],
+		"description": "Bold Lowercase a - 𝐚"
+	},
+	"Bold Lowercase a (boldla)": {
+		"scope": "",
+		"prefix": "jboldla",
+		"body": [
+			"𝐚"
+		],
+		"description": "Bold Lowercase a - 𝐚"
+	},
+	"Bold Lowercase b": {
+		"scope": "",
+		"prefix": "jboldb",
+		"body": [
+			"𝐛"
+		],
+		"description": "Bold Lowercase b - 𝐛"
+	},
+	"Bold Lowercase b (boldlowerb)": {
+		"scope": "",
+		"prefix": "jboldlowerb",
+		"body": [
+			"𝐛"
+		],
+		"description": "Bold Lowercase b - 𝐛"
+	},
+	"Bold Lowercase b (boldlowb)": {
+		"scope": "",
+		"prefix": "jboldlowb",
+		"body": [
+			"𝐛"
+		],
+		"description": "Bold Lowercase b - 𝐛"
+	},
+	"Bold Lowercase b (boldlb)": {
+		"scope": "",
+		"prefix": "jboldlb",
+		"body": [
+			"𝐛"
+		],
+		"description": "Bold Lowercase b - 𝐛"
+	},
+	"Bold Lowercase c": {
+		"scope": "",
+		"prefix": "jboldc",
+		"body": [
+			"𝐜"
+		],
+		"description": "Bold Lowercase c - 𝐜"
+	},
+	"Bold Lowercase c (boldlowerc)": {
+		"scope": "",
+		"prefix": "jboldlowerc",
+		"body": [
+			"𝐜"
+		],
+		"description": "Bold Lowercase c - 𝐜"
+	},
+	"Bold Lowercase c (boldlowc)": {
+		"scope": "",
+		"prefix": "jboldlowc",
+		"body": [
+			"𝐜"
+		],
+		"description": "Bold Lowercase c - 𝐜"
+	},
+	"Bold Lowercase c (boldlc)": {
+		"scope": "",
+		"prefix": "jboldlc",
+		"body": [
+			"𝐜"
+		],
+		"description": "Bold Lowercase c - 𝐜"
+	},
+	"Bold Lowercase d": {
+		"scope": "",
+		"prefix": "jboldd",
+		"body": [
+			"𝐝"
+		],
+		"description": "Bold Lowercase d - 𝐝"
+	},
+	"Bold Lowercase d (boldlowerd)": {
+		"scope": "",
+		"prefix": "jboldlowerd",
+		"body": [
+			"𝐝"
+		],
+		"description": "Bold Lowercase d - 𝐝"
+	},
+	"Bold Lowercase d (boldlowd)": {
+		"scope": "",
+		"prefix": "jboldlowd",
+		"body": [
+			"𝐝"
+		],
+		"description": "Bold Lowercase d - 𝐝"
+	},
+	"Bold Lowercase d (boldld)": {
+		"scope": "",
+		"prefix": "jboldld",
+		"body": [
+			"𝐝"
+		],
+		"description": "Bold Lowercase d - 𝐝"
+	},
+	"Bold Lowercase e": {
+		"scope": "",
+		"prefix": "jbolde",
+		"body": [
+			"𝐞"
+		],
+		"description": "Bold Lowercase e - 𝐞"
+	},
+	"Bold Lowercase e (boldlowere)": {
+		"scope": "",
+		"prefix": "jboldlowere",
+		"body": [
+			"𝐞"
+		],
+		"description": "Bold Lowercase e - 𝐞"
+	},
+	"Bold Lowercase e (boldlowe)": {
+		"scope": "",
+		"prefix": "jboldlowe",
+		"body": [
+			"𝐞"
+		],
+		"description": "Bold Lowercase e - 𝐞"
+	},
+	"Bold Lowercase e (boldle)": {
+		"scope": "",
+		"prefix": "jboldle",
+		"body": [
+			"𝐞"
+		],
+		"description": "Bold Lowercase e - 𝐞"
+	},
+	"Bold Lowercase f": {
+		"scope": "",
+		"prefix": "jboldf",
+		"body": [
+			"𝐟"
+		],
+		"description": "Bold Lowercase f - 𝐟"
+	},
+	"Bold Lowercase f (boldlowerf)": {
+		"scope": "",
+		"prefix": "jboldlowerf",
+		"body": [
+			"𝐟"
+		],
+		"description": "Bold Lowercase f - 𝐟"
+	},
+	"Bold Lowercase f (boldlowf)": {
+		"scope": "",
+		"prefix": "jboldlowf",
+		"body": [
+			"𝐟"
+		],
+		"description": "Bold Lowercase f - 𝐟"
+	},
+	"Bold Lowercase f (boldlf)": {
+		"scope": "",
+		"prefix": "jboldlf",
+		"body": [
+			"𝐟"
+		],
+		"description": "Bold Lowercase f - 𝐟"
+	},
+	"Bold Lowercase g": {
+		"scope": "",
+		"prefix": "jboldg",
+		"body": [
+			"𝐠"
+		],
+		"description": "Bold Lowercase g - 𝐠"
+	},
+	"Bold Lowercase g (boldlowerg)": {
+		"scope": "",
+		"prefix": "jboldlowerg",
+		"body": [
+			"𝐠"
+		],
+		"description": "Bold Lowercase g - 𝐠"
+	},
+	"Bold Lowercase g (boldlowg)": {
+		"scope": "",
+		"prefix": "jboldlowg",
+		"body": [
+			"𝐠"
+		],
+		"description": "Bold Lowercase g - 𝐠"
+	},
+	"Bold Lowercase g (boldlg)": {
+		"scope": "",
+		"prefix": "jboldlg",
+		"body": [
+			"𝐠"
+		],
+		"description": "Bold Lowercase g - 𝐠"
+	},
+	"Bold Lowercase h": {
+		"scope": "",
+		"prefix": "jboldh",
+		"body": [
+			"𝐡"
+		],
+		"description": "Bold Lowercase h - 𝐡"
+	},
+	"Bold Lowercase h (boldlowerh)": {
+		"scope": "",
+		"prefix": "jboldlowerh",
+		"body": [
+			"𝐡"
+		],
+		"description": "Bold Lowercase h - 𝐡"
+	},
+	"Bold Lowercase h (boldlowh)": {
+		"scope": "",
+		"prefix": "jboldlowh",
+		"body": [
+			"𝐡"
+		],
+		"description": "Bold Lowercase h - 𝐡"
+	},
+	"Bold Lowercase h (boldlh)": {
+		"scope": "",
+		"prefix": "jboldlh",
+		"body": [
+			"𝐡"
+		],
+		"description": "Bold Lowercase h - 𝐡"
+	},
+	"Bold Lowercase i": {
+		"scope": "",
+		"prefix": "jboldi",
+		"body": [
+			"𝐢"
+		],
+		"description": "Bold Lowercase i - 𝐢"
+	},
+	"Bold Lowercase i (boldloweri)": {
+		"scope": "",
+		"prefix": "jboldloweri",
+		"body": [
+			"𝐢"
+		],
+		"description": "Bold Lowercase i - 𝐢"
+	},
+	"Bold Lowercase i (boldlowi)": {
+		"scope": "",
+		"prefix": "jboldlowi",
+		"body": [
+			"𝐢"
+		],
+		"description": "Bold Lowercase i - 𝐢"
+	},
+	"Bold Lowercase i (boldli)": {
+		"scope": "",
+		"prefix": "jboldli",
+		"body": [
+			"𝐢"
+		],
+		"description": "Bold Lowercase i - 𝐢"
+	},
+	"Bold Lowercase j": {
+		"scope": "",
+		"prefix": "jboldj",
+		"body": [
+			"𝐣"
+		],
+		"description": "Bold Lowercase j - 𝐣"
+	},
+	"Bold Lowercase j (boldlowerj)": {
+		"scope": "",
+		"prefix": "jboldlowerj",
+		"body": [
+			"𝐣"
+		],
+		"description": "Bold Lowercase j - 𝐣"
+	},
+	"Bold Lowercase j (boldlowj)": {
+		"scope": "",
+		"prefix": "jboldlowj",
+		"body": [
+			"𝐣"
+		],
+		"description": "Bold Lowercase j - 𝐣"
+	},
+	"Bold Lowercase j (boldlj)": {
+		"scope": "",
+		"prefix": "jboldlj",
+		"body": [
+			"𝐣"
+		],
+		"description": "Bold Lowercase j - 𝐣"
+	},
+	"Bold Lowercase k": {
+		"scope": "",
+		"prefix": "jboldk",
+		"body": [
+			"𝐤"
+		],
+		"description": "Bold Lowercase k - 𝐤"
+	},
+	"Bold Lowercase k (boldlowerk)": {
+		"scope": "",
+		"prefix": "jboldlowerk",
+		"body": [
+			"𝐤"
+		],
+		"description": "Bold Lowercase k - 𝐤"
+	},
+	"Bold Lowercase k (boldlowk)": {
+		"scope": "",
+		"prefix": "jboldlowk",
+		"body": [
+			"𝐤"
+		],
+		"description": "Bold Lowercase k - 𝐤"
+	},
+	"Bold Lowercase k (boldlk)": {
+		"scope": "",
+		"prefix": "jboldlk",
+		"body": [
+			"𝐤"
+		],
+		"description": "Bold Lowercase k - 𝐤"
+	},
+	"Bold Lowercase l": {
+		"scope": "",
+		"prefix": "jboldl",
+		"body": [
+			"𝐥"
+		],
+		"description": "Bold Lowercase l - 𝐥"
+	},
+	"Bold Lowercase l (boldlowerl)": {
+		"scope": "",
+		"prefix": "jboldlowerl",
+		"body": [
+			"𝐥"
+		],
+		"description": "Bold Lowercase l - 𝐥"
+	},
+	"Bold Lowercase l (boldlowl)": {
+		"scope": "",
+		"prefix": "jboldlowl",
+		"body": [
+			"𝐥"
+		],
+		"description": "Bold Lowercase l - 𝐥"
+	},
+	"Bold Lowercase l (boldll)": {
+		"scope": "",
+		"prefix": "jboldll",
+		"body": [
+			"𝐥"
+		],
+		"description": "Bold Lowercase l - 𝐥"
+	},
+	"Bold Lowercase m": {
+		"scope": "",
+		"prefix": "jboldm",
+		"body": [
+			"𝐦"
+		],
+		"description": "Bold Lowercase m - 𝐦"
+	},
+	"Bold Lowercase m (boldlowerm)": {
+		"scope": "",
+		"prefix": "jboldlowerm",
+		"body": [
+			"𝐦"
+		],
+		"description": "Bold Lowercase m - 𝐦"
+	},
+	"Bold Lowercase m (boldlowm)": {
+		"scope": "",
+		"prefix": "jboldlowm",
+		"body": [
+			"𝐦"
+		],
+		"description": "Bold Lowercase m - 𝐦"
+	},
+	"Bold Lowercase m (boldlm)": {
+		"scope": "",
+		"prefix": "jboldlm",
+		"body": [
+			"𝐦"
+		],
+		"description": "Bold Lowercase m - 𝐦"
+	},
+	"Bold Lowercase n": {
+		"scope": "",
+		"prefix": "jboldn",
+		"body": [
+			"𝐧"
+		],
+		"description": "Bold Lowercase n - 𝐧"
+	},
+	"Bold Lowercase n (boldlowern)": {
+		"scope": "",
+		"prefix": "jboldlowern",
+		"body": [
+			"𝐧"
+		],
+		"description": "Bold Lowercase n - 𝐧"
+	},
+	"Bold Lowercase n (boldlown)": {
+		"scope": "",
+		"prefix": "jboldlown",
+		"body": [
+			"𝐧"
+		],
+		"description": "Bold Lowercase n - 𝐧"
+	},
+	"Bold Lowercase n (boldln)": {
+		"scope": "",
+		"prefix": "jboldln",
+		"body": [
+			"𝐧"
+		],
+		"description": "Bold Lowercase n - 𝐧"
+	},
+	"Bold Lowercase o": {
+		"scope": "",
+		"prefix": "jboldo",
+		"body": [
+			"𝐨"
+		],
+		"description": "Bold Lowercase o - 𝐨"
+	},
+	"Bold Lowercase o (boldlowero)": {
+		"scope": "",
+		"prefix": "jboldlowero",
+		"body": [
+			"𝐨"
+		],
+		"description": "Bold Lowercase o - 𝐨"
+	},
+	"Bold Lowercase o (boldlowo)": {
+		"scope": "",
+		"prefix": "jboldlowo",
+		"body": [
+			"𝐨"
+		],
+		"description": "Bold Lowercase o - 𝐨"
+	},
+	"Bold Lowercase o (boldlo)": {
+		"scope": "",
+		"prefix": "jboldlo",
+		"body": [
+			"𝐨"
+		],
+		"description": "Bold Lowercase o - 𝐨"
+	},
+	"Bold Lowercase p": {
+		"scope": "",
+		"prefix": "jboldp",
+		"body": [
+			"𝐩"
+		],
+		"description": "Bold Lowercase p - 𝐩"
+	},
+	"Bold Lowercase p (boldlowerp)": {
+		"scope": "",
+		"prefix": "jboldlowerp",
+		"body": [
+			"𝐩"
+		],
+		"description": "Bold Lowercase p - 𝐩"
+	},
+	"Bold Lowercase p (boldlowp)": {
+		"scope": "",
+		"prefix": "jboldlowp",
+		"body": [
+			"𝐩"
+		],
+		"description": "Bold Lowercase p - 𝐩"
+	},
+	"Bold Lowercase p (boldlp)": {
+		"scope": "",
+		"prefix": "jboldlp",
+		"body": [
+			"𝐩"
+		],
+		"description": "Bold Lowercase p - 𝐩"
+	},
+	"Bold Lowercase q": {
+		"scope": "",
+		"prefix": "jboldq",
+		"body": [
+			"𝐪"
+		],
+		"description": "Bold Lowercase q - 𝐪"
+	},
+	"Bold Lowercase q (boldlowerq)": {
+		"scope": "",
+		"prefix": "jboldlowerq",
+		"body": [
+			"𝐪"
+		],
+		"description": "Bold Lowercase q - 𝐪"
+	},
+	"Bold Lowercase q (boldlowq)": {
+		"scope": "",
+		"prefix": "jboldlowq",
+		"body": [
+			"𝐪"
+		],
+		"description": "Bold Lowercase q - 𝐪"
+	},
+	"Bold Lowercase q (boldlq)": {
+		"scope": "",
+		"prefix": "jboldlq",
+		"body": [
+			"𝐪"
+		],
+		"description": "Bold Lowercase q - 𝐪"
+	},
+	"Bold Lowercase r": {
+		"scope": "",
+		"prefix": "jboldr",
+		"body": [
+			"𝐫"
+		],
+		"description": "Bold Lowercase r - 𝐫"
+	},
+	"Bold Lowercase r (boldlowerr)": {
+		"scope": "",
+		"prefix": "jboldlowerr",
+		"body": [
+			"𝐫"
+		],
+		"description": "Bold Lowercase r - 𝐫"
+	},
+	"Bold Lowercase r (boldlowr)": {
+		"scope": "",
+		"prefix": "jboldlowr",
+		"body": [
+			"𝐫"
+		],
+		"description": "Bold Lowercase r - 𝐫"
+	},
+	"Bold Lowercase r (boldlr)": {
+		"scope": "",
+		"prefix": "jboldlr",
+		"body": [
+			"𝐫"
+		],
+		"description": "Bold Lowercase r - 𝐫"
+	},
+	"Bold Lowercase s": {
+		"scope": "",
+		"prefix": "jbolds",
+		"body": [
+			"𝐬"
+		],
+		"description": "Bold Lowercase s - 𝐬"
+	},
+	"Bold Lowercase s (boldlowers)": {
+		"scope": "",
+		"prefix": "jboldlowers",
+		"body": [
+			"𝐬"
+		],
+		"description": "Bold Lowercase s - 𝐬"
+	},
+	"Bold Lowercase s (boldlows)": {
+		"scope": "",
+		"prefix": "jboldlows",
+		"body": [
+			"𝐬"
+		],
+		"description": "Bold Lowercase s - 𝐬"
+	},
+	"Bold Lowercase s (boldls)": {
+		"scope": "",
+		"prefix": "jboldls",
+		"body": [
+			"𝐬"
+		],
+		"description": "Bold Lowercase s - 𝐬"
+	},
+	"Bold Lowercase t": {
+		"scope": "",
+		"prefix": "jboldt",
+		"body": [
+			"𝐭"
+		],
+		"description": "Bold Lowercase t - 𝐭"
+	},
+	"Bold Lowercase t (boldlowert)": {
+		"scope": "",
+		"prefix": "jboldlowert",
+		"body": [
+			"𝐭"
+		],
+		"description": "Bold Lowercase t - 𝐭"
+	},
+	"Bold Lowercase t (boldlowt)": {
+		"scope": "",
+		"prefix": "jboldlowt",
+		"body": [
+			"𝐭"
+		],
+		"description": "Bold Lowercase t - 𝐭"
+	},
+	"Bold Lowercase t (boldlt)": {
+		"scope": "",
+		"prefix": "jboldlt",
+		"body": [
+			"𝐭"
+		],
+		"description": "Bold Lowercase t - 𝐭"
+	},
+	"Bold Lowercase u": {
+		"scope": "",
+		"prefix": "jboldu",
+		"body": [
+			"𝐮"
+		],
+		"description": "Bold Lowercase u - 𝐮"
+	},
+	"Bold Lowercase u (boldloweru)": {
+		"scope": "",
+		"prefix": "jboldloweru",
+		"body": [
+			"𝐮"
+		],
+		"description": "Bold Lowercase u - 𝐮"
+	},
+	"Bold Lowercase u (boldlowu)": {
+		"scope": "",
+		"prefix": "jboldlowu",
+		"body": [
+			"𝐮"
+		],
+		"description": "Bold Lowercase u - 𝐮"
+	},
+	"Bold Lowercase u (boldlu)": {
+		"scope": "",
+		"prefix": "jboldlu",
+		"body": [
+			"𝐮"
+		],
+		"description": "Bold Lowercase u - 𝐮"
+	},
+	"Bold Lowercase v": {
+		"scope": "",
+		"prefix": "jboldv",
+		"body": [
+			"𝐯"
+		],
+		"description": "Bold Lowercase v - 𝐯"
+	},
+	"Bold Lowercase v (boldlowerv)": {
+		"scope": "",
+		"prefix": "jboldlowerv",
+		"body": [
+			"𝐯"
+		],
+		"description": "Bold Lowercase v - 𝐯"
+	},
+	"Bold Lowercase v (boldlowv)": {
+		"scope": "",
+		"prefix": "jboldlowv",
+		"body": [
+			"𝐯"
+		],
+		"description": "Bold Lowercase v - 𝐯"
+	},
+	"Bold Lowercase v (boldlv)": {
+		"scope": "",
+		"prefix": "jboldlv",
+		"body": [
+			"𝐯"
+		],
+		"description": "Bold Lowercase v - 𝐯"
+	},
+	"Bold Lowercase w": {
+		"scope": "",
+		"prefix": "jboldw",
+		"body": [
+			"𝐰"
+		],
+		"description": "Bold Lowercase w - 𝐰"
+	},
+	"Bold Lowercase w (boldlowerw)": {
+		"scope": "",
+		"prefix": "jboldlowerw",
+		"body": [
+			"𝐰"
+		],
+		"description": "Bold Lowercase w - 𝐰"
+	},
+	"Bold Lowercase w (boldloww)": {
+		"scope": "",
+		"prefix": "jboldloww",
+		"body": [
+			"𝐰"
+		],
+		"description": "Bold Lowercase w - 𝐰"
+	},
+	"Bold Lowercase w (boldlw)": {
+		"scope": "",
+		"prefix": "jboldlw",
+		"body": [
+			"𝐰"
+		],
+		"description": "Bold Lowercase w - 𝐰"
+	},
+	"Bold Lowercase x": {
+		"scope": "",
+		"prefix": "jboldx",
+		"body": [
+			"𝐱"
+		],
+		"description": "Bold Lowercase x - 𝐱"
+	},
+	"Bold Lowercase x (boldlowerx)": {
+		"scope": "",
+		"prefix": "jboldlowerx",
+		"body": [
+			"𝐱"
+		],
+		"description": "Bold Lowercase x - 𝐱"
+	},
+	"Bold Lowercase x (boldlowx)": {
+		"scope": "",
+		"prefix": "jboldlowx",
+		"body": [
+			"𝐱"
+		],
+		"description": "Bold Lowercase x - 𝐱"
+	},
+	"Bold Lowercase x (boldlx)": {
+		"scope": "",
+		"prefix": "jboldlx",
+		"body": [
+			"𝐱"
+		],
+		"description": "Bold Lowercase x - 𝐱"
+	},
+	"Bold Lowercase y": {
+		"scope": "",
+		"prefix": "jboldy",
+		"body": [
+			"𝐲"
+		],
+		"description": "Bold Lowercase y - 𝐲"
+	},
+	"Bold Lowercase y (boldlowery)": {
+		"scope": "",
+		"prefix": "jboldlowery",
+		"body": [
+			"𝐲"
+		],
+		"description": "Bold Lowercase y - 𝐲"
+	},
+	"Bold Lowercase y (boldlowy)": {
+		"scope": "",
+		"prefix": "jboldlowy",
+		"body": [
+			"𝐲"
+		],
+		"description": "Bold Lowercase y - 𝐲"
+	},
+	"Bold Lowercase y (boldly)": {
+		"scope": "",
+		"prefix": "jboldly",
+		"body": [
+			"𝐲"
+		],
+		"description": "Bold Lowercase y - 𝐲"
+	},
+	"Bold Lowercase z": {
+		"scope": "",
+		"prefix": "jboldz",
+		"body": [
+			"𝐳"
+		],
+		"description": "Bold Lowercase z - 𝐳"
+	},
+	"Bold Lowercase z (boldlowerz)": {
+		"scope": "",
+		"prefix": "jboldlowerz",
+		"body": [
+			"𝐳"
+		],
+		"description": "Bold Lowercase z - 𝐳"
+	},
+	"Bold Lowercase z (boldlowz)": {
+		"scope": "",
+		"prefix": "jboldlowz",
+		"body": [
+			"𝐳"
+		],
+		"description": "Bold Lowercase z - 𝐳"
+	},
+	"Bold Lowercase z (boldlz)": {
+		"scope": "",
+		"prefix": "jboldlz",
+		"body": [
+			"𝐳"
+		],
+		"description": "Bold Lowercase z - 𝐳"
+	},
+	"Plus": {
+		"scope": "",
+		"prefix": "jplus",
+		"body": [
+			"+"
+		],
+		"description": "Plus - +"
+	},
+	"Minus": {
+		"scope": "",
+		"prefix": "jminus",
+		"body": [
+			"-"
+		],
+		"description": "Minus - -"
+	},
+	"Minus (hyphen)": {
+		"scope": "",
+		"prefix": "jhyphen",
+		"body": [
+			"-"
+		],
+		"description": "Minus - -"
+	},
+	"Cross Product": {
+		"scope": "",
+		"prefix": "jcross",
+		"body": [
+			"×"
+		],
+		"description": "Cross Product - ×"
+	},
+	"Cross Product (times)": {
+		"scope": "",
+		"prefix": "jtimes",
+		"body": [
+			"×"
+		],
+		"description": "Cross Product - ×"
+	},
+	"Center Dot": {
+		"scope": "",
+		"prefix": "jcdot",
+		"body": [
+			"·"
+		],
+		"description": "Center Dot - ·"
+	},
+	"Circle": {
+		"scope": "",
+		"prefix": "jcirc",
+		"body": [
+			"∘"
+		],
+		"description": "Circle - ∘"
+	},
+	"Circle (compose)": {
+		"scope": "",
+		"prefix": "jcompose",
+		"body": [
+			"∘"
+		],
+		"description": "Circle - ∘"
+	},
+	"Plus Minus": {
+		"scope": "",
+		"prefix": "jpm",
+		"body": [
+			"±"
+		],
+		"description": "Plus Minus - ±"
+	},
+	"Circled Plus": {
+		"scope": "",
+		"prefix": "joplus",
+		"body": [
+			"⊕"
+		],
+		"description": "Circled Plus - ⊕"
+	},
+	"Circled Dot": {
+		"scope": "",
+		"prefix": "jodot",
+		"body": [
+			"⊙"
+		],
+		"description": "Circled Dot - ⊙"
+	},
+	"Circled Cross": {
+		"scope": "",
+		"prefix": "jocross",
+		"body": [
+			"⊗"
+		],
+		"description": "Circled Cross - ⊗"
+	},
+	"Circled Cross (otimes)": {
+		"scope": "",
+		"prefix": "jotimes",
+		"body": [
+			"⊗"
+		],
+		"description": "Circled Cross - ⊗"
+	},
+	"Script A": {
+		"scope": "",
+		"prefix": "jcala",
+		"body": [
+			"𝒜"
+		],
+		"description": "Script A - 𝒜"
+	},
+	"Script B": {
+		"scope": "",
+		"prefix": "jcalb",
+		"body": [
+			"ℬ"
+		],
+		"description": "Script B - ℬ"
+	},
+	"Script C": {
+		"scope": "",
+		"prefix": "jcalc",
+		"body": [
+			"𝒞"
+		],
+		"description": "Script C - 𝒞"
+	},
+	"Script D": {
+		"scope": "",
+		"prefix": "jcald",
+		"body": [
+			"𝒟"
+		],
+		"description": "Script D - 𝒟"
+	},
+	"Script E": {
+		"scope": "",
+		"prefix": "jcale",
+		"body": [
+			"ℰ"
+		],
+		"description": "Script E - ℰ"
+	},
+	"Script F": {
+		"scope": "",
+		"prefix": "jcalf",
+		"body": [
+			"ℱ"
+		],
+		"description": "Script F - ℱ"
+	},
+	"Script G": {
+		"scope": "",
+		"prefix": "jcalg",
+		"body": [
+			"𝒢"
+		],
+		"description": "Script G - 𝒢"
+	},
+	"Script H": {
+		"scope": "",
+		"prefix": "jcalh",
+		"body": [
+			"ℋ"
+		],
+		"description": "Script H - ℋ"
+	},
+	"Script I": {
+		"scope": "",
+		"prefix": "jcali",
+		"body": [
+			"ℐ"
+		],
+		"description": "Script I - ℐ"
+	},
+	"Script J": {
+		"scope": "",
+		"prefix": "jcalj",
+		"body": [
+			"𝒥"
+		],
+		"description": "Script J - 𝒥"
+	},
+	"Script K": {
+		"scope": "",
+		"prefix": "jcalk",
+		"body": [
+			"𝒦"
+		],
+		"description": "Script K - 𝒦"
+	},
+	"Script L": {
+		"scope": "",
+		"prefix": "jcall",
+		"body": [
+			"ℒ"
+		],
+		"description": "Script L - ℒ"
+	},
+	"Script M": {
+		"scope": "",
+		"prefix": "jcalm",
+		"body": [
+			"ℳ"
+		],
+		"description": "Script M - ℳ"
+	},
+	"Script N": {
+		"scope": "",
+		"prefix": "jcaln",
+		"body": [
+			"𝒩"
+		],
+		"description": "Script N - 𝒩"
+	},
+	"Script O": {
+		"scope": "",
+		"prefix": "jcalo",
+		"body": [
+			"𝒪"
+		],
+		"description": "Script O - 𝒪"
+	},
+	"Script P": {
+		"scope": "",
+		"prefix": "jcalp",
+		"body": [
+			"𝒫"
+		],
+		"description": "Script P - 𝒫"
+	},
+	"Script Q": {
+		"scope": "",
+		"prefix": "jcalq",
+		"body": [
+			"𝒬"
+		],
+		"description": "Script Q - 𝒬"
+	},
+	"Script R": {
+		"scope": "",
+		"prefix": "jcalr",
+		"body": [
+			"ℛ"
+		],
+		"description": "Script R - ℛ"
+	},
+	"Script S": {
+		"scope": "",
+		"prefix": "jcals",
+		"body": [
+			"𝒮"
+		],
+		"description": "Script S - 𝒮"
+	},
+	"Script T": {
+		"scope": "",
+		"prefix": "jcalt",
+		"body": [
+			"𝒯"
+		],
+		"description": "Script T - 𝒯"
+	},
+	"Script U": {
+		"scope": "",
+		"prefix": "jcalu",
+		"body": [
+			"𝒰"
+		],
+		"description": "Script U - 𝒰"
+	},
+	"Script V": {
+		"scope": "",
+		"prefix": "jcalv",
+		"body": [
+			"𝒱"
+		],
+		"description": "Script V - 𝒱"
+	},
+	"Script W": {
+		"scope": "",
+		"prefix": "jcalw",
+		"body": [
+			"𝒲"
+		],
+		"description": "Script W - 𝒲"
+	},
+	"Script X": {
+		"scope": "",
+		"prefix": "jcalx",
+		"body": [
+			"𝒳"
+		],
+		"description": "Script X - 𝒳"
+	},
+	"Script Y": {
+		"scope": "",
+		"prefix": "jcaly",
+		"body": [
+			"𝒴"
+		],
+		"description": "Script Y - 𝒴"
+	},
+	"Script Z": {
+		"scope": "",
+		"prefix": "jcalz",
+		"body": [
+			"𝒵"
+		],
+		"description": "Script Z - 𝒵"
+	},
+	"Infinity": {
+		"scope": "",
+		"prefix": "jinfinity",
+		"body": [
+			"∞"
+		],
+		"description": "Infinity - ∞"
+	},
+	"Empty Set": {
+		"scope": "",
+		"prefix": "jemptyset",
+		"body": [
+			"∅"
+		],
+		"description": "Empty Set - ∅"
+	},
+	"Maps To": {
+		"scope": "",
+		"prefix": "jmapsto",
+		"body": [
+			"↦"
+		],
+		"description": "Maps To - ↦"
+	},
+	"Right Arrow": {
+		"scope": "",
+		"prefix": "jarrow",
+		"body": [
+			"→"
+		],
+		"description": "Right Arrow - →"
+	},
+	"Right Arrow (rightarrow)": {
+		"scope": "",
+		"prefix": "jrightarrow",
+		"body": [
+			"→"
+		],
+		"description": "Right Arrow - →"
+	},
+	"Right Arrow (rarrow)": {
+		"scope": "",
+		"prefix": "jrarrow",
+		"body": [
+			"→"
+		],
+		"description": "Right Arrow - →"
+	},
+	"Left Arrow": {
+		"scope": "",
+		"prefix": "jleftarrow",
+		"body": [
+			"←"
+		],
+		"description": "Left Arrow - ←"
+	},
+	"Left Arrow (larrow)": {
+		"scope": "",
+		"prefix": "jlarrow",
+		"body": [
+			"←"
+		],
+		"description": "Left Arrow - ←"
+	},
+	"Bidirectional Arrow": {
+		"scope": "",
+		"prefix": "jbiarrow",
+		"body": [
+			"↔"
+		],
+		"description": "Bidirectional Arrow - ↔"
+	},
+	"Logical AND": {
+		"scope": "",
+		"prefix": "jand",
+		"body": [
+			"∧"
+		],
+		"description": "Logical AND - ∧"
+	},
+	"Logical AND (land)": {
+		"scope": "",
+		"prefix": "jland",
+		"body": [
+			"∧"
+		],
+		"description": "Logical AND - ∧"
+	},
+	"Logical OR": {
+		"scope": "",
+		"prefix": "jor",
+		"body": [
+			"∨"
+		],
+		"description": "Logical OR - ∨"
+	},
+	"Logical OR (lor)": {
+		"scope": "",
+		"prefix": "jlor",
+		"body": [
+			"∨"
+		],
+		"description": "Logical OR - ∨"
+	},
+	"Logical NOT": {
+		"scope": "",
+		"prefix": "jnot",
+		"body": [
+			"¬"
+		],
+		"description": "Logical NOT - ¬"
+	},
+	"Implies": {
+		"scope": "",
+		"prefix": "jimplies",
+		"body": [
+			"⇒"
+		],
+		"description": "Implies - ⇒"
+	},
+	"If and Only If": {
+		"scope": "",
+		"prefix": "jiff",
+		"body": [
+			"⇔"
+		],
+		"description": "If and Only If - ⇔"
+	},
+	"If and Only If (ifandonlyif)": {
+		"scope": "",
+		"prefix": "jifandonlyif",
+		"body": [
+			"⇔"
+		],
+		"description": "If and Only If - ⇔"
+	},
+	"For All": {
+		"scope": "",
+		"prefix": "jforall",
+		"body": [
+			"∀"
+		],
+		"description": "For All - ∀"
+	},
+	"For All (all)": {
+		"scope": "",
+		"prefix": "jall",
+		"body": [
+			"∀"
+		],
+		"description": "For All - ∀"
+	},
+	"Exists": {
+		"scope": "",
+		"prefix": "jexists",
+		"body": [
+			"∃"
+		],
+		"description": "Exists - ∃"
+	},
+	"Exists (thereexists)": {
+		"scope": "",
+		"prefix": "jthereexists",
+		"body": [
+			"∃"
+		],
+		"description": "Exists - ∃"
+	},
+	"Not Exists": {
+		"scope": "",
+		"prefix": "jnotexists",
+		"body": [
+			"∄"
+		],
+		"description": "Not Exists - ∄"
+	},
+	"Entails": {
+		"scope": "",
+		"prefix": "jentails",
+		"body": [
+			"⊨"
+		],
+		"description": "Entails - ⊨"
+	},
+	"Judges": {
+		"scope": "",
+		"prefix": "jjudges",
+		"body": [
+			"⊢"
+		],
+		"description": "Judges - ⊢"
+	},
+	"True": {
+		"scope": "",
+		"prefix": "jtrue",
+		"body": [
+			"⊤"
+		],
+		"description": "True - ⊤"
+	},
+	"False": {
+		"scope": "",
+		"prefix": "jfalse",
+		"body": [
+			"⊥"
+		],
+		"description": "False - ⊥"
+	},
+	"Therefore": {
+		"scope": "",
+		"prefix": "jtherefore",
+		"body": [
+			"∴"
+		],
+		"description": "Therefore - ∴"
+	},
+	"Thumbs Up": {
+		"scope": "",
+		"prefix": "jthumbsup",
+		"body": [
+			"👍"
+		],
+		"description": "Thumbs Up - 👍"
+	},
+	"Thumbs Up (thumbup)": {
+		"scope": "",
+		"prefix": "jthumbup",
+		"body": [
+			"👍"
+		],
+		"description": "Thumbs Up - 👍"
+	},
+	"Heart": {
+		"scope": "",
+		"prefix": "jheart",
+		"body": [
+			"❤️"
+		],
+		"description": "Heart - ❤️"
+	},
+	"Laughing": {
+		"scope": "",
+		"prefix": "jlaugh",
+		"body": [
+			"😂"
+		],
+		"description": "Laughing - 😂"
+	},
+	"Smile": {
+		"scope": "",
+		"prefix": "jrosysmile",
+		"body": [
+			"😊"
+		],
+		"description": "Smile - 😊"
+	},
+	"Wink": {
+		"scope": "",
+		"prefix": "jwink",
+		"body": [
+			"😉"
+		],
+		"description": "Wink - 😉"
+	},
+	"Fire": {
+		"scope": "",
+		"prefix": "jfire",
+		"body": [
+			"🔥"
+		],
+		"description": "Fire - 🔥"
+	},
+	"Thinking": {
+		"scope": "",
+		"prefix": "jthink",
+		"body": [
+			"🤔"
+		],
+		"description": "Thinking - 🤔"
+	},
+	"Thinking (hmm)": {
+		"scope": "",
+		"prefix": "jhmm",
+		"body": [
+			"🤔"
+		],
+		"description": "Thinking - 🤔"
+	},
+	"Check Mark": {
+		"scope": "",
+		"prefix": "jcheck",
+		"body": [
+			"✅"
+		],
+		"description": "Check Mark - ✅"
+	},
+	"Check Mark (done)": {
+		"scope": "",
+		"prefix": "jdone",
+		"body": [
+			"✅"
+		],
+		"description": "Check Mark - ✅"
+	},
+	"Party": {
+		"scope": "",
+		"prefix": "jparty",
+		"body": [
+			"🎉"
+		],
+		"description": "Party - 🎉"
+	},
+	"Party (celebrate)": {
+		"scope": "",
+		"prefix": "jcelebrate",
+		"body": [
+			"🎉"
+		],
+		"description": "Party - 🎉"
+	},
+	"Bold Uppercase A": {
+		"scope": "",
+		"prefix": "jboldupa",
+		"body": [
+			"𝐀"
+		],
+		"description": "Bold Uppercase A - 𝐀"
+	},
+	"Bold Uppercase A (bolduppera)": {
+		"scope": "",
+		"prefix": "jbolduppera",
+		"body": [
+			"𝐀"
+		],
+		"description": "Bold Uppercase A - 𝐀"
+	},
+	"Bold Uppercase A (boldua)": {
+		"scope": "",
+		"prefix": "jboldua",
+		"body": [
+			"𝐀"
+		],
+		"description": "Bold Uppercase A - 𝐀"
+	},
+	"Bold Uppercase B": {
+		"scope": "",
+		"prefix": "jboldupb",
+		"body": [
+			"𝐁"
+		],
+		"description": "Bold Uppercase B - 𝐁"
+	},
+	"Bold Uppercase B (boldupperb)": {
+		"scope": "",
+		"prefix": "jboldupperb",
+		"body": [
+			"𝐁"
+		],
+		"description": "Bold Uppercase B - 𝐁"
+	},
+	"Bold Uppercase B (boldub)": {
+		"scope": "",
+		"prefix": "jboldub",
+		"body": [
+			"𝐁"
+		],
+		"description": "Bold Uppercase B - 𝐁"
+	},
+	"Bold Uppercase C": {
+		"scope": "",
+		"prefix": "jboldupc",
+		"body": [
+			"𝐂"
+		],
+		"description": "Bold Uppercase C - 𝐂"
+	},
+	"Bold Uppercase C (boldupperc)": {
+		"scope": "",
+		"prefix": "jboldupperc",
+		"body": [
+			"𝐂"
+		],
+		"description": "Bold Uppercase C - 𝐂"
+	},
+	"Bold Uppercase C (bolduc)": {
+		"scope": "",
+		"prefix": "jbolduc",
+		"body": [
+			"𝐂"
+		],
+		"description": "Bold Uppercase C - 𝐂"
+	},
+	"Bold Uppercase D": {
+		"scope": "",
+		"prefix": "jboldupd",
+		"body": [
+			"𝐃"
+		],
+		"description": "Bold Uppercase D - 𝐃"
+	},
+	"Bold Uppercase D (boldupperd)": {
+		"scope": "",
+		"prefix": "jboldupperd",
+		"body": [
+			"𝐃"
+		],
+		"description": "Bold Uppercase D - 𝐃"
+	},
+	"Bold Uppercase D (boldud)": {
+		"scope": "",
+		"prefix": "jboldud",
+		"body": [
+			"𝐃"
+		],
+		"description": "Bold Uppercase D - 𝐃"
+	},
+	"Bold Uppercase E": {
+		"scope": "",
+		"prefix": "jboldupe",
+		"body": [
+			"𝐄"
+		],
+		"description": "Bold Uppercase E - 𝐄"
+	},
+	"Bold Uppercase E (bolduppere)": {
+		"scope": "",
+		"prefix": "jbolduppere",
+		"body": [
+			"𝐄"
+		],
+		"description": "Bold Uppercase E - 𝐄"
+	},
+	"Bold Uppercase E (boldue)": {
+		"scope": "",
+		"prefix": "jboldue",
+		"body": [
+			"𝐄"
+		],
+		"description": "Bold Uppercase E - 𝐄"
+	},
+	"Bold Uppercase F": {
+		"scope": "",
+		"prefix": "jboldupf",
+		"body": [
+			"𝐅"
+		],
+		"description": "Bold Uppercase F - 𝐅"
+	},
+	"Bold Uppercase F (boldupperf)": {
+		"scope": "",
+		"prefix": "jboldupperf",
+		"body": [
+			"𝐅"
+		],
+		"description": "Bold Uppercase F - 𝐅"
+	},
+	"Bold Uppercase F (bolduf)": {
+		"scope": "",
+		"prefix": "jbolduf",
+		"body": [
+			"𝐅"
+		],
+		"description": "Bold Uppercase F - 𝐅"
+	},
+	"Bold Uppercase G": {
+		"scope": "",
+		"prefix": "jboldupg",
+		"body": [
+			"𝐆"
+		],
+		"description": "Bold Uppercase G - 𝐆"
+	},
+	"Bold Uppercase G (boldupperg)": {
+		"scope": "",
+		"prefix": "jboldupperg",
+		"body": [
+			"𝐆"
+		],
+		"description": "Bold Uppercase G - 𝐆"
+	},
+	"Bold Uppercase G (boldug)": {
+		"scope": "",
+		"prefix": "jboldug",
+		"body": [
+			"𝐆"
+		],
+		"description": "Bold Uppercase G - 𝐆"
+	},
+	"Bold Uppercase H": {
+		"scope": "",
+		"prefix": "jbolduph",
+		"body": [
+			"𝐇"
+		],
+		"description": "Bold Uppercase H - 𝐇"
+	},
+	"Bold Uppercase H (boldupperh)": {
+		"scope": "",
+		"prefix": "jboldupperh",
+		"body": [
+			"𝐇"
+		],
+		"description": "Bold Uppercase H - 𝐇"
+	},
+	"Bold Uppercase H (bolduh)": {
+		"scope": "",
+		"prefix": "jbolduh",
+		"body": [
+			"𝐇"
+		],
+		"description": "Bold Uppercase H - 𝐇"
+	},
+	"Bold Uppercase I": {
+		"scope": "",
+		"prefix": "jboldupi",
+		"body": [
+			"𝐈"
+		],
+		"description": "Bold Uppercase I - 𝐈"
+	},
+	"Bold Uppercase I (boldupperi)": {
+		"scope": "",
+		"prefix": "jboldupperi",
+		"body": [
+			"𝐈"
+		],
+		"description": "Bold Uppercase I - 𝐈"
+	},
+	"Bold Uppercase I (boldui)": {
+		"scope": "",
+		"prefix": "jboldui",
+		"body": [
+			"𝐈"
+		],
+		"description": "Bold Uppercase I - 𝐈"
+	},
+	"Bold Uppercase J": {
+		"scope": "",
+		"prefix": "jboldupj",
+		"body": [
+			"𝐉"
+		],
+		"description": "Bold Uppercase J - 𝐉"
+	},
+	"Bold Uppercase J (boldupperj)": {
+		"scope": "",
+		"prefix": "jboldupperj",
+		"body": [
+			"𝐉"
+		],
+		"description": "Bold Uppercase J - 𝐉"
+	},
+	"Bold Uppercase J (bolduj)": {
+		"scope": "",
+		"prefix": "jbolduj",
+		"body": [
+			"𝐉"
+		],
+		"description": "Bold Uppercase J - 𝐉"
+	},
+	"Bold Uppercase K": {
+		"scope": "",
+		"prefix": "jboldupk",
+		"body": [
+			"𝐊"
+		],
+		"description": "Bold Uppercase K - 𝐊"
+	},
+	"Bold Uppercase K (boldupperk)": {
+		"scope": "",
+		"prefix": "jboldupperk",
+		"body": [
+			"𝐊"
+		],
+		"description": "Bold Uppercase K - 𝐊"
+	},
+	"Bold Uppercase K (bolduk)": {
+		"scope": "",
+		"prefix": "jbolduk",
+		"body": [
+			"𝐊"
+		],
+		"description": "Bold Uppercase K - 𝐊"
+	},
+	"Bold Uppercase L": {
+		"scope": "",
+		"prefix": "jboldupl",
+		"body": [
+			"𝐋"
+		],
+		"description": "Bold Uppercase L - 𝐋"
+	},
+	"Bold Uppercase L (boldupperl)": {
+		"scope": "",
+		"prefix": "jboldupperl",
+		"body": [
+			"𝐋"
+		],
+		"description": "Bold Uppercase L - 𝐋"
+	},
+	"Bold Uppercase L (boldul)": {
+		"scope": "",
+		"prefix": "jboldul",
+		"body": [
+			"𝐋"
+		],
+		"description": "Bold Uppercase L - 𝐋"
+	},
+	"Bold Uppercase M": {
+		"scope": "",
+		"prefix": "jboldupm",
+		"body": [
+			"𝐌"
+		],
+		"description": "Bold Uppercase M - 𝐌"
+	},
+	"Bold Uppercase M (boldupperm)": {
+		"scope": "",
+		"prefix": "jboldupperm",
+		"body": [
+			"𝐌"
+		],
+		"description": "Bold Uppercase M - 𝐌"
+	},
+	"Bold Uppercase M (boldum)": {
+		"scope": "",
+		"prefix": "jboldum",
+		"body": [
+			"𝐌"
+		],
+		"description": "Bold Uppercase M - 𝐌"
+	},
+	"Bold Uppercase N": {
+		"scope": "",
+		"prefix": "jboldupn",
+		"body": [
+			"𝐍"
+		],
+		"description": "Bold Uppercase N - 𝐍"
+	},
+	"Bold Uppercase N (bolduppern)": {
+		"scope": "",
+		"prefix": "jbolduppern",
+		"body": [
+			"𝐍"
+		],
+		"description": "Bold Uppercase N - 𝐍"
+	},
+	"Bold Uppercase N (boldun)": {
+		"scope": "",
+		"prefix": "jboldun",
+		"body": [
+			"𝐍"
+		],
+		"description": "Bold Uppercase N - 𝐍"
+	},
+	"Bold Uppercase O": {
+		"scope": "",
+		"prefix": "jboldupo",
+		"body": [
+			"𝐎"
+		],
+		"description": "Bold Uppercase O - 𝐎"
+	},
+	"Bold Uppercase O (bolduppero)": {
+		"scope": "",
+		"prefix": "jbolduppero",
+		"body": [
+			"𝐎"
+		],
+		"description": "Bold Uppercase O - 𝐎"
+	},
+	"Bold Uppercase O (bolduo)": {
+		"scope": "",
+		"prefix": "jbolduo",
+		"body": [
+			"𝐎"
+		],
+		"description": "Bold Uppercase O - 𝐎"
+	},
+	"Bold Uppercase P": {
+		"scope": "",
+		"prefix": "jboldupp",
+		"body": [
+			"𝐏"
+		],
+		"description": "Bold Uppercase P - 𝐏"
+	},
+	"Bold Uppercase P (boldupperp)": {
+		"scope": "",
+		"prefix": "jboldupperp",
+		"body": [
+			"𝐏"
+		],
+		"description": "Bold Uppercase P - 𝐏"
+	},
+	"Bold Uppercase P (boldup)": {
+		"scope": "",
+		"prefix": "jboldup",
+		"body": [
+			"𝐏"
+		],
+		"description": "Bold Uppercase P - 𝐏"
+	},
+	"Bold Uppercase Q": {
+		"scope": "",
+		"prefix": "jboldupq",
+		"body": [
+			"𝐐"
+		],
+		"description": "Bold Uppercase Q - 𝐐"
+	},
+	"Bold Uppercase Q (boldupperq)": {
+		"scope": "",
+		"prefix": "jboldupperq",
+		"body": [
+			"𝐐"
+		],
+		"description": "Bold Uppercase Q - 𝐐"
+	},
+	"Bold Uppercase Q (bolduq)": {
+		"scope": "",
+		"prefix": "jbolduq",
+		"body": [
+			"𝐐"
+		],
+		"description": "Bold Uppercase Q - 𝐐"
+	},
+	"Bold Uppercase R": {
+		"scope": "",
+		"prefix": "jboldupr",
+		"body": [
+			"𝐑"
+		],
+		"description": "Bold Uppercase R - 𝐑"
+	},
+	"Bold Uppercase R (boldupperr)": {
+		"scope": "",
+		"prefix": "jboldupperr",
+		"body": [
+			"𝐑"
+		],
+		"description": "Bold Uppercase R - 𝐑"
+	},
+	"Bold Uppercase R (boldur)": {
+		"scope": "",
+		"prefix": "jboldur",
+		"body": [
+			"𝐑"
+		],
+		"description": "Bold Uppercase R - 𝐑"
+	},
+	"Bold Uppercase S": {
+		"scope": "",
+		"prefix": "jboldups",
+		"body": [
+			"𝐒"
+		],
+		"description": "Bold Uppercase S - 𝐒"
+	},
+	"Bold Uppercase S (bolduppers)": {
+		"scope": "",
+		"prefix": "jbolduppers",
+		"body": [
+			"𝐒"
+		],
+		"description": "Bold Uppercase S - 𝐒"
+	},
+	"Bold Uppercase S (boldus)": {
+		"scope": "",
+		"prefix": "jboldus",
+		"body": [
+			"𝐒"
+		],
+		"description": "Bold Uppercase S - 𝐒"
+	},
+	"Bold Uppercase T": {
+		"scope": "",
+		"prefix": "jboldupt",
+		"body": [
+			"𝐓"
+		],
+		"description": "Bold Uppercase T - 𝐓"
+	},
+	"Bold Uppercase T (bolduppert)": {
+		"scope": "",
+		"prefix": "jbolduppert",
+		"body": [
+			"𝐓"
+		],
+		"description": "Bold Uppercase T - 𝐓"
+	},
+	"Bold Uppercase T (boldut)": {
+		"scope": "",
+		"prefix": "jboldut",
+		"body": [
+			"𝐓"
+		],
+		"description": "Bold Uppercase T - 𝐓"
+	},
+	"Bold Uppercase U": {
+		"scope": "",
+		"prefix": "jboldupu",
+		"body": [
+			"𝐔"
+		],
+		"description": "Bold Uppercase U - 𝐔"
+	},
+	"Bold Uppercase U (boldupperu)": {
+		"scope": "",
+		"prefix": "jboldupperu",
+		"body": [
+			"𝐔"
+		],
+		"description": "Bold Uppercase U - 𝐔"
+	},
+	"Bold Uppercase U (bolduu)": {
+		"scope": "",
+		"prefix": "jbolduu",
+		"body": [
+			"𝐔"
+		],
+		"description": "Bold Uppercase U - 𝐔"
+	},
+	"Bold Uppercase V": {
+		"scope": "",
+		"prefix": "jboldupv",
+		"body": [
+			"𝐕"
+		],
+		"description": "Bold Uppercase V - 𝐕"
+	},
+	"Bold Uppercase V (boldupperv)": {
+		"scope": "",
+		"prefix": "jboldupperv",
+		"body": [
+			"𝐕"
+		],
+		"description": "Bold Uppercase V - 𝐕"
+	},
+	"Bold Uppercase V (bolduv)": {
+		"scope": "",
+		"prefix": "jbolduv",
+		"body": [
+			"𝐕"
+		],
+		"description": "Bold Uppercase V - 𝐕"
+	},
+	"Bold Uppercase W": {
+		"scope": "",
+		"prefix": "jboldupw",
+		"body": [
+			"𝐖"
+		],
+		"description": "Bold Uppercase W - 𝐖"
+	},
+	"Bold Uppercase W (boldupperw)": {
+		"scope": "",
+		"prefix": "jboldupperw",
+		"body": [
+			"𝐖"
+		],
+		"description": "Bold Uppercase W - 𝐖"
+	},
+	"Bold Uppercase W (bolduw)": {
+		"scope": "",
+		"prefix": "jbolduw",
+		"body": [
+			"𝐖"
+		],
+		"description": "Bold Uppercase W - 𝐖"
+	},
+	"Bold Uppercase X": {
+		"scope": "",
+		"prefix": "jboldupx",
+		"body": [
+			"𝐗"
+		],
+		"description": "Bold Uppercase X - 𝐗"
+	},
+	"Bold Uppercase X (boldupperx)": {
+		"scope": "",
+		"prefix": "jboldupperx",
+		"body": [
+			"𝐗"
+		],
+		"description": "Bold Uppercase X - 𝐗"
+	},
+	"Bold Uppercase X (boldux)": {
+		"scope": "",
+		"prefix": "jboldux",
+		"body": [
+			"𝐗"
+		],
+		"description": "Bold Uppercase X - 𝐗"
+	},
+	"Bold Uppercase Y": {
+		"scope": "",
+		"prefix": "jboldupy",
+		"body": [
+			"𝐘"
+		],
+		"description": "Bold Uppercase Y - 𝐘"
+	},
+	"Bold Uppercase Y (bolduppery)": {
+		"scope": "",
+		"prefix": "jbolduppery",
+		"body": [
+			"𝐘"
+		],
+		"description": "Bold Uppercase Y - 𝐘"
+	},
+	"Bold Uppercase Y (bolduy)": {
+		"scope": "",
+		"prefix": "jbolduy",
+		"body": [
+			"𝐘"
+		],
+		"description": "Bold Uppercase Y - 𝐘"
+	},
+	"Bold Uppercase Z": {
+		"scope": "",
+		"prefix": "jboldupz",
+		"body": [
+			"𝐙"
+		],
+		"description": "Bold Uppercase Z - 𝐙"
+	},
+	"Bold Uppercase Z (boldupperz)": {
+		"scope": "",
+		"prefix": "jboldupperz",
+		"body": [
+			"𝐙"
+		],
+		"description": "Bold Uppercase Z - 𝐙"
+	},
+	"Bold Uppercase Z (bolduz)": {
+		"scope": "",
+		"prefix": "jbolduz",
+		"body": [
+			"𝐙"
+		],
+		"description": "Bold Uppercase Z - 𝐙"
+	},
+	"Blackboard Bold A": {
+		"scope": "",
+		"prefix": "jbba",
+		"body": [
+			"𝔸"
+		],
+		"description": "Blackboard Bold A - 𝔸"
+	},
+	"Blackboard Bold B": {
+		"scope": "",
+		"prefix": "jbbb",
+		"body": [
+			"𝔹"
+		],
+		"description": "Blackboard Bold B - 𝔹"
+	},
+	"Blackboard Bold C": {
+		"scope": "",
+		"prefix": "jbbc",
+		"body": [
+			"ℂ"
+		],
+		"description": "Blackboard Bold C - ℂ"
+	},
+	"Blackboard Bold D": {
+		"scope": "",
+		"prefix": "jbbd",
+		"body": [
+			"𝔻"
+		],
+		"description": "Blackboard Bold D - 𝔻"
+	},
+	"Blackboard Bold E": {
+		"scope": "",
+		"prefix": "jbbe",
+		"body": [
+			"𝔼"
+		],
+		"description": "Blackboard Bold E - 𝔼"
+	},
+	"Blackboard Bold F": {
+		"scope": "",
+		"prefix": "jbbf",
+		"body": [
+			"𝔽"
+		],
+		"description": "Blackboard Bold F - 𝔽"
+	},
+	"Blackboard Bold G": {
+		"scope": "",
+		"prefix": "jbbg",
+		"body": [
+			"𝔾"
+		],
+		"description": "Blackboard Bold G - 𝔾"
+	},
+	"Blackboard Bold H": {
+		"scope": "",
+		"prefix": "jbbh",
+		"body": [
+			"ℍ"
+		],
+		"description": "Blackboard Bold H - ℍ"
+	},
+	"Blackboard Bold I": {
+		"scope": "",
+		"prefix": "jbbi",
+		"body": [
+			"𝕀"
+		],
+		"description": "Blackboard Bold I - 𝕀"
+	},
+	"Blackboard Bold J": {
+		"scope": "",
+		"prefix": "jbbj",
+		"body": [
+			"𝕁"
+		],
+		"description": "Blackboard Bold J - 𝕁"
+	},
+	"Blackboard Bold K": {
+		"scope": "",
+		"prefix": "jbbk",
+		"body": [
+			"𝕂"
+		],
+		"description": "Blackboard Bold K - 𝕂"
+	},
+	"Blackboard Bold L": {
+		"scope": "",
+		"prefix": "jbbl",
+		"body": [
+			"𝕃"
+		],
+		"description": "Blackboard Bold L - 𝕃"
+	},
+	"Blackboard Bold M": {
+		"scope": "",
+		"prefix": "jbbm",
+		"body": [
+			"𝕄"
+		],
+		"description": "Blackboard Bold M - 𝕄"
+	},
+	"Blackboard Bold N": {
+		"scope": "",
+		"prefix": "jbbn",
+		"body": [
+			"ℕ"
+		],
+		"description": "Blackboard Bold N - ℕ"
+	},
+	"Blackboard Bold O": {
+		"scope": "",
+		"prefix": "jbbo",
+		"body": [
+			"𝕆"
+		],
+		"description": "Blackboard Bold O - 𝕆"
+	},
+	"Blackboard Bold P": {
+		"scope": "",
+		"prefix": "jbbp",
+		"body": [
+			"ℙ"
+		],
+		"description": "Blackboard Bold P - ℙ"
+	},
+	"Blackboard Bold Q": {
+		"scope": "",
+		"prefix": "jbbq",
+		"body": [
+			"ℚ"
+		],
+		"description": "Blackboard Bold Q - ℚ"
+	},
+	"Blackboard Bold R": {
+		"scope": "",
+		"prefix": "jbbr",
+		"body": [
+			"ℝ"
+		],
+		"description": "Blackboard Bold R - ℝ"
+	},
+	"Blackboard Bold S": {
+		"scope": "",
+		"prefix": "jbbs",
+		"body": [
+			"𝕊"
+		],
+		"description": "Blackboard Bold S - 𝕊"
+	},
+	"Blackboard Bold T": {
+		"scope": "",
+		"prefix": "jbbt",
+		"body": [
+			"𝕋"
+		],
+		"description": "Blackboard Bold T - 𝕋"
+	},
+	"Blackboard Bold U": {
+		"scope": "",
+		"prefix": "jbbu",
+		"body": [
+			"𝕌"
+		],
+		"description": "Blackboard Bold U - 𝕌"
+	},
+	"Blackboard Bold V": {
+		"scope": "",
+		"prefix": "jbbv",
+		"body": [
+			"𝕍"
+		],
+		"description": "Blackboard Bold V - 𝕍"
+	},
+	"Blackboard Bold W": {
+		"scope": "",
+		"prefix": "jbbw",
+		"body": [
+			"𝕎"
+		],
+		"description": "Blackboard Bold W - 𝕎"
+	},
+	"Blackboard Bold X": {
+		"scope": "",
+		"prefix": "jbbx",
+		"body": [
+			"𝕏"
+		],
+		"description": "Blackboard Bold X - 𝕏"
+	},
+	"Blackboard Bold Y": {
+		"scope": "",
+		"prefix": "jbby",
+		"body": [
+			"𝕐"
+		],
+		"description": "Blackboard Bold Y - 𝕐"
+	},
+	"Blackboard Bold Z": {
+		"scope": "",
+		"prefix": "jbbz",
+		"body": [
+			"ℤ"
+		],
+		"description": "Blackboard Bold Z - ℤ"
+	},
+	"Underscore": {
+		"scope": "",
+		"prefix": "junderscore",
+		"body": [
+			"_"
+		],
+		"description": "Underscore - _"
+	},
+	"Forward Slash": {
+		"scope": "",
+		"prefix": "jslash",
+		"body": [
+			"/"
+		],
+		"description": "Forward Slash - /"
+	},
+	"Forward Slash (forwardslash)": {
+		"scope": "",
+		"prefix": "jforwardslash",
+		"body": [
+			"/"
+		],
+		"description": "Forward Slash - /"
+	},
+	"Backslash": {
+		"scope": "",
+		"prefix": "jbackslash",
+		"body": [
+			"\\"
+		],
+		"description": "Backslash - \\"
+	},
+	"Asterisk": {
+		"scope": "",
+		"prefix": "jasterisk",
+		"body": [
+			"*"
+		],
+		"description": "Asterisk - *"
+	},
+	"Period": {
+		"scope": "",
+		"prefix": "jperiod",
+		"body": [
+			"."
+		],
+		"description": "Period - ."
+	},
+	"Comma": {
+		"scope": "",
+		"prefix": "jcomma",
+		"body": [
+			","
+		],
+		"description": "Comma - ,"
+	},
+	"Colon": {
+		"scope": "",
+		"prefix": "jcolon",
+		"body": [
+			":"
+		],
+		"description": "Colon - :"
+	},
+	"Semicolon": {
+		"scope": "",
+		"prefix": "jsemicolon",
+		"body": [
+			";"
+		],
+		"description": "Semicolon - ;"
+	},
+	"Apostrophe": {
+		"scope": "",
+		"prefix": "japostrophe",
+		"body": [
+			"'"
+		],
+		"description": "Apostrophe - '"
+	},
+	"Apostrophe (quote)": {
+		"scope": "",
+		"prefix": "jquote",
+		"body": [
+			"'"
+		],
+		"description": "Apostrophe - '"
+	},
+	"Left Quote": {
+		"scope": "",
+		"prefix": "jlquote",
+		"body": [
+			"\""
+		],
+		"description": "Left Quote - \""
+	},
+	"Left Quote (leftquote)": {
+		"scope": "",
+		"prefix": "jleftquote",
+		"body": [
+			"\""
+		],
+		"description": "Left Quote - \""
+	},
+	"Right Quote": {
+		"scope": "",
+		"prefix": "jrquote",
+		"body": [
+			"\""
+		],
+		"description": "Right Quote - \""
+	},
+	"Right Quote (rightquote)": {
+		"scope": "",
+		"prefix": "jrightquote",
+		"body": [
+			"\""
+		],
+		"description": "Right Quote - \""
+	},
+	"Backtick": {
+		"scope": "",
+		"prefix": "jbacktick",
+		"body": [
+			"`"
+		],
+		"description": "Backtick - `"
+	},
+	"Ampersand": {
+		"scope": "",
+		"prefix": "jampersand",
+		"body": [
+			"&"
+		],
+		"description": "Ampersand - &"
+	},
+	"Pipe": {
+		"scope": "",
+		"prefix": "jpipe",
+		"body": [
+			"|"
+		],
+		"description": "Pipe - |"
+	},
+	"Pipe (bar)": {
+		"scope": "",
+		"prefix": "jbar",
+		"body": [
+			"|"
+		],
+		"description": "Pipe - |"
+	},
+	"Tilde": {
+		"scope": "",
+		"prefix": "jtilde",
+		"body": [
+			"~"
+		],
+		"description": "Tilde - ~"
+	},
+	"Percent": {
+		"scope": "",
+		"prefix": "jpercent",
+		"body": [
+			"%"
+		],
+		"description": "Percent - %"
+	},
+	"Caret": {
+		"scope": "",
+		"prefix": "jcaret",
+		"body": [
+			"^"
+		],
+		"description": "Caret - ^"
+	},
+	"Caret (hat)": {
+		"scope": "",
+		"prefix": "jhat",
+		"body": [
+			"^"
+		],
+		"description": "Caret - ^"
+	},
+	"Dollar": {
+		"scope": "",
+		"prefix": "jdollar",
+		"body": [
+			"$"
+		],
+		"description": "Dollar - $"
+	},
+	"Hash": {
+		"scope": "",
+		"prefix": "jhash",
+		"body": [
+			"#"
+		],
+		"description": "Hash - #"
+	},
+	"Question Mark": {
+		"scope": "",
+		"prefix": "jquestion",
+		"body": [
+			"?"
+		],
+		"description": "Question Mark - ?"
+	},
+	"Exclamation Mark": {
+		"scope": "",
+		"prefix": "jexclamation",
+		"body": [
+			"!"
+		],
+		"description": "Exclamation Mark - !"
+	}
+}

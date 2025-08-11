@@ -10,7 +10,7 @@ return {
                     "lua", "vim", "vimdoc", 
                     "python",
                     "javascript","typescript", "html", "css", 
-                    "json", "toml",
+                    "json", "toml", "yaml",
                     "markdown", "markdown_inline", 
                     "rust", "cpp", "c",
                     "agda",
@@ -27,7 +27,8 @@ return {
                 },
                 
                 indent = {
-                    enable = true
+                    enable = true,
+                    disable = { "yaml" },
                 },
             })
         end,

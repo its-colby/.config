@@ -1,0 +1,106 @@
+{
+    "Bold Lowercase a": {
+        "shortcut": ["bolda", "boldlowera", "boldlowa", "boldla"],
+        "body": "𝐚"
+    },
+    "Bold Lowercase b": {
+        "shortcut": ["boldb", "boldlowerb", "boldlowb", "boldlb"],
+        "body": "𝐛"
+    },
+    "Bold Lowercase c": {
+        "shortcut": ["boldc", "boldlowerc", "boldlowc", "boldlc"],
+        "body": "𝐜"
+    },
+    "Bold Lowercase d": {
+        "shortcut": ["boldd", "boldlowerd", "boldlowd", "boldld"],
+        "body": "𝐝"
+    },
+    "Bold Lowercase e": {
+        "shortcut": ["bolde", "boldlowere", "boldlowe", "boldle"],
+        "body": "𝐞"
+    },
+    "Bold Lowercase f": {
+        "shortcut": ["boldf", "boldlowerf", "boldlowf", "boldlf"],
+        "body": "𝐟"
+    },
+    "Bold Lowercase g": {
+        "shortcut": ["boldg", "boldlowerg", "boldlowg", "boldlg"],
+        "body": "𝐠"
+    },
+    "Bold Lowercase h": {
+        "shortcut": ["boldh", "boldlowerh", "boldlowh", "boldlh"],
+        "body": "𝐡"
+    },
+    "Bold Lowercase i": {
+        "shortcut": ["boldi", "boldloweri", "boldlowi", "boldli"],
+        "body": "𝐢"
+    },
+    "Bold Lowercase j": {
+        "shortcut": ["boldj", "boldlowerj", "boldlowj", "boldlj"],
+        "body": "𝐣"
+    },
+    "Bold Lowercase k": {
+        "shortcut": ["boldk", "boldlowerk", "boldlowk", "boldlk"],
+        "body": "𝐤"
+    },
+    "Bold Lowercase l": {
+        "shortcut": ["boldl", "boldlowerl", "boldlowl", "boldll"],
+        "body": "𝐥"
+    },
+    "Bold Lowercase m": {
+        "shortcut": ["boldm", "boldlowerm", "boldlowm", "boldlm"],
+        "body": "𝐦"
+    },
+    "Bold Lowercase n": {
+        "shortcut": ["boldn", "boldlowern", "boldlown", "boldln"],
+        "body": "𝐧"
+    },
+    "Bold Lowercase o": {
+        "shortcut": ["boldo", "boldlowero", "boldlowo", "boldlo"],
+        "body": "𝐨"
+    },
+    "Bold Lowercase p": {
+        "shortcut": ["boldp", "boldlowerp", "boldlowp", "boldlp"],
+        "body": "𝐩"
+    },
+    "Bold Lowercase q": {
+        "shortcut": ["boldq", "boldlowerq", "boldlowq", "boldlq"],
+        "body": "𝐪"
+    },
+    "Bold Lowercase r": {
+        "shortcut": ["boldr", "boldlowerr", "boldlowr", "boldlr"],
+        "body": "𝐫"
+    },
+    "Bold Lowercase s": {
+        "shortcut": ["bolds", "boldlowers", "boldlows", "boldls"],
+        "body": "𝐬"
+    },
+    "Bold Lowercase t": {
+        "shortcut": ["boldt", "boldlowert", "boldlowt", "boldlt"],
+        "body": "𝐭"
+    },
+    "Bold Lowercase u": {
+        "shortcut": ["boldu", "boldloweru", "boldlowu", "boldlu"],
+        "body": "𝐮"
+    },
+    "Bold Lowercase v": {
+        "shortcut": ["boldv", "boldlowerv", "boldlowv", "boldlv"],
+        "body": "𝐯"
+    },
+    "Bold Lowercase w": {
+        "shortcut": ["boldw", "boldlowerw", "boldloww", "boldlw"],
+        "body": "𝐰"
+    },
+    "Bold Lowercase x": {
+        "shortcut": ["boldx", "boldlowerx", "boldlowx", "boldlx"],
+        "body": "𝐱"
+    },
+    "Bold Lowercase y": {
+        "shortcut": ["boldy", "boldlowery", "boldlowy", "boldly"],
+        "body": "𝐲"
+    },
+    "Bold Lowercase z": {
+        "shortcut": ["boldz", "boldlowerz", "boldlowz", "boldlz"],
+        "body": "𝐳"
+    }
+} 

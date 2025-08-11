@@ -1,0 +1,86 @@
+{
+    "Underscore": {
+        "shortcut": ["underscore"],
+        "body": "_"
+    },
+    "Forward Slash": {
+        "shortcut": ["slash", "forwardslash"],
+        "body": "/"
+    },
+    "Backslash": {
+        "shortcut": ["backslash"],
+        "body": "\\"
+    },
+    "Asterisk": {
+        "shortcut": ["asterisk"],
+        "body": "*"
+    },
+    "Period": {
+        "shortcut": ["period"],
+        "body": "."
+    },
+    "Comma": {
+        "shortcut": ["comma"],
+        "body": ","
+    },
+    "Colon": {
+        "shortcut": ["colon"],
+        "body": ":"
+    },
+    "Semicolon": {
+        "shortcut": ["semicolon"],
+        "body": ";"
+    },
+    "Apostrophe": {
+        "shortcut": ["apostrophe", "quote"],
+        "body": "'"
+    },
+    "Left Quote": {
+        "shortcut": ["lquote", "leftquote"],
+        "body": "\""
+    },
+    "Right Quote": {
+        "shortcut": ["rquote", "rightquote"],
+        "body": "\""
+    },
+    "Backtick": {
+        "shortcut": ["backtick"],
+        "body": "`"
+    },
+    "Ampersand": {
+        "shortcut": ["ampersand"],
+        "body": "&"
+    },
+    "Pipe": {
+        "shortcut": ["pipe", "bar"],
+        "body": "|"
+    },
+    "Tilde": {
+        "shortcut": ["tilde"],
+        "body": "~"
+    },
+    "Percent": {
+        "shortcut": ["percent"],
+        "body": "%"
+    },
+    "Caret": {
+        "shortcut": ["caret", "hat"],
+        "body": "^"
+    },
+    "Dollar": {
+        "shortcut": ["dollar"],
+        "body": "$"
+    },
+    "Hash": {
+        "shortcut": ["hash"],
+        "body": "#"
+    },
+    "Question Mark": {
+        "shortcut": ["question"],
+        "body": "?"
+    },
+    "Exclamation Mark": {
+        "shortcut": ["exclamation"],
+        "body": "!"
+    }
+} 

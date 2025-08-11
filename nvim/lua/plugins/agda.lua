@@ -5,19 +5,21 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
         print("Setting up Agda keymaps...")
         
         -- Core cornelis commands
-        vim.keymap.set("n", "<leader>if", ":CornelisLoad<CR>", { buffer = true, desc = "Load Agda file" })
-        vim.keymap.set("n", "<leader>id", ":CornelisCloseInfoWindows<CR>", { buffer = true, desc = "Load Agda file" })
-        vim.keymap.set("n", "<leader>uk", ":CornelisRefine<CR>", { buffer = true, desc = "Refine goal" })
-        vim.keymap.set("n", "<leader>ul", ":CornelisMakeCase<CR>", { buffer = true, desc = "Make case split" })
-        vim.keymap.set("n", "<leader>u;", ":CornelisTypeContext<CR>", { buffer = true, desc = "Show type context" })
-        vim.keymap.set("n", "<leader>a.", ":CornelisTypeContextInfer<CR>", { buffer = true, desc = "Show type context (infer)" })
-        vim.keymap.set("n", "<leader>an", ":CornelisSolve<CR>", { buffer = true, desc = "Solve goal" })
-        vim.keymap.set("n", "<leader>aa", ":CornelisAuto<CR>", { buffer = true, desc = "Auto solve" })
-        vim.keymap.set("n", "gd", ":CornelisGoToDefinition<CR>", { buffer = true, desc = "Go to definition" })
+        vim.keymap.set("n", "<localleader>f", ":CornelisLoad<CR>", 
+            { buffer = true, desc = "Load Agda file" })
+        vim.keymap.set("n", "<localleader>d", ":CornelisCloseInfoWindows<CR>",
+            { buffer = true, desc = "Close info windows" })
+        vim.keymap.set("n", "<localleader>uk", ":CornelisRefine<CR>", { buffer = true, desc = "Refine goal" })
+        vim.keymap.set("n", "<localleader>ul", ":CornelisMakeCase<CR>", { buffer = true, desc = "Make case split" })
+        vim.keymap.set("n", "<localleader>u;", ":CornelisTypeContext<CR>", { buffer = true, desc = "Show type context" })
+        vim.keymap.set("n", "<localleader>a.", ":CornelisTypeContextInfer<CR>", { buffer = true, desc = "Show type context (infer)" })
+        vim.keymap.set("n", "<localleader>an", ":CornelisSolve<CR>", { buffer = true, desc = "Solve goal" })
+        vim.keymap.set("n", "<localleader>aa", ":CornelisAuto<CR>", { buffer = true, desc = "Auto solve" })
+        vim.keymap.set("n", "<localleader>gd", ":CornelisGoToDefinition<CR>", { buffer = true, desc = "Go to definition" })
         
         -- Goal navigation
-        vim.keymap.set("n", "[/", ":CornelisPrevGoal<CR>", { buffer = true, desc = "Previous goal" })
-        vim.keymap.set("n", "]/", ":CornelisNextGoal<CR>", { buffer = true, desc = "Next goal" })
+        vim.keymap.set("n", "<localleader>[/", ":CornelisPrevGoal<CR>", { buffer = true, desc = "Previous goal" })
+        vim.keymap.set("n", "<localleader>]/", ":CornelisNextGoal<CR>", { buffer = true, desc = "Next goal" })
         
         -- Increment/decrement
         vim.keymap.set("n", "<C-a>", ":CornelisInc<CR>", { buffer = true, desc = "Increment" })

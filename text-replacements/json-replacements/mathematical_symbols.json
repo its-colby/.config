@@ -1,0 +1,26 @@
+{
+    "Infinity": {
+        "shortcut": ["infinity"],
+        "body": "∞"
+    },
+    "Empty Set": {
+        "shortcut": ["emptyset"],
+        "body": "∅"
+    },
+    "Maps To": {
+        "shortcut": ["mapsto"],
+        "body": "↦"
+    },
+    "Right Arrow": {
+        "shortcut": ["arrow", "rightarrow", "rarrow"],
+        "body": "→"
+    },
+    "Left Arrow": {
+        "shortcut": ["leftarrow", "larrow"],
+        "body": "←"
+    },
+    "Bidirectional Arrow": {
+        "shortcut": ["biarrow"],
+        "body": "↔"
+    }
+} 
