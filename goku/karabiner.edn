@@ -141,7 +141,7 @@
                 [:semicolon :backslash] ; \
 
                 [:u :!Sgrave_accent_and_tilde] ; ~
-                [:i :!S4] ; $
+                [:i :!S3] ; #
                 [:o :!S5] ; %
                 [:p :!S6] ; ^
 
@@ -243,7 +243,7 @@
                 [:j :!Sj]
                 [:k :!Sk]
                 [:l :!Sl]
-                [:semicolon :!Ssemicolon]
+                [:semicolon :semicolon]
 
                 [:h :!Sh]
 
@@ -255,7 +255,7 @@
                 [:m :!Sm]
                 [:comma :!S1]
                 [:period :!Sslash]
-                [:slash :!S2]
+                [:slash :!S4]
 
                 [:n :!Sn]
                 [:y :!Sy]
@@ -429,7 +429,9 @@
         {
             :des "all layers"
             :rules [
-                [:slash :!S3]
+                [:slash :!S2]
+                [:semicolon :!Ssemicolon]
+
                 [:quote []]
                 [:!Squote []]
                 ;; [:return_or_enter []]

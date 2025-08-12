@@ -1,1 +1,5 @@
 font-size = 20
+
+# Send Command+bracket keys to terminal instead of intercepting them
+keybind = cmd+left_bracket=text:\x1b[
+keybind = cmd+right_bracket=text:\x1b]

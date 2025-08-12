@@ -1373,7 +1373,7 @@
             "key_code" : "i"
           },
           "to" : [ {
-            "key_code" : "4",
+            "key_code" : "3",
             "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
@@ -1393,7 +1393,7 @@
               "value" : 1
             }
           }, {
-            "key_code" : "4",
+            "key_code" : "3",
             "modifiers" : [ "left_shift" ]
           } ],
           "from" : {
@@ -3681,8 +3681,7 @@
             "key_code" : "semicolon"
           },
           "to" : [ {
-            "key_code" : "semicolon",
-            "modifiers" : [ "left_shift" ]
+            "key_code" : "semicolon"
           } ],
           "conditions" : [ {
             "name" : "g-modifier-left-shift",
@@ -3701,8 +3700,7 @@
               "value" : 1
             }
           }, {
-            "key_code" : "semicolon",
-            "modifiers" : [ "left_shift" ]
+            "key_code" : "semicolon"
           } ],
           "from" : {
             "simultaneous" : [ {
@@ -4104,7 +4102,7 @@
             "key_code" : "slash"
           },
           "to" : [ {
-            "key_code" : "2",
+            "key_code" : "4",
             "modifiers" : [ "left_shift" ]
           } ],
           "conditions" : [ {
@@ -4124,7 +4122,7 @@
               "value" : 1
             }
           }, {
-            "key_code" : "2",
+            "key_code" : "4",
             "modifiers" : [ "left_shift" ]
           } ],
           "from" : {
@@ -8028,7 +8026,16 @@
             "key_code" : "slash"
           },
           "to" : [ {
-            "key_code" : "3",
+            "key_code" : "2",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "semicolon"
+          },
+          "to" : [ {
+            "key_code" : "semicolon",
             "modifiers" : [ "left_shift" ]
           } ],
           "type" : "basic"

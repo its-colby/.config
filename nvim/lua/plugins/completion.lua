@@ -27,7 +27,7 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
-                mapping = cmp.mapping.preset.insert({
+                mapping = {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
@@ -57,7 +57,10 @@ return {
                         end, 
                         { "i", "s" }
                     ),
-                }),
+                    -- Explicitly disable arrow keys for completion navigation
+                    ["<Up>"] = cmp.mapping(function(fallback) fallback() end, { "i" }),
+                    ["<Down>"] = cmp.mapping(function(fallback) fallback() end, { "i" }),
+                },
                 sources = cmp.config.sources(
                     {
                         { name = "nvim_lsp" },
