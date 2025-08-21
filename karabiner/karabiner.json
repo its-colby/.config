@@ -16,6 +16,53 @@
         "description" : "f-modifier-text-insertion",
         "manipulators" : [ {
           "from" : {
+            "key_code" : "spacebar"
+          },
+          "to" : [ {
+            "key_code" : "m",
+            "modifiers" : [ "left_command", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "f-modifier-text-insertion",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "f-modifier-text-insertion",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "m",
+            "modifiers" : [ "left_command", "left_option", "left_shift" ]
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "spacebar"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "f-modifier-text-insertion",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
             "key_code" : "j"
           },
           "to" : [ {
@@ -151,53 +198,6 @@
           }
         }, {
           "from" : {
-            "key_code" : "semicolon"
-          },
-          "to" : [ {
-            "key_code" : "delete_or_backspace",
-            "modifiers" : [ "fn" ]
-          } ],
-          "conditions" : [ {
-            "name" : "f-modifier-text-insertion",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "type" : "basic",
-          "parameters" : {
-            "basic.simultaneous_threshold_milliseconds" : 250
-          },
-          "to" : [ {
-            "set_variable" : {
-              "name" : "f-modifier-text-insertion",
-              "value" : 1
-            }
-          }, {
-            "key_code" : "delete_or_backspace",
-            "modifiers" : [ "fn" ]
-          } ],
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "f"
-            }, {
-              "key_code" : "semicolon"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : true,
-              "key_down_order" : "strict",
-              "key_up_order" : "strict_inverse",
-              "key_up_when" : "any",
-              "to_after_key_up" : [ {
-                "set_variable" : {
-                  "name" : "f-modifier-text-insertion",
-                  "value" : 0
-                }
-              } ]
-            }
-          }
-        }, {
-          "from" : {
             "key_code" : "h"
           },
           "to" : [ {
@@ -229,6 +229,53 @@
               "key_code" : "f"
             }, {
               "key_code" : "h"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "f-modifier-text-insertion",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "y"
+          },
+          "to" : [ {
+            "key_code" : "slash",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "conditions" : [ {
+            "name" : "f-modifier-text-insertion",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "f-modifier-text-insertion",
+              "value" : 1
+            }
+          }, {
+            "key_code" : "slash",
+            "modifiers" : [ "left_command" ]
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "y"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,
@@ -436,8 +483,8 @@
             "key_code" : "n"
           },
           "to" : [ {
-            "key_code" : "slash",
-            "modifiers" : [ "left_command" ]
+            "key_code" : "delete_or_backspace",
+            "modifiers" : [ "fn" ]
           } ],
           "conditions" : [ {
             "name" : "f-modifier-text-insertion",
@@ -456,8 +503,8 @@
               "value" : 1
             }
           }, {
-            "key_code" : "slash",
-            "modifiers" : [ "left_command" ]
+            "key_code" : "delete_or_backspace",
+            "modifiers" : [ "fn" ]
           } ],
           "from" : {
             "simultaneous" : [ {

@@ -13,6 +13,7 @@ vim.opt.textwidth = 80        -- Auto-wrap at 80 characters
 vim.opt.colorcolumn = "80"    -- Visual line at column 80
 vim.opt.wrap = true           -- Wrap long lines visually
 vim.opt.linebreak = true      -- Break at word boundaries
+vim.opt.formatoptions:append("t")  -- Enable auto-wrap text using textwidth
 
 -- Indentation settings
 vim.opt.tabstop = 4           -- Number of spaces a tab counts for
@@ -40,7 +41,6 @@ vim.opt.sidescrolloff = 8     -- Keep 8 columns visible when scrolling
 -- Editing behavior
 vim.opt.clipboard = "unnamedplus"  -- Use system clipboard
 vim.opt.undofile = true       -- Persistent undo across sessions
-
 
 -- A S D F = navigate characters
 vim.keymap.set({'n', 'v'}, 'a', 'j', { desc = 'Move down 1 line' })
@@ -91,7 +91,7 @@ vim.keymap.set('n', '<leader>l', ':q<CR>', { desc = 'Quit' })
 
 -- Enter and Delete in normal mode
 vim.keymap.set('n', '<CR>', 'i<CR><Esc>', { desc = 'Insert newline at cursor' })
-vim.keymap.set('n', '<BS>', 'x', { desc = 'Delete character at cursor' })
+vim.keymap.set('n', '<BS>', 'i<Right><BS><Esc>', { desc = 'Delete character at cursor' })
 
 
 -- U I O P 
@@ -111,12 +111,12 @@ vim.keymap.set('i', '<M-]>', '<C-o>>>', { desc = 'Indent' })
 
 
 -- M EXCLAMATION PERIOD @ = delete lines and words
-vim.keymap.set('i', '<C-U>', '<Esc>d^i', { desc = 'Delete to beginning of line' })
-vim.keymap.set('i', '<D-Delete>', '<Esc>d$a', { desc = 'Delete to end of line' })
+vim.keymap.set('i', '<C-U>', '<Esc>v0"_di', { desc = 'Delete to beginning of line' })
+vim.keymap.set('i', '<D-Delete>', '<Esc>"_d$a', { desc = 'Delete to end of line' })
 vim.keymap.set('i', '<M-BS>', '<C-w>', { desc = 'Delete word backward' })
 vim.keymap.set('i', '<M-Delete>', '<C-o>dw', { desc = 'Delete word forward' })
 
-vim.keymap.set('n', '.', 'd^', { desc = 'Delete to beginning of line' })
+vim.keymap.set('n', '.', 'v0d<Esc>', { desc = 'Delete to beginning of line' })
 vim.keymap.set('n', 'm', 'db', { desc = 'Delete word backward' })
 vim.keymap.set('n', ',', 'dw', { desc = 'Delete word forward' })
 vim.keymap.set('n', '@', 'd$', { desc = 'Delete to end of line', noremap = true, silent = true })
@@ -237,4 +237,4 @@ require("config.lazy")
 require("config.abbreviations").setup()
 
 
--- todo: undo weird in insertion, tabs, search files and folders, auto completion, auto wrapping, organize file
+-- todo: tabs, search files and folders, better auto wrapping, organize file, better paste buffer and selection

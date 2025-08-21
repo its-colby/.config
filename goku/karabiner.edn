@@ -85,19 +85,22 @@
             :des "f-modifier-text-insertion"
             :rules [
                 :f-modifier-text-insertion
+                
+                [:spacebar :!SCOm] ; accept autocomplete suggestion
 
                 [:j :delete_or_backspace] ; delete character before cursor
                 [:k :return_or_enter] ; enter
                 [:l :tab] ; tab
-                [:semicolon :!Fdelete_or_backspace] ; delete character after cursor 
+                ; semicolon unmapped
                 [:h :!Sreturn_or_enter] ; return
 
+                [:y :!Cslash] ; comment/uncomment
                 [:u :!Cz] ; undo
                 [:i :!CSz] ; redo
                 [:o :!Copen_bracket] ; deindent
                 [:p :!Cclose_bracket] ; indent
 
-                [:n :!Cslash] ; comment/uncomment
+                [:n :!Fdelete_or_backspace] ; delete character after cursor 
                 [:m :!Odelete_or_backspace] ; delete word (respects app-configured word-seperators) before cursor
                 [:comma :!OFdelete_or_backspace] ; delete word (respects app-configured word-seperators) after cursor
                 [:period :!Cdelete_or_backspace] ; delete to beg. of line

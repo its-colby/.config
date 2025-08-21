@@ -32,7 +32,7 @@ return {
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    -- Use Tab to cycle through completions
                     ["<Tab>"] = cmp.mapping(
                         function(fallback)
                             if cmp.visible() then
@@ -45,7 +45,9 @@ return {
                         end, 
                         { "i", "s" }
                     ),
-                    ["<S-Tab>"] = cmp.mapping(
+                    -- Use Cmd+Shift+Option+M to accept completion
+                    ["<D-S-M-m>"] = cmp.mapping.confirm({ select = true }),
+                    ["<D-S-M-S-m>"] = cmp.mapping(
                         function(fallback)
                             if cmp.visible() then
                                 cmp.select_prev_item()
@@ -57,9 +59,10 @@ return {
                         end, 
                         { "i", "s" }
                     ),
-                    -- Explicitly disable arrow keys for completion navigation
+                    -- Explicitly disable arrow keys and enter for completion navigation
                     ["<Up>"] = cmp.mapping(function(fallback) fallback() end, { "i" }),
                     ["<Down>"] = cmp.mapping(function(fallback) fallback() end, { "i" }),
+                    ["<CR>"] = cmp.mapping(function(fallback) fallback() end, { "i" }),
                 },
                 sources = cmp.config.sources(
                     {
