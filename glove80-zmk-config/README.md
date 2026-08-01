@@ -1,12 +1,10 @@
 # Glove80 ZMK config (Goku-mirrored)
 
-Keymap in `config/glove80.keymap` mirrors the simlayers from `~/.config/goku/karabiner.edn`:
-hold a layer key and tap another key for the same action Goku does on the Mac built-in keyboard.
+Keymap in `config/glove80.keymap`: **stock MoErgo non-letter keys** (Magic, Lower, Escape,
+Tab, thumbs, mods, punctuation, etc.), with Goku simlayers only on the **letter** hold-keys.
 
-Tap a layer key alone to type the letter. Physical `;` types `:` and physical `/` types `@`
-(same as Goku’s “all layers” remaps). `;` itself is on **G+;** and `/` is on **S+;**.
-
-Magic layer (hold the Magic key) is unchanged for Bluetooth, RGB, bootloader, and reset.
+Hold a letter + tap another key for the same shortcut Goku does on the Mac keyboard.
+Tap a letter alone to type it. `;` still types `;` (hold `;` for Goku’s 1–5 layer).
 
 ## Building firmware
 
