@@ -31,93 +31,105 @@
         '"
    }
 
+    :devices {
+        :builtin [{:is_built_in_keyboard true}]
+    }
+
     :simlayers {
-        :f-modifier-text-insertion {:key :f}
-        :d-modifier-dual-punctuation {:key :d}
-        :s-modifier-solo-punctuation {:key :s}
+        ; ---------------------------------------
+        ; ---------- Left Hand Activated --------
+        ; ---------------------------------------
+        :f-text-editing {:key :f :condi :builtin}
+        :d-dual-punctuation {:key :d :condi :builtin}
+        :s-solo-punctuation {:key :s :condi :builtin}
+        :a-6-through-0 {:key :a :condi :builtin}
 
-        :j-modifier-cursor-navigation {:key :j}
-        :k-modifier-text-selection {:key :k}
-        :u-modifier-file-management {:key :u}
+        :r-recording {:key :r :condi :builtin}
 
-        :a-modifier-6-through-0 {:key :a}
-        :semicolon-modifier-1-through-5 {:key :semicolon}
+        :v-relations {:key :v :condi :builtin}
+        :c-operators {:key :c :condi :builtin}
+        :x-logic {:key :x :condi :builtin}
 
-        :g-modifier-left-shift {:key :g}
-        :h-modifier-right-shift {:key :h}
+        :g-left-shift {:key :g :condi :builtin}
 
-        :w-modifier-logic {:key :w}
-        :e-modifier-operators {:key :e}
-        :r-modifier-relations {:key :r}
-        ; more symbols → ↔
-        ; refresh, previous next track, dictation, screen scrolling
+        ; ---------------------------------------
+        ; -------- Right Hand Activated ---------
+        ; ---------------------------------------
+        :j-text-navigation {:key :j :condi :builtin}
+        :k-tab-navigation {:key :k :condi :builtin}
+        :l-window-navigation {:key :l :condi :builtin}
+        :semicolon-1-through-5 {:key :semicolon :condi :builtin}
 
-        :l-modifier-tile-management {:key :l}
-        :i-modifier-app-navigation {:key :i} ; change to browser management
-        :o-modifier-audio-visual-controls {:key :o}
+        :u-file-navigation {:key :u :condi :builtin}
+        :i-text-selection {:key :i :condi :builtin}
+        :o-audio-visual {:key :o :condi :builtin}
+        :p-tmux {:key :p :condi :builtin}
 
-        
+        :h-right-shift {:key :h :condi :builtin}
+    }
+
+    :input-sources {
+        :russian-phonetic {
+            :input_source_id "^com\\.apple\\.keylayout\\.Russian-Phonetic$"
+        }
+        :us {
+            :input_source_id "^com\\.apple\\.keylayout\\.US$"
+        }
     }
 
     :main [
-        ;; {
-        ;;     :des "text-navigation-layer-toggle"
-        ;;     :rules [
-        ;;         [:!Cj ["text-navigation-layer" 0] :text-navigation-layer]
-        ;;         [:!Cj ["text-navigation-layer" 1]]
-        ;;     ]
-        ;; }
-
-        ;; {
-        ;;     :des "text-navigation-layer"
-        ;;     :rules [
-        ;;         :text-navigation-layer
-
-        ;;         [:f :right_arrow] ; moves cursor right
-        ;;         [:d :left_arrow] ; moves cursor left
-        ;;         [:s :up_arrow] ; moves cursor up
-        ;;         [:a :down_arrow] ; moves cursor down
-                
-        ;;     ]
-        ;; }
-
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ------------ Text Editing -------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "f-modifier-text-insertion"
+            :des "f-text-editing"
             :rules [
-                :f-modifier-text-insertion
+                [:condi :f-text-editing :builtin]
                 
-                [:spacebar :!SCOm] ; accept autocomplete suggestion
-
                 [:j :delete_or_backspace] ; delete character before cursor
-                [:k :return_or_enter] ; enter
+                [:k :return_or_enter] ; enter 
                 [:l :tab] ; tab
-                ; semicolon unmapped
-                [:h :!Sreturn_or_enter] ; return
+                [:semicolon :!Sreturn_or_enter] ; return
 
-                [:y :!Cslash] ; comment/uncomment
-                [:u :!Cz] ; undo
-                [:i :!CSz] ; redo
-                [:o :!Copen_bracket] ; deindent
-                [:p :!Cclose_bracket] ; indent
+                [:u :!Copen_bracket] ; deindent
+                [:i :!Cclose_bracket] ; indent
 
-                [:n :!Fdelete_or_backspace] ; delete character after cursor 
                 [:m :!Odelete_or_backspace] ; delete word (respects app-configured word-seperators) before cursor
                 [:comma :!OFdelete_or_backspace] ; delete word (respects app-configured word-seperators) after cursor
                 [:period :!Cdelete_or_backspace] ; delete to beg. of line
                 [:slash :!CFdelete_or_backspace] ; delete to end of line
 
+                [:n :!Fdelete_or_backspace] ; delete character after cursor 
+
+
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------- D Dual Punctuation ---------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "d-modifier-dual-punctuation"
+            :des "d-dual-punctuation"
             :rules [
-                :d-modifier-dual-punctuation
+                [:condi :d-dual-punctuation :builtin]
 
                 [:j [:!S9 :!S0 :left_arrow]] ; (cursor)
                 [:k [:open_bracket :close_bracket :left_arrow]] ; [cursor]
                 [:l [:!Sopen_bracket :!Sclose_bracket :left_arrow]] ; {cursor}
                 [:semicolon [:paste-left "⟨⟩"]] ; ⟨cursor⟩
+
+                [:u [:!Squote :!Squote :left_arrow]] ; “cursor”
+                [:i :!Squote] ; "
+                [:o [:quote :quote :left_arrow]] ; 'cursor'
+                [:p :quote] ; '
 
                 [:h [
                     :grave_accent_and_tilde
@@ -125,211 +137,51 @@
                     :left_arrow
                 ]] ; `cursor`
 
-                [:u [:!Squote :!Squote :left_arrow]] ; “cursor”
-                [:i :!Squote] ; "
-                [:o [:quote :quote :left_arrow]] ; 'cursor'
-                [:p :quote] ; '
-
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ----------- S Solo Punctuation --------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "s-modifier-solo-punctuation"
+            :des "s-solo-punctuation"
             :rules [
-                :s-modifier-solo-punctuation
+                [:condi :s-solo-punctuation :builtin]
                 
-                [:j :hyphen] ; - hyphen
-                [:k :!Shyphen] ; _ underscore
-                [:l :slash] ; /
-                [:semicolon :backslash] ; \
+                [:j :equal_sign] ; =
+                [:k :hyphen] ; - hyphen
+                [:l :!Shyphen] ; _ underscore
+                [:semicolon :slash] ; /
 
-                [:u :!Sgrave_accent_and_tilde] ; ~
-                [:i :!S3] ; #
-                [:o :!S5] ; %
-                [:p :!S6] ; ^
+                [:u :!Sequal_sign] ; +
+                [:i :!S8] ; *
+                [:o :!S3] ; #
+                [:p :backslash] ; \
 
-                [:m :!S7] ; &
-                [:comma :!S8] ; *
-                [:period :!Sbackslash] ; |
+                [:m :!Sgrave_accent_and_tilde] ; ~
+                [:comma :!S5] ; %
+                [:period :!S6] ; ^
+                [:slash :!S7] ; &
+
+                [:h :!Sbackslash] ; |
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ------------ A 6 through 0 ------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "j-modifier-cursor-navigation"
+            :des "a-6-through-0"
             :rules [
-                :j-modifier-cursor-navigation
-
-                [:f :right_arrow] ; moves cursor right
-                [:d :left_arrow] ; moves cursor left
-                [:s :up_arrow] ; moves cursor up
-                [:a :down_arrow] ; moves cursor down
-
-                [:g :escape] ; escape key
-
-                [:r :!Oright_arrow] ; moves cursor right by one word
-                [:e :!Oleft_arrow] ; moves cursor left by one word
-                [:w :!Cright_arrow] ; moves cursor to end of line
-                [:q :!Cleft_arrow] ; moves cursor to beg. of line
-            ]
-        }
-
-        {
-            :des "k-modifier-text-selection"
-            :rules [
-                :k-modifier-text-selection
-
-                [:r :!SOright_arrow] ; adds/removes next word to selected text
-                [:e :!SOleft_arrow] ; adds/removes prev. word to selected text
-                [:w :!SCright_arrow] ; adds (from end of line) to selected text
-                [:q :!SCleft_arrow] ; adds (from beg. of line) to selected text
-
-                [:g :!Ca] ; adds/removes all text to selected text
-
-                [:f :!Sright_arrow] ; adds/removes next char to selected text
-                [:d :!Sleft_arrow] ; adds/removes previous char to selected text
-                [:s :!Sup_arrow] ; adds/removes previous line to selected text
-                [:a :!Sdown_arrow] ; adds/removes next line to selected text
-
-                [:v :!Cv] ; pastes text from clipboard with formatting
-                [:c :!Cx] ; removes selected text and saves it to clipboard
-                [:x :!Cc] ; copies selected text to clipboard
-                [:z :!CSv] ; pastes text from clipboard without formatting
-            ]
-        }
-
-        {
-            :des "u-modifier-file-management"
-            :rules [
-                :u-modifier-file-management
-
-                [:f :!Cf] ; opens a find input box
-                [:d :!Cg] ; moves cursor to next search result
-                [:s :!CSg] ; moves cursor to previous search result
-
-                [:g :!Cs] ; save
-
-                [:r :!COf] ; opens a find and replace input box
-            ]
-        }
-
-        {
-            :des "l-modifier-tile-management"
-            ; The following commands must be additionally specified in tile-management software like aerospace in order to work properly.
-            :rules [
-                :l-modifier-tile-management
-
-                [:f :!SOf] ; focus right tile
-                [:d :!SOd] ; focus left tile
-                [:s :!SOs] ; move tile right
-                [:a :!SOa] ; move tile left
-
-                [:g :!Cw] ; closes focused tile or tab
-
-                [:r :!SOr] ; resize by +50
-                [:e :!SOe] ; resize by -50
-                [:w :!SOw] ; activate side-by-side layout and toggle vertical/horizontal
-                [:q :!SOq] ; activate accordion layout and toggle vertical/horizontal
-
-                [:v :!SOv] ; go to workspace 1
-                [:c :!SOc] ; go to workspace 2
-                [:x :!SOx] ; move current window to workspace 1
-                [:z :!SOz] ; move current window to workspace 2
-            ]
-        }
-
-
-        {
-            :des "g-modifier-left-shift"
-            :rules [
-                :g-modifier-left-shift
-
-                [:j :!Sj]
-                [:k :!Sk]
-                [:l :!Sl]
-                [:semicolon :semicolon]
-
-                [:h :!Sh]
-
-                [:u :!Su]
-                [:i :!Si]
-                [:o :!So]
-                [:p :!Sp]
-
-                [:m :!Sm]
-                [:comma :!S1]
-                [:period :!Sslash]
-                [:slash :!S4]
-
-                [:n :!Sn]
-                [:y :!Sy]
-            ]
-        }
-
-        {
-            :des "h-modifier-right-shift"
-            :rules [
-                :h-modifier-right-shift
-
-                [:f :!Sf]
-                [:d :!Sd]
-                [:s :!Ss]
-                [:a :!Sa]
-
-                [:g :!Sg]
-
-                [:r :!Sr]
-                [:e :!Se]
-                [:w :!Sw]
-                [:q :!Sq]
-
-                [:v :!Sv]
-                [:c :!Sc]
-                [:x :!Sx]
-                [:z :!Sz]
-
-                [:b :!Sb]
-                [:t :!St]
-            ]
-        }
-
-        {
-            :des "i-modifier-app-navigation"
-            :rules [:i-modifier-app-navigation
-
-                [:f :!SCclose_bracket] ; opens right tab
-                [:d :!SCopen_bracket] ; opens left tab
-                [:s :!Cclose_bracket] ; goes back on safari
-                [:a :!Copen_bracket] ; goes forward on safari
-
-                [:g :!Ct] ; creates new tab
-
-                [:r :page_up] ; scroll up by one screen
-                [:e :page_down] ; scroll down by one screen
-                [:w :!Fleft_arrow] ; scroll to top
-                [:q :!Fright_arrow] ; scroll to bottom
-            ]
-        }
-
-        {
-            :des "o-modifier-audio-visual-controls"
-            :rules [
-                :o-modifier-audio-visual-controls
-
-                [:f :volume_increment]
-                [:d :volume_decrement]
-                [:s :display_brightness_increment]
-                [:a :display_brightness_decrement]
-                
-                [:g :mute]
-
-                [:r :!CS3] ; screenshot full screen
-            ]
-        }
-
-        {
-            :des "a-modifier-6-through-0"
-            :rules [
-                :a-modifier-6-through-0
+                [:condi :a-6-through-0 :builtin]
 
                 [:h :6]
                 [:j :7]
@@ -337,28 +189,40 @@
                 [:l :9]
                 [:semicolon :0]
 
-                [:u :!O5]
-                [:i :!OSo]
+                [:u :!O5] ; infinity
+                [:i :!OSo] ; empty set
+            ]
+        }
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; -------------- R Recording ------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "r-recording"
+            :rules [
+                [:condi :r-recording :builtin]
+
+                [:j :!TOa] ; resume recoding
+                [:k :!TOb] ; pause recording
+                [:l :f13] ; start recording
+                [:semicolon :!TOd] ; stop recording
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; -------------- V Relations ------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "semicolon-modifier-1-through-5"
+            :des "v-relations"
             :rules [
-                :semicolon-modifier-1-through-5
-
-                [:a :1]
-                [:s :2]
-                [:d :3]
-                [:f :4]
-                [:g :5]
-            ]
-        }
-
-        {
-            :des "r-modifier-relations"
-            :rules [
-                :r-modifier-relations
+                [:condi :v-relations :builtin]
 
                 [:j :equal_sign]
                 [:k :!Oequal_sign]
@@ -382,10 +246,17 @@
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; -------------- C Operators ------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "e-modifier-operators"
+            :des "c-operators"
             :rules [
-                :e-modifier-operators
+                [:condi :c-operators :builtin]
 
                 [:j :!Sequal_sign]
                 [:k :!OS9]
@@ -406,10 +277,17 @@
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; --------------- X Logic ---------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
-            :des "w-modifier-logic"
+            :des "x-logic"
             :rules [
-                :w-modifier-logic
+                [:condi :x-logic :builtin]
 
                 [:j [:paste "∧"]]
                 [:k [:paste "∨"]]
@@ -429,63 +307,284 @@
             ]
         }
 
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ------------- G Left Shift ------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "g-left-shift"
+            :rules [
+                [:condi :g-left-shift :builtin]
+
+                [:j :!Sj]
+                [:k :!Sk]
+                [:l :!Sl]
+                [:semicolon :semicolon]
+
+                [:h :!Sh]
+
+                [:u :!Su]
+                [:i :!Si]
+                [:o :!So]
+                [:p :!Sp]
+
+                [:m :!Sm]
+                [:comma :!S1]
+                [:period :!Sslash]
+                [:slash :!S4]
+
+                [:n :!Sn]
+                [:y :!Sy]
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ----------- J Text Navigation ---------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "j-text-navigation"
+            :rules [
+                [:condi :j-text-navigation :builtin]
+
+                [:f :right_arrow] ; moves cursor right
+                [:d :left_arrow] ; moves cursor left
+                [:s :up_arrow] ; moves cursor up
+                [:a :down_arrow] ; moves cursor down
+
+                [:r :!Oright_arrow] ; moves cursor right by one word
+                [:e :!Oleft_arrow] ; moves cursor left by one word
+                [:w :!Cright_arrow] ; moves cursor to end of line
+                [:q :!Cleft_arrow] ; moves cursor to beg. of line
+
+                [:v :!SOTv] ; moves cursor right by one word
+                [:c :!TOequal_sign] ; moves cursor left by one word
+                [:x :!SOTx] ; moves cursor to end of line
+                [:z :!SOTz] ; moves cursor to beg. of line
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ----------- K Tab Navigation ----------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "k-tab-navigation. controls tmux, arc, cursor (limited), and mac in general (limited)."
+            :rules [[:condi :k-tab-navigation :builtin]
+
+                [:spacebar :!TOw] ; tmux, arc: closes focused tab, pane, or window.
+                
+                [:g :!TOg] ; tmux: create new window. arc: create new tab.
+                [:f :!TOf] ; tmux: focus next pane. arc: focus next tab.
+                [:d :!TOd] ; tmux: focus previous pane. arc: focus previous tab.
+                [:s :!TOs] ; tmux: focus next window. arc: focus right pane.
+                [:a :!TOa] ; tmux: focus previous window. arc: focus left pane.
+
+                [:t :!TOq] ; arc: switch spaces.
+                [:r :!TOr] ; tmux: split vertically. arc: escape split view.
+                [:e :!TOe] ; tmux, arc: split horizontally.
+                [:w :!Cclose_bracket] ; arc: navigate to next link
+                [:q :!Copen_bracket] ; arc: navigate to previous link
+
+                [:v :page_up] ; mac: scroll up by one screen
+                [:c :page_down] ; mac: scroll down by one screen
+                [:x :!Fleft_arrow] ; mac: scroll to top
+                [:z :!Fright_arrow] ; mac: scroll to bottom
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------- L Window Navigation --------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "l-window-navigation. controls aerospace."
+            :rules [
+                [:condi :l-window-navigation :builtin]
+
+                [:spacebar :!SOspacebar] ; aerospace: closes focused window.
+
+                [:f :!SOf] ; aerospace: focus the next tile
+                [:d :!SOd] ; aerospace: focus the previous tile
+                [:s :!SOs] ; aerospace: go to workspace 2
+                [:a :!SOa] ; aerospace: go to workspace 1
+
+                [:r :!SOr] ; aerospace: move current window to workspace 2
+                [:e :!SOe] ; aerospace: move current window to workspace 1
+                [:w :!SOw] ; aerospace: activate accordion layout and toggle vertical/horizontal
+                [:q :!SOq] ; aerospace: activate split-screen and toggle vertical/horizontal
+
+                [:v :!SOv] ; aerospace: resize by +50
+                [:c :!SOc] ; aerospace: resize by -50
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; --------- Semicolon 1 through 5 -------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "semicolon-1-through-5"
+            :rules [
+                [:condi :semicolon-1-through-5 :builtin]
+
+                [:a :1]
+                [:s :2]
+                [:d :3]
+                [:f :4]
+                [:g :5]
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ----------- U File Navigation ---------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "u-file-navigation"
+            :rules [
+                [:condi :u-file-navigation :builtin]
+
+                [:f :!Cz] ; undo
+                [:d :!CSz] ; redo
+                [:s :tab] ; next ui element
+                [:a :!Stab] ; previous ui element
+
+                [:r :!Cf] ; opens a find input box
+                [:e :!COf] ; opens a find and replace input box
+                [:w :!Cg] ; moves cursor to next search result
+                [:q :!CSg] ; moves cursor to previous search result
+
+                [:v :!Cs] ; save
+                [:c :escape] ; escape key
+
+                [:spacebar :!SCOm] ; accept autocomplete suggestion
+                [:g :!Ff2] ; rename symbol
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ----------- I Text Selection ----------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "i-text-selection"
+            :rules [
+                [:condi :i-text-selection :builtin]
+
+                [:f :!SOright_arrow] ; adds/removes next word to selected text
+                [:d :!SOleft_arrow] ; adds/removes prev. word to selected text
+                [:s :!SCright_arrow] ; adds (from end of line) to selected text
+                [:a :!SCleft_arrow] ; adds (from beg. of line) to selected text
+
+                [:r :!Sright_arrow] ; adds/removes next char to selected text
+                [:e :!Sleft_arrow] ; adds/removes previous char to selected text
+                [:w :!Sup_arrow] ; adds/removes previous line to selected text
+                [:q :!Sdown_arrow] ; adds/removes next line to selected text
+
+                [:v :!Cv] ; pastes text from clipboard with formatting
+                [:c :!Cx] ; removes selected text and saves it to clipboard
+                [:x :!Cc] ; copies selected text to clipboard
+                [:z :!CSv] ; pastes text from clipboard without formatting
+
+                [:spacebar :!Cslash] ; comment/uncomment
+                [:g :!Ca] ; adds/removes all text to selected text
+
+            ]
+        }
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ------------ O Audio/Visual -----------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+
+        {
+            :des "o-audio-visual"
+            :rules [
+                [:condi :o-audio-visual :builtin]
+
+                [:f :volume_increment]
+                [:d :volume_decrement]
+                [:s :display_brightness_increment]
+                [:a :display_brightness_decrement]
+                                
+                [:r :!Cl] ; screenshot full screen
+
+                [:g :mute]
+
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ------------- H Right Shift -----------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        {
+            :des "h-right-shift"
+            :rules [
+                [:condi :h-right-shift :builtin]
+
+                [:f :!Sf]
+                [:d :!Sd]
+                [:s :!Ss]
+                [:a :!Sa]
+
+                [:g :!Sg]
+
+                [:r :!Sr]
+                [:e :!Se]
+                [:w :!Sw]
+                [:q :!Sq]
+
+                [:v :!Sv]
+                [:c :!Sc]
+                [:x :!Sx]
+                [:z :!Sz]
+
+                [:b :!Sb]
+                [:t :!St]
+            ]
+        }
+
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; -------------- All Layers -------------
+        ; ---------------------------------------
+        ; ---------------------------------------
+        ; ---------------------------------------
         {
             :des "all layers"
             :rules [
+                :builtin
                 [:slash :!S2]
                 [:semicolon :!Ssemicolon]
-
-                [:quote []]
-                [:!Squote []]
-                ;; [:return_or_enter []]
-
-                [:open_bracket []]
-                [:!Sopen_bracket []]
-                [:close_bracket []]
-                [:!Sclose_bracket []]
-                [:backslash []]
-                [:!Sbackslash []]
-
-                [:hyphen []]
-                [:!Shyphen []]
-                [:equal_sign []]
-                [:!Sequal_sign []]
-                ;; [:delete_or_backspace []]
-
-                [:tab []]
-                ;[:left_shift []]
-                ;[:right_shift []]
-
-                [:grave_accent_and_tilde []]
-                [:!Sgrave_accent_and_tilde []]
-
-                ;[:escape []]
-
-                ;[:1 []]
-                ;[:!S1 []]
-                ;[:2 []]
-                ;[:!S2 []]
-                ;[:3 []]
-                ;[:!S3 []]
-                ;[:4 []]
-                ;[:!S4 []]
-                ;[:5 []]
-                ;[:!S5 []]
-                ;[:6 []]
-                ;[:!S6 []]
-                ;[:7 []]
-                ;[:!S7 []]
-                ;[:8 []]
-                ;[:!S8 []]
-                ;[:9 []]
-                ;[:!S9 []]
-                ;[:0 []]
-                ;[:!S0 []]
-
-                ;[:left_arrow []]
-                ;[:right_arrow []]
-                ;[:up_arrow []]
-                ;[:down_arrow []]
             ]
         }
     ]

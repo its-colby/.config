@@ -23,7 +23,6 @@ return {
                 },
             })
             
-            local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             
             -- LSP keymaps function
@@ -89,20 +88,31 @@ return {
                 )
             end
             
+            local function setup_server(name, opts)
+                if vim.lsp and vim.lsp.config and vim.lsp.enable then
+                    vim.lsp.config(name, opts)
+                    vim.lsp.enable(name)
+                    return
+                end
+
+                -- Backward compatibility for older Neovim versions.
+                require("lspconfig")[name].setup(opts)
+            end
+
             -- Python
-            lspconfig.pyright.setup({
+            setup_server("pyright", {
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
-            
+
             -- Markdown
-            lspconfig.marksman.setup({
+            setup_server("marksman", {
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
-            
+
             -- Lua
-            lspconfig.lua_ls.setup({
+            setup_server("lua_ls", {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {

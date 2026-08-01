@@ -26,6 +26,9 @@ return {
         ft = { "markdown" },
         build = "cd app && npm install",
         config = function()
+            vim.g.mkdp_browser = "Arc"
+            vim.g.mkdp_echo_preview_url = 1
+
             vim.keymap.set(
                 "n",
                 "<leader>mp",
@@ -34,92 +37,28 @@ return {
             )
         end,
     },
-    
-    -- Enhanced markdown rendering in Neovim
+    -- In-buffer markdown rendering
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = { 
+        dependencies = {
             "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons" -- Optional: for icons
+            "nvim-tree/nvim-web-devicons",
         },
         ft = { "markdown" },
+        cmd = { "RenderMarkdown" },
         opts = {
-            -- Enable the plugin
             enabled = true,
-            -- File types this plugin will run on
             file_types = { "markdown" },
-            -- Render modes that will show the rendered view
+            latex = { enabled = false },
             render_modes = { "n", "c", "t" },
-            -- Maximum file size (in MB) that this plugin will attempt to render
             max_file_size = 10.0,
-            -- Heading configuration
-            heading = {
-                enabled = true,
-                sign = true,
-                position = "overlay",
-                icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
-                signs = { "󰫎 " },
-                width = "full",
-                backgrounds = {
-                    "RenderMarkdownH1Bg",
-                    "RenderMarkdownH2Bg", 
-                    "RenderMarkdownH3Bg",
-                    "RenderMarkdownH4Bg",
-                    "RenderMarkdownH5Bg",
-                    "RenderMarkdownH6Bg",
-                },
-                foregrounds = {
-                    "RenderMarkdownH1",
-                    "RenderMarkdownH2",
-                    "RenderMarkdownH3", 
-                    "RenderMarkdownH4",
-                    "RenderMarkdownH5",
-                    "RenderMarkdownH6",
-                },
-            },
-            -- Code block configuration
-            code = {
-                enabled = true,
-                sign = true,
-                style = "full",
-                position = "left",
-                language_icon = true,
-                language_name = true,
-                width = "full",
-                highlight = "RenderMarkdownCode",
-            },
-            -- Dash/horizontal rule configuration
-            dash = {
-                enabled = true,
-                icon = "─",
-                width = "full",
-            },
-            -- List bullet configuration
-            bullet = {
-                enabled = true,
-                icons = { "●", "○", "◆", "◇" },
-            },
-            -- Checkbox configuration
-            checkbox = {
-                enabled = true,
-                unchecked = { icon = "󰄱 " },
-                checked = { icon = "󰱒 " },
-            },
-            -- Quote block configuration
-            quote = {
-                enabled = true,
-                icon = "▋",
-            },
         },
-        config = function(_, opts)
-            require("render-markdown").setup(opts)
-            
-            -- Add keymaps for render-markdown
+        config = function()
             vim.keymap.set(
-                "n", 
-                "<leader>mr", 
-                ":RenderMarkdown toggle<CR>", 
-                { desc = "Toggle Markdown Rendering" }
+                "n",
+                "<leader>mr",
+                ":RenderMarkdown toggle<CR>",
+                { desc = "Render Markdown in editor" }
             )
         end,
     },

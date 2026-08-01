@@ -1,0 +1,6 @@
+{
+  "trustedformulae": [
+    "stripe/stripe-cli/stripe",
+    "tursodatabase/tap/turso"
+  ]
+}

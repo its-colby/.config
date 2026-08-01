@@ -27,6 +27,11 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
+                completion = {
+                    -- Delay completion popup to allow abbreviations to work
+                    keyword_length = 4,
+                    autocomplete = false, -- Disable automatic popup
+                },
                 mapping = {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),

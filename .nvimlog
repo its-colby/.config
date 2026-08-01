@@ -1,0 +1,2 @@
+WRN 2026-05-28T13:00:53.969 ?.23405    server_start:193: Failed to start server: operation not permitted: /var/folders/tn/rtpt4qvs0v1d05xnz77b1f1h0000gn/T/nvim.colby/ih2EPC/nvim.23405.0
+WRN 2026-05-28T13:01:06.157 ?.23438    server_start:193: Failed to start server: operation not permitted: /var/folders/tn/rtpt4qvs0v1d05xnz77b1f1h0000gn/T/nvim.colby/lbF4xp/nvim.23438.0

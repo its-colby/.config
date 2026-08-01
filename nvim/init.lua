@@ -233,8 +233,22 @@ vim.keymap.set('i', '<D-s>', '<Esc>:w<CR>i', { desc = 'Save file in insert mode'
 vim.keymap.set('n', '<S-D-]>', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', '<S-D-[>', ':tabprevious<CR>', { desc = 'Previous tab' })
 
-require("config.lazy")
+-- Handle Karabiner relation symbols in insert mode
+-- These map the Option+key combinations to their intended symbols
+vim.keymap.set('i', '<M-,>', '≤', { desc = 'Insert less than or equal' })
+vim.keymap.set('i', '<M-.>', '≥', { desc = 'Insert greater than or equal' })
+vim.keymap.set('i', '<S-,>', '<', { desc = 'Insert less than' })
+vim.keymap.set('i', '<S-.>', '>', { desc = 'Insert greater than' })
+
+-- Load abbreviations before plugins to avoid conflicts
 require("config.abbreviations").setup()
+
+require("config.lazy")
+
+-- Neovim 0.12 can crash on markdown injection directives used by treesitter.
+-- Keep markdown highlighting/rendering enabled, but disable only injections.
+pcall(vim.treesitter.query.set, "markdown", "injections", "")
+pcall(vim.treesitter.query.set, "markdown_inline", "injections", "")
 
 
 -- todo: tabs, search files and folders, better auto wrapping, organize file, better paste buffer and selection

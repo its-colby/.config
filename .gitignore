@@ -1,3 +1,6 @@
 **/.DS_Store
 **/automatic_backups/
 **/lazy-lock.json
+agda/**
+# Stripe CLI credentials (API keys)
+stripe/

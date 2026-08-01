@@ -1,11 +1,11 @@
 after-startup-command = []
 
-start-at-login = false
+start-at-login = true
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-accordion-padding = 30
+accordion-padding = 0
 
 default-root-container-layout = 'tiles'
 
@@ -27,29 +27,18 @@ automatically-unhide-macos-hidden-apps = false
     outer.right =      0
 
 [mode.main.binding]
-    alt-shift-f = 'focus right'
-    alt-shift-d = 'focus left'
-    alt-shift-s = 'move right'
-    alt-shift-a = 'move left'
 
-    alt-shift-e = 'resize smart -50'
-    alt-shift-r = 'resize smart +50'
-    alt-shift-w = 'layout tiles horizontal vertical'
-    alt-shift-q = 'layout accordion horizontal vertical'
+    alt-shift-space = 'close --quit-if-last-window'
 
-    alt-shift-v = 'workspace 1'
-    alt-shift-c = 'workspace 2'
-    alt-shift-x = 'move-node-to-workspace 1'
-    alt-shift-z = 'move-node-to-workspace 2'
+    alt-shift-f = 'focus --boundaries-action wrap-around-the-workspace right'
+    alt-shift-d = 'focus --boundaries-action wrap-around-the-workspace left'
+    alt-shift-s = 'workspace 1'
+    alt-shift-a = 'workspace 2'
 
-    alt-shift-semicolon = 'mode service'
+    alt-shift-r = 'move-node-to-workspace 2'
+    alt-shift-e = 'move-node-to-workspace 1'
+    alt-shift-w = 'layout accordion horizontal vertical'
+    alt-shift-q = 'layout tiles horizontal vertical'
 
-    alt-shift-cmd-q = ['flatten-workspace-tree', 'mode main'] # reset layout
-    alt-shift-cmd-w = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-    alt-shift-cmd-e = ['close-all-windows-but-current', 'mode main']
-
-
-    cmd-alt-shift-f = ['join-with left', 'mode main']
-    cmd-alt-shift-d = ['join-with down', 'mode main']
-    cmd-alt-shift-s = ['join-with up', 'mode main']
-    cmd-alt-shift-a = ['join-with right', 'mode main']
+    alt-shift-v = 'resize smart -50'
+    alt-shift-c = 'resize smart +50'
