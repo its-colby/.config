@@ -1,0 +1,78 @@
+/*
+ * Layout helpers for sparse Glove80 layers + macro shorthand.
+ *
+ * Goku layers only bind the opposite hand; everything else stays &trans.
+ * LAYER_RIGHT — hold a left-hand key; bindings land on the right hand.
+ * LAYER_LEFT  — hold a right-hand key; bindings land on the left hand.
+ *
+ * Pass ___ for unused positions. Optional last arg is Space.
+ *
+ * WRAP(name, left, right) — type left+right, then Left (cursor between).
+ * UC(name, h0, h1, h2, h3) — macOS Unicode Hex Input (Option + 4 hex keys).
+ */
+
+#pragma once
+
+#define ___ &trans
+
+/* #binding-cells is safe here: "binding-cells" is not a macro parameter */
+#define WRAP(name, left, right)                    \
+    name: name {                                   \
+        compatible = "zmk,behavior-macro";         \
+        #binding-cells = <0>;                      \
+        bindings = <&macro_tap &kp left &kp right &kp LEFT>; \
+    }
+
+#define UC(name, h0, h1, h2, h3)                   \
+    name: name {                                   \
+        compatible = "zmk,behavior-macro";         \
+        #binding-cells = <0>;                      \
+        bindings = <&macro_press &kp LALT>,        \
+                   <&macro_tap &kp h0 &kp h1 &kp h2 &kp h3>, \
+                   <&macro_release &kp LALT>;      \
+    }
+
+/* Two Unicode chars then Left — used for ⟨⟩ */
+#define UC2_LEFT(name, a0, a1, a2, a3, b0, b1, b2, b3) \
+    name: name {                                   \
+        compatible = "zmk,behavior-macro";         \
+        #binding-cells = <0>;                      \
+        bindings                                   \
+            = <&macro_press &kp LALT>              \
+            , <&macro_tap &kp a0 &kp a1 &kp a2 &kp a3> \
+            , <&macro_release &kp LALT>            \
+            , <&macro_press &kp LALT>              \
+            , <&macro_tap &kp b0 &kp b1 &kp b2 &kp b3> \
+            , <&macro_release &kp LALT>            \
+            , <&macro_tap &kp LEFT>;               \
+    }
+
+/* clang-format off */
+
+#define LAYER_RIGHT( \
+    /* Y U I O P */ y, u, i, o, p, \
+    /* H J K L ; */ h, j, k, l, semi, \
+    /* N M , . / */ n, m, comma, dot, fslh, \
+    /* Space */     space \
+) \
+___ ___ ___ ___ ___                         ___ ___ ___ ___ ___ \
+___ ___ ___ ___ ___ ___               ___ ___ ___ ___ ___ ___ \
+___ ___ ___ ___ ___ ___               y   u   i   o   p   ___ \
+___ ___ ___ ___ ___ ___               h   j   k   l   semi ___ \
+___ ___ ___ ___ ___ ___ ___ ___ ___   ___ ___ ___   n m comma dot fslh ___ \
+___ ___ ___ ___ ___     ___ ___ ___   ___ ___ space ___ ___ ___ ___ ___
+
+#define LAYER_LEFT( \
+    /* Q W E R T */ q, w, e, r, t, \
+    /* A S D F G */ a, s, d, f, g, \
+    /* Z X C V B */ z, x, c, v, b, \
+    /* Space */     space \
+) \
+___ ___ ___ ___ ___                         ___ ___ ___ ___ ___ \
+___ ___ ___ ___ ___ ___               ___ ___ ___ ___ ___ ___ \
+___ q   w   e   r   t                 ___ ___ ___ ___ ___ ___ \
+___ a   s   d   f   g                 ___ ___ ___ ___ ___ ___ \
+___ z   x   c   v   b   ___ ___ ___   ___ ___ ___   ___ ___ ___ ___ ___ ___ \
+___ ___ ___ ___ ___     ___ ___ ___   ___ ___ space ___ ___ ___ ___ ___
+
+/* clang-format on */

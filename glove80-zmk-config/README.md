@@ -3,6 +3,10 @@
 Keymap in `config/glove80.keymap`: **stock MoErgo non-letter keys** (Magic, Lower, Escape,
 Tab, thumbs, mods, punctuation, etc.), with Goku simlayers only on the **letter** hold-keys.
 
+Goku overlay layers are written sparsely via helpers in `config/layout_helpers.dtsi`
+(`LAYER_RIGHT` / `LAYER_LEFT`) so you only list the opposite-hand bindings; the rest become
+transparent automatically.
+
 Hold a letter + tap another key for the same shortcut Goku does on the Mac keyboard.
 Tap a letter alone to type it. `;` still types `;` (hold `;` for Goku’s 1–5 layer).
 

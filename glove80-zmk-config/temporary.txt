@@ -1,0 +1,118 @@
+PROPOSED 14 LAYERS (4 home-row actions each)
+============================================
+Budget: home-row holds A S D F + J K L ;, plus 3 left thumbs (BSPC / DEL / LAlt) and 3 right thumbs (RAlt / Enter / Space).
+Each layer = hold that key → 4 actions on the opposite home row. Thumb taps stay: Backspace, Delete, Enter, Space, etc.
+Numbers, full symbol rows, unicode/math, media, recording → not in this set (base layout / Lower / later).
+
+RIGHT-HAND HOLDS → left home row A S D F
+- J  tab create/close:     new tab/window | close tab/pane | split horizontal | split vertical
+- K  tab/pane focus:       prev window/pane | next window/pane | prev tab/pane | next tab/pane
+- L  aerospace focus:      workspace 1 | workspace 2 | focus prev tile | focus next tile
+- ;  aerospace arrange:    move → ws1 | move → ws2 | tiles layout | accordion layout
+
+LEFT-HAND HOLDS → right home row J K L ;
+- A  apps:                 Cursor | Arc | Terminal | Slack (swap to taste)
+- S  symbols (top 4):      = | - | _ | /
+- D  wrappers:             () | [] | {} | ""
+- F  code jump:            quick open (Cmd+P) | command palette | go to definition | navigate back
+
+LEFT THUMBS → right home row J K L ;
+- BSPC  delete:            delete word left | delete word right | delete to line start | delete to line end
+- DEL   move by unit:      word left | word right | line start | line end
+- LAlt  select/extend:     select word left | select word right | select to line start | select to line end
+
+RIGHT THUMBS → left home row A S D F
+- RAlt  find:              find | find next | find prev | rename
+- Enter clipboard:         copy | cut | paste | select all
+- Space edit core:         undo | redo | save | Escape
+
+Out of this 14 (on purpose): plain arrows, indent/deindent, Shift+Enter/Tab-as-layer, full number rows, unicode, volume, browser link next/prev, scroll/Home/End, more workspaces 3–4, app extras — park on upper rows, Lower, or a later expansion.
+
+================================================================================
+
+F:
+- , Cmd+[ (deindent) , Cmd+] (indent) , - , -
+- , Backspace , Enter , Tab , Shift+Enter (newline)
+Forward Delete , Option+Backspace (delete word left) , Option+Forward Delete (delete word right) , Cmd+Backspace (delete to line start) , Cmd+Forward Delete (delete to line end)
+
+D:
+"" , " , '' , ' , -
+`` , () , [] , {} , ⟨⟩
+- , - , - , - , -
+
+S:
++ , * , # , \ , -
+| , = , hyphen , _ , /
+- , ~ , % , ^ , &
+
+A:
+∞ , ∅ , - , - , -
+6 , 7 , 8 , 9 , 0
+- , - , - , - , -
+
+R:
+- , - , - , - , -
+- , Ctrl+Option+A (resume recording) , Ctrl+Option+B (pause recording) , F13 (start recording) , Ctrl+Option+D (stop recording)
+- , - , - , - , -
+
+V:
+⊄ , ≤ , ≥ , < , >
+∼ , = , ≠ , ≡ , ≢
+⊅ , ∈ , ∉ , ⊆ , ⊇
+
+C:
+- , × , ⊕ , ⊗ , ⊙
+↦ , + , · , ∘ , ±
+- , → , ← , ↑ , ↓
+
+X:
+- , ⟹ , ⟺ , ⊢ , ⊨
+¬ , ∧ , ∨ , ∃ , ∀
+- , ⊤ , ⊥ , ∴ , -
+
+G:
+- , - , - , - , -
+- , - , - , - , ;
+- , - , ! , ? , $
+
+J:
+- , Option+Right (word right) , Option+Left (word left) , Cmd+Right (line end) , Cmd+Left (line start)
+- , Right , Left , Up , Down
+- , Shift+Option+Ctrl+V , Ctrl+Option+= , Shift+Option+Ctrl+X , Shift+Option+Ctrl+Z
+
+K:
+Ctrl+Option+Q (Arc switch spaces) , Ctrl+Option+R (tmux split vertical / Arc escape split) , Ctrl+Option+E (split horizontal) , Cmd+] (next link) , Cmd+[ (prev link)
+Ctrl+Option+G (new tab/window) , Ctrl+Option+F (next tab/pane) , Ctrl+Option+D (prev tab/pane) , Ctrl+Option+S (next window / right pane) , Ctrl+Option+A (prev window / left pane)
+- , Page Up (scroll up) , Page Down (scroll down) , Home (scroll top) , End (scroll bottom)
+Space: Ctrl+Option+W (close tab/pane/window)
+
+L:
+- , Shift+Option+R (move window to workspace 2) , Shift+Option+E (move window to workspace 1) , Shift+Option+W (accordion layout) , Shift+Option+Q (tiles layout)
+- , Shift+Option+F (focus next tile) , Shift+Option+D (focus prev tile) , Shift+Option+S (workspace 2) , Shift+Option+A (workspace 1)
+- , Shift+Option+V (resize +50) , Shift+Option+C (resize -50) , - , -
+Space: Shift+Option+Space (close window)
+
+;:
+- , - , - , - , -
+5 , 4 , 3 , 2 , 1
+- , - , - , - , -
+
+U:
+- , Cmd+F (find) , Cmd+Option+F (find and replace) , Cmd+G (next find) , Cmd+Shift+G (prev find)
+F2 (rename) , Cmd+Z (undo) , Cmd+Shift+Z (redo) , Tab (next UI element) , Shift+Tab (prev UI element)
+- , Cmd+S (save) , Escape , - , -
+Space: Shift+Cmd+Option+M (accept autocomplete)
+
+I:
+- , Shift+Right (select char right) , Shift+Left (select char left) , Shift+Up (select line up) , Shift+Down (select line down)
+Cmd+A (select all) , Shift+Option+Right (select word right) , Shift+Option+Left (select word left) , Shift+Cmd+Right (select to line end) , Shift+Cmd+Left (select to line start)
+- , Cmd+V (paste) , Cmd+X (cut) , Cmd+C (copy) , Cmd+Shift+V (paste without formatting)
+Space: Cmd+/ (comment toggle)
+
+O:
+- , Cmd+L (screenshot) , - , - , -
+Mute , Volume Up , Volume Down , Brightness Up , Brightness Down
+- , - , - , - , -
+
+H:
+(shifted letters only)
