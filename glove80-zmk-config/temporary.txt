@@ -86,6 +86,10 @@ Q = - , X = - , M = - , C = - , V = -
 Space: focus right (Shift+Option+F)
 (Aerospace handles WM; Hammerspoon only apps via hyper)
 
+GLOVE80 EDGE MEDIA (base layer only)
+Left of B: Volume Up , Left of N: Volume Down
+Under Q: Brightness Down , Under X: Brightness Up
+
 THUMB LAYERS ↔ MAC / GOKU
 Glove80 thumb cluster (bottom row, inner→outer): left = Tab, Caps, (Alt) | right = (Alt), Space, Enter
 Top thumb row: Shift on both sides (already), other mods unchanged.
