@@ -78,34 +78,52 @@
             bindings = <&kp COMMA>, <&kp DQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        mm_m: mod_morph_m {
+        // Graphite . (phys comma): period / !
+        mm_dotkey: mod_morph_dotkey {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        mm_comma: mod_morph_comma {
+        // Graphite - (phys period): hyphen / _
+        mm_minus: mod_morph_minus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        mm_dot: mod_morph_dot {
+        // Under I (phys /): semicolon / colon
+        mm_fslh: mod_morph_fslh {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        // Right of I (phys '): slash / backslash
         mm_sqt: mod_morph_sqt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        // Right of J (phys \ on Glove80 alpha row): ? / |
         mm_bslh: mod_morph_bslh {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // Bracket keys: [/{ and ]/}
+        mm_lbkt: mod_morph_lbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mm_rbkt: mod_morph_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -208,7 +226,7 @@
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
             // |  TAB  |  B  |  L  |  D   |  W   |  Z   |                                                 |  ,   |   F   |   O   |  U   |   J   |   \  |
             // |  ESC  |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
-            // |   `   |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  K   |   .   |   -   |  ;   |   /   | PGUP |
+            // |   `   |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
             // | MAGIC | HOME| END | LEFT | RIGHT|      | TAB   | CAPS  | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
@@ -216,8 +234,8 @@
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
             &kp TAB        &kp B    &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
             &kp ESC        &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &kp GRAVE      &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp K   &mm_m   &mm_comma   &mm_dot     &kp FSLH    &kp PG_UP
-            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT          &kp TAB     &lt L_AUDIO CAPS &kp LALT &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
+            &kp GRAVE      &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
+            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT          &kp TAB     &lt L_AUDIO CAPS &kp LALT &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 

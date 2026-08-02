@@ -541,8 +541,8 @@
                 [:h :y] [:j :h] [:k :a] [:l :e] [:semicolon :i]
                 ; bottom row
                 [:z :q] [:x :x] [:c :m] [:v :c] [:b :v]
-                [:n :k]
-                ; :m :period via punct; :y :comma via punct
+                [:n :k] [:m :p]
+                ; :y :comma via punct; phys ,/. via punct
             ]
         }
 
@@ -554,29 +554,45 @@
             :rules [
                 :builtin
 
-                ; phys y (Graphite ,): comma / "
+                ; phys y (Graphite , left of F): comma / "
                 [:y :comma]
                 [:!Sy :!Squote]
+                [:!Ry :!Squote]
 
-                ; phys m (Graphite P / word-nav alone): period / !
-                [:m :period]
-                [:!Sm :!S1]
+                ; phys comma (Graphite . next to P): period / !
+                [:comma :period]
+                [:!Scomma :!S1]
+                [:!Rcomma :!S1]
 
-                ; phys comma (Graphite .): hyphen / _
-                [:comma :hyphen]
-                [:!Scomma :!Shyphen]
+                ; phys period (Graphite - next to .): hyphen / _
+                [:period :hyphen]
+                [:!Speriod :!Shyphen]
+                [:!Rperiod :!Shyphen]
 
-                ; phys period (Graphite -): semicolon / :
-                [:period :semicolon]
-                [:!Speriod :!Ssemicolon]
+                ; phys slash (under Graphite I): semicolon / :
+                [:slash :semicolon]
+                [:!Sslash :!Ssemicolon]
+                [:!Rslash :!Ssemicolon]
 
-                ; phys quote (next to I): slash / backslash
+                ; phys quote (right of I): slash / backslash
                 [:quote :slash]
                 [:!Squote :backslash]
+                [:!Rquote :backslash]
 
-                ; phys backslash (next to J): ? / |
-                [:backslash :!Sslash]
-                [:!Sbackslash :!Sbackslash]
+                ; phys [ (right of J): ? / |
+                [:open_bracket :!Sslash]
+                [:!Sopen_bracket :!Sbackslash]
+                [:!Ropen_bracket :!Sbackslash]
+
+                ; phys ] : [ / {
+                [:close_bracket :open_bracket]
+                [:!Sclose_bracket :!Sopen_bracket]
+                [:!Rclose_bracket :!Sopen_bracket]
+
+                ; phys \ : ] / }
+                [:backslash :close_bracket]
+                [:!Sbackslash :!Sclose_bracket]
+                [:!Rbackslash :!Sclose_bracket]
             ]
         }
     ]

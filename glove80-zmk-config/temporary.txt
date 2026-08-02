@@ -96,11 +96,12 @@ Right bottom (under right index): N = 1st right thumb / Space (Word Deletion) , 
 
 BASE PUNCTUATION (Graphite, both keyboards)
 Left of F (,): comma ; Shift = "
-Under A (.): period ; Shift = !
-Under E (-): hyphen ; Shift = _
-Under I (;): semicolon ; Shift = :
-Next to I ('): slash ; Shift = backslash
-Next to J (\): question mark ; Shift = |
+Next to P (.): period ; Shift = !
+Next to . (-): hyphen ; Shift = _
+Under I (/): semicolon ; Shift = :
+Right of I ('): slash ; Shift = backslash
+Right of J ([ on Mac / \ on Glove80 alpha): ? ; Shift = |
+Next keys (]/]): [/{ and ]/}  (Mac: phys ] and \; Glove80: LBKT/RBKT keys)
 
 BSPC: (tap = Tab — base layer; Mac Goku alone/hold key = V)
 
