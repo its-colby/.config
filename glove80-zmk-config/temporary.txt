@@ -1,66 +1,161 @@
-PROPOSED 14 LAYERS (4 home-row actions each)
+PROPOSED LAYERS
 ============================================
-Budget: home-row holds A S D F + J K L ;, plus 3 left thumbs (BSPC / DEL / LAlt) and 3 right thumbs (RAlt / Enter / Space).
-Each layer = hold that key → 4 actions on the opposite home row. Thumb taps stay: Backspace, Delete, Enter, Space, etc.
-Numbers, full symbol rows, unicode/math, media, recording → not in this set (base layout / Lower / later).
+ARCHITECTURE
+- macOS input source: US/QWERTY only (do NOT enable OS Graphite — it remaps Glove80 too).
+- Mac builtin Graphite: Goku/Karabiner (:is_built_in_keyboard only).
+- Glove80 Graphite: ZMK firmware HID letters.
+- Shared scripting: Hammerspoon = app open/focus only. Window management = Aerospace.
+- Karabiner never targets Glove80.
 
-RIGHT-HAND HOLDS → left home row A S D F
-- J  tab create/close:     new tab/window | close tab/pane | split horizontal | split vertical
-- K  tab/pane focus:       prev window/pane | next window/pane | prev tab/pane | next tab/pane
-- L  aerospace focus:      workspace 1 | workspace 2 | focus prev tile | focus next tile
-- ;  aerospace arrange:    move → ws1 | move → ws2 | tiles layout | accordion layout
 
-LEFT-HAND HOLDS → right home row J K L ;
-- A  apps:                 Cursor | Arc | Terminal | Slack (swap to taste)
-- S  symbols (top 4):      = | - | _ | /
-- D  wrappers:             () | [] | {} | ""
-- F  code jump:            quick open (Cmd+P) | command palette | go to definition | navigate back
+UPPER ROW (punctuation / math)
+W: Dual Punctuation (left index)
+H = "" , A = " , E = '' , I = '
+K = `` , P = () , . = [] , - = {} , / = ⟨⟩
 
-LEFT THUMBS → right home row J K L ;
-- BSPC  delete:            delete word left | delete word right | delete to line start | delete to line end
-- DEL   move by unit:      word left | word right | line start | line end
-- LAlt  select/extend:     select word left | select word right | select to line start | select to line end
+F: Solo Punctuation (right index)
+B = + , L = * , D = # , W = \ , Z = -
+N = | , R = = , T = hyphen , S = _
+Q = - , X = ~ , M = % , C = ^ , V = &
 
-RIGHT THUMBS → left home row A S D F
-- RAlt  find:              find | find next | find prev | rename
-- Enter clipboard:         copy | cut | paste | select all
-- Space edit core:         undo | redo | save | Escape
+D: Math Relations (left middle)
+H = ⊄ , A = ≤ , E = ≥ , I = <
+K = ∼ , P = = , . = ≠ , - = ≡ , / = ≢
+(also ⊇-row on further keys if needed: ⊅ ∈ ∉ ⊆ ⊇)
 
-Out of this 14 (on purpose): plain arrows, indent/deindent, Shift+Enter/Tab-as-layer, full number rows, unicode, volume, browser link next/prev, scroll/Home/End, more workspaces 3–4, app extras — park on upper rows, Lower, or a later expansion.
+O: Math Operators (right middle)
+B = - , L = × , D = ⊕ , W = ⊗ , Z = ⊙
+N = ↦ , R = + , T = · , S = ∘
+Q = - , X = → , M = ← , C = ↑ , V = ↓
+(± on a free key if needed)
+
+L: Logic Symbols (left ring)
+H = - , A = ⟹ , E = ⟺ , I = ⊢
+K = ¬ , P = ∧ , . = ∨ , - = ∃ , / = ∀
+(also ⊤ ⊥ ∴ ⊨)
+
+U: Misc Punctuation (right ring — leftovers)
+B = ; , L = ! , D = ? , W = $ , Z = /
+N = ∞ , R = ∅ , T = ± , S = ⊨
+Q = ⊤ , X = ⊥ , M = ∴ , C = - , V = -
+
+HOME ROW
+N: Find & Navigate
+, = find (Cmd+F) , F = find and replace (Cmd+Option+F) , O = next find (Cmd+G) , U = prev find (Cmd+Shift+G) , J = rename (F2)
+H = Tab (next UI) , A = Shift+Tab (prev UI) , E = save (Cmd+S) , I = Escape
+K = - , P = - , . = - , - = - , / = -
+Space: accept autocomplete (Shift+Cmd+Option+M)
+
+R: Text Selection
+, = select line up (Shift+Up) , F = select line down (Shift+Down) , O = select char right (Shift+Right) , U = select char left (Shift+Left) , J = -
+H = select word right (Shift+Option+Right) , A = select word left (Shift+Option+Left) , E = select to line end (Shift+Cmd+Right) , I = select to line start (Shift+Cmd+Left)
+K = - , P = - , . = - , - = - , / = -
+Space: select all (Cmd+A)
+
+T: Browser Navigation
+, = prev link (Cmd+[) , F = next link (Cmd+]) , O = split horizontal (Ctrl+Option+E) , U = - , J = -
+H = new tab (Ctrl+Option+G) , A = next tab (Ctrl+Option+F) , E = prev tab (Ctrl+Option+D) , I = switch spaces (Ctrl+Option+Q)
+Space: close tab (Ctrl+Option+W)
+
+H: Primary Application Navigation
+N = Cursor its-colby , R = Cursor MOPAverse , T = Cursor .config , S = Ghostty
+Space: close window (Shift+Option+Space)
+(via ~/.config/bin/open-or-focus + Hammerspoon hyper; Goku builtin shell/hyper)
+
+S: Secondary Application Navigation
+, = WhatsApp (Arc) , F = GitHub (Arc) , O = Gmail (Arc) , U = Google Calendar (Arc) , J = -
+H = ChatGPT (Arc) , A = YouTube (Arc) , E = Russian dictionary (Arc) , I = life.itscolby.com (Arc)
+K = Messages , P = Spotify , . = - , - = - , / = -
+(same open-or-focus; projects: ~/projects/itscolby, ~/projects/mopaverse, ~/.config)
+
+A: Inner Application Navigation
+B = Page Up , L = Page Down , D = Home (top of page) , W = End (bottom of page) , Z = -
+N = toggle upper sidebar , R = toggle bottom sidebar , T = toggle left sidebar , S = toggle right sidebar
+Q = - , X = - , M = zoom in (Cmd+=) , C = zoom out (Cmd+-) , V = -
+
+E: Clipboard & Edit
+B = - , L = - , D = paste without formatting (Cmd+Shift+V) , W = redo (Cmd+Shift+Z) , Z = -
+N = copy (Cmd+C) , R = cut (Cmd+X) , T = paste (Cmd+V) , S = undo (Cmd+Z)
+Q = - , X = - , M = - , C = - , V = -
+Space: comment toggle (Cmd+/)
+
+I: Window Management
+B = - , L = focus left (Shift+Option+D) , D = resize smaller (Shift+Option+C) , W = resize bigger (Shift+Option+V) , Z = -
+N = swap neighbor (Shift+Option+A) , R = float / tiling toggle (Shift+Option+S) , T = accordion (Shift+Option+Q) , S = tiles/split orientation toggle (Shift+Option+W)
+Q = - , X = - , M = - , C = - , V = -
+Space: focus right (Shift+Option+F)
+(Aerospace handles WM; Hammerspoon only apps via hyper)
+
+THUMB LAYERS ↔ MAC / GOKU
+Glove80 thumb cluster (bottom row, inner→outer): left = Tab, Caps, (Alt) | right = (Alt), Space, Enter
+Top thumb row: Shift on both sides (already), other mods unchanged.
+Mac: stock Tab / Shift / Backspace / Delete stay put. Thumb *layers* use bottom-row holds under the index fingers.
+
+Left bottom (under left index):  V = 1st left thumb (Tab) , B = 2nd left thumb (Caps tap / Audio hold)
+Right bottom (under right index): N = 1st right thumb / Space (Word Deletion) , M = 2nd right thumb / Enter (Word Navigation)
+
+BASE PUNCTUATION (Graphite, both keyboards)
+Left of F (,): comma ; Shift = "
+Under A (.): period ; Shift = !
+Under E (-): hyphen ; Shift = _
+Under I (;): semicolon ; Shift = :
+Next to I ('): slash ; Shift = backslash
+Next to J (\): question mark ; Shift = |
+
+BSPC: (tap = Tab — base layer; Mac Goku alone/hold key = V)
+
+DEL: Audio & Display (tap = Caps Lock; hold = this layer; Mac Goku hold key = B)
+B = - , L = screenshot (Cmd+L) , D = - , W = - , Z = -
+N = Mute , R = Volume Up , T = Volume Down , S = Brightness Up
+Q = Brightness Down , X = - , M = - , C = - , V = -
+
+LAlt:
+
+RAlt:
+
+Space: Word Deletion (Mac Goku hold key = N)
+B = Shift+Enter (newline) , L = delete to line end (Cmd+Delete) , D = delete to line start (Cmd+Backspace) , W = indent (Cmd+]) , Z = deindent (Cmd+[)
+N = Backspace , R = delete word left (Option+Backspace) , T = delete word right (Option+Delete) , S = -
+Q = - , X = - , M = - , C = - , V = -
+
+Enter: Word Navigation (Mac Goku hold key = M)
+B = - , L = Right , D = Left , W = Up , Z = Down
+N = word left (Option+Left) , R = word right (Option+Right) , T = line end (Cmd+Right) , S = line start (Cmd+Left)
+Q = - , X = - , M = - , C = - , V = -
 
 ================================================================================
 
-F:
+S:
 - , Cmd+[ (deindent) , Cmd+] (indent) , - , -
 - , Backspace , Enter , Tab , Shift+Enter (newline)
 Forward Delete , Option+Backspace (delete word left) , Option+Forward Delete (delete word right) , Cmd+Backspace (delete to line start) , Cmd+Forward Delete (delete to line end)
 
-D:
+T:
 "" , " , '' , ' , -
 `` , () , [] , {} , ⟨⟩
 - , - , - , - , -
 
-S:
+R:
 + , * , # , \ , -
 | , = , hyphen , _ , /
 - , ~ , % , ^ , &
 
-A:
+N:
 ∞ , ∅ , - , - , -
 6 , 7 , 8 , 9 , 0
 - , - , - , - , -
 
-R:
+W:
 - , - , - , - , -
 - , Ctrl+Option+A (resume recording) , Ctrl+Option+B (pause recording) , F13 (start recording) , Ctrl+Option+D (stop recording)
 - , - , - , - , -
 
-V:
+C:
 ⊄ , ≤ , ≥ , < , >
 ∼ , = , ≠ , ≡ , ≢
 ⊅ , ∈ , ∉ , ⊆ , ⊇
 
-C:
+M:
 - , × , ⊕ , ⊗ , ⊙
 ↦ , + , · , ∘ , ±
 - , → , ← , ↑ , ↓
@@ -75,44 +170,44 @@ G:
 - , - , - , - , ;
 - , - , ! , ? , $
 
-J:
+H:
 - , Option+Right (word right) , Option+Left (word left) , Cmd+Right (line end) , Cmd+Left (line start)
 - , Right , Left , Up , Down
 - , Shift+Option+Ctrl+V , Ctrl+Option+= , Shift+Option+Ctrl+X , Shift+Option+Ctrl+Z
 
-K:
+A:
 Ctrl+Option+Q (Arc switch spaces) , Ctrl+Option+R (tmux split vertical / Arc escape split) , Ctrl+Option+E (split horizontal) , Cmd+] (next link) , Cmd+[ (prev link)
 Ctrl+Option+G (new tab/window) , Ctrl+Option+F (next tab/pane) , Ctrl+Option+D (prev tab/pane) , Ctrl+Option+S (next window / right pane) , Ctrl+Option+A (prev window / left pane)
 - , Page Up (scroll up) , Page Down (scroll down) , Home (scroll top) , End (scroll bottom)
 Space: Ctrl+Option+W (close tab/pane/window)
 
-L:
+E:
 - , Shift+Option+R (move window to workspace 2) , Shift+Option+E (move window to workspace 1) , Shift+Option+W (accordion layout) , Shift+Option+Q (tiles layout)
 - , Shift+Option+F (focus next tile) , Shift+Option+D (focus prev tile) , Shift+Option+S (workspace 2) , Shift+Option+A (workspace 1)
 - , Shift+Option+V (resize +50) , Shift+Option+C (resize -50) , - , -
 Space: Shift+Option+Space (close window)
 
-;:
+I:
 - , - , - , - , -
 5 , 4 , 3 , 2 , 1
 - , - , - , - , -
 
-U:
+F:
 - , Cmd+F (find) , Cmd+Option+F (find and replace) , Cmd+G (next find) , Cmd+Shift+G (prev find)
 F2 (rename) , Cmd+Z (undo) , Cmd+Shift+Z (redo) , Tab (next UI element) , Shift+Tab (prev UI element)
 - , Cmd+S (save) , Escape , - , -
 Space: Shift+Cmd+Option+M (accept autocomplete)
 
-I:
+O:
 - , Shift+Right (select char right) , Shift+Left (select char left) , Shift+Up (select line up) , Shift+Down (select line down)
 Cmd+A (select all) , Shift+Option+Right (select word right) , Shift+Option+Left (select word left) , Shift+Cmd+Right (select to line end) , Shift+Cmd+Left (select to line start)
 - , Cmd+V (paste) , Cmd+X (cut) , Cmd+C (copy) , Cmd+Shift+V (paste without formatting)
 Space: Cmd+/ (comment toggle)
 
-O:
+U:
 - , Cmd+L (screenshot) , - , - , -
 Mute , Volume Up , Volume Down , Brightness Up , Brightness Down
 - , - , - , - , -
 
-H:
+Y:
 (shifted letters only)

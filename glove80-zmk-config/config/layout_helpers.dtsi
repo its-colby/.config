@@ -1,19 +1,26 @@
 /*
  * Layout helpers for sparse Glove80 layers + macro shorthand.
  *
- * Goku layers only bind the opposite hand; everything else stays &trans.
+ * Letter layers only bind the opposite hand; everything else stays &trans.
  * LAYER_RIGHT — hold a left-hand key; bindings land on the right hand.
  * LAYER_LEFT  — hold a right-hand key; bindings land on the left hand.
+ *
+ * Helper parameter names are QWERTY / physical HID positions. Proposed-layer
+ * docs label keys by Graphite role — convert before filling args
+ * (e.g. Graphite H → physical J → param `j`).
  *
  * Pass ___ for unused positions. Optional last arg is Space.
  *
  * WRAP(name, left, right) — type left+right, then Left (cursor between).
  * UC(name, h0, h1, h2, h3) — macOS Unicode Hex Input (Option + 4 hex keys).
+ * HYPER(k) — Ctrl+Opt+Cmd+Shift+k (Hammerspoon / Goku app chords).
  */
 
 #pragma once
 
 #define ___ &trans
+
+#define HYPER(k) LC(LA(LG(LS(k))))
 
 /* #binding-cells is safe here: "binding-cells" is not a macro parameter */
 #define WRAP(name, left, right)                    \

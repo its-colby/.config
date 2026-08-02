@@ -1,0 +1,50 @@
+#!/bin/bash
+# open-or-focus — open an app/URL/project, or focus if already running.
+# Usage: open-or-focus <target>
+set -euo pipefail
+
+focus_app() {
+  local app="$1"
+  if pgrep -qi "$app" >/dev/null 2>&1; then
+    osascript -e "tell application \"$app\" to activate" 2>/dev/null || open -a "$app"
+  else
+    open -a "$app"
+  fi
+}
+
+open_arc_url() {
+  local url="$1"
+  # open URL in Arc (creates/focuses tab); activate Arc
+  open -a Arc "$url"
+  osascript -e 'tell application "Arc" to activate' 2>/dev/null || true
+}
+
+open_cursor_project() {
+  local path="$1"
+  if command -v cursor >/dev/null 2>&1; then
+    cursor "$path"
+  else
+    open -a Cursor "$path"
+  fi
+}
+
+case "${1:-}" in
+  cursor-itscolby)  open_cursor_project "/Users/colby/projects/itscolby" ;;
+  cursor-mopaverse) open_cursor_project "/Users/colby/projects/mopaverse" ;;
+  cursor-config)    open_cursor_project "/Users/colby/.config" ;;
+  ghostty)          focus_app "Ghostty" ;;
+  messages)         focus_app "Messages" ;;
+  spotify)          focus_app "Spotify" ;;
+  whatsapp)         open_arc_url "https://web.whatsapp.com" ;;
+  github)           open_arc_url "https://github.com" ;;
+  gmail)            open_arc_url "https://mail.google.com" ;;
+  calendar)         open_arc_url "https://calendar.google.com" ;;
+  chatgpt)          open_arc_url "https://chatgpt.com" ;;
+  youtube)          open_arc_url "https://www.youtube.com" ;;
+  russian-dict)     open_arc_url "https://www.wiktionary.org" ;; # replace with your dict URL
+  life)             open_arc_url "https://life.itscolby.com" ;;
+  *)
+    echo "Unknown target: ${1:-}" >&2
+    exit 1
+    ;;
+esac

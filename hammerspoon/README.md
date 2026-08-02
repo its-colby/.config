@@ -1,0 +1,2 @@
+-- Symlink-friendly copy; canonical config lives in ~/.hammerspoon/init.lua
+-- See ~/.hammerspoon/init.lua

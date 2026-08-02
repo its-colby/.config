@@ -26,19 +26,28 @@ automatically-unhide-macos-hidden-apps = false
     outer.top =        0
     outer.right =      0
 
+# Bindings match I-layer chords from Goku/ZMK (Alt+Shift+…).
+# T→q accordion | S→w tiles/split toggle | R→s float | N→a swap
+# L→d focus left | Space→f focus right | D→c smaller | W→v bigger
 [mode.main.binding]
 
     alt-shift-space = 'close --quit-if-last-window'
 
-    alt-shift-f = 'focus --boundaries-action wrap-around-the-workspace right'
     alt-shift-d = 'focus --boundaries-action wrap-around-the-workspace left'
-    alt-shift-s = 'workspace 1'
-    alt-shift-a = 'workspace 2'
+    alt-shift-f = 'focus --boundaries-action wrap-around-the-workspace right'
 
-    alt-shift-r = 'move-node-to-workspace 2'
-    alt-shift-e = 'move-node-to-workspace 1'
-    alt-shift-w = 'layout accordion horizontal vertical'
-    alt-shift-q = 'layout tiles horizontal vertical'
+    # width-ish smart resize (Aerospace reflows siblings)
+    alt-shift-c = 'resize smart -50'
+    alt-shift-v = 'resize smart +50'
 
-    alt-shift-v = 'resize smart -50'
-    alt-shift-c = 'resize smart +50'
+    # Accordion: one window fills; focus L/R cycles
+    alt-shift-q = 'layout accordion horizontal vertical'
+
+    # Split/tiles: tiling layout; repeat toggles orientation (H↔V)
+    alt-shift-w = 'layout tiles horizontal vertical'
+
+    # Float / disorganized Mac-style
+    alt-shift-s = 'layout floating tiling'
+
+    # Swap / cycle focused with neighbor
+    alt-shift-a = 'swap --wrap-around right'
