@@ -41,10 +41,11 @@
 #define FACTORY_TEST 20
 
 // Built-in layer-tap (&lt): hold → momentary layer, tap → key.
+// tap-preferred + longer term: slow/learning taps won't accidentally arm layers.
 &lt {
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <200>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <400>;
+    quick-tap-ms = <400>;
 };
 
 / {
