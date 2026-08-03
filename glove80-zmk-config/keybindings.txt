@@ -1,0 +1,285 @@
+KEY BINDINGS (current)
+============================================
+Keys in bindings are Graphite. Layer headers note Graphite hold key + QWERTY key.
+
+DOC CONVENTION
+- Every layer lists the full opposite-hand block (3 rows + Space), comma-separated per row.
+- Unmapped keys: unused   (never "-" as a placeholder).
+- A real hyphen/minus glyph: hyphen or minus.
+- Center-column keys (Z/G/Y and ,/./etc.) are always included.
+- Space = opposite-hand thumb action on the layer (see thumb note below).
+- Hold/activation key is in the layer header as (Graphite X, QWERTY Y), not as a binding.
+- Layer sections: upper/home/thumb × left/right; within each, inward → outward (toward pinky).
+- DIFF — "Space" activation: Goku always uses the Space key (either thumb). Glove80 uses the
+  opposite thumb from the hold hand: left-hand layers → right Space; right-hand layers → left Backspace.
+
+ARCHITECTURE
+- macOS input source: US/QWERTY only (do NOT enable OS Graphite — it remaps Glove80 too).
+- Mac builtin Graphite: Goku/Karabiner (:is_built_in_keyboard / :builtin only).
+- Glove80 Graphite: ZMK firmware HID letters.
+- Apps: Hammerspoon hyper chords → ~/.config/bin/open-or-focus.
+- Window management: Aerospace (Alt+Shift chords).
+- Karabiner never targets Glove80.
+- Glove80 layer holds: opposite hand only (LAYER_LEFT / LAYER_RIGHT).
+  Goku can bind same-hand keys too — see DIFF notes where that matters.
+
+
+================================================================================
+BASE LAYER — LETTERS (Graphite)
+================================================================================
+Both keyboards type the same Graphite alphas (OS stays US).
+Letters: Shift = uppercase (not listed).
+
+  b l d w z    , f o u j  ?
+  n r t s g    y h a e i  /
+  q x m c v    k p . -  ;
+
+Shifted:
+               "          |
+                          \
+                   ! _  :
+
+Hold letters (layer taps / simlayers), inward → outward:
+  Upper left:  W D L B
+  Upper right: F O U
+  Home left:   S (primary apps) T (secondary) R (inner nav) N (window)
+  Home right:  H (browser) A (clipboard) E (selection) I (find)
+  (other letters type alone)
+
+
+================================================================================
+BASE LAYER — PUNCTUATION (both, unless noted)
+================================================================================
+, (left of F) → comma ; Shift = "
+. (next to P) → period ; Shift = !
+- (next to .) → hyphen ; Shift = _
+/ (under I) → ; ; Shift = :
+' (right of I) → / ; Shift = \
+? (right of J) → ? ; Shift = |
+
+Brackets / curly:
+  DIFF — physical placement differs; same glyphs:
+  - Mac (Goku): phys ] → [/{ ; phys \ → ]/}
+  - Glove80: LBKT → [/{ ; RBKT → ]/}
+  - Glove80 right-of-J alpha key (\ position) → ?/| (same as Mac phys [)
+
+
+================================================================================
+BASE LAYER — GLOVE80-ONLY EDGE KEYS
+================================================================================
+(Not on Mac; Mac keeps stock Tab/Esc/Home/End there.)
+
+Left of B → Volume Up
+Left of N → Volume Down
+Under Q → Brightness Down
+Under X → Brightness Up
+
+Top F-row (Glove80 only):
+  F1 = Brightness Down , F2 = Brightness Up
+  F3 = Volume Down , F4 = Volume Up
+  F5–F8 = F5–F8
+  F9 = Cmd+= (zoom in) , F10 = Cmd+- (zoom out)
+
+================================================================================
+BASE LAYER — THUMB / BOTTOM HOLDS (how layers are triggered)
+================================================================================
+DIFF — activation keys differ; layer contents match.
+
+Glove80 thumbs (inner → outer):
+  Left bottom: Backspace | Tab (tap) / Audio hold | Alt
+  Left top: Shift | Caps Lock | Lower
+  Right: Alt | Enter (tap) / Word-Nav hold | Space (tap) / Word-Del hold
+  Also: Shift + RCtrl (Russian toggle tap) on right top thumb row.
+  Glove80 only — tap RCTRL (2nd top-right thumb, hold still RCtrl) toggles Vestnik Russian (L_RU).
+
+Mac (Goku) — stock Tab/Shift/Backspace/Delete stay put.
+  Bottom-row holds under index fingers:
+  phys B (Graphite V alone) → Audio hold
+  phys N (Graphite K alone) → Word Deletion hold
+  phys M (Graphite P alone) → Word Navigation hold
+  (Glove80 left thumbs differ; Mac uses real Tab/Caps/Ctrl)
+
+
+================================================================================
+UPPER ROW LEFT (inward → outward: W, D, L, B)
+================================================================================
+
+--- W: Dual Punctuation (Graphite W, QWERTY R) ---
+, = unused , F = unused , O = unused , U = unused , J = unused
+Y = unused , H = "" (wrap) , A = " , E = '' (wrap) , I = '
+K = `` (wrap) , P = () (wrap) , . = [] (wrap) , - = {} (wrap) , / = ⟨⟩ (wrap)
+Space = unused
+
+--- D: Solo Punctuation (Graphite D, QWERTY E) ---
+, = + , F = * , O = # , U = \ , J = hyphen
+Y = | , H = = , A = hyphen , E = _ , I = unused
+K = hyphen , P = ~ , . = % , - = ^ , / = &
+Space = unused
+
+--- L: Misc Punctuation (Graphite L, QWERTY W) ---
+, = ; , F = ! , O = ? , U = $ , J = /
+Y = ∞ , H = ∅ , A = ± , E = ⊨ , I = unused
+K = ⊤ , P = ⊥ , . = ∴ , - = unused , / = unused
+Space = unused
+
+--- B: Logic Symbols (Graphite B, QWERTY Q) ---
+, = unused , F = ⊤ , O = ⊥ , U = ⊨ , J = unused
+Y = ¬ , H = ∧ , A = ∨ , E = ∃ , I = ∀
+K = unused , P = unused , . = unused , - = unused , / = unused
+Space = ∴
+
+
+================================================================================
+UPPER ROW RIGHT (inward → outward: F, O, U)
+================================================================================
+
+--- F: Math Relations (Graphite F, QWERTY U) ---
+B = ≤ , L = ≥ , D = ≅ , W = ≇ , Z = ∝
+N = < , R = > , T = = , S = ≠ , G = ≈
+Q = ⊂ , X = ⊃ , M = ∈ , C = ∉ , V = ∼
+Space = ≔
+
+--- O: Math Operators (Graphite O, QWERTY I) ---
+B = ± , L = × , D = ∩ , W = ∪ , Z = ∘
+N = ÷ , R = · , T = - , S = + , G = √
+Q = ∂ , X = ∫ , M = ∏ , C = ∑ , V = ↦
+Space = ∖
+
+--- U: IPA Symbols (Graphite U, QWERTY O) ---
+Same symbols; per row freq order: index → left → stretched index (center).
+B = ɪ , L = ɐ , D = ɨ , W = ə , Z = ʊ
+N = ŋ , R = ɔ , T = ɛ , S = ʲ , G = ø
+Q = ʁ , X = ɕ , M = ʒ , C = ʃ , V = ç
+Space = ː
+
+
+================================================================================
+HOME ROW LEFT (inward → outward: S, T, R, N)
+================================================================================
+
+--- S: Primary Apps (Graphite S, QWERTY F) ---
+, = unused , F = unused , O = unused , U = unused , J = unused
+Y = Cursor ~/projects/itscolby , H = Cursor ~/projects/mopaverse , A = Cursor ~/.config , E = Ghostty , I = unused
+K = unused , P = unused , . = unused , - = unused , / = unused
+Space = Shift+Opt+Space (close window / Aerospace)   ; Glove80: right Space (opp. thumb)
+
+--- T: Secondary Apps (Graphite T, QWERTY D) ---
+Hyper = Ctrl+Opt+Cmd+Shift → Hammerspoon → open-or-focus
+Arc URLs: focus existing Favorites (topApp) tab if one matches; else any open tab; else new tab.
+, = Spotify , F = WhatsApp (Arc) , O = GitHub (Arc) , U = Gmail (Arc) , J = Google Calendar (Arc)
+Y = Messages , H = ChatGPT (Arc) , A = YouTube (Arc) , E = Russian dictionary (en.openrussian.org) , I = life.itscolby.com
+K = unused , P = unused , . = unused , - = unused , / = unused
+Space = Delete
+
+--- R: Inner Application Nav (Graphite R, QWERTY S) ---
+, = unused , F = Cmd+= (zoom in) , O = Cmd+- (zoom out) , U = Page Up , J = Page Down
+Y = unused , H = Cmd+B (left sidebar) , A = Cmd+Opt+B (right sidebar) , E = Cmd+J (bottom/panel) , I = unused
+K = unused , P = unused , . = unused , - = unused , / = unused
+Space = unused
+
+--- N: Window Management (Graphite N, QWERTY A) ---
+Aerospace via Alt+Shift chords (same on both).
+, = unused , F = resize smaller (Shift+Opt+C) , O = resize bigger (Shift+Opt+V) , U = unused , J = unused
+Y = swap neighbor (Shift+Opt+A) , H = focus left (Shift+Opt+D) , A = focus right (Shift+Opt+F) , E = accordion (Shift+Opt+Q) , I = tiles/split toggle (Shift+Opt+W)
+K = unused , P = unused , . = unused , - = unused , / = unused
+Space = unused
+
+
+================================================================================
+HOME ROW RIGHT (inward → outward: H, A, E, I)
+================================================================================
+
+--- H: Browser Navigation (Graphite H, QWERTY J) ---
+B = unused , L = Ctrl+Opt+E (split horiz) , D = Cmd+[ (prev link) , W = Cmd+] (next link) , Z = unused
+N = Ctrl+Opt+Q (switch spaces) , R = Ctrl+Opt+G (new tab) , T = Ctrl+Opt+D (prev tab) , S = Ctrl+Opt+F (next tab) , G = unused
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = Ctrl+Opt+W (close tab)   ; Glove80: left Backspace (opp. thumb)
+
+--- A: Clipboard & Edit (Graphite A, QWERTY K) ---
+B = unused , L = unused , D = Cmd+Shift+V (paste plain) , W = Cmd+Shift+Z (redo) , Z = unused
+N = Cmd+C , R = Cmd+X , T = Cmd+V , S = Cmd+Z , G = unused
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = Cmd+/ (comment toggle)   ; Glove80: left Backspace (opp. thumb)
+
+--- E: Text Selection (Graphite E, QWERTY L) ---
+B = Shift+Up (line) , L = Shift+Down (line) , D = Shift+Right (char) , W = Shift+Left (char) , Z = unused
+N = Shift+Opt+Left (word) , R = Shift+Opt+Right (word) , T = Shift+Cmd+Left (line start) , S = Shift+Cmd+Right (line end) , G = unused
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = Cmd+A (select all)   ; Glove80: left Backspace (opp. thumb)
+
+--- I: Find & Navigate (Graphite I, QWERTY ;) ---
+B = Cmd+F (find) , L = Cmd+Opt+F (find/replace) , D = Cmd+G (next find) , W = Cmd+Shift+G (prev find) , Z = F2 (rename)
+N = unused , R = Tab , T = Shift+Tab , S = Cmd+S (save) , G = Escape
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = Shift+Cmd+Opt+M (accept autocomplete)   ; Glove80: left Backspace (opp. thumb)
+
+
+================================================================================
+THUMB CLUSTER LEFT (inward → outward)
+================================================================================
+Bindings on left hand. Activation differs by keyboard (see thumb holds above).
+
+--- Audio & Display ---
+Hold: Glove80 Tab-key (ex-Caps) | Mac QWERTY B (Graphite V alone)
+B = unused , L = Cmd+L (screenshot) , D = unused , W = unused , Z = unused
+N = Mute , R = Volume Up , T = Volume Down , S = Brightness Up , G = unused
+Q = Brightness Down , X = unused , M = unused , C = unused , V = unused
+Space = unused
+(Glove80 also has base-edge Vol/Bri keys; see above.)
+
+
+================================================================================
+THUMB CLUSTER RIGHT (inward → outward: Word Nav, Word Del)
+================================================================================
+
+--- Word Navigation ---
+Hold: Glove80 Enter | Mac QWERTY M (Graphite P alone)
+B = unused , L = Down , D = Up , W = Left , Z = Right
+N = Opt+Left (word) , R = Opt+Right (word) , T = Cmd+Left (line start) , S = Cmd+Right (line end) , G = unused
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = unused
+
+--- Word Deletion ---
+Hold: Glove80 Space | Mac QWERTY N (Graphite K alone)
+B = unused , L = unused , D = Cmd+[ (deindent) , W = Cmd+] (indent) , Z = unused
+N = Opt+Backspace (word left) , R = Opt+Delete (word right) , T = Cmd+Backspace (to line start) , S = Cmd+Delete (to line end) , G = unused
+Q = unused , X = unused , M = unused , C = unused , V = unused
+Space = Delete   ; Glove80: left Backspace thumb (opp. of hold Space)
+
+
+================================================================================
+GLOVE80 STOCK LAYERS (not mirrored in Goku)
+================================================================================
+LOWER (layer_td on center): MoErgo default numpad / media / nav.
+MAGIC (magic key): Bluetooth profiles, RGB, bootloader, factory test.
+
+RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
+- Toggle: tap RCTRL (top thumb row, 2nd from inward on right). Hold = RCtrl.
+  Tap again → back to DEFAULT.
+- OS stays US; letters via Unicode Hex Input (same as math/IPA macros).
+- Alphas on Graphite positions:
+
+  ц д р г х    ф п а я э
+  с т н к б    ь в о е и
+  ш з л м ч    ж й ы у ю
+
+- Extras:
+  RIGHT (under C) = щ
+  UP (under P) = ъ
+  DOWN (under .) = ё
+  Backspace thumb (opp. Space) = ́ combining acute (stress on preceding vowel)
+  right of J = . ; Shift = ;
+  right of I = , ; Shift = — (em dash)
+  [ ] (left of PgDn) = « »
+
+
+================================================================================
+QUICK DIFF SUMMARY (Goku vs Glove80)
+================================================================================
+1. Graphite implementation: Goku remaps builtin only; Glove80 sends Graphite HID.
+2. Layer activation: Goku bottom-row holds (B/N/M); Glove80 real thumbs (Tab-hold Audio / Space / Enter).
+3. Left thumbs: Glove80 Backspace | Tab | Caps-on-LCtrl-slot; Mac keeps stock Tab/Caps/Ctrl.
+4. Edge media (Vol/Bri next to B/N/Q/X): Glove80 only.
+5. Bracket keys: Mac phys ]+\ ; Glove80 LBKT/RBKT cluster.
+6. Russian Vestnik toggle (RCTRL tap): Glove80 only.
+7. Opposite-hand-only layers on Glove80; Goku may use same-hand bindings.

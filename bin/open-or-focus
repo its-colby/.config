@@ -12,11 +12,89 @@ focus_app() {
   fi
 }
 
+# Arc: prefer an existing Favorites (topApp) tab matching the URL host/path;
+# else any matching tab; else open a new tab.
+# Args: full URL to open, optional match substring (defaults to host of URL).
 open_arc_url() {
   local url="$1"
-  # open URL in Arc (creates/focuses tab); activate Arc
-  open -a Arc "$url"
-  osascript -e 'tell application "Arc" to activate' 2>/dev/null || true
+  local match="${2:-}"
+  if [[ -z "$match" ]]; then
+    match="${url#*://}"
+    match="${match%%/*}"
+    match="${match#www.}"
+  fi
+
+  if ! pgrep -qi "Arc" >/dev/null 2>&1; then
+    open -a Arc "$url"
+    return
+  fi
+
+  local result
+  result="$(MATCH="$match" URL="$url" osascript <<'EOF' 2>/dev/null || true
+with timeout of 8 seconds
+  set needle to system attribute "MATCH"
+  set targetUrl to system attribute "URL"
+  tell application "Arc"
+    -- Pass 1: Favorites (topApp)
+    set wi to 1
+    repeat with w in windows
+      set ti to 1
+      repeat with t in tabs of w
+        try
+          set loc to location of t as text
+          set u to URL of t as text
+          if loc is "topApp" and u contains needle then
+            tell window wi
+              tell tab ti to select
+            end tell
+            activate
+            return "topApp"
+          end if
+        end try
+        set ti to ti + 1
+      end repeat
+      set wi to wi + 1
+    end repeat
+
+    -- Pass 2: any other open tab (pinned or regular)
+    set wi to 1
+    repeat with w in windows
+      set ti to 1
+      repeat with t in tabs of w
+        try
+          set u to URL of t as text
+          if u contains needle then
+            tell window wi
+              tell tab ti to select
+            end tell
+            activate
+            return "tab"
+          end if
+        end try
+        set ti to ti + 1
+      end repeat
+      set wi to wi + 1
+    end repeat
+
+    -- Pass 3: new tab in front window
+    if (count of windows) is 0 then
+      open location targetUrl
+    else
+      tell front window
+        make new tab with properties {URL:targetUrl}
+      end tell
+    end if
+    activate
+    return "new"
+  end tell
+end timeout
+EOF
+)"
+
+  if [[ -z "$result" ]]; then
+    open -a Arc "$url"
+    osascript -e 'tell application "Arc" to activate' 2>/dev/null || true
+  fi
 }
 
 open_cursor_project() {
@@ -35,14 +113,14 @@ case "${1:-}" in
   ghostty)          focus_app "Ghostty" ;;
   messages)         focus_app "Messages" ;;
   spotify)          focus_app "Spotify" ;;
-  whatsapp)         open_arc_url "https://web.whatsapp.com" ;;
-  github)           open_arc_url "https://github.com" ;;
-  gmail)            open_arc_url "https://mail.google.com" ;;
-  calendar)         open_arc_url "https://calendar.google.com" ;;
-  chatgpt)          open_arc_url "https://chatgpt.com" ;;
-  youtube)          open_arc_url "https://www.youtube.com" ;;
-  russian-dict)     open_arc_url "https://www.wiktionary.org" ;; # replace with your dict URL
-  life)             open_arc_url "https://life.itscolby.com" ;;
+  whatsapp)         open_arc_url "https://web.whatsapp.com" "web.whatsapp.com" ;;
+  github)           open_arc_url "https://github.com" "github.com" ;;
+  gmail)            open_arc_url "https://mail.google.com" "mail.google.com" ;;
+  calendar)         open_arc_url "https://calendar.google.com" "calendar.google.com" ;;
+  chatgpt)          open_arc_url "https://chatgpt.com" "chatgpt.com" ;;
+  youtube)          open_arc_url "https://www.youtube.com" "youtube.com" ;;
+  russian-dict)     open_arc_url "https://en.openrussian.org/" "openrussian.org" ;;
+  life)             open_arc_url "https://life.itscolby.com" "life.itscolby.com" ;;
   *)
     echo "Unknown target: ${1:-}" >&2
     exit 1

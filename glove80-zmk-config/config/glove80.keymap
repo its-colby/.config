@@ -22,27 +22,31 @@
 #include "layout_helpers.dtsi"
 
 // Layer indices — LOWER/MAGIC/FACTORY keep stock roles
+// Source order below: upper/home/thumb × left/right, inward → outward.
+// Numeric indices kept stable for keymap compatibility.
 #define DEFAULT 0
 #define LOWER   1
-#define L_W     2   // Graphite W — Dual punctuation (phys R)
-#define L_F     3   // Graphite F — Solo punctuation (phys U)
-#define L_D     4   // Graphite D — Math relations (phys E)
-#define L_O     5   // Graphite O — Math operators (phys I)
-#define L_L     6   // Graphite L — Logic symbols (phys W)
-#define L_U     7   // Graphite U — Misc punctuation (phys O)
-#define L_N     8   // Graphite N — Find & navigate (phys A)
-#define L_R     9   // Graphite R — Text selection (phys S)
-#define L_T     10  // Graphite T — Browser (phys D)
-#define L_S     11  // Graphite S — Secondary apps (phys F)
-#define L_H     12  // Graphite H — Primary apps (phys J)
-#define L_A     13  // Graphite A — Inner app nav (phys K)
-#define L_E     14  // Graphite E — Clipboard & edit (phys L)
-#define L_I     15  // Graphite I — Window management (phys SEMI)
-#define L_AUDIO 16  // Caps hold — Audio & display
-#define L_WDEL  17  // Space hold — Word deletion
-#define L_WNAV  18  // Enter hold — Word navigation
-#define MAGIC   19
-#define FACTORY_TEST 20
+#define L_W     2   // Upper L: Graphite W — Dual punctuation (QWERTY R)
+#define L_D     4   // Upper L: Graphite D — Solo punctuation (QWERTY E)
+#define L_L     7   // Upper L: Graphite L — Misc punctuation (QWERTY W)
+#define L_B     6   // Upper L: Graphite B — Logic symbols (QWERTY Q)
+#define L_F     3   // Upper R: Graphite F — Math relations (QWERTY U)
+#define L_O     5   // Upper R: Graphite O — Math operators (QWERTY I)
+#define L_U     8   // Upper R: Graphite U — IPA symbols (QWERTY O)
+#define L_S     12  // Home L: Graphite S — Primary apps (QWERTY F)
+#define L_T     11  // Home L: Graphite T — Secondary apps (QWERTY D)
+#define L_R     10  // Home L: Graphite R — Inner app nav (QWERTY S)
+#define L_N     9   // Home L: Graphite N — Window management (QWERTY A)
+#define L_H     13  // Home R: Graphite H — Browser (QWERTY J)
+#define L_A     14  // Home R: Graphite A — Clipboard & edit (QWERTY K)
+#define L_E     15  // Home R: Graphite E — Text selection (QWERTY L)
+#define L_I     16  // Home R: Graphite I — Find & navigate (QWERTY ;)
+#define L_AUDIO 17  // Thumb L: Tab-key hold — Audio & display
+#define L_WDEL  18  // Thumb R: Space hold — Word deletion
+#define L_WNAV  19  // Thumb R: Enter hold — Word navigation
+#define L_RU    20  // Toggle: Vestnik Russian (tap RCTRL)
+#define MAGIC   21
+#define FACTORY_TEST 22
 
 // Built-in layer-tap (&lt): hold → momentary layer, tap → key.
 &lt {
@@ -174,15 +178,34 @@
         UC(m_equiv,     N2, N2, N6, N1); // ≡
         UC(m_nequiv,    N2, N2, N6, N2); // ≢
         UC(m_sim,       N2, N2, N3, C);  // ∼
+        UC(m_approx,    N2, N2, N4, N8); // ≈
+        UC(m_coloneq,   N2, N2, N5, N4); // ≔
         UC(m_in,        N2, N2, N0, N8); // ∈
         UC(m_notin,     N2, N2, N0, N9); // ∉
         UC(m_subseteq,  N2, N2, N8, N6); // ⊆
         UC(m_supseteq,  N2, N2, N8, N7); // ⊇
+        UC(m_subset,    N2, N2, N8, N2); // ⊂
+        UC(m_superset,  N2, N2, N8, N3); // ⊃
         UC(m_nsubset,   N2, N2, N8, N4); // ⊄
         UC(m_nsuperset, N2, N2, N8, N5); // ⊅
+        UC(m_cong,      N2, N2, N4, N5); // ≅
+        UC(m_ncong,     N2, N2, N4, N7); // ≇
+        UC(m_propto,    N2, N2, N1, D);  // ∝
+        UC(m_ni,        N2, N2, N0, B);  // ∋
+        UC(m_notni,     N2, N2, N0, C);  // ∌
         UC(m_circ,      N2, N2, N1, N8); // ∘
         UC(m_mapsto,    N2, N1, A,  N6); // ↦
         UC(m_times,     N0, N0, D,  N7); // ×
+        UC(m_div,       N0, N0, F,  N7); // ÷
+        UC(m_sqrt,      N2, N2, N1, A);  // √
+        UC(m_cap,       N2, N2, N2, N9); // ∩
+        UC(m_cup,       N2, N2, N2, A);  // ∪
+        UC(m_setminus,  N2, N2, N1, N6); // ∖
+        UC(m_sum,       N2, N2, N1, N1); // ∑
+        UC(m_prod,      N2, N2, N0, F);  // ∏
+        UC(m_int,       N2, N2, N2, B);  // ∫
+        UC(m_partial,   N2, N2, N0, N2); // ∂
+        UC(m_lrarr,     N2, N1, N9, N4); // ↔
         UC(m_oplus,     N2, N2, N9, N5); // ⊕
         UC(m_otimes,    N2, N2, N9, N7); // ⊗
         UC(m_odot,      N2, N2, N9, N9); // ⊙
@@ -208,7 +231,32 @@
         UC(m_neq,       N2, N2, N6, N0); // ≠
         UC(m_middot,    N0, N0, B,  N7); // ·
         UC(m_pm,        N0, N0, B,  N1); // ±
+
+        // IPA (Graphite U) — RU > DE > EN, non-Latin, by frequency
+        UC(m_palatal,   N0, N2, B,  N2); // ʲ
+        UC(m_schwa,     N0, N2, N5, N9); // ə
+        UC(m_barred_i,  N0, N2, N6, N8); // ɨ
+        UC(m_esh,       N0, N2, N8, N3); // ʃ
+        UC(m_ezh,       N0, N2, N9, N2); // ʒ
+        UC(m_c_curl,    N0, N2, N5, N5); // ɕ
+        UC(m_turned_a,  N0, N2, N5, N0); // ɐ
+        UC(m_ccedil,    N0, N0, E,  N7); // ç
+        UC(m_inv_R,     N0, N2, N8, N1); // ʁ
+        UC(m_eng,       N0, N1, N4, B);  // ŋ
+        UC(m_sml_cap_i, N0, N2, N6, A);  // ɪ
+        UC(m_upsilon,   N0, N2, N8, A);  // ʊ
+        UC(m_open_o,    N0, N2, N5, N4); // ɔ
+        UC(m_epsilon,   N0, N2, N5, B);  // ɛ
+        UC(m_o_slash,   N0, N0, F,  N8); // ø
+        UC(m_length,    N0, N2, D,  N0); // ː
+
         UC(m_not,       N0, N0, A,  C);  // ¬
+
+#include "russian_macros.inc"
+    };
+
+    behaviors {
+#include "russian_behaviors.inc"
     };
 
     keymap {
@@ -222,20 +270,20 @@
         // =====================================================================
         default_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
+            // | BRIDN | BRIUP | VOLDN | VOLUP |  F5  |                                                               |  F6   |  F7   |  F8  | ZOOM+ | ZOOM- |
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
             // | VOLUP |  B  |  L  |  D   |  W   |  Z   |                                                 |  ,   |   F   |   O   |  U   |   J   |   \  |
             // | VOLDN |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
-            // |   `   |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
-            // | MAGIC |BRIDN|BRIUP| LEFT | RIGHT|      | TAB   | CAPS  | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
+            // |   `   |  Q  |  X  |  M   |  C   |  V   | LSHFT | CAPS  | LOWER | | LGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
+            // | MAGIC |BRIDN|BRIUP| LEFT | RIGHT|      | BSPC  | TAB   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+            &kp C_BRI_DN   &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp LG(EQUAL) &kp LG(MINUS)
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp C_VOL_UP   &kp B    &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
+            &kp C_VOL_UP   &lt L_B B &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
             &kp C_VOL_DN   &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &kp GRAVE      &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
-            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &kp LEFT &kp RIGHT        &kp TAB     &lt L_AUDIO CAPS &kp LALT &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
+            &kp GRAVE      &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp CAPS    &layer_td  &kp LGUI  &ru_tog RCTRL L_RU &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
+            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp LALT &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 
@@ -258,7 +306,11 @@
         // LAYER_LEFT (q,w,e,r,t,  a,s,d,f,g,  z,x,c,v,b,  space)
         // =====================================================================
 
-        // Graphite W (phys R) — Dual punctuation
+        // =====================================================================
+        // UPPER LEFT (inward → outward): W D L B
+        // =====================================================================
+
+        // Graphite W, QWERTY R — Dual punctuation
         layer_w {
             bindings = <
             LAYER_RIGHT(
@@ -270,10 +322,10 @@
             >;
         };
 
-        // Graphite F (phys U) — Solo punctuation
-        layer_f {
+        // Graphite D, QWERTY E — Solo punctuation
+        layer_d {
             bindings = <
-            LAYER_LEFT(
+            LAYER_RIGHT(
                 &kp PLUS, &kp STAR, &kp HASH, &kp BSLH, &kp MINUS,
                 &kp PIPE, &kp EQUAL, &kp MINUS, &kp UNDER, ___,
                 &kp MINUS, &kp TILDE, &kp PRCNT, &kp CARET, &kp AMPS,
@@ -282,46 +334,10 @@
             >;
         };
 
-        // Graphite D (phys E) — Math relations
-        layer_d {
-            bindings = <
-            LAYER_RIGHT(
-                &m_nsuperset, &m_in, &m_notin, &m_subseteq, &m_supseteq,
-                ___, &m_nsubset, &m_leq, &m_geq, &kp LT,
-                &m_sim, &kp EQUAL, &m_neq, &m_equiv, &m_nequiv,
-                ___
-            )
-            >;
-        };
-
-        // Graphite O (phys I) — Math operators
-        layer_o {
-            bindings = <
-            LAYER_LEFT(
-                &kp MINUS, &m_times, &m_oplus, &m_otimes, &m_odot,
-                &m_mapsto, &kp PLUS, &m_middot, &m_circ, &m_pm,
-                &kp MINUS, &m_rarr, &m_larr, &m_uarr, &m_darr,
-                ___
-            )
-            >;
-        };
-
-        // Graphite L (phys W) — Logic symbols
+        // Graphite L, QWERTY W — Misc punctuation
         layer_l {
             bindings = <
             LAYER_RIGHT(
-                &m_top, &m_bot, &m_therefore, &m_models, ___,
-                ___, ___, &m_implies, &m_iff, &m_vdash,
-                &m_not, &m_land, &m_lor, &m_exists, &m_forall,
-                ___
-            )
-            >;
-        };
-
-        // Graphite U (phys O) — Misc punctuation
-        layer_u {
-            bindings = <
-            LAYER_LEFT(
                 &kp SEMI, &kp EXCL, &kp QMARK, &kp DLLR, &kp FSLH,
                 &m_inf, &m_emptyset, &m_pm, &m_models, ___,
                 &m_top, &m_bot, &m_therefore, ___, ___,
@@ -330,58 +346,71 @@
             >;
         };
 
-        // Graphite N (phys A) — Find & navigate
-        layer_n {
+        // Graphite B, QWERTY Q — Logic symbols
+        // F⊤ O⊥ U⊨ | Y¬ H∧ A∨ E∃ I∀ | Space∴
+        layer_b {
             bindings = <
             LAYER_RIGHT(
-                &kp LG(F), &kp LG(LA(F)), &kp LG(G), &kp LG(LS(G)), &kp F2,
-                ___, &kp TAB, &kp LS(TAB), &kp LG(S), &kp ESC,
+                ___, &m_top, &m_bot, &m_models, ___,
+                &m_not, &m_land, &m_lor, &m_exists, &m_forall,
                 ___, ___, ___, ___, ___,
-                &kp LS(LG(LA(M)))
+                &m_therefore
             )
             >;
         };
 
-        // Graphite R (phys S) — Text selection
-        layer_r {
+        // =====================================================================
+        // UPPER RIGHT (inward → outward): F O U
+        // =====================================================================
+
+        // Graphite F, QWERTY U — Math relations (rows cycled LEFT)
+        // B≤ L≥ D≅ W≇ Z∝ | N< R> T= S≠ G≈ | Q⊂ X⊃ M∈ C∉ V∼ | Space≔
+        layer_f {
             bindings = <
-            LAYER_RIGHT(
-                &kp LS(UP), &kp LS(DOWN), &kp LS(RIGHT), &kp LS(LEFT), ___,
-                ___, &kp LS(LA(RIGHT)), &kp LS(LA(LEFT)), &kp LS(LG(RIGHT)), &kp LS(LG(LEFT)),
-                ___, ___, ___, ___, ___,
-                &kp LG(A)
+            LAYER_LEFT(
+                &m_leq, &m_geq, &m_cong, &m_ncong, &m_propto,
+                &kp LT, &kp GT, &kp EQUAL, &m_neq, &m_approx,
+                &m_subset, &m_superset, &m_in, &m_notin, &m_sim,
+                &m_coloneq
             )
             >;
         };
 
-        // Graphite T (phys D) — Browser navigation
-        layer_t {
+        // Graphite O, QWERTY I — Math operators
+        // B± L× D∩ W∪ Z∘ | N÷ R· T- S+ G√ | Q∂ X∫ M∏ C∑ V↦ | Space∖
+        layer_o {
             bindings = <
-            LAYER_RIGHT(
-                &kp LG(LBKT), &kp LG(RBKT), &kp LC(LA(E)), ___, ___,
-                ___, &kp LC(LA(G)), &kp LC(LA(F)), &kp LC(LA(D)), &kp LC(LA(Q)),
-                ___, ___, ___, ___, ___,
-                &kp LC(LA(W))
+            LAYER_LEFT(
+                &m_pm, &m_times, &m_cap, &m_cup, &m_circ,
+                &m_div, &m_middot, &kp MINUS, &kp PLUS, &m_sqrt,
+                &m_partial, &m_int, &m_prod, &m_sum, &m_mapsto,
+                &m_setminus
             )
             >;
         };
 
-        // Graphite S (phys F) — Secondary apps (Arc via hyper chords; Karabiner/HS handles)
+        // Graphite U, QWERTY O — IPA (per-row freq: index→left→center)
+        // Bɪ Lɐ Dɨ Wə Zʊ | Nŋ Rɔ Tɛ Sʲ Gø | Qʁ Xɕ Mʒ Cʃ Vç | Spaceː
+        layer_u {
+            bindings = <
+            LAYER_LEFT(
+                &m_sml_cap_i, &m_turned_a, &m_barred_i, &m_schwa, &m_upsilon,
+                &m_eng, &m_open_o, &m_epsilon, &m_palatal, &m_o_slash,
+                &m_inv_R, &m_c_curl, &m_ezh, &m_esh, &m_ccedil,
+                &m_length
+            )
+            >;
+        };
+
+        // =====================================================================
+        // HOME LEFT (inward → outward): S T R N
+        // =====================================================================
+
+        // Graphite S, QWERTY F — Primary apps (was H; flipped to right hand)
+        // Y/H/A/E = apps 1-4
         layer_s {
             bindings = <
             LAYER_RIGHT(
-                &kp HYPER(Q), &kp HYPER(W), &kp HYPER(E), &kp HYPER(R), ___,
-                ___, &kp HYPER(T), &kp HYPER(Y), &kp HYPER(U), &kp HYPER(I),
-                &kp HYPER(O), &kp HYPER(P), ___, ___, ___,
-                ___
-            )
-            >;
-        };
-
-        // Graphite H (phys J) — Primary apps
-        layer_h {
-            bindings = <
-            LAYER_LEFT(
                 ___, ___, ___, ___, ___,
                 &kp HYPER(N1), &kp HYPER(N2), &kp HYPER(N3), &kp HYPER(N4), ___,
                 ___, ___, ___, ___, ___,
@@ -390,20 +419,64 @@
             >;
         };
 
-        // Graphite A (phys K) — Inner application navigation
-        layer_a {
+        // Graphite T, QWERTY D — Secondary apps (was S)
+        // Upper: F WhatsApp … J Calendar; Y Messages; , Spotify; Space = Delete
+        layer_t {
             bindings = <
-            LAYER_LEFT(
-                &kp PG_UP, &kp PG_DN, &kp HOME, &kp END, ___,
-                &kp LG(LA(J)), &kp LG(J), &kp LG(B), &kp LG(LA(B)), ___,
-                ___, ___, &kp LG(EQUAL), &kp LG(MINUS), ___,
+            LAYER_RIGHT(
+                &kp HYPER(P), &kp HYPER(Q), &kp HYPER(W), &kp HYPER(E), &kp HYPER(R),
+                &kp HYPER(O), &kp HYPER(T), &kp HYPER(Y), &kp HYPER(U), &kp HYPER(I),
+                ___, ___, ___, ___, ___,
+                &kp DEL
+            )
+            >;
+        };
+
+        // Graphite R, QWERTY S — Inner app nav (was A; flipped to right)
+        // H left sidebar, A right sidebar, E bottom; F/O zoom; U/J page
+        layer_r {
+            bindings = <
+            LAYER_RIGHT(
+                ___, &kp LG(EQUAL), &kp LG(MINUS), &kp PG_UP, &kp PG_DN,
+                ___, &kp LG(B), &kp LG(LA(B)), &kp LG(J), ___,
+                ___, ___, ___, ___, ___,
                 ___
             )
             >;
         };
 
-        // Graphite E (phys L) — Clipboard & edit
-        layer_e {
+        // Graphite N, QWERTY A — Window management (was I; flipped to right)
+        // F/O resize; Y swap; H/A focus; E accordion; I split
+        layer_n {
+            bindings = <
+            LAYER_RIGHT(
+                ___, &kp LS(LA(C)), &kp LS(LA(V)), ___, ___,
+                &kp LS(LA(A)), &kp LS(LA(D)), &kp LS(LA(F)), &kp LS(LA(Q)), &kp LS(LA(W)),
+                ___, ___, ___, ___, ___,
+                ___
+            )
+            >;
+        };
+
+        // =====================================================================
+        // HOME RIGHT (inward → outward): H A E I
+        // =====================================================================
+
+        // Graphite H, QWERTY J — Browser (was T; flipped to left)
+        // D/W links; L split; R new; T prev; S next; N switch spaces
+        layer_h {
+            bindings = <
+            LAYER_LEFT(
+                ___, &kp LC(LA(E)), &kp LG(LBKT), &kp LG(RBKT), ___,
+                &kp LC(LA(Q)), &kp LC(LA(G)), &kp LC(LA(D)), &kp LC(LA(F)), ___,
+                ___, ___, ___, ___, ___,
+                &kp LC(LA(W))
+            )
+            >;
+        };
+
+        // Graphite A, QWERTY K — Clipboard & edit (was E)
+        layer_a {
             bindings = <
             LAYER_LEFT(
                 ___, ___, &kp LG(LS(V)), &kp LG(LS(Z)), ___,
@@ -414,20 +487,36 @@
             >;
         };
 
-        // Graphite I — Window management (Alt+Shift → Aerospace)
-        // L=focus left, D/W=resize, N=swap, R=float, T=accordion, S=tiles/split, Space=focus right
-        layer_i {
+        // Graphite E, QWERTY L — Text selection (was R; flipped to left)
+        // Home: N/R word, T/S line start/end
+        layer_e {
             bindings = <
             LAYER_LEFT(
-                ___, &kp LS(LA(D)), &kp LS(LA(C)), &kp LS(LA(V)), ___,
-                &kp LS(LA(A)), &kp LS(LA(S)), &kp LS(LA(Q)), &kp LS(LA(W)), ___,
+                &kp LS(UP), &kp LS(DOWN), &kp LS(RIGHT), &kp LS(LEFT), ___,
+                &kp LS(LA(LEFT)), &kp LS(LA(RIGHT)), &kp LS(LG(LEFT)), &kp LS(LG(RIGHT)), ___,
                 ___, ___, ___, ___, ___,
-                &kp LS(LA(F))
+                &kp LG(A)
             )
             >;
         };
 
-        // Caps hold — Audio & display (left-hand Graphite keys; thumb free)
+        // Graphite I, QWERTY ; — Find & navigate (was N; flipped to left)
+        layer_i {
+            bindings = <
+            LAYER_LEFT(
+                &kp LG(F), &kp LG(LA(F)), &kp LG(G), &kp LG(LS(G)), &kp F2,
+                ___, &kp TAB, &kp LS(TAB), &kp LG(S), &kp ESC,
+                ___, ___, ___, ___, ___,
+                &kp LS(LG(LA(M)))
+            )
+            >;
+        };
+
+        // =====================================================================
+        // THUMB LEFT
+        // =====================================================================
+
+        // Caps-key position (now Tab tap) hold — Audio & display
         layer_audio {
             bindings = <
             LAYER_LEFT(
@@ -439,27 +528,51 @@
             >;
         };
 
-        // Space hold — Word deletion
-        layer_wdel {
+        // =====================================================================
+        // THUMB RIGHT (inward → outward): Word Nav, Word Del
+        // =====================================================================
+
+        // Enter hold — Word navigation
+        // L down, D up, W left, Z right; T line start, S line end
+        layer_wnav {
             bindings = <
             LAYER_LEFT(
-                &kp LS(RET), &kp LG(DEL), &kp LG(BSPC), &kp LG(RBKT), &kp LG(LBKT),
-                &kp BSPC, &kp LA(BSPC), &kp LA(DEL), ___, ___,
+                ___, &kp DOWN, &kp UP, &kp LEFT, &kp RIGHT,
+                &kp LA(LEFT), &kp LA(RIGHT), &kp LG(LEFT), &kp LG(RIGHT), ___,
                 ___, ___, ___, ___, ___,
                 ___
             )
             >;
         };
 
-        // Enter hold — Word navigation
-        layer_wnav {
+        // Space hold — Word deletion
+        // D deindent, W indent; N/R word; T/S line; opp. thumb = Delete
+        layer_wdel {
             bindings = <
             LAYER_LEFT(
-                ___, &kp RIGHT, &kp LEFT, &kp UP, &kp DOWN,
-                &kp LA(LEFT), &kp LA(RIGHT), &kp LG(RIGHT), &kp LG(LEFT), ___,
+                ___, ___, &kp LG(LBKT), &kp LG(RBKT), ___,
+                &kp LA(BSPC), &kp LA(DEL), &kp LG(BSPC), &kp LG(DEL), ___,
                 ___, ___, ___, ___, ___,
-                ___
+                &kp DEL
             )
+            >;
+        };
+
+        // =====================================================================
+        // RUSSIAN — Vestnik (Вестник), toggle via tap RCTRL (hold = RCtrl)
+        //   ц д р г х  ф п а я э  .
+        //   с т н к б  ь в о е и  ,
+        //   ш з л м ч  ж й ы у ю
+        // Extras: RIGHT щ | UP ъ | DOWN ё | BSPC-thumb ́ | [ « | ] »
+        // =====================================================================
+        russian_layer {
+            bindings = <
+            &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
+            &trans         &trans       &trans      &trans      &trans      &trans                                                                     &trans  &trans  &trans      &trans      &trans      &trans
+            &trans         &mm_ru_tse   &mm_ru_de   &mm_ru_er   &mm_ru_ge   &mm_ru_ha                                                                  &mm_ru_ef &mm_ru_pe &mm_ru_a &mm_ru_ya &mm_ru_e &mm_ru_dot
+            &trans         &mm_ru_es    &mm_ru_te   &mm_ru_en   &mm_ru_ka   &mm_ru_be                                                                  &mm_ru_soft &mm_ru_ve &mm_ru_o &mm_ru_ye &mm_ru_i &mm_ru_comma
+            &trans         &mm_ru_sha   &mm_ru_ze   &mm_ru_el   &mm_ru_em   &mm_ru_che &trans &trans &trans  &trans  &ru_tog RCTRL DEFAULT &trans   &mm_ru_zhe &mm_ru_short_i &mm_ru_yery &mm_ru_u &mm_ru_yu &trans
+            &trans         &trans       &trans      &trans      &mm_ru_shcha               &m_ru_stress &trans &trans &trans &trans &trans &mm_ru_hard &mm_ru_yo &m_ru_laquo &m_ru_raquo &trans
             >;
         };
 

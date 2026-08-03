@@ -9,7 +9,8 @@
  * docs label keys by Graphite role — convert before filling args
  * (e.g. Graphite H → physical J → param `j`).
  *
- * Pass ___ for unused positions. Optional last arg is Space.
+ * Pass ___ for unused positions. Optional last arg is the opposite-hand thumb
+ * "Space" action: LAYER_RIGHT → right Space; LAYER_LEFT → left Backspace thumb.
  *
  * WRAP(name, left, right) — type left+right, then Left (cursor between).
  * UC(name, h0, h1, h2, h3) — macOS Unicode Hex Input (Option + 4 hex keys).
@@ -60,7 +61,7 @@
     /* Y U I O P */ y, u, i, o, p, \
     /* H J K L ; */ h, j, k, l, semi, \
     /* N M , . / */ n, m, comma, dot, fslh, \
-    /* Space */     space \
+    /* opposite thumb (Space) */ space \
 ) \
 ___ ___ ___ ___ ___                         ___ ___ ___ ___ ___ \
 ___ ___ ___ ___ ___ ___               ___ ___ ___ ___ ___ ___ \
@@ -73,13 +74,13 @@ ___ ___ ___ ___ ___     ___ ___ ___   ___ ___ space ___ ___ ___ ___ ___
     /* Q W E R T */ q, w, e, r, t, \
     /* A S D F G */ a, s, d, f, g, \
     /* Z X C V B */ z, x, c, v, b, \
-    /* Space */     space \
+    /* opposite thumb (Backspace) */ space \
 ) \
 ___ ___ ___ ___ ___                         ___ ___ ___ ___ ___ \
 ___ ___ ___ ___ ___ ___               ___ ___ ___ ___ ___ ___ \
 ___ q   w   e   r   t                 ___ ___ ___ ___ ___ ___ \
 ___ a   s   d   f   g                 ___ ___ ___ ___ ___ ___ \
 ___ z   x   c   v   b   ___ ___ ___   ___ ___ ___   ___ ___ ___ ___ ___ ___ \
-___ ___ ___ ___ ___     ___ ___ ___   ___ ___ space ___ ___ ___ ___ ___
+___ ___ ___ ___ ___     space ___ ___   ___ ___ ___ ___ ___ ___ ___ ___
 
 /* clang-format on */
