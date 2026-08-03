@@ -1,70 +1,15 @@
-        UC(m_ru_a,     N0, N4, N3, N0); // а
-        UC(m_ru_a_u,   N0, N4, N1, N0); // А
-        UC(m_ru_be,     N0, N4, N3, N1); // б
-        UC(m_ru_be_u,   N0, N4, N1, N1); // Б
-        UC(m_ru_ve,     N0, N4, N3, N2); // в
-        UC(m_ru_ve_u,   N0, N4, N1, N2); // В
-        UC(m_ru_ge,     N0, N4, N3, N3); // г
-        UC(m_ru_ge_u,   N0, N4, N1, N3); // Г
-        UC(m_ru_de,     N0, N4, N3, N4); // д
-        UC(m_ru_de_u,   N0, N4, N1, N4); // Д
-        UC(m_ru_ye,     N0, N4, N3, N5); // е
-        UC(m_ru_ye_u,   N0, N4, N1, N5); // Е
-        UC(m_ru_yo,     N0, N4, N5, N1); // ё
-        UC(m_ru_yo_u,   N0, N4, N0, N1); // Ё
-        UC(m_ru_zhe,     N0, N4, N3, N6); // ж
-        UC(m_ru_zhe_u,   N0, N4, N1, N6); // Ж
-        UC(m_ru_ze,     N0, N4, N3, N7); // з
-        UC(m_ru_ze_u,   N0, N4, N1, N7); // З
-        UC(m_ru_i,     N0, N4, N3, N8); // и
-        UC(m_ru_i_u,   N0, N4, N1, N8); // И
-        UC(m_ru_short_i,     N0, N4, N3, N9); // й
-        UC(m_ru_short_i_u,   N0, N4, N1, N9); // Й
-        UC(m_ru_ka,     N0, N4, N3, A); // к
-        UC(m_ru_ka_u,   N0, N4, N1, A); // К
-        UC(m_ru_el,     N0, N4, N3, B); // л
-        UC(m_ru_el_u,   N0, N4, N1, B); // Л
-        UC(m_ru_em,     N0, N4, N3, C); // м
-        UC(m_ru_em_u,   N0, N4, N1, C); // М
-        UC(m_ru_en,     N0, N4, N3, D); // н
-        UC(m_ru_en_u,   N0, N4, N1, D); // Н
-        UC(m_ru_o,     N0, N4, N3, E); // о
-        UC(m_ru_o_u,   N0, N4, N1, E); // О
-        UC(m_ru_pe,     N0, N4, N3, F); // п
-        UC(m_ru_pe_u,   N0, N4, N1, F); // П
-        UC(m_ru_er,     N0, N4, N4, N0); // р
-        UC(m_ru_er_u,   N0, N4, N2, N0); // Р
-        UC(m_ru_es,     N0, N4, N4, N1); // с
-        UC(m_ru_es_u,   N0, N4, N2, N1); // С
-        UC(m_ru_te,     N0, N4, N4, N2); // т
-        UC(m_ru_te_u,   N0, N4, N2, N2); // Т
-        UC(m_ru_u,     N0, N4, N4, N3); // у
-        UC(m_ru_u_u,   N0, N4, N2, N3); // У
-        UC(m_ru_ef,     N0, N4, N4, N4); // ф
-        UC(m_ru_ef_u,   N0, N4, N2, N4); // Ф
-        UC(m_ru_ha,     N0, N4, N4, N5); // х
-        UC(m_ru_ha_u,   N0, N4, N2, N5); // Х
-        UC(m_ru_tse,     N0, N4, N4, N6); // ц
-        UC(m_ru_tse_u,   N0, N4, N2, N6); // Ц
-        UC(m_ru_che,     N0, N4, N4, N7); // ч
-        UC(m_ru_che_u,   N0, N4, N2, N7); // Ч
-        UC(m_ru_sha,     N0, N4, N4, N8); // ш
-        UC(m_ru_sha_u,   N0, N4, N2, N8); // Ш
-        UC(m_ru_shcha,     N0, N4, N4, N9); // щ
-        UC(m_ru_shcha_u,   N0, N4, N2, N9); // Щ
-        UC(m_ru_hard,     N0, N4, N4, A); // ъ
-        UC(m_ru_hard_u,   N0, N4, N2, A); // Ъ
-        UC(m_ru_yery,     N0, N4, N4, B); // ы
-        UC(m_ru_yery_u,   N0, N4, N2, B); // Ы
-        UC(m_ru_soft,     N0, N4, N4, C); // ь
-        UC(m_ru_soft_u,   N0, N4, N2, C); // Ь
-        UC(m_ru_e,     N0, N4, N4, D); // э
-        UC(m_ru_e_u,   N0, N4, N2, D); // Э
-        UC(m_ru_yu,     N0, N4, N4, E); // ю
-        UC(m_ru_yu_u,   N0, N4, N2, E); // Ю
-        UC(m_ru_ya,     N0, N4, N4, F); // я
-        UC(m_ru_ya_u,   N0, N4, N2, F); // Я
-        UC(m_ru_laquo, N0, N0, A, B); // «
-        UC(m_ru_raquo, N0, N0, B, B); // »
-        UC(m_ru_mdash, N2, N0, N1, N4); // —
-        UC(m_ru_stress, N0, N3, N0, N1); // ́ combining acute (stress)
+        // Stress mark still via Unicode Hex (rare; single codepoint).
+        UC(m_ru_stress, N0, N3, N0, N1); // ́ combining acute
+
+        // Russian layer enter/leave: signal Hammerspoon (F16/F17) then change layer.
+        // Letters are plain &kp; Vestnik Cyrillic is applied in ~/.config/hammerspoon/vestnik.lua
+        m_ru_on: macro_ru_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F16 &tog L_RU>;
+        };
+        m_ru_off: macro_ru_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F17 &to DEFAULT>;
+        };

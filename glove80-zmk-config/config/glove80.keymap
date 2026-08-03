@@ -319,24 +319,24 @@
         // =====================================================================
         default_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // | BRIDN | BRIUP | ZOOM+ | ZOOM- |  F5  |                                                               | NEXT  |  PP   | MUTE | VOLDN | VOLUP |
-            // |  F13  |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |  =/+ |
+            // | BRIDN | BRIUP | ZOOM+ | ZOOM- | none |                                                               | NEXT  |  PP   | MUTE | VOLDN | VOLUP |
+            // | none  |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |  =/+ |
             // |  ESC  |  B  |  L  |  D   |  W   |  Z   |                                                 |  ,   |   F   |   O   |  U   |   J   |   \  |
-            // |  F11  |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
-            // |  F12  |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LGUI  | | RGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
-            // | MAGIC |BRIDN|BRIUP| LEFT | RIGHT|      | BSPC  | TAB   | CAPS  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
+            // | none  |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
+            // | none  |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LGUI  | | RGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | none |
+            // | MAGIC |BRIDN|BRIUP| none | none |      | BSPC  | TAB   | CAPS  | | RALT  | RET   | SPACE |      | none  | none  |  [   |   ]   | none |
             // Thumbs: outer = toward letter keys / outside of body; inner = toward split center.
             // Left  top outer→inner: Shift | Ctrl | Cmd.  Bottom: Bspc | Tab (hold Audio) | Caps.
             // Right top outer→inner: Shift | Ctrl (hold) / Russian (tap) | Cmd.
             // Right bottom outer→inner: Space (hold Word-Del) | Enter (hold Word-Nav) | Alt.
 
             bindings = <
-            &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &kp F5                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
-            &kp F13        &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
+            &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
+            &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
-            &kp F11        &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &kp F12        &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_tog RCTRL L_RU &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
-            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
+            &none          &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
+            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_on RCTRL &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &none
+            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &none &none        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &none &none &mm_lbkt &mm_rbkt &none
             >;
         };
 
@@ -618,16 +618,18 @@
         //   ц д р г х  ф п а я э  .
         //   с т н к б  ь в о е и  ,
         //   ш з л м ч  ж й ы у ю
+        // Plain Graphite &kp letters; Hammerspoon vestnik.lua maps to Cyrillic
+        // after F16 (on). Tap again: F17 + &to DEFAULT (off).
         // Extras: RIGHT щ | UP ъ | DOWN ё | BSPC-thumb ́ | [ « | ] »
         // =====================================================================
         russian_layer {
             bindings = <
             &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
             &trans         &trans       &trans      &trans      &trans      &trans                                                                     &trans  &trans  &trans      &trans      &trans      &trans
-            &trans         &mm_ru_tse   &mm_ru_de   &mm_ru_er   &mm_ru_ge   &mm_ru_ha                                                                  &mm_ru_ef &mm_ru_pe &mm_ru_a &mm_ru_ya &mm_ru_e &mm_ru_dot
-            &trans         &mm_ru_es    &mm_ru_te   &mm_ru_en   &mm_ru_ka   &mm_ru_be                                                                  &mm_ru_soft &mm_ru_ve &mm_ru_o &mm_ru_ye &mm_ru_i &mm_ru_comma
-            &trans         &mm_ru_sha   &mm_ru_ze   &mm_ru_el   &mm_ru_em   &mm_ru_che &trans &trans &trans  &trans  &ru_tog RCTRL DEFAULT &trans   &mm_ru_zhe &mm_ru_short_i &mm_ru_yery &mm_ru_u &mm_ru_yu &trans
-            &trans         &trans       &trans      &trans      &mm_ru_shcha               &m_ru_stress &trans &trans &trans &trans &trans &mm_ru_hard &mm_ru_yo &m_ru_laquo &m_ru_raquo &trans
+            &trans         &kp B        &kp L       &kp D       &kp W       &kp Z                                                                       &kp COMMA &kp F &kp O &kp U &kp J &kp BSLH
+            &trans         &kp N        &kp R       &kp T       &kp S       &kp G                                                                       &kp Y &kp H &kp A &kp E &kp I &kp SQT
+            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL &kp RSHFT   &kp K &kp P &kp DOT &kp MINUS &kp SEMI &trans
+            &trans         &trans       &trans      &trans      &kp RIGHT                 &m_ru_stress &trans &trans &trans &trans &trans &kp UP &kp DOWN &kp LBKT &kp RBKT &trans
             >;
         };
 

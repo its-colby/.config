@@ -15,7 +15,9 @@ DOC CONVENTION
 
 ARCHITECTURE
 - macOS input source: prefer **Unicode Hex Input** as the daily layout (US-compatible;
-  required for Russian / math / IPA / … / — macros). Do NOT enable OS Graphite.
+  required for math / IPA / … / — macros). Do NOT enable OS Graphite.
+- Russian (Vestnik): Hammerspoon eventtap (`vestnik.lua`), NOT Unicode Hex — Hex is too
+  slow and races into CJK when typing quickly. Glove80 taps F16 on / F17 off.
 - Mac builtin Graphite: Goku/Karabiner (:is_built_in_keyboard / :builtin only).
 - Glove80 Graphite: ZMK firmware HID letters.
 - Apps: Hammerspoon hyper chords → ~/.config/bin/open-or-focus.
@@ -59,7 +61,7 @@ BASE LAYER — PUNCTUATION (both, unless noted)
 ? (right of J) → ? ; Shift = |
 
 Number row (Glove80):
-  Left of 1 → F13 (was =)
+  Left of 1 → none
   Right of 0 → = ; Shift = +
   Hyphen/underscore: still on Graphite - (next to .)
 
@@ -76,15 +78,20 @@ BASE LAYER — GLOVE80-ONLY EDGE KEYS
 (Not on Mac; Mac keeps stock Tab/Esc/Home/End there.)
 
 Left of B → Escape
-Left of N → F11
-Left of Q → F12
+Left of N → none
+Left of Q → none
 Under Q → Brightness Down
 Under X → Brightness Up
+Left of 1 → none
+Right of 0 → = / +
+PgUp (right of /) → none
+PgDn (right of ]) → none
+Arrow cluster (LEFT / RIGHT / UP / DOWN) → none
 
 Top F-row (Glove80 only):
   F1 = Brightness Down , F2 = Brightness Up
   F3 = Cmd+= (zoom in) , F4 = Cmd+- (zoom out)
-  F5 = F5
+  F5 = none
   F6 = Next track , F7 = Play/Pause , F8 = Mute
   F9 = Volume Down , F10 = Volume Up
 
@@ -254,11 +261,12 @@ MAGIC (magic key): Bluetooth profiles, RGB, bootloader, factory test.
 
 RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
 - Toggle: tap right-top middle (Control key). Hold = RCtrl.
-  Tap again → back to DEFAULT.
-- OS must include **Unicode Hex Input** (System Settings → Keyboard → Input Sources).
-  Keep it selected (or switch to it) when using Russian / math / IPA unicode macros.
-  U.S. alone is not enough — Option+hex only emits Cyrillic under Unicode Hex Input.
-- Do NOT rely on OS “Russian - Phonetic” for this layer (layout won’t match Vestnik).
+  Tap on → F16 + layer on (Hammerspoon enables Vestnik eventtap).
+  Tap off → F17 + &to DEFAULT (Hammerspoon disables). Absolute on/off, not a flaky Hex toggle.
+- Cyrillic is NOT Unicode Hex. Firmware sends Graphite Latin HID; Hammerspoon
+  (~/.config/hammerspoon/vestnik.lua) replaces with Vestnik glyphs. Instant, no CJK races.
+- Reload Hammerspoon after vestnik.lua changes. Accessibility permission required for eventtap.
+- Math / IPA layers still need Unicode Hex Input when you use those macros.
 - Alphas on Graphite positions:
 
   ц д р г х    ф п а я э
@@ -269,10 +277,10 @@ RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
   RIGHT (under C) = щ
   UP (under P) = ъ
   DOWN (under .) = ё
-  Backspace thumb (opp. Space) = ́ combining acute (stress on preceding vowel)
+  Backspace thumb (opp. Space) = ́ combining acute (still Hex; rare)
   right of J = . ; Shift = ;
   right of I = , ; Shift = — (em dash)
-  [ ] (left of PgDn) = « »
+  [ ] = « »
 
 
 ================================================================================
@@ -281,7 +289,7 @@ QUICK DIFF SUMMARY (Goku vs Glove80)
 1. Graphite implementation: Goku remaps builtin only; Glove80 sends Graphite HID.
 2. Layer activation: Goku Graphite M / . / P holds; Glove80 Tab / Enter / Space holds + letter holds.
 3. Thumbs (outer→inner): L Shift/Ctrl/Cmd + Bspc/Tab(+Audio)/Caps; R Shift/Ctrl(+RU)/Cmd + Space(+WDel)/Enter(+WNav)/Alt.
-4. Edge keys left of B/N/Q: Esc / F11 / F12 (Glove80 only). Bri under Q/X still.
+4. Edge keys left of B/N/Q: Esc / none / none. Bri under Q/X still. F5/F13/arrows/Pg± = none.
 5. Bracket keys: Mac phys ]+\ ; Glove80 LBKT/RBKT cluster.
-6. Russian Vestnik toggle (RCTRL tap): Glove80 only.
+6. Russian Vestnik (RCTRL tap): Glove80 + Hammerspoon F16/F17; not Hex.
 7. Opposite-hand-only layers on Glove80; Goku may use same-hand bindings.
