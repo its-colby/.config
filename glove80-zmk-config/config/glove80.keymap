@@ -336,7 +336,7 @@
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
             &none          &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_on RCTRL &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &none
+            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_on RCTRL 0 &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &none
             &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &none &none        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &none &none &mm_lbkt &mm_rbkt &none
             >;
         };
@@ -629,8 +629,8 @@
             &trans         &trans       &trans      &trans      &trans      &trans                                                                     &trans  &trans  &trans      &trans      &trans      &trans
             &trans         &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                       &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
             &trans         &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                       &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
-            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL &kp RSHFT   &kp K &kp P &kp DOT &kp MINUS &kp SEMI &trans
-            &trans         &trans       &trans      &trans      &none                     &kp BSPC &ru_tab L_AUDIO &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &none &none &kp LBKT &kp RBKT &trans
+            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL 0 &kp RSHFT   &kp K &kp P &kp DOT &kp MINUS &kp SEMI &trans
+            &trans         &trans       &trans      &trans      &none                     &kp BSPC &ru_tab L_AUDIO 0 &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &none &none &kp LBKT &kp RBKT &trans
             >;
         };
 
