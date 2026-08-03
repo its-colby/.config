@@ -272,18 +272,22 @@
             // ---------------------------------------------------------------------------------------------------------------------------------
             // | BRIDN | BRIUP | VOLDN | VOLUP |  F5  |                                                               |  F6   |  F7   |  F8  | ZOOM+ | ZOOM- |
             // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
-            // | VOLUP |  B  |  L  |  D   |  W   |  Z   |                                                 |  ,   |   F   |   O   |  U   |   J   |   \  |
-            // | VOLDN |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
-            // |   `   |  Q  |  X  |  M   |  C   |  V   | LSHFT | CAPS  | LOWER | | LGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
-            // | MAGIC |BRIDN|BRIUP| LEFT | RIGHT|      | BSPC  | TAB   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
+            // |  ESC  |  B  |  L  |  D   |  W   |  Z   |                                                 |  ,   |   F   |   O   |  U   |   J   |   \  |
+            // |  F11  |  N  |  R  |  T   |  S   |  G   |                                                 |  Y   |   H   |   A   |  E   |   I   |   '  |
+            // |  F12  |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LGUI  | | RGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | PGUP |
+            // | MAGIC |BRIDN|BRIUP| LEFT | RIGHT|      | BSPC  | TAB   | CAPS  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
+            // Thumbs: outer = toward letter keys / outside of body; inner = toward split center.
+            // Left  top outer→inner: Shift | Ctrl | Cmd.  Bottom: Bspc | Tab (hold Audio) | Caps.
+            // Right top outer→inner: Shift | Ctrl (hold) / Russian (tap) | Cmd.
+            // Right bottom outer→inner: Space (hold Word-Del) | Enter (hold Word-Nav) | Alt.
 
             bindings = <
-            &kp C_BRI_DN   &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp LG(EQUAL) &kp LG(MINUS)
+            &kp C_BRI_DN   &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp LG(PLUS) &kp LG(MINUS)
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp C_VOL_UP   &lt L_B B &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
-            &kp C_VOL_DN   &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &kp GRAVE      &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp CAPS    &layer_td  &kp LGUI  &ru_tog RCTRL L_RU &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
-            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp LALT &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
+            &kp ESC        &lt L_B B &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
+            &kp F11        &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
+            &kp F12        &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_tog RCTRL L_RU &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &kp PG_UP
+            &magic MAGIC 0 &kp C_BRI_DN &kp C_BRI_UP &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 
@@ -437,7 +441,7 @@
         layer_r {
             bindings = <
             LAYER_RIGHT(
-                ___, &kp LG(EQUAL), &kp LG(MINUS), &kp PG_UP, &kp PG_DN,
+                ___, &kp LG(PLUS), &kp LG(MINUS), &kp PG_UP, &kp PG_DN,
                 ___, &kp LG(B), &kp LG(LA(B)), &kp LG(J), ___,
                 ___, ___, ___, ___, ___,
                 ___

@@ -328,7 +328,7 @@
             :rules [
                 [:condi :r-inner-nav :builtin]
 
-                [:u :!Cequal_sign]          ; F = zoom in
+                [:u :!CSequal_sign]         ; F = zoom in (Cmd++)
                 [:i :!Chyphen]              ; O = zoom out
                 [:o :page_up]               ; U = Page Up
                 [:p :page_down]             ; J = Page Down

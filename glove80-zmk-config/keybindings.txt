@@ -69,8 +69,9 @@ BASE LAYER — GLOVE80-ONLY EDGE KEYS
 ================================================================================
 (Not on Mac; Mac keeps stock Tab/Esc/Home/End there.)
 
-Left of B → Volume Up
-Left of N → Volume Down
+Left of B → Escape
+Left of N → F11
+Left of Q → F12
 Under Q → Brightness Down
 Under X → Brightness Up
 
@@ -78,26 +79,26 @@ Top F-row (Glove80 only):
   F1 = Brightness Down , F2 = Brightness Up
   F3 = Volume Down , F4 = Volume Up
   F5–F8 = F5–F8
-  F9 = Cmd+= (zoom in) , F10 = Cmd+- (zoom out)
+  F9 = Cmd++ (zoom in) , F10 = Cmd+- (zoom out)
+
+Brightness: C_BRI_* only drives the built-in (or Apple) panel. External monitors need
+MonitorControl (or Lunar) to listen to the same keys and optionally sync all displays.
 
 ================================================================================
-BASE LAYER — THUMB / BOTTOM HOLDS (how layers are triggered)
+BASE LAYER — THUMB CLUSTERS
 ================================================================================
-DIFF — activation keys differ; layer contents match.
+Orientation (split): outer = toward letter keys / outside of body;
+inner = toward the gap between halves (like G inner vs S outer; Y inner vs H outer).
 
-Glove80 thumbs (inner → outer):
-  Left bottom: Backspace | Tab (tap) / Audio hold | Alt
-  Left top: Shift | Caps Lock | Lower
-  Right: Alt | Enter (tap) / Word-Nav hold | Space (tap) / Word-Del hold
-  Also: Shift + RCtrl (Russian toggle tap) on right top thumb row.
-  Glove80 only — tap RCTRL (2nd top-right thumb, hold still RCtrl) toggles Vestnik Russian (L_RU).
+Left — outer → inner
+  Top:    Shift (hold) | Control (hold) | Command (hold)
+  Bottom: Backspace    | Tab (tap) / Audio (hold) | Caps Lock (tap toggle)
 
-Mac (Goku) — stock Tab/Shift/Backspace/Delete stay put.
-  Bottom-row holds under index fingers:
-  phys B (Graphite V alone) → Audio hold
-  phys N (Graphite K alone) → Word Deletion hold
-  phys M (Graphite P alone) → Word Navigation hold
-  (Glove80 left thumbs differ; Mac uses real Tab/Caps/Ctrl)
+Right — outer → inner
+  Top:    Shift (hold) | Control (hold) / Russian tap | Command (hold)
+  Bottom: Space (tap) / Word-Del (hold) | Enter (tap) / Word-Nav (hold) | Alt (hold)
+
+Mods are hold-only (tap alone does nothing useful). Russian: tap right-top middle.
 
 
 ================================================================================
@@ -172,8 +173,8 @@ K = unused , P = unused , . = unused , - = unused , / = unused
 Space = Delete
 
 --- R: Inner Application Nav (Graphite R, QWERTY S) ---
-, = unused , F = Cmd+= (zoom in) , O = Cmd+- (zoom out) , U = Page Up , J = Page Down
-Y = unused , H = Cmd+B (left sidebar) , A = Cmd+Opt+B (right sidebar) , E = Cmd+J (bottom/panel) , I = unused
+, = unused , F = Cmd++ (zoom in) , O = Cmd+- (zoom out) , U = Page Up , J = Page Down
+Y = unused , H = Cmd+B (left sidebar) , A = Cmd+Opt+B (right sidebar / Cursor chat) , E = Cmd+J (bottom/panel) , I = unused
 K = unused , P = unused , . = unused , - = unused , / = unused
 Space = unused
 
@@ -215,22 +216,16 @@ Space = Shift+Cmd+Opt+M (accept autocomplete)   ; Glove80: left Backspace (opp. 
 
 
 ================================================================================
-THUMB CLUSTER LEFT (inward → outward)
+THUMB CLUSTER LAYERS (holds on Glove80 thumbs; Mac also via Goku B/N/M)
 ================================================================================
-Bindings on left hand. Activation differs by keyboard (see thumb holds above).
+Bindings on opposite hand.
 
 --- Audio & Display ---
-Hold: Glove80 Tab-key (ex-Caps) | Mac QWERTY B (Graphite V alone)
+Hold: Glove80 Tab | Mac QWERTY B (Graphite V alone)
 B = unused , L = Cmd+L (screenshot) , D = unused , W = unused , Z = unused
 N = Mute , R = Volume Up , T = Volume Down , S = Brightness Up , G = unused
 Q = Brightness Down , X = unused , M = unused , C = unused , V = unused
 Space = unused
-(Glove80 also has base-edge Vol/Bri keys; see above.)
-
-
-================================================================================
-THUMB CLUSTER RIGHT (inward → outward: Word Nav, Word Del)
-================================================================================
 
 --- Word Navigation ---
 Hold: Glove80 Enter | Mac QWERTY M (Graphite P alone)
@@ -250,11 +245,11 @@ Space = Delete   ; Glove80: left Backspace thumb (opp. of hold Space)
 ================================================================================
 GLOVE80 STOCK LAYERS (not mirrored in Goku)
 ================================================================================
-LOWER (layer_td on center): MoErgo default numpad / media / nav.
+LOWER: MoErgo stock numpad/nav layer (still in firmware; not on a thumb currently).
 MAGIC (magic key): Bluetooth profiles, RGB, bootloader, factory test.
 
 RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
-- Toggle: tap RCTRL (top thumb row, 2nd from inward on right). Hold = RCtrl.
+- Toggle: tap right-top middle (Control key). Hold = RCtrl.
   Tap again → back to DEFAULT.
 - OS stays US; letters via Unicode Hex Input (same as math/IPA macros).
 - Alphas on Graphite positions:
@@ -277,9 +272,9 @@ RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
 QUICK DIFF SUMMARY (Goku vs Glove80)
 ================================================================================
 1. Graphite implementation: Goku remaps builtin only; Glove80 sends Graphite HID.
-2. Layer activation: Goku bottom-row holds (B/N/M); Glove80 real thumbs (Tab-hold Audio / Space / Enter).
-3. Left thumbs: Glove80 Backspace | Tab | Caps-on-LCtrl-slot; Mac keeps stock Tab/Caps/Ctrl.
-4. Edge media (Vol/Bri next to B/N/Q/X): Glove80 only.
+2. Layer activation: Goku bottom-row holds (B/N/M); Glove80 letter holds + thumb holds (Tab/Enter/Space).
+3. Thumbs (outer→inner): L Shift/Ctrl/Cmd + Bspc/Tab(+Audio)/Caps; R Shift/Ctrl(+RU)/Cmd + Space(+WDel)/Enter(+WNav)/Alt.
+4. Edge keys left of B/N/Q: Esc / F11 / F12 (Glove80 only). Bri under Q/X still.
 5. Bracket keys: Mac phys ]+\ ; Glove80 LBKT/RBKT cluster.
 6. Russian Vestnik toggle (RCTRL tap): Glove80 only.
 7. Opposite-hand-only layers on Glove80; Goku may use same-hand bindings.

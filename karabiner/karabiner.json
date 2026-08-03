@@ -6757,7 +6757,7 @@
           },
           "to" : [ {
             "key_code" : "equal_sign",
-            "modifiers" : [ "left_command" ]
+            "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "conditions" : [ {
             "name" : "r-inner-nav",
@@ -6782,7 +6782,7 @@
             }
           }, {
             "key_code" : "equal_sign",
-            "modifiers" : [ "left_command" ]
+            "modifiers" : [ "left_command", "left_shift" ]
           } ],
           "from" : {
             "simultaneous" : [ {
