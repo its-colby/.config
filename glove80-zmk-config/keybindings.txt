@@ -14,7 +14,8 @@ DOC CONVENTION
   opposite thumb from the hold hand: left-hand layers → right Space; right-hand layers → left Backspace.
 
 ARCHITECTURE
-- macOS input source: US/QWERTY only (do NOT enable OS Graphite — it remaps Glove80 too).
+- macOS input source: prefer **Unicode Hex Input** as the daily layout (US-compatible;
+  required for Russian / math / IPA / … / — macros). Do NOT enable OS Graphite.
 - Mac builtin Graphite: Goku/Karabiner (:is_built_in_keyboard / :builtin only).
 - Glove80 Graphite: ZMK firmware HID letters.
 - Apps: Hammerspoon hyper chords → ~/.config/bin/open-or-focus.
@@ -254,7 +255,10 @@ MAGIC (magic key): Bluetooth profiles, RGB, bootloader, factory test.
 RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
 - Toggle: tap right-top middle (Control key). Hold = RCtrl.
   Tap again → back to DEFAULT.
-- OS stays US; letters via Unicode Hex Input (same as math/IPA macros).
+- OS must include **Unicode Hex Input** (System Settings → Keyboard → Input Sources).
+  Keep it selected (or switch to it) when using Russian / math / IPA unicode macros.
+  U.S. alone is not enough — Option+hex only emits Cyrillic under Unicode Hex Input.
+- Do NOT rely on OS “Russian - Phonetic” for this layer (layout won’t match Vestnik).
 - Alphas on Graphite positions:
 
   ц д р г х    ф п а я э

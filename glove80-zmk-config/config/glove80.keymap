@@ -21,30 +21,28 @@
 
 #include "layout_helpers.dtsi"
 
-// Layer indices — LOWER/MAGIC/FACTORY keep stock roles
-// Source order below: upper/home/thumb × left/right, inward → outward.
-// Numeric indices kept stable for keymap compatibility.
+// Layer indices — must match declaration order in `keymap` below.
 #define DEFAULT 0
 #define LOWER   1
-#define L_W     2   // Upper L: Graphite W — Dual punctuation (QWERTY R)
-#define L_D     4   // Upper L: Graphite D — Solo punctuation (QWERTY E)
-#define L_L     7   // Upper L: Graphite L — Logic symbols (QWERTY W)
-#define L_B     6   // unused (was logic; B is plain letter now)
-#define L_F     3   // Upper R: Graphite F — Math relations (QWERTY U)
-#define L_O     5   // Upper R: Graphite O — Math operators (QWERTY I)
-#define L_U     8   // Upper R: Graphite U — IPA symbols (QWERTY O)
-#define L_S     12  // Home L: Graphite S — Primary apps (QWERTY F)
-#define L_T     11  // Home L: Graphite T — Secondary apps (QWERTY D)
-#define L_R     10  // Home L: Graphite R — Inner app nav (QWERTY S)
-#define L_N     9   // Home L: Graphite N — Window management (QWERTY A)
-#define L_H     13  // Home R: Graphite H — Browser (QWERTY J)
-#define L_A     14  // Home R: Graphite A — Clipboard & edit (QWERTY K)
-#define L_E     15  // Home R: Graphite E — Text selection (QWERTY L)
-#define L_I     16  // Home R: Graphite I — Find & navigate (QWERTY ;)
-#define L_AUDIO 17  // Thumb L: Tab-key hold — Audio & display
-#define L_WDEL  18  // Thumb R: Space hold — Word deletion
-#define L_WNAV  19  // Thumb R: Enter hold — Word navigation
-#define L_RU    20  // Toggle: Vestnik Russian (tap RCTRL)
+#define L_W     2   // Graphite W — Dual punctuation
+#define L_D     3   // Graphite D — Solo punctuation
+#define L_L     4   // Graphite L — Logic symbols
+#define L_B     5   // unused stub (B is plain letter)
+#define L_F     6   // Graphite F — Math relations
+#define L_O     7   // Graphite O — Math operators
+#define L_U     8   // Graphite U — IPA
+#define L_S     9   // Graphite S — Primary apps
+#define L_T     10  // Graphite T — Secondary apps
+#define L_R     11  // Graphite R — Inner app nav
+#define L_N     12  // Graphite N — Window management
+#define L_H     13  // Graphite H — Browser
+#define L_A     14  // Graphite A — Clipboard
+#define L_E     15  // Graphite E — Text selection
+#define L_I     16  // Graphite I — Find & navigate
+#define L_AUDIO 17  // Tab hold — Audio & display
+#define L_WNAV  18  // Enter hold — Word navigation
+#define L_WDEL  19  // Space hold — Word deletion
+#define L_RU    20  // Vestnik Russian (tap RCTRL)
 #define MAGIC   21
 #define FACTORY_TEST 22
 
@@ -501,8 +499,6 @@
             >;
         };
 
-        // Graphite N, QWERTY A — Window management (was I; flipped to right)
-        // F/O resize; Y swap; H/A focus; E accordion; I split
         // Graphite N, QWERTY A — Window management
         // F/O send ws; U/J go ws; P/. resize; Y swap; H/A focus; E accordion; I split
         layer_n {
