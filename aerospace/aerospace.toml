@@ -51,3 +51,9 @@ automatically-unhide-macos-hidden-apps = false
 
     # Swap / cycle focused with neighbor
     alt-shift-a = 'swap --wrap-around right'
+
+    # Workspaces (N-layer: U/J go, F/O send)
+    alt-shift-1 = 'workspace 1'
+    alt-shift-2 = 'workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 1'
+    alt-shift-4 = 'move-node-to-workspace 2'

@@ -44,8 +44,7 @@
         ; Upper left (inward → outward): W D L B
         :w-dual-punctuation {:key :r :condi :builtin}       ; Graphite W, QWERTY R
         :d-solo-punctuation {:key :e :condi :builtin}       ; Graphite D, QWERTY E
-        :l-misc             {:key :w :condi :builtin}       ; Graphite L, QWERTY W
-        :b-logic            {:key :q :condi :builtin}       ; Graphite B, QWERTY Q
+        :l-logic            {:key :w :condi :builtin}       ; Graphite L, QWERTY W — Logic symbols
 
         ; Upper right (inward → outward): F O U
         :f-relations        {:key :u :condi :builtin}       ; Graphite F, QWERTY U
@@ -64,12 +63,12 @@
         :e-selection        {:key :l :condi :builtin}       ; Graphite E, QWERTY L — Text selection
         :i-find             {:key :semicolon :condi :builtin} ; Graphite I, QWERTY ; — Find
 
-        ; Thumb left
-        :b-audio            {:key :b :condi :builtin}       ; Audio (QWERTY B / Graphite V alone)
+        ; Thumb left — Audio (Glove80 Tab hold). Mac: Graphite M (phys C).
+        :m-audio            {:key :c :condi :builtin}       ; Graphite M, QWERTY C
 
-        ; Thumb right (inward → outward): Word Nav, Word Del
-        :m-word-navigation  {:key :m :condi :builtin}       ; Word Nav (QWERTY M / Graphite P alone)
-        :n-word-deletion    {:key :n :condi :builtin}       ; Word Del (QWERTY N / Graphite K alone)
+        ; Thumb right — Word Nav / Word Del (Glove80 Enter / Space holds)
+        :dot-word-navigation {:key :comma :condi :builtin}  ; Graphite . (under A), QWERTY comma
+        :p-word-deletion    {:key :m :condi :builtin}       ; Graphite P, QWERTY M
     }
 
     :input-sources {
@@ -95,22 +94,29 @@
             :rules [
                 [:condi :w-dual-punctuation :builtin]
 
-                ; Graphite H A E I
+                ; Graphite F O U J — wrap pairs (, unused; () on Space)
+                [:u [:open_bracket :close_bracket :left_arrow]]   ; F = []
+                [:i [:!Sopen_bracket :!Sclose_bracket :left_arrow]] ; O = {}
+                [:o [:paste-left "⟨⟩"]]                            ; U = ⟨⟩
+                [:p [
+                    :grave_accent_and_tilde
+                    :grave_accent_and_tilde
+                    :left_arrow
+                ]]                                                ; J = ``
+
+                ; Graphite H A E I — quotes
                 [:j [:!Squote :!Squote :left_arrow]]              ; H = ""
                 [:k :!Squote]                                     ; A = "
                 [:l [:quote :quote :left_arrow]]                  ; E = ''
                 [:semicolon :quote]                               ; I = '
 
-                ; Graphite K P . - /
-                [:n [
-                    :grave_accent_and_tilde
-                    :grave_accent_and_tilde
-                    :left_arrow
-                ]]                                                ; K = ``
-                [:m [:!S9 :!S0 :left_arrow]]                      ; P = ()
-                [:comma [:open_bracket :close_bracket :left_arrow]] ; . = []
-                [:period [:!Sopen_bracket :!Sclose_bracket :left_arrow]] ; - = {}
-                [:slash [:paste-left "⟨⟩"]]                        ; / = ⟨⟩
+                ; Graphite P . - / — single open/close (K unused)
+                [:m :!S9]                                         ; P = (
+                [:comma :!S0]                                     ; . = )
+                [:period :open_bracket]                           ; - = [
+                [:slash :close_bracket]                           ; / = ]
+
+                [:spacebar [:!S9 :!S0 :left_arrow]]               ; Space = ()
             ]
         }
 
@@ -119,59 +125,31 @@
             :rules [
                 [:condi :d-solo-punctuation :builtin]
 
-                ; Graphite , F O U J
-                [:y :!Sequal_sign]          ; , = +
-                [:u :!S8]                   ; F = *
-                [:i :!S3]                   ; O = #
-                [:o :backslash]             ; U = \\
-                [:p :hyphen]                ; J = hyphen
+                ; Graphite F O U J (, unused)
+                [:u :!S5]                   ; F = %
+                [:i :!Sgrave_accent_and_tilde] ; O = ~
+                [:o :!S6]                   ; U = ^
+                [:p :!S4]                   ; J = $
 
                 ; Graphite Y H A E I
-                [:h :!Sbackslash]           ; Y = |
-                [:j :equal_sign]            ; H = =
-                [:k :hyphen]                ; A = hyphen
-                [:l :!Shyphen]              ; E = _
-                ; I unused
+                [:h :!S8]                   ; Y = *
+                [:j [:paste "…"]]           ; H = …
+                [:k :!S3]                   ; A = #
+                [:l :!S7]                   ; E = &
+                [:semicolon :!S2]           ; I = @
 
-                ; Graphite K P . - /
-                [:n :hyphen]                ; K = hyphen
-                [:m :!Sgrave_accent_and_tilde] ; P = ~
-                [:comma :!S5]               ; . = %
-                [:period :!S6]              ; - = ^
-                [:slash :!S7]               ; / = &
+                ; Graphite P .
+                [:m [:paste "∅"]]           ; P = ∅
+                [:comma [:paste "∞"]]       ; . = ∞
+
+                [:spacebar [:paste "—"]]    ; Space = —
             ]
         }
 
         {
-            :des "l-misc (Graphite L, QWERTY W)"
+            :des "l-logic (Graphite L, QWERTY W)"
             :rules [
-                [:condi :l-misc :builtin]
-
-                ; Graphite , F O U J
-                [:y :semicolon]             ; , = ;
-                [:u :!S1]                   ; F = !
-                [:i :!Sslash]               ; O = ?
-                [:o :!S4]                   ; U = $
-                [:p :slash]                 ; J = /
-
-                ; Graphite Y H A E I
-                [:h [:paste "∞"]]           ; Y = ∞
-                [:j [:paste "∅"]]           ; H = ∅
-                [:k [:paste "±"]]           ; A = ±
-                [:l [:paste "⊨"]]           ; E = ⊨
-                ; I unused
-
-                ; Graphite K P .
-                [:n [:paste "⊤"]]           ; K = ⊤
-                [:m [:paste "⊥"]]           ; P = ⊥
-                [:comma [:paste "∴"]]       ; . = ∴
-            ]
-        }
-
-        {
-            :des "b-logic (Graphite B, QWERTY Q)"
-            :rules [
-                [:condi :b-logic :builtin]
+                [:condi :l-logic :builtin]
 
                 [:u [:paste "⊤"]]           ; F = ⊤
                 [:i [:paste "⊥"]]           ; O = ⊥
@@ -227,7 +205,7 @@
             :rules [
                 [:condi :o-operators :builtin]
 
-                [:q [:paste "±"]]           ; B = ±
+                [:q [:paste "∖"]]           ; B = ∖
                 [:w [:paste "×"]]           ; L = ×
                 [:e [:paste "∩"]]           ; D = ∩
                 [:r [:paste "∪"]]           ; W = ∪
@@ -245,29 +223,29 @@
                 [:v [:paste "∑"]]           ; C = ∑
                 [:b [:paste "↦"]]           ; V = ↦
 
-                [:spacebar [:paste "∖"]]    ; Space = ∖
+                [:spacebar [:paste "±"]]    ; Space = ±
             ]
         }
 
 
         {
-            :des "u-ipa (Graphite U, QWERTY O) — per-row freq: index→left→center"
+            :des "u-ipa (Graphite U, QWERTY O) — upper↔middle flipped"
             :rules [
                 [:condi :u-ipa :builtin]
 
-                ; vowels on W D L B Z (freq)
-                [:r [:paste "ə"]]           ; W = ə
-                [:e [:paste "ɨ"]]           ; D = ɨ
-                [:w [:paste "ɐ"]]           ; L = ɐ
-                [:q [:paste "ɪ"]]           ; B = ɪ
-                [:t [:paste "ʊ"]]           ; Z = ʊ
+                ; former middle row on B L D W Z
+                [:q [:paste "ŋ"]]           ; B = ŋ
+                [:w [:paste "ɔ"]]           ; L = ɔ
+                [:e [:paste "ɛ"]]           ; D = ɛ
+                [:r [:paste "ʲ"]]           ; W = ʲ
+                [:t [:paste "ø"]]           ; Z = ø
 
-                ; mix on S T R N G
-                [:f [:paste "ʲ"]]           ; S = ʲ
-                [:d [:paste "ɛ"]]           ; T = ɛ
-                [:s [:paste "ɔ"]]           ; R = ɔ
-                [:a [:paste "ŋ"]]           ; N = ŋ
-                [:g [:paste "ø"]]           ; G = ø
+                ; former upper row on N R T S G
+                [:a [:paste "ɪ"]]           ; N = ɪ
+                [:s [:paste "ɐ"]]           ; R = ɐ
+                [:d [:paste "ɨ"]]           ; T = ɨ
+                [:f [:paste "ə"]]           ; S = ə
+                [:g [:paste "ʊ"]]           ; G = ʊ
 
                 ; consonants on C M X Q V
                 [:v [:paste "ʃ"]]           ; C = ʃ
@@ -328,7 +306,7 @@
             :rules [
                 [:condi :r-inner-nav :builtin]
 
-                [:u :!CSequal_sign]         ; F = zoom in (Cmd++)
+                [:u :!Cequal_sign]          ; F = zoom in (Cmd+=)
                 [:i :!Chyphen]              ; O = zoom out
                 [:o :page_up]               ; U = Page Up
                 [:p :page_down]             ; J = Page Down
@@ -344,14 +322,22 @@
             :rules [
                 [:condi :n-window-mgmt :builtin]
 
-                [:u :!SOc]                  ; F = resize smaller
-                [:i :!SOv]                  ; O = resize bigger
+                ; Graphite F O U J — send / go workspaces
+                [:u :!SO3]                  ; F = send to workspace 1
+                [:i :!SO4]                  ; O = send to workspace 2
+                [:o :!SO1]                  ; U = go to workspace 1
+                [:p :!SO2]                  ; J = go to workspace 2
 
+                ; Graphite Y H A E I
                 [:h :!SOa]                  ; Y = swap neighbor
                 [:j :!SOd]                  ; H = focus left
                 [:k :!SOf]                  ; A = focus right
                 [:l :!SOq]                  ; E = accordion
                 [:semicolon :!SOw]          ; I = tiles/split
+
+                ; Graphite P .
+                [:m :!SOc]                  ; P = resize smaller
+                [:comma :!SOv]              ; . = resize bigger
             ]
         }
 
@@ -418,58 +404,53 @@
             :rules [
                 [:condi :i-find :builtin]
 
-                [:q :!Cf]
-                [:w :!COf]
-                [:e :!Cg]
-                [:r :!CSg]
-                [:t :!Ff2]
-
-                [:s :tab]
-                [:d :!Stab]
-                [:f :!Cs]
-                [:g :escape]
-
-                [:spacebar :!SCOm]
-            ]
-        }
-
-        ; =======================================
-        ; THUMB LEFT
-        ; =======================================
-
-        {
-            :des "b-audio (QWERTY B hold — Audio; Graphite V alone)"
-            :rules [
-                [:condi :b-audio :builtin]
-
-                ; Graphite L
-                [:w :!Cl]                   ; L = screenshot (Cmd+L)
+                ; Graphite L D W
+                [:w :!Ff12]                 ; L = go to definition
+                [:e :!COf]                  ; D = find/replace
+                [:r :!Cf]                   ; W = find
 
                 ; Graphite N R T S
-                [:a :mute]                  ; N = Mute
-                [:s :volume_increment]      ; R = Volume Up
-                [:d :volume_decrement]      ; T = Volume Down
-                [:f :display_brightness_increment] ; S = Brightness Up
+                [:a :!Ff2]                  ; N = rename symbol
+                [:s :!CSg]                  ; R = previous find
+                [:d :!Cg]                   ; T = next find
+                [:f :!Cs]                   ; S = save
 
-                ; Graphite Q
-                [:z :display_brightness_decrement] ; Q = Brightness Down
+                [:spacebar :escape]         ; Space = Escape
             ]
         }
 
         ; =======================================
-        ; THUMB RIGHT (inward → outward): Word Nav, Word Del
+        ; THUMB LAYERS (opp. hand taps; Mac holds = Graphite M / . / P)
         ; =======================================
 
         {
-            :des "m-word-navigation (QWERTY M hold — Word Nav; Graphite P alone)"
+            :des "m-audio (Graphite M hold — Audio; phys C). Taps on right hand."
             :rules [
-                [:condi :m-word-navigation :builtin]
+                [:condi :m-audio :builtin]
 
-                ; Graphite L D W Z
-                [:w :down_arrow]            ; L = Down
-                [:e :up_arrow]              ; D = Up
-                [:r :left_arrow]            ; W = Left
-                [:t :right_arrow]           ; Z = Right
+                ; Graphite F O U
+                [:u :display_brightness_increment] ; F = Brightness Up
+                [:i :display_brightness_decrement] ; O = Brightness Down
+                [:o :!Cl]                   ; U = screenshot (Cmd+L)
+
+                ; Graphite H A E I
+                [:j :!Cequal_sign]          ; H = zoom in
+                [:k :!Chyphen]              ; A = zoom out
+                [:l :volume_increment]      ; E = Volume Up
+                [:semicolon :volume_decrement] ; I = Volume Down
+            ]
+        }
+
+        {
+            :des "dot-word-navigation (Graphite . hold — Word Nav; phys comma). Taps on left hand."
+            :rules [
+                [:condi :dot-word-navigation :builtin]
+
+                ; Graphite B L D W (Z unused)
+                [:q :down_arrow]            ; B = Down
+                [:w :up_arrow]              ; L = Up
+                [:e :left_arrow]            ; D = Left
+                [:r :right_arrow]           ; W = Right
 
                 ; Graphite N R T S
                 [:a :!Oleft_arrow]          ; N = word left
@@ -480,9 +461,9 @@
         }
 
         {
-            :des "n-word-deletion (QWERTY N hold — Word Del; Graphite K alone)"
+            :des "p-word-deletion (Graphite P hold — Word Del; phys M). Taps on left hand."
             :rules [
-                [:condi :n-word-deletion :builtin]
+                [:condi :p-word-deletion :builtin]
 
                 ; Graphite D W
                 [:e :!Copen_bracket]        ; D = deindent (Cmd+[)
