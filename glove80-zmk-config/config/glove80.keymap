@@ -8,7 +8,8 @@
  * Shared actions (apps, window mgmt) emit chords; Hammerspoon runs the scripts.
  * Karabiner must not handle Glove80.
  *
- * Unicode macros use macOS Unicode Hex Input for math/logic paste keys.
+ * Unicode macros: F15 + 4 hex digits → Hammerspoon keyStrokes (see unicode_leader.lua).
+ * No macOS Unicode Hex Input required.
  */
 
 #include <behaviors.dtsi>
@@ -618,18 +619,18 @@
         //   ц д р г х  ф п а я э  .
         //   с т н к б  ь в о е и  ,
         //   ш з л м ч  ж й ы у ю
-        // Plain Graphite &kp letters; Hammerspoon vestnik.lua maps to Cyrillic
-        // after F16 (on). Tap again: F17 + &to DEFAULT (off).
-        // Extras: RIGHT щ | UP ъ | DOWN ё | BSPC-thumb ́ | [ « | ] »
+        // Plain Graphite letters + same &lt layer holds as base (layers work in RU).
+        // Hammerspoon maps to Cyrillic; layer keys tap=letter / hold=layer (no glyph).
+        // Extras: hold ш→щ, ь→ъ, э→ё. Tab-thumb tap = stress (hold = Audio); [ ] = « »
         // =====================================================================
         russian_layer {
             bindings = <
             &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
             &trans         &trans       &trans      &trans      &trans      &trans                                                                     &trans  &trans  &trans      &trans      &trans      &trans
-            &trans         &kp B        &kp L       &kp D       &kp W       &kp Z                                                                       &kp COMMA &kp F &kp O &kp U &kp J &kp BSLH
-            &trans         &kp N        &kp R       &kp T       &kp S       &kp G                                                                       &kp Y &kp H &kp A &kp E &kp I &kp SQT
+            &trans         &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                       &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
+            &trans         &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                       &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
             &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL &kp RSHFT   &kp K &kp P &kp DOT &kp MINUS &kp SEMI &trans
-            &trans         &trans       &trans      &trans      &kp RIGHT                 &m_ru_stress &trans &trans &trans &trans &trans &kp UP &kp DOWN &kp LBKT &kp RBKT &trans
+            &trans         &trans       &trans      &trans      &none                     &kp BSPC &ru_tab L_AUDIO &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &none &none &kp LBKT &kp RBKT &trans
             >;
         };
 

@@ -1,10 +1,15 @@
--- App open/focus + Vestnik Russian (Glove80). Window management is Aerospace.
+-- App open/focus + Vestnik Russian + Glove80 unicode symbols.
+-- Window management is Aerospace.
 --
--- OS input source: Unicode Hex Input (or U.S.) for Latin / math / IPA macros.
--- Graphite is per-keyboard (Goku builtin / ZMK Glove80). Russian does NOT use
--- Hex macros — see vestnik.lua (F16 on / F17 off from the keyboard).
+-- OS input source: plain U.S. is fine (Unicode Hex Input no longer required).
+-- Graphite is per-keyboard (Goku builtin / ZMK Glove80).
 --
--- Reload: Hammerspoon menu → Reload Config
+-- Glove80 unicode (math / IPA / logic / stress): F15 + 4 hex → unicode_leader.lua
+-- Russian Vestnik:
+--   Glove80: F16 on / F17 off (with Russian layer)
+--   Mac builtin: hold Graphite X, tap Graphite H (phys J) → F18 → toggle
+--
+-- Reload: Hammerspoon menu → Reload Config; run `goku` after karabiner.edn edits
 -- Symlink: ln -sf ~/.config/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 local hyper = {"ctrl", "alt", "cmd", "shift"}
@@ -39,7 +44,12 @@ for key, target in pairs(appBindings) do
 end
 
 package.path = configDir .. "/?.lua;" .. package.path
+
+-- Unicode leader before Vestnik so F15/hex win over Cyrillic remap
+local unicode_leader = require("unicode_leader")
+unicode_leader.start()
+
 local vestnik = require("vestnik")
 vestnik.start()
 
-hs.alert.show("Hammerspoon: apps + Vestnik", 1.2)
+hs.alert.show("Hammerspoon: apps + Vestnik + unicode", 1.2)

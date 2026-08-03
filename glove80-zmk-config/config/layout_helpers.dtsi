@@ -13,7 +13,8 @@
  * "Space" action: LAYER_RIGHT → right Space; LAYER_LEFT → left Backspace thumb.
  *
  * WRAP(name, left, right) — type left+right, then Left (cursor between).
- * UC(name, h0, h1, h2, h3) — macOS Unicode Hex Input (Option + 4 hex keys).
+ * UC(name, h0, h1, h2, h3) — F15 + 4 hex keys; Hammerspoon types the codepoint
+ *   (no macOS Unicode Hex Input / Option). See ~/.config/hammerspoon/unicode_leader.lua.
  * HYPER(k) — Ctrl+Opt+Cmd+Shift+k (Hammerspoon / Goku app chords).
  */
 
@@ -35,9 +36,9 @@
     name: name {                                   \
         compatible = "zmk,behavior-macro";         \
         #binding-cells = <0>;                      \
-        bindings = <&macro_press &kp LALT>,        \
-                   <&macro_tap &kp h0 &kp h1 &kp h2 &kp h3>, \
-                   <&macro_release &kp LALT>;      \
+        wait-ms = <0>;                             \
+        tap-ms = <5>;                              \
+        bindings = <&macro_tap &kp F15 &kp h0 &kp h1 &kp h2 &kp h3>; \
     }
 
 /* Two Unicode chars then Left — used for ⟨⟩ */
@@ -45,13 +46,11 @@
     name: name {                                   \
         compatible = "zmk,behavior-macro";         \
         #binding-cells = <0>;                      \
+        wait-ms = <0>;                             \
+        tap-ms = <5>;                              \
         bindings                                   \
-            = <&macro_press &kp LALT>              \
-            , <&macro_tap &kp a0 &kp a1 &kp a2 &kp a3> \
-            , <&macro_release &kp LALT>            \
-            , <&macro_press &kp LALT>              \
-            , <&macro_tap &kp b0 &kp b1 &kp b2 &kp b3> \
-            , <&macro_release &kp LALT>            \
+            = <&macro_tap &kp F15 &kp a0 &kp a1 &kp a2 &kp a3> \
+            , <&macro_tap &kp F15 &kp b0 &kp b1 &kp b2 &kp b3> \
             , <&macro_tap &kp LEFT>;               \
     }
 

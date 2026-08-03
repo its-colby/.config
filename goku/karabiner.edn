@@ -69,6 +69,9 @@
         ; Thumb right — Word Nav / Word Del (Glove80 Enter / Space holds)
         :dot-word-navigation {:key :comma :condi :builtin}  ; Graphite . (under A), QWERTY comma
         :p-word-deletion    {:key :m :condi :builtin}       ; Graphite P, QWERTY M
+
+        ; Vestnik toggle: hold Graphite X (phys X), tap Graphite H (phys J) → F18
+        :x-vestnik          {:key :x :condi :builtin}
     }
 
     :input-sources {
@@ -84,6 +87,17 @@
         ; NOTE: Graphite base remaps are at the END of :main so simlayer
         ; rules match first while a layer is held (Karabiner = first match wins).
 
+        ; =======================================
+        ; Vestnik toggle (before h-browser, which also uses phys J)
+        ; Hold Graphite X, tap Graphite H (phys J) → F18 → Hammerspoon
+        ; =======================================
+        {
+            :des "Vestnik toggle (hold X, tap H)"
+            :rules [
+                [:condi :x-vestnik :builtin]
+                [:j :f18]
+            ]
+        }
 
         ; =======================================
         ; UPPER LEFT (inward → outward): W D L B
@@ -488,15 +502,17 @@
             :rules [
                 :builtin
 
+                ; ## = optional any modifiers (Cmd/Ctrl/Opt/Shift kept).
+                ; So Cmd+Graphite S (phys F) → Cmd+S save, Cmd+V → paste, etc.
                 ; top row
-                [:q :b] [:w :l] [:e :d] [:r :w] [:t :z]
-                [:u :f] [:i :o] [:o :u] [:p :j]
+                [:##q :b] [:##w :l] [:##e :d] [:##r :w] [:##t :z]
+                [:##u :f] [:##i :o] [:##o :u] [:##p :j]
                 ; home row (y/m/punct keys handled in punct block)
-                [:a :n] [:s :r] [:d :t] [:f :s] [:g :g]
-                [:h :y] [:j :h] [:k :a] [:l :e] [:semicolon :i]
+                [:##a :n] [:##s :r] [:##d :t] [:##f :s] [:##g :g]
+                [:##h :y] [:##j :h] [:##k :a] [:##l :e] [:##semicolon :i]
                 ; bottom row
-                [:z :q] [:x :x] [:c :m] [:v :c] [:b :v]
-                [:n :k] [:m :p]
+                [:##z :q] [:##x :x] [:##c :m] [:##v :c] [:##b :v]
+                [:##n :k] [:##m :p]
                 ; :y :comma via punct; phys ,/. via punct
             ]
         }
@@ -510,37 +526,37 @@
                 :builtin
 
                 ; phys y (Graphite , left of F): comma / "
-                [:y :comma]
+                [:##y :comma]
                 [:!Sy :!Squote]
                 [:!Ry :!Squote]
 
                 ; phys comma (Graphite . next to P): period / !
-                [:comma :period]
+                [:##comma :period]
                 [:!Scomma :!S1]
                 [:!Rcomma :!S1]
 
                 ; phys period (Graphite - next to .): hyphen / _
-                [:period :hyphen]
+                [:##period :hyphen]
                 [:!Speriod :!Shyphen]
                 [:!Rperiod :!Shyphen]
 
                 ; phys slash (under Graphite I): semicolon / :
-                [:slash :semicolon]
+                [:##slash :semicolon]
                 [:!Sslash :!Ssemicolon]
                 [:!Rslash :!Ssemicolon]
 
                 ; phys quote (right of I): slash / backslash
-                [:quote :slash]
+                [:##quote :slash]
                 [:!Squote :backslash]
                 [:!Rquote :backslash]
 
                 ; phys [ (right of J): ? / |
-                [:open_bracket :!Sslash]
+                [:##open_bracket :!Sslash]
                 [:!Sopen_bracket :!Sbackslash]
                 [:!Ropen_bracket :!Sbackslash]
 
                 ; phys ] : [ / {
-                [:close_bracket :open_bracket]
+                [:##close_bracket :open_bracket]
                 [:!Sclose_bracket :!Sopen_bracket]
                 [:!Rclose_bracket :!Sopen_bracket]
 

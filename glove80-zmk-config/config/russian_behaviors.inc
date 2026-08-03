@@ -16,3 +16,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&m_ru_off>;
         };
+        // Tab thumb in Russian: tap = stress ́ , hold = Audio layer
+        ru_tab: ru_stress_tab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RU_TAB";
+            #binding-cells = <1>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&m_ru_stress>;
+        };

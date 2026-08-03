@@ -1,5 +1,9 @@
-        // Stress mark still via Unicode Hex (rare; single codepoint).
-        UC(m_ru_stress, N0, N3, N0, N1); // ́ combining acute
+        // Stress: F14 → Hammerspoon applies ́ to the character before the cursor
+        m_ru_stress: macro_ru_stress {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F14>;
+        };
 
         // Russian layer enter/leave: signal Hammerspoon (F16/F17) then change layer.
         // Letters are plain &kp; Vestnik Cyrillic is applied in ~/.config/hammerspoon/vestnik.lua

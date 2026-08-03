@@ -14,12 +14,19 @@ DOC CONVENTION
   opposite thumb from the hold hand: left-hand layers → right Space; right-hand layers → left Backspace.
 
 ARCHITECTURE
-- macOS input source: prefer **Unicode Hex Input** as the daily layout (US-compatible;
-  required for math / IPA / … / — macros). Do NOT enable OS Graphite.
-- Russian (Vestnik): Hammerspoon eventtap (`vestnik.lua`), NOT Unicode Hex — Hex is too
-  slow and races into CJK when typing quickly. Glove80 taps F16 on / F17 off.
+- macOS input source: plain **U.S.** is fine. Do NOT enable OS Graphite.
+  (Unicode Hex Input is no longer required — Glove80 symbols go through Hammerspoon.)
+- Cmd/Ctrl/Opt + Graphite letter = normal Mac shortcut for that letter (Cmd+S save,
+  Cmd+V paste, Cmd+C copy, Cmd+F find, …). Mac: Goku `##` remaps keep modifiers.
+  Glove80: firmware already sends Graphite HID with mods.
+- Glove80 unicode (math / IPA / logic / … / — / stress): firmware sends F15 + 4 hex
+  digits; Hammerspoon `unicode_leader.lua` types the glyph (same idea as Vestnik).
+- Russian (Vestnik): Hammerspoon eventtap (`vestnik.lua`). Global once on (Glove80 + Mac).
+  Glove80: F16 on / F17 off with the Russian layer.
+  Mac builtin: hold Graphite X, tap Graphite H (phys J) → F18 (Goku) → Hammerspoon toggle.
 - Mac builtin Graphite: Goku/Karabiner (:is_built_in_keyboard / :builtin only).
 - Glove80 Graphite: ZMK firmware HID letters.
+- Mac symbol layers: Goku clipboard paste (already fast).
 - Apps: Hammerspoon hyper chords → ~/.config/bin/open-or-focus.
 - Window management: Aerospace (Alt+Shift chords).
 - Karabiner never targets Glove80.
@@ -260,24 +267,27 @@ LOWER: MoErgo stock numpad/nav layer (still in firmware; not on a thumb currentl
 MAGIC (magic key): Bluetooth profiles, RGB, bootloader, factory test.
 
 RUSSIAN (L_RU) — Vestnik (Вестник), Glove80 only
-- Toggle: tap right-top middle (Control key). Hold = RCtrl.
-  Tap on → F16 + layer on (Hammerspoon enables Vestnik eventtap).
-  Tap off → F17 + &to DEFAULT (Hammerspoon disables). Absolute on/off, not a flaky Hex toggle.
-- Cyrillic is NOT Unicode Hex. Firmware sends Graphite Latin HID; Hammerspoon
-  (~/.config/hammerspoon/vestnik.lua) replaces with Vestnik glyphs. Instant, no CJK races.
-- Reload Hammerspoon after vestnik.lua changes. Accessibility permission required for eventtap.
-- Math / IPA layers still need Unicode Hex Input when you use those macros.
+- Toggle (Glove80): tap right-top middle (Control key). Hold = RCtrl.
+  Tap on → F16 + layer on; tap off → F17 + &to DEFAULT.
+- Toggle (Mac builtin): hold Graphite X, tap Graphite H (physical J).
+  Goku sends F18; Hammerspoon toggles the same global eventtap.
+- Cyrillic is NOT Unicode Hex. Graphite Latin HID → Hammerspoon Vestnik glyphs.
+- Math / IPA / logic (and Russian stress): F15 + hex → Hammerspoon (not OS Hex Input).
+- Reload Hammerspoon after vestnik/unicode_leader changes. Accessibility required.
+- Layers still work in Russian mode (same letter holds / thumbs as base).
+  Vestnik only emits Cyrillic on tap for layer keys; hold opens the layer.
 - Alphas on Graphite positions:
 
   ц д р г х    ф п а я э
   с т н к б    ь в о е и
   ш з л м ч    ж й ы у ю
 
-- Extras:
-  RIGHT (under C) = щ
-  UP (under P) = ъ
-  DOWN (under .) = ё
-  Backspace thumb (opp. Space) = ́ combining acute (still Hex; rare)
+- Extras (both keyboards, Hammerspoon hold-tap ~200ms; keys with no layers):
+  hold ш (Q) = щ ; Shift+hold = Щ
+  hold ь (Y) = ъ ; Shift+hold = Ъ
+  hold э (J) = ё ; Shift+hold = Ё
+  Stress ́ : applies to the letter before the cursor (vowel, then stress).
+    Glove80 Tab-thumb tap (hold = Audio); Mac hold Space
   right of J = . ; Shift = ;
   right of I = , ; Shift = — (em dash)
   [ ] = « »
