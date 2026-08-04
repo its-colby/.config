@@ -42,9 +42,9 @@
 #define L_A     15  // Graphite A — Clipboard
 #define L_E     16  // Graphite E — Text selection
 #define L_I     17  // Graphite I — Find & navigate
-#define L_AUDIO 18  // Tab hold — Audio & display
-#define L_WNAV  19  // Enter hold — Word navigation
-#define L_WDEL  20  // Space hold — Word deletion
+#define L_AUDIO 18  // LT5 hold — Audio & display
+#define L_WNAV  19  // Graphite . hold — Word navigation
+#define L_WDEL  20  // Graphite P hold — Word deletion
 #define MAGIC   21
 #define FACTORY_TEST 22
 
@@ -88,6 +88,14 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // Hold Graphite . → Word-Nav; tap → ./!
+        dot_wnav: hold_tap_dot_wnav {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            bindings = <&mo>, <&mm_dotkey>;
         };
         // Graphite - (phys period): hyphen / _
         mm_minus: mod_morph_minus {
@@ -329,31 +337,32 @@
             // | MAGIC | none | none | LEFT | RIGHT|      | BSPC  | TAB   | CAPS  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | none |
             // Thumbs (see keybindings.txt THUMB KEY IDS):
             // LT1–3 Shift|Ctrl|Cmd ; LT4–6 Bspc|Tab(+Audio)|Caps
-            // RT1–3 Shift|Ctrl(+RU tap)|Cmd ; RT4–6 Space(+WDel)|Enter(+WNav)|Alt
+            // RT1–3 Shift|Ctrl(+RU tap)|Cmd ; RT4–6 Space|Enter|Alt (plain; repeat OK)
+            // Word-Nav = hold Graphite . ; Word-Del = hold Graphite P
 
             bindings = <
             &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
             &none          &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_on RCTRL 0 &kp RSHFT   &kp K   &kp P   &mm_dotkey  &mm_minus   &mm_fslh    &none
-            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &none
+            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &kp RGUI  &ru_on RCTRL 0 &kp RSHFT   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &none
+            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &none
             >;
         };
 
         // =====================================================================
         // RUSSIAN — Vestnik (layer index below letter layers so holds still work)
-        // Unmapped positions are &none (no fall-through surprises).
+        // Same F-row / numbers / Esc / Caps / Magic as default; letter HID → Vestnik.
         // Stress: tap LT5 (hold LT5 = Audio). Type vowel, then LT5.
         // =====================================================================
         russian_layer {
             bindings = <
-            &none          &none        &none       &none       &none                                                                                          &none   &none       &none       &none       &none
-            &none          &none        &none       &none       &none       &none                                                                      &none   &none   &none       &none       &none       &none
-            &none          &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                        &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
+            &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
+            &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
+            &kp ESC        &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                        &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
             &none          &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                        &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
-            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL 0 &kp RSHFT   &kp K &kp P &kp DOT &kp MINUS &kp SEMI &none
-            &none          &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &none &kp RALT &lt L_WNAV RET &lt L_WDEL SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &none
+            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &kp RGUI  &ru_off RCTRL 0 &kp RSHFT   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &none
+            &magic MAGIC 0 &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &kp CAPS &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &none
             >;
         };
 
@@ -604,7 +613,7 @@
         // THUMB RIGHT (inward → outward): Word Nav, Word Del
         // =====================================================================
 
-        // Enter hold — Word navigation
+        // Graphite . hold — Word navigation
         // B down, L up, D left, W right; T line start, S line end
         layer_wnav {
             bindings = <
@@ -617,7 +626,7 @@
             >;
         };
 
-        // Space hold — Word deletion
+        // Graphite P hold — Word deletion
         // D deindent, W indent; N/R word; T/S line; opp. thumb = Delete
         layer_wdel {
             bindings = <

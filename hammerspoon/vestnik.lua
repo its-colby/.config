@@ -76,6 +76,8 @@ local function buildLayerKeys()
     kc.f, kc.o, kc.u, -- math / IPA
     kc.s, kc.t, kc.r, kc.n, -- apps / nav / window
     kc.h, kc.a, kc.e, kc.i, -- browser / clipboard / selection / find
+    kc.p, -- Word-Del hold
+    kc["."], -- Word-Nav hold
   }
   local set = {}
   for _, code in ipairs(list) do
@@ -94,46 +96,11 @@ local function acuteMark()
   return hs.utf8.codepointToUTF8(0x0301)
 end
 
--- Put combining acute on the character before the cursor (not a free-standing mark).
+-- Combining acute (U+0301) attaches to the character before the cursor.
+-- Do NOT use clipboard select/copy/paste — restoring the pasteboard races Cmd+V
+-- and pastes whatever was on the clipboard (the LT5 bug).
 local function applyStressToPrevious()
-  if tap then
-    tap:stop()
-  end
-  local pb = hs.pasteboard
-  local saved = pb.getContents()
-
-  hs.eventtap.keyStroke({ "shift" }, "left", 0)
-  hs.timer.doAfter(0.025, function()
-    hs.eventtap.keyStroke({ "cmd" }, "c", 0)
-    hs.timer.doAfter(0.025, function()
-      local selected = pb.getContents()
-      if not selected or selected == "" then
-        hs.eventtap.keyStroke({}, "right", 0)
-        if saved ~= nil then
-          pb.setContents(saved)
-        end
-        if enabled and tap then
-          tap:start()
-        end
-        return
-      end
-      local acu = acuteMark()
-      local out = selected
-      if not string.find(selected, acu, 1, true) then
-        out = selected .. acu
-      end
-      pb.setContents(out)
-      hs.eventtap.keyStroke({ "cmd" }, "v", 0)
-      hs.timer.doAfter(0.025, function()
-        if saved ~= nil then
-          pb.setContents(saved)
-        end
-        if enabled and tap then
-          tap:start()
-        end
-      end)
-    end)
-  end)
+  postChar(acuteMark())
 end
 
 local function clearHold()
