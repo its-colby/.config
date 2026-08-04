@@ -16,8 +16,8 @@ local vestnikMap = nil
 local holdExtras = nil
 local layerKeys = nil
 
-local HOLD_S = 0.2
--- { keyCode, upper, timer, fired, kind = "extra"|"layer", extra = optional }
+local HOLD_S = 0.18
+-- { keyCode, upper, timer, fired, kind = "extra"|"layer"|"stress", extra = optional }
 local holdState = nil
 
 local function buildMap()
