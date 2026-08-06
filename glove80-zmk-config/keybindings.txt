@@ -87,7 +87,7 @@ Thumbs (outer → inner; top then bottom) — between the halves, not shown abov
 
   LT1 = Shift*        RT1 = Shift*
   LT2 = Ctrl          RT2 = Ctrl / tap Russian
-  LT3 = Cmd           RT3 = Cmd
+  LT3 = Cmd           RT3 = Cmd / tap Game
   LT4 = Backspace     RT4 = Space
   LT5 = Tab / Audio*  RT5 = Enter
   LT6 = Caps          RT6 = Alt
@@ -114,6 +114,7 @@ Other
   Graphite source      Mac: Goku remap          Glove80: ZMK HID
   Audio hold           Mac: M                   Glove80: LT5 (M types alone)
   Russian toggle       Mac: hold X, tap H       Glove80: tap RT2
+  Game mode            Mac: (none)              Glove80: tap RT3 (hold = RCmd)
   Modifiers / Space    Mac: stock keys          Glove80: LT/RT thumbs (§5)
   Esc                  Mac: stock Esc           Glove80: left of B
   Arrows / edges       Mac: stock only          Glove80: under M/C/P/PERIOD + none pads
@@ -259,6 +260,15 @@ thumb = unused
 --------------------------------------------------------------------------------
 8. TOGGLE LAYERS
 --------------------------------------------------------------------------------
+
+--- Game (Glove80 only) ---
+Enable / leave: tap RT3 (hold RT3 = RCmd). Mac: none.
+
+On: plain Graphite letters/punct (no hold layers). F-row bri/vol/media,
+numbers, Magic, mods, Space/Enter/arrows unchanged. LT5 = plain Tab
+(no Audio hold). RT2 = plain RCtrl (no Russian). P / PERIOD = plain (no
+Word-Del / Word-Nav).
+
 
 --- Russian / Vestnik ---
 Enable

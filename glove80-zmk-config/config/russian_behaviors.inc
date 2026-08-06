@@ -24,3 +24,11 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&m_ru_stress>;
         };
+        // RT3: hold = RGUI (Cmd); tap = toggle game layer (plain keys, no holds)
+        game_cmd: game_cmd_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&tog>;
+        };
