@@ -32,11 +32,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&tog>;
         };
-        // LT5 default: hold = Audio; tap = nothing
-        audio_hold: audio_hold_only {
+        // LT1/RT1: hold = Shift; tap = Caps Lock
+        shift_caps: shift_caps_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&none>;
+            quick-tap-ms = <180>;
+            bindings = <&kp>, <&kp>;
         };

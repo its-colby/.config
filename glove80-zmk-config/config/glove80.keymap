@@ -349,8 +349,8 @@
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
             &mkp LCLK      &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS   &kp LCTRL   &kp LGUI  &game_cmd RGUI L_GAME  &ru_on RCTRL 0 &mt RSHFT CAPS   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &kp PG_UP
-            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &audio_hold L_AUDIO 0 &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
+            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK   &kp LCTRL   &kp LGUI  &game_cmd RGUI L_GAME  &ru_on RCTRL 0 &shift_caps RSHFT CAPSLOCK   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &kp PG_UP
+            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &mo L_AUDIO &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 
@@ -364,7 +364,7 @@
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                        &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
             &mkp LCLK      &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                        &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
-            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &ru_off RCTRL 0 &mt RSHFT CAPS   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &kp PG_UP
+            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &ru_off RCTRL 0 &shift_caps RSHFT CAPSLOCK   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &kp PG_UP
             &magic MAGIC 0 &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
             >;
         };
@@ -652,7 +652,7 @@
             &trans         &trans       &trans      &trans      &trans      &trans                                                                      &trans  &trans  &trans      &trans      &trans      &trans
             &trans         &kp B        &kp L       &kp D       &kp W       &kp Z                                                                        &mm_y   &kp F   &kp O       &kp U       &kp J       &mm_bslh
             &mkp LCLK      &kp N        &kp R       &kp T       &kp S       &kp G                                                                        &kp Y   &kp H   &kp A       &kp E       &kp I       &mm_sqt
-            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &kp RCTRL &mt RSHFT CAPS   &kp K &kp P &mm_dotkey &mm_minus &mm_fslh &kp PG_UP
+            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &kp RCTRL &shift_caps RSHFT CAPSLOCK   &kp K &kp P &mm_dotkey &mm_minus &mm_fslh &kp PG_UP
             &trans         &trans       &trans      &trans      &trans                    &trans &none &kp TAB &trans &trans &trans &trans &trans &trans &trans &kp PG_DN
             >;
         };
