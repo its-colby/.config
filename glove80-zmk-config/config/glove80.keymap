@@ -19,6 +19,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #include "layout_helpers.dtsi"
 
@@ -337,34 +338,34 @@
             // | none  |  Q  |  X  |  M   |  C   |  V   | LSHFT | LCTRL | LGUI  | | RGUI  | RU/RC | RSHFT |  K   |   P   |   .   |  -   |   /   | none |
             // | MAGIC | none | none | LEFT | RIGHT|      | BSPC  | TAB   | CAPS  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | none |
             // Thumbs (see keybindings.txt THUMB KEY IDS):
-            // LT1–3 Shift|Ctrl|Cmd ; LT4–6 Bspc|Tab(+Audio)|Caps
-            // RT1–3 Shift|Ctrl(+RU tap)|Cmd(+game tap) ; RT4–6 Space|Enter|Alt (plain; repeat OK)
+            // LT1/RT1 tap Caps, hold Shift; LT2 Ctrl; LT3 Cmd
+            // LT4 Bspc; LT5 Audio hold (tap none); LT6 Tab
+            // RT2 Ctrl(+RU tap); RT3 Cmd(+game tap); RT4–6 Space|Enter|Alt
             // Word-Nav = hold Graphite . ; Word-Del = hold Graphite P
-            // Game = tap RT3 (hold RT3 = RCmd)
+            // Under Esc = left click; right of ; / ] = PgUp / PgDn
 
             bindings = <
             &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
-            &none          &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &kp LSHFT   &kp LCTRL   &kp LGUI  &game_cmd RGUI L_GAME  &ru_on RCTRL 0 &kp RSHFT   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &none
-            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &lt L_AUDIO TAB &kp CAPS &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &none
+            &mkp LCLK      &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
+            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS   &kp LCTRL   &kp LGUI  &game_cmd RGUI L_GAME  &ru_on RCTRL 0 &mt RSHFT CAPS   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &kp PG_UP
+            &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &audio_hold L_AUDIO 0 &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 
         // =====================================================================
         // RUSSIAN — Vestnik (layer index below letter layers so holds still work)
-        // Same F-row / numbers / Esc / Caps / Magic as default; letter HID → Vestnik.
-        // Stress: tap LT5 (hold LT5 = Audio). Type vowel, then LT5.
+        // Same edges/thumbs as default except LT5 tap = stress.
         // =====================================================================
         russian_layer {
             bindings = <
             &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
             &kp ESC        &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                        &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
-            &none          &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                        &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
-            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &kp LSHFT &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &ru_off RCTRL 0 &kp RSHFT   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &none
-            &magic MAGIC 0 &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &kp CAPS &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &none
+            &mkp LCLK      &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                        &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
+            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &ru_off RCTRL 0 &mt RSHFT CAPS   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &kp PG_UP
+            &magic MAGIC 0 &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
             >;
         };
 
@@ -650,9 +651,9 @@
             &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
             &trans         &trans       &trans      &trans      &trans      &trans                                                                      &trans  &trans  &trans      &trans      &trans      &trans
             &trans         &kp B        &kp L       &kp D       &kp W       &kp Z                                                                        &mm_y   &kp F   &kp O       &kp U       &kp J       &mm_bslh
-            &trans         &kp N        &kp R       &kp T       &kp S       &kp G                                                                        &kp Y   &kp H   &kp A       &kp E       &kp I       &mm_sqt
-            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &trans &trans &trans  &game_cmd RGUI L_GAME  &kp RCTRL &trans   &kp K &kp P &mm_dotkey &mm_minus &mm_fslh &trans
-            &trans         &trans       &trans      &trans      &trans                    &trans &kp TAB &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &mkp LCLK      &kp N        &kp R       &kp T       &kp S       &kp G                                                                        &kp Y   &kp H   &kp A       &kp E       &kp I       &mm_sqt
+            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &mt LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &kp RCTRL &mt RSHFT CAPS   &kp K &kp P &mm_dotkey &mm_minus &mm_fslh &kp PG_UP
+            &trans         &trans       &trans      &trans      &trans                    &trans &none &kp TAB &trans &trans &trans &trans &trans &trans &trans &kp PG_DN
             >;
         };
 

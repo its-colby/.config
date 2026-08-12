@@ -32,3 +32,11 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&tog>;
         };
+        // LT5 default: hold = Audio; tap = nothing
+        audio_hold: audio_hold_only {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&none>;
+        };

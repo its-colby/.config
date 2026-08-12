@@ -77,20 +77,20 @@ Thumbs omitted from the diagram — listed below.
   F1  F2  F3  F4  F5                            F6  F7  F8  F9  F10
   ·   1   2   3   4   5                     6   7   8   9   0   =
   esc B   L*  D*  W*  Z                     ,   F*  O*  U*  J   ?
-  ·   N*  R*  T*  S*  G                     Y   H*  A*  E*  I   /
-  ·   Q   X   M   C   V                     K   P*  .*  -   ;   ·
-  MG  ·   ·   ←   →                             ↑   ↓   [   ]   ·
+  clk N*  R*  T*  S*  G                     Y   H*  A*  E*  I   /
+  ·   Q   X   M   C   V                     K   P*  .*  -   ;  PgUp
+  MG  ·   ·   ←   →                             ↑   ↓   [   ]  PgDn
 
 Thumbs (outer → inner; top then bottom) — between the halves, not shown above
   LT1 LT2 LT3          RT3 RT2 RT1
   LT4 LT5 LT6          RT6 RT5 RT4
 
-  LT1 = Shift*        RT1 = Shift*
-  LT2 = Ctrl          RT2 = Ctrl / tap Russian
-  LT3 = Cmd           RT3 = Cmd / tap Game
-  LT4 = Backspace     RT4 = Space
-  LT5 = Tab / Audio*  RT5 = Enter
-  LT6 = Caps          RT6 = Alt
+  LT1 = Caps (tap) / Shift (hold)     RT1 = Caps (tap) / Shift (hold)
+  LT2 = Ctrl                          RT2 = Ctrl / tap Russian
+  LT3 = Cmd                           RT3 = Cmd / tap Game
+  LT4 = Backspace                     RT4 = Space
+  LT5 = Audio* (hold; tap none)       RT5 = Enter
+  LT6 = Tab                           RT6 = Alt
 
 F1–F10
   F1 = Bri↓   F2 = Bri↑   F3 = Zoom+   F4 = Zoom−   F5 = none
@@ -102,10 +102,12 @@ Holds (same letter layers as Mac)
   S Primary apps · T Secondary apps · R App nav · N Window
   H Browser · A Clipboard · E Selection · I Find
   P Word-Del · PERIOD Word-Nav · LT5 Audio
-  LT1/RT1 Shift layer (§7)
+  LT1/RT1 Shift (hold) / Caps (tap)
 
 Other
   · = none · MG = MAGIC (BT / RGB / bootloader)
+  clk = left mouse click (under Esc)
+  PgUp / PgDn = right of SEMICOLON / RBKT
 
 
 --------------------------------------------------------------------------------
@@ -117,10 +119,10 @@ Other
   Game mode            Mac: (none)              Glove80: tap RT3 (hold = RCmd)
   Modifiers / Space    Mac: stock keys          Glove80: LT/RT thumbs (§5)
   Esc                  Mac: stock Esc           Glove80: left of B
-  Arrows / edges       Mac: stock only          Glove80: under M/C/P/PERIOD + none pads
+  Arrows / edges       Mac: stock only          Glove80: under M/C/P/PERIOD; PgUp/PgDn; click under Esc
   Function row         Mac: stock Apple         Glove80: F1–F10 (§5)
   Brackets             Mac: phys RBKT / BSLH    Glove80: LBKT / RBKT cluster
-  Layer Space          Mac: Space key    Glove80: opp. thumb (RT4 / LT4)
+  Layer Space          Mac: either Space key    Glove80: opp. thumb (RT4 / LT4)
 
 
 --------------------------------------------------------------------------------
@@ -249,6 +251,7 @@ Letters = uppercase
 COMMA = " , PERIOD = ! , HYPHEN = _ , SEMICOLON = :
 QUOTE = \ , QUESTION = |
 LBKT = { , RBKT = } , EQUAL = +
+(Glove80 LT1/RT1 tap = Caps Lock)
 
 --- Audio (hold LT5 Glove80 / Graphite M Mac) ---
 COMMA = unused , F = Bri↑ , O = Bri↓ , U = Cmd+L , J = unused
@@ -265,9 +268,9 @@ thumb = unused
 Enable / leave: tap RT3 (hold RT3 = RCmd). Mac: none.
 
 On: plain Graphite letters/punct (no hold layers). F-row bri/vol/media,
-numbers, Magic, mods, Space/Enter/arrows unchanged. LT5 = plain Tab
-(no Audio hold). RT2 = plain RCtrl (no Russian). P / PERIOD = plain (no
-Word-Del / Word-Nav).
+numbers, Magic, mods, Space/Enter/arrows unchanged. LT5 = none (no Audio).
+LT6 = Tab. RT2 = plain RCtrl (no Russian). P / PERIOD = plain (no
+Word-Del / Word-Nav). PgUp/PgDn + click under Esc still work.
 
 
 --- Russian / Vestnik ---
