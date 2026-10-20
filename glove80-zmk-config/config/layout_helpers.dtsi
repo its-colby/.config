@@ -5,9 +5,8 @@
  * LAYER_RIGHT — hold a left-hand key; bindings land on the right hand.
  * LAYER_LEFT  — hold a right-hand key; bindings land on the left hand.
  *
- * Helper parameter names are QWERTY / physical HID positions. Proposed-layer
- * docs label keys by Graphite role — convert before filling args
- * (e.g. Graphite H → physical J → param `j`).
+ * Helper parameter names are QWERTY / physical HID positions
+ * (e.g. Browser layer hold = J → param `j`).
  *
  * Pass ___ for unused positions. Optional last arg is the opposite-hand thumb
  * "Space" action: LAYER_RIGHT → right Space; LAYER_LEFT → left Backspace thumb.

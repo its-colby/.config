@@ -35,43 +35,40 @@
         :builtin [{:is_built_in_keyboard true}]
     }
 
-    ; Graphite letter → physical QWERTY (Karabiner keycodes):
-    ; B→q L→w D→e W→r Z→t  ,→y F→u O→i U→o J→p
-    ; N→a R→s T→d S→f G→g  Y→h H→j A→k E→l I→semicolon
-    ; Q→z X→x M→c C→v V→b  K→n P→m .→comma -→period /→slash
-    ; Simlayer :key is always the PHYSICAL key under the Graphite letter.
+    ; QWERTY — simlayer :key is the letter that opens the layer (same finger
+    ; positions as the old Graphite layout).
     :simlayers {
-        ; Upper left (inward → outward): W D L B
-        :w-dual-punctuation {:key :r :condi :builtin}       ; Graphite W, QWERTY R
-        :d-solo-punctuation {:key :e :condi :builtin}       ; Graphite D, QWERTY E
-        :l-logic            {:key :w :condi :builtin}       ; Graphite L, QWERTY W — Logic symbols
+        ; Upper left (inward → outward): R E W
+        :w-dual-punctuation {:key :r :condi :builtin}       ; R — Dual punctuation
+        :d-solo-punctuation {:key :e :condi :builtin}       ; E — Solo punctuation
+        :l-logic            {:key :w :condi :builtin}       ; W — Logic symbols
 
-        ; Upper right (inward → outward): F O U
-        :f-relations        {:key :u :condi :builtin}       ; Graphite F, QWERTY U
-        :o-operators        {:key :i :condi :builtin}       ; Graphite O, QWERTY I
-        :u-ipa              {:key :o :condi :builtin}       ; Graphite U, QWERTY O
+        ; Upper right (inward → outward): U I O
+        :f-relations        {:key :u :condi :builtin}       ; U — Math relations
+        :o-operators        {:key :i :condi :builtin}       ; I — Math operators
+        :u-ipa              {:key :o :condi :builtin}       ; O — IPA
 
-        ; Home left (inward → outward): S T R N
-        :s-primary-apps     {:key :f :condi :builtin}       ; Graphite S, QWERTY F — Primary apps
-        :t-secondary-apps   {:key :d :condi :builtin}       ; Graphite T, QWERTY D — Secondary apps
-        :r-inner-nav        {:key :s :condi :builtin}       ; Graphite R, QWERTY S — Inner app nav
-        :n-window-mgmt      {:key :a :condi :builtin}       ; Graphite N, QWERTY A — Window mgmt
+        ; Home left (inward → outward): F D S A
+        :s-primary-apps     {:key :f :condi :builtin}       ; F — Primary apps
+        :t-secondary-apps   {:key :d :condi :builtin}       ; D — Secondary apps
+        :r-inner-nav        {:key :s :condi :builtin}       ; S — Inner app nav
+        :n-window-mgmt      {:key :a :condi :builtin}       ; A — Window mgmt
 
-        ; Home right (inward → outward): H A E I
-        :h-browser          {:key :j :condi :builtin}       ; Graphite H, QWERTY J — Browser
-        :a-clipboard        {:key :k :condi :builtin}       ; Graphite A, QWERTY K — Clipboard
-        :e-selection        {:key :l :condi :builtin}       ; Graphite E, QWERTY L — Text selection
-        :i-find             {:key :semicolon :condi :builtin} ; Graphite I, QWERTY ; — Find
+        ; Home right (inward → outward): J K L ;
+        :h-browser          {:key :j :condi :builtin}       ; J — Browser
+        :a-clipboard        {:key :k :condi :builtin}       ; K — Clipboard
+        :e-selection        {:key :l :condi :builtin}       ; L — Text selection
+        :i-find             {:key :semicolon :condi :builtin} ; ; — Find
 
-        ; Thumb left — Audio (Glove80 Tab hold). Mac: Graphite M (phys C).
-        :m-audio            {:key :c :condi :builtin}       ; Graphite M, QWERTY C
+        ; Mac Audio hold on C (Glove80: LT5). Off while mouse layer moves C.
+        :m-audio            {:key :c :condi [:builtin :!mouse]}
 
         ; Lower right — Word Nav / Word Del (same holds on Glove80)
-        :dot-word-navigation {:key :comma :condi :builtin}  ; Graphite . (under A), QWERTY comma
-        :p-word-deletion    {:key :m :condi :builtin}       ; Graphite P, QWERTY M
+        :dot-word-navigation {:key :comma :condi [:builtin :!mouse]}  ; , — Word Nav
+        :p-word-deletion    {:key :m :condi [:builtin :!mouse]}       ; M — Word Del
 
-        ; Vestnik toggle: hold Graphite X (phys X), tap Graphite H (phys J) → F18
-        :x-vestnik          {:key :x :condi :builtin}
+        ; Hold G: J → mouse toggle, K → Vestnik toggle
+        :g-leader           {:key :g :condi :builtin}
     }
 
     :input-sources {
@@ -84,18 +81,73 @@
     }
 
     :main [
-        ; NOTE: Graphite base remaps are at the END of :main so simlayer
-        ; rules match first while a layer is held (Karabiner = first match wins).
+        ; Simlayer rules first; stock QWERTY otherwise (no letter remap).
 
         ; =======================================
-        ; Vestnik toggle (before h-browser, which also uses phys J)
-        ; Hold Graphite X, tap Graphite H (phys J) → F18 → Hammerspoon
+        ; Hold G: J = mouse on/off, K = Vestnik (F18)
+        ; Must be before h-browser (J) and a-clipboard (K).
         ; =======================================
         {
-            :des "Vestnik toggle (hold X, tap H)"
+            :des "G-leader: tap J → mouse on (if off)"
             :rules [
-                [:condi :x-vestnik :builtin]
-                [:j :f18]
+                [:condi :g-leader :builtin :!mouse]
+                [:j [["mouse" 1] :!Sf18]]
+            ]
+        }
+        {
+            :des "G-leader: tap J → mouse off (if on)"
+            :rules [
+                [:condi :g-leader :builtin :mouse]
+                [:j [["mouse" 0] :!Sf18]]
+            ]
+        }
+        {
+            :des "G-leader: tap K → Vestnik toggle (F18)"
+            :rules [
+                [:condi :g-leader :builtin]
+                [:k :f18]
+            ]
+        }
+        {
+            :des "mouse layer — bottom-row move, B/N click, arrows scroll"
+            :rules [
+                [:condi :mouse :builtin]
+
+                ; Z X C V — cardinals
+                [:z {:mkey {:x -1536}}]
+                [:x {:mkey {:y -1536}}]
+                [:c {:mkey {:y 1536}}]
+                [:v {:mkey {:x 1536}}]
+
+                ; M , . / — diagonals
+                [:m {:mkey {:x -1536 :y -1536}}]
+                [:comma {:mkey {:x 1536 :y -1536}}]
+                [:period {:mkey {:x -1536 :y 1536}}]
+                [:slash {:mkey {:x 1536 :y 1536}}]
+
+                ; B LCLK, N RCLK
+                [:b {:pkey :button1}]
+                [:n {:pkey :button2}]
+
+                ; Arrows = scroll
+                [:up_arrow {:mkey {:vwheel -64}}]
+                [:down_arrow {:mkey {:vwheel 64}}]
+                [:left_arrow {:mkey {:hwheel 64}}]
+                [:right_arrow {:mkey {:hwheel -64}}]
+            ]
+        }
+        {
+            :des "mouse: tap F = lock LCLK, hold F = primary apps"
+            :rules [
+                [:condi :mouse :builtin :!h-browser :!g-leader]
+                [:f ["s-primary-apps" 1] {:afterup ["s-primary-apps" 0] :alone :f19}]
+            ]
+        }
+        {
+            :des "mouse: tap J = unlock LCLK, hold J = browser"
+            :rules [
+                [:condi :mouse :builtin :!s-primary-apps :!g-leader]
+                [:j ["h-browser" 1] {:afterup ["h-browser" 0] :alone :f20}]
             ]
         }
 
@@ -325,6 +377,7 @@
                 [:o :page_up]               ; U = Page Up
                 [:p :page_down]             ; J = Page Down
 
+                [:h :!CTOSf]                ; Y = focus editor (Hyper+F)
                 [:j :!Cb]                   ; H = left sidebar
                 [:k :!COb]                  ; A = right sidebar
                 [:l :!Cj]                   ; E = bottom/panel
@@ -493,78 +546,6 @@
             ]
         }
 
-        ; =======================================
-        ; Graphite base letters LAST (builtin only)
-        ; Must be after simlayers so layer holds win.
-        ; =======================================
-        {
-            :des "graphite-base-letters (builtin only)"
-            :rules [
-                :builtin
-
-                ; ## = optional any modifiers (Cmd/Ctrl/Opt/Shift kept).
-                ; So Cmd+Graphite S (phys F) → Cmd+S save, Cmd+V → paste, etc.
-                ; top row
-                [:##q :b] [:##w :l] [:##e :d] [:##r :w] [:##t :z]
-                [:##u :f] [:##i :o] [:##o :u] [:##p :j]
-                ; home row (y/m/punct keys handled in punct block)
-                [:##a :n] [:##s :r] [:##d :t] [:##f :s] [:##g :g]
-                [:##h :y] [:##j :h] [:##k :a] [:##l :e] [:##semicolon :i]
-                ; bottom row
-                [:##z :q] [:##x :x] [:##c :m] [:##v :c] [:##b :v]
-                [:##n :k] [:##m :p]
-                ; :y :comma via punct; phys ,/. via punct
-            ]
-        }
-
-        ; =======================================
-        ; Base punctuation LAST (builtin only)
-        ; =======================================
-        {
-            :des "graphite-base-punct (builtin only)"
-            :rules [
-                :builtin
-
-                ; phys y (Graphite , left of F): comma / "
-                [:##y :comma]
-                [:!Sy :!Squote]
-                [:!Ry :!Squote]
-
-                ; phys comma (Graphite . next to P): period / !
-                [:##comma :period]
-                [:!Scomma :!S1]
-                [:!Rcomma :!S1]
-
-                ; phys period (Graphite - next to .): hyphen / _
-                [:##period :hyphen]
-                [:!Speriod :!Shyphen]
-                [:!Rperiod :!Shyphen]
-
-                ; phys slash (under Graphite I): semicolon / :
-                [:##slash :semicolon]
-                [:!Sslash :!Ssemicolon]
-                [:!Rslash :!Ssemicolon]
-
-                ; phys quote (right of I): slash / backslash
-                [:##quote :slash]
-                [:!Squote :backslash]
-                [:!Rquote :backslash]
-
-                ; phys [ (right of J): ? / |
-                [:##open_bracket :!Sslash]
-                [:!Sopen_bracket :!Sbackslash]
-                [:!Ropen_bracket :!Sbackslash]
-
-                ; phys ] : [ / {
-                [:##close_bracket :open_bracket]
-                [:!Sclose_bracket :!Sopen_bracket]
-                [:!Rclose_bracket :!Sopen_bracket]
-
-                ; phys \ : ] / }
-                [:backslash :close_bracket]
-                [:!Sbackslash :!Sclose_bracket]
-                [:!Rbackslash :!Sclose_bracket]
-            ]
-        }
+        ; QWERTY letters/punct: no remap — stock Mac layout.
     ]
 }

@@ -101,16 +101,17 @@
   <div class="grid">
     <div class="stack">
       <section class="panel">
-        <h2>Default</h2>
+        <h2>Default · QWERTY</h2>
         <div class="board">  F1  F2  F3  F4  F5                            F6  F7  F8  F9  F10
   ·   1   2   3   4   5                     6   7   8   9   0   =
-  esc B   L*  D*  W*  Z                     ,   F*  O*  U*  J   ?
-  clk N*  R*  T*  S*  G                     Y   H*  A*  E*  I   /
-  ·   Q   X   M   C   V                     K   P*  .*  -   ;  PgUp
+  esc Q   W*  E*  R*  T                     Y   U*  I*  O*  P   \
+  clk A*  S*  D*  F*  G*                    H   J*  K*  L*  ;   '
+  ·   Z   X   C   V   B                     N   M*  ,*  .   /  PgUp
   MG  ·   ·   ←   →                             ↑   ↓   [   ]  PgDn</div>
         <div class="thumbs">
           LT1 Caps/⇧ · LT2 Ctrl · LT3 Cmd · LT4 Bspc · LT5 Audio hold · LT6 Tab<br>
           RT1 Caps/⇧ · RT2 Ctrl/RU · RT3 Cmd/Game · RT4 Space · RT5 Enter · RT6 Alt<br>
+          <b>G+J</b> mouse · <b>G+K</b> Russian · <b>RT3 tap</b> game · <b>LT1/RT1 tap</b> Caps<br>
           <b>F1–F10</b> Bri↓ Bri↑ Zoom+ Zoom− · | Next PP Mute Vol↓ Vol↑
         </div>
       </section>
@@ -119,73 +120,84 @@
         <h2>Russian · Vestnik</h2>
         <div class="board">  ·   ·   ·   ·   ·                             ·   ·   ·   ·   ·
   ·   ·   ·   ·   ·   ·                     ·   ·   ·   ·   ·   ·
-  ·   ц   д   р   г   х                     ф   п   а   я   э*  .
-  ·   с   т   н   к   б                     ь*  в   о   е   и   ,
+  ·   ц   д   р   г   х                     ф   п   а   я   э*  \
+  ·   с   т   н   к   б                     ь*  в   о   е   и   '
   ·   ш*  з   л   м   ч                     ж   й   ы   у   ю  PgUp
   ·   ·   ·   ·   ·                             ·   ·   «   »  PgDn</div>
         <div class="notes">
+          <b>on/off</b> G+K · RT2 tap · HUD Russian / English<br>
           <b>*</b> hold→щ/ъ/ё · LT5 tap = stress ́<br>
-          punctuation = PERIOD (Shift ;), COMMA (Shift —), LBKT («), RBKT (»)
+          [ = « · ] = »
         </div>
       </section>
 
       <div class="layers">
-        <div class="layer span2"><h3>LT5 Audio</h3><pre>F Bri↑ · O Bri↓ · U screenshot · H Zoom+ · A Zoom− · E Vol↑ · I Vol↓</pre></div>
-        <div class="layer"><h3>P Word-Del</h3><pre>D/W indent
-N/R del word · T/S del line
+        <div class="layer span2"><h3>LT5 Audio</h3><pre>U Bri↑ · I Bri↓ · O screenshot · J Zoom+ · K Zoom− · L Vol↑ · ; Vol↓</pre></div>
+        <div class="layer"><h3>M Word-Del</h3><pre>E/R indent
+A/S del word · D/F del line
 thumb Delete</pre></div>
-        <div class="layer"><h3>PERIOD Word-Nav</h3><pre>B/L/D/W arrows
-N/R word · T/S line ends</pre></div>
+        <div class="layer"><h3>COMMA Word-Nav</h3><pre>Q/W/E/R arrows
+A/S word · D/F line ends</pre></div>
+        <div class="layer span2"><h3>Mouse (G+J)</h3><pre>Z ←  X ↑  C ↓  V →        M ↖  , ↗  . ↙  / ↘
+B LCLK · N RCLK · arrows scroll
+tap F lock · tap J release · hold F/J layers stay
+HUD Mouse / Default</pre></div>
+        <div class="layer"><h3>Game (RT3)</h3><pre>plain QWERTY — no letter holds
+tap RT3 leave · hold RCmd
+HUD Game / Default</pre></div>
+        <div class="layer"><h3>Caps (LT1/RT1 tap)</h3><pre>tap = Caps Lock · hold = Shift
+HUD Caps / Default</pre></div>
       </div>
     </div>
 
     <div class="layers">
-      <div class="layer"><h3>S Primary apps</h3><pre>Y itscolby · H mopaverse
-A ~/.config · E Ghostty
+      <div class="layer"><h3>F Primary apps</h3><pre>Y itscolby · J mopaverse
+K ~/.config · L Ghostty
 thumb close window</pre></div>
-      <div class="layer"><h3>H Browser</h3><pre>L split · D/W link hist
-N spaces · R new · T/S tabs
+      <div class="layer"><h3>J Browser</h3><pre>W split · E/R link hist
+A spaces · S new · D/F tabs
 thumb close tab</pre></div>
-      <div class="layer"><h3>T Secondary apps</h3><pre>, Spotify  F WhatsApp  O GitHub
-U Gmail    J Calendar
-Y Messages H ChatGPT   A YouTube
-E openrussian  I life.itscolby
+      <div class="layer"><h3>D Secondary apps</h3><pre>, Spotify  U WhatsApp  I GitHub
+O Gmail    P Calendar
+Y Messages J ChatGPT   K YouTube
+L openrussian  ; life.itscolby
 thumb Delete</pre></div>
-      <div class="layer"><h3>A Clipboard</h3><pre>D paste plain · W redo
-N copy · R cut · T paste · S undo
+      <div class="layer"><h3>K Clipboard</h3><pre>E paste plain · R redo
+A copy · S cut · D paste · F undo
 thumb comment</pre></div>
-      <div class="layer"><h3>R App nav</h3><pre>F Zoom+  O Zoom−  U PgUp  J PgDn
-H Cmd+B  A Cmd+Opt+B  E Cmd+J</pre></div>
-      <div class="layer"><h3>E Selection</h3><pre>B/L line · D/W char
-N/R word · T/S line ends
+      <div class="layer"><h3>S App nav</h3><pre>U Zoom+  I Zoom−  O PgUp  P PgDn
+Y editor · J left · K right · L panel
+(J/K/L: open+focus, or close if focused)</pre></div>
+      <div class="layer"><h3>L Selection</h3><pre>Q/W line · E/R char
+A/S word · D/F line ends
 thumb select all</pre></div>
-      <div class="layer"><h3>N Window</h3><pre>F/O send ws · U/J go ws
-Y swap · H/A focus · E accordion · I tiles
-P resize− · . resize+</pre></div>
-      <div class="layer"><h3>I Find</h3><pre>L F12 · D replace · W find
-N F2 · R/T find · S save
+      <div class="layer"><h3>A Window</h3><pre>U/I send ws · O/P go ws
+Y swap · J/K focus · L accordion · ; tiles
+M resize− · , resize+</pre></div>
+      <div class="layer"><h3>; Find</h3><pre>W F12 · E replace · R find
+A F2 · S/D find · F save
 thumb Escape</pre></div>
-      <div class="layer"><h3>W Dual punct</h3><pre>  ·   []  {}  ⟨⟩  ``
+      <div class="layer"><h3>R Dual punct</h3><pre>  ·   []  {}  ⟨⟩  ``
   ·   ""  "   ''  '
   ·   (   )   [   ]
   ()</pre></div>
-      <div class="layer"><h3>F Math rel</h3><pre>≤  ≥  ≅  ≇  ∝
+      <div class="layer"><h3>U Math rel</h3><pre>≤  ≥  ≅  ≇  ∝
 &lt;  &gt;  =  ≠  ≈
 ⊂  ⊃  ∈  ∉  ∼
 ≔</pre></div>
-      <div class="layer"><h3>D Solo punct</h3><pre>  ·   %   ~   ^   $
-  *   …   #   &   @
+      <div class="layer"><h3>E Solo punct</h3><pre>  ·   %   ~   ^   $
+  *   …   #   &amp;   @
   ·   ∅   ∞   ·   ·
   —</pre></div>
-      <div class="layer"><h3>O Math ops</h3><pre>∖  ×  ∩  ∪  ∘
+      <div class="layer"><h3>I Math ops</h3><pre>∖  ×  ∩  ∪  ∘
 ÷  ·  -  +  √
 ∂  ∫  ∏  ∑  ↦
 ±</pre></div>
-      <div class="layer"><h3>L Logic</h3><pre>  ·   ⊤   ⊥   ⊨   ·
+      <div class="layer"><h3>W Logic</h3><pre>  ·   ⊤   ⊥   ⊨   ·
   ¬   ∧   ∨   ∃   ∀
   ·   ·   ·   ·   ·
   ∴</pre></div>
-      <div class="layer"><h3>U IPA</h3><pre>ŋ  ɔ  ɛ  ʲ  ø
+      <div class="layer"><h3>O IPA</h3><pre>ŋ  ɔ  ɛ  ʲ  ø
 ɪ  ɐ  ɨ  ə  ʊ
 ʁ  ɕ  ʒ  ʃ  ç
 ː</pre></div>

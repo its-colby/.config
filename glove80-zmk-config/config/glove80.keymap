@@ -1,9 +1,9 @@
 /*
- * Glove80 keymap — firmware Graphite alphas (HID letter codes).
+ * Glove80 keymap — QWERTY alphas (HID letter codes).
  *
- * macOS input source must stay US/QWERTY. Do NOT enable an OS Graphite layout
- * (it would double-map Glove80). Mac builtin Graphite is done in Goku/Karabiner
- * with :is_built_in_keyboard only.
+ * macOS input source: U.S. QWERTY. Layer holds stay on the same finger positions
+ * as the old Graphite layout (e.g. Primary apps = left-index F).
+ * Mac builtin layers are Goku/Karabiner (:is_built_in_keyboard only).
  *
  * Shared actions (apps, window mgmt) emit chords; Hammerspoon runs the scripts.
  * Karabiner must not handle Glove80.
@@ -28,27 +28,28 @@
 #define DEFAULT 0
 #define L_RU    1   // Vestnik Russian (tap RCTRL) — under letter layers
 #define LOWER   2
-#define L_W     3   // Graphite W — Dual punctuation
-#define L_D     4   // Graphite D — Solo punctuation
-#define L_L     5   // Graphite L — Logic symbols
-#define L_B     6   // unused stub (B is plain letter)
-#define L_F     7   // Graphite F — Math relations
-#define L_O     8   // Graphite O — Math operators
-#define L_U     9   // Graphite U — IPA
-#define L_S     10  // Graphite S — Primary apps
-#define L_T     11  // Graphite T — Secondary apps
-#define L_R     12  // Graphite R — Inner app nav
-#define L_N     13  // Graphite N — Window management
-#define L_H     14  // Graphite H — Browser
-#define L_A     15  // Graphite A — Clipboard
-#define L_E     16  // Graphite E — Text selection
-#define L_I     17  // Graphite I — Find & navigate
+#define L_W     3   // QWERTY R — Dual punctuation (was Graphite W)
+#define L_D     4   // QWERTY E — Solo punctuation (was Graphite D)
+#define L_L     5   // QWERTY W — Logic symbols (was Graphite L)
+#define L_G     6   // hold G — J toggles mouse, K toggles Russian
+#define L_F     7   // QWERTY U — Math relations (was Graphite F)
+#define L_O     8   // QWERTY I — Math operators (was Graphite O)
+#define L_U     9   // QWERTY O — IPA (was Graphite U)
+#define L_S     10  // QWERTY F — Primary apps (was Graphite S)
+#define L_T     11  // QWERTY D — Secondary apps (was Graphite T)
+#define L_R     12  // QWERTY S — Inner app nav (was Graphite R)
+#define L_N     13  // QWERTY A — Window management (was Graphite N)
+#define L_H     14  // QWERTY J — Browser (was Graphite H)
+#define L_A     15  // QWERTY K — Clipboard (was Graphite A)
+#define L_E     16  // QWERTY L — Text selection (was Graphite E)
+#define L_I     17  // QWERTY ; — Find & navigate (was Graphite I)
 #define L_AUDIO 18  // LT5 hold — Audio & display
-#define L_WNAV  19  // Graphite . hold — Word navigation
-#define L_WDEL  20  // Graphite P hold — Word deletion
+#define L_WNAV  19  // QWERTY , hold — Word navigation (was Graphite .)
+#define L_WDEL  20  // QWERTY M hold — Word deletion (was Graphite P)
 #define L_GAME  21  // tap RT3 — plain keys (no letter/thumb layers)
-#define MAGIC   22
-#define FACTORY_TEST 23
+#define L_MOUSE 22  // hold G, tap J — mouse (bottom-row move)
+#define MAGIC   23
+#define FACTORY_TEST 24
 
 // Built-in layer-tap (&lt): hold → momentary layer, tap → key.
 &lt {
@@ -77,58 +78,21 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        // Base punctuation (shift morphs). Physical positions as specified.
-        mm_y: mod_morph_y {
+        // QWERTY comma: tap , / shift < ; hold → Word-Nav
+        mm_comma: mod_morph_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp DQT>;
+            bindings = <&kp COMMA>, <&kp LT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        // Graphite . (phys comma): period / !
-        mm_dotkey: mod_morph_dotkey {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // Hold Graphite . → Word-Nav; tap → ./!
-        dot_wnav: hold_tap_dot_wnav {
+        comma_wnav: hold_tap_comma_wnav {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <280>;
-            bindings = <&mo>, <&mm_dotkey>;
+            bindings = <&mo>, <&mm_comma>;
         };
-        // Graphite - (phys period): hyphen / _
-        mm_minus: mod_morph_minus {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp UNDER>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // Under I (phys /): semicolon / colon
-        mm_fslh: mod_morph_fslh {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // Right of I (phys '): slash / backslash
-        // Shift+BSLH would be pipe if Shift stays in the HID report — release it first.
-        mm_sqt: mod_morph_sqt {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp FSLH>, <&m_bslash>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // Right of J (phys \ on Glove80 alpha row): ? / |
-        mm_bslh: mod_morph_bslh {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp PIPE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // Bracket keys: [/{ and ]/}
+        // Bracket keys: [/{ and ]/} (stock QWERTY)
         mm_lbkt: mod_morph_lbkt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -324,10 +288,10 @@
         compatible = "zmk,keymap";
 
         // =====================================================================
-        // DEFAULT — Graphite letter HID (OS must be US/QWERTY)
-        //   b l d w z  , f o u j  \
-        //   n r t s g  y h a e i  '
-        //   q x m c v  k p . - /
+        // DEFAULT — QWERTY letter HID
+        //   q w e r t  y u i o p
+        //   a s d f g  h j k l ;
+        //   z x c v b  n m , . /
         // =====================================================================
         default_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
@@ -347,24 +311,24 @@
             bindings = <
             &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
-            &kp ESC        &kp B     &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                      &mm_y   &lt L_F F  &lt L_O O  &lt L_U U  &kp J       &mm_bslh
-            &mkp LCLK      &lt L_N N &lt L_R R  &lt L_T T   &lt L_S S   &kp G                                                                      &kp Y   &lt L_H H  &lt L_A A  &lt L_E E  &lt L_I I   &mm_sqt
-            &none          &kp Q    &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK   &kp LCTRL   &kp LGUI  &game_cmd RGUI L_GAME  &ru_on RCTRL 0 &shift_caps RSHFT CAPSLOCK   &kp K   &lt L_WDEL P   &dot_wnav L_WNAV 0   &mm_minus   &mm_fslh    &kp PG_UP
+            &kp ESC        &kp Q     &lt L_L W   &lt L_D E   &lt L_W R   &kp T                                                                      &kp Y   &lt L_F U  &lt L_O I  &lt L_U O  &kp P       &kp BSLH
+            &mkp LCLK      &lt L_N A &lt L_R S  &lt L_T D   &lt L_S F   &lt L_G G                                                                  &kp H   &lt L_H J  &lt L_A K  &lt L_E L  &lt L_I SEMI   &kp SQT
+            &none          &kp Z    &kp X       &kp C       &kp V       &kp B   &shift_caps LSHFT CAPS   &kp LCTRL   &kp LGUI  &game_cmd RGUI 0  &ru_on RCTRL 0 &shift_caps RSHFT CAPS   &kp N   &lt L_WDEL M   &comma_wnav L_WNAV 0   &kp DOT   &kp FSLH    &kp PG_UP
             &magic MAGIC 0 &none &none &kp LEFT &kp RIGHT        &kp BSPC    &mo L_AUDIO &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &mm_lbkt &mm_rbkt &kp PG_DN
             >;
         };
 
         // =====================================================================
-        // RUSSIAN — Vestnik (layer index below letter layers so holds still work)
+        // RUSSIAN — Vestnik (same QWERTY letters; HS remaps to Cyrillic)
         // Same edges/thumbs as default except LT5 tap = stress.
         // =====================================================================
         russian_layer {
             bindings = <
             &kp C_BRI_DN   &kp C_BRI_UP &m_zoom_in   &m_zoom_out  &none                                                                                         &kp C_NEXT &kp C_PP    &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP
             &none          &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp EQUAL
-            &kp ESC        &kp B        &lt L_L L   &lt L_D D   &lt L_W W   &kp Z                                                                        &kp COMMA &lt L_F F &lt L_O O &lt L_U U &kp J &kp BSLH
-            &mkp LCLK      &lt L_N N    &lt L_R R   &lt L_T T   &lt L_S S   &kp G                                                                        &kp Y &lt L_H H &lt L_A A &lt L_E E &lt L_I I &kp SQT
-            &none          &kp Q        &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &ru_off RCTRL 0 &shift_caps RSHFT CAPSLOCK   &kp K &lt L_WDEL P &lt L_WNAV DOT &kp MINUS &kp SEMI &kp PG_UP
+            &kp ESC        &kp Q        &lt L_L W   &lt L_D E   &lt L_W R   &kp T                                                                        &kp Y &lt L_F U &lt L_O I &lt L_U O &kp P &kp BSLH
+            &mkp LCLK      &lt L_N A    &lt L_R S   &lt L_T D   &lt L_S F   &lt L_G G                                                                    &kp H &lt L_H J &lt L_A K &lt L_E L &lt L_I SEMI &kp SQT
+            &none          &kp Z        &kp X       &kp C       &kp V       &kp B   &shift_caps LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI 0  &ru_off RCTRL 0 &shift_caps RSHFT CAPS   &kp N &lt L_WDEL M &lt L_WNAV COMMA &kp DOT &kp FSLH &kp PG_UP
             &magic MAGIC 0 &none        &none       &kp LEFT    &kp RIGHT                    &kp BSPC &ru_tab L_AUDIO 0 &kp TAB &kp RALT &kp RET &kp SPACE &kp UP &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
             >;
         };
@@ -430,12 +394,12 @@
             >;
         };
 
-        // Unused — kept for stable layer indices (logic moved to L)
-        layer_b {
+        // Hold G: H = toggle mouse, A = toggle Russian
+        layer_g {
             bindings = <
             LAYER_RIGHT(
                 ___, ___, ___, ___, ___,
-                ___, ___, ___, ___, ___,
+                ___, &m_mouse_tog, &m_ru_tog, ___, ___,
                 ___, ___, ___, ___, ___,
                 ___
             )
@@ -516,12 +480,12 @@
         };
 
         // Graphite R, QWERTY S — Inner app nav (was A; flipped to right)
-        // H left sidebar, A right sidebar, E bottom; F/O zoom; U/J page
+        // Y focus editor; H/A/E sidebars (Cursor: open/focus, close if focused)
         layer_r {
             bindings = <
             LAYER_RIGHT(
                 ___, &m_zoom_in, &m_zoom_out, &kp PG_UP, &kp PG_DN,
-                ___, &kp LG(B), &m_right_sidebar, &kp LG(J), ___,
+                &kp HYPER(F), &kp LG(B), &m_right_sidebar, &kp LG(J), ___,
                 ___, ___, ___, ___, ___,
                 ___
             )
@@ -650,10 +614,27 @@
             bindings = <
             &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
             &trans         &trans       &trans      &trans      &trans      &trans                                                                      &trans  &trans  &trans      &trans      &trans      &trans
-            &trans         &kp B        &kp L       &kp D       &kp W       &kp Z                                                                        &mm_y   &kp F   &kp O       &kp U       &kp J       &mm_bslh
-            &mkp LCLK      &kp N        &kp R       &kp T       &kp S       &kp G                                                                        &kp Y   &kp H   &kp A       &kp E       &kp I       &mm_sqt
-            &trans         &kp Q        &kp X       &kp M       &kp C       &kp V   &shift_caps LSHFT CAPSLOCK &kp LCTRL &kp LGUI  &game_cmd RGUI L_GAME  &kp RCTRL &shift_caps RSHFT CAPSLOCK   &kp K &kp P &mm_dotkey &mm_minus &mm_fslh &kp PG_UP
+            &trans         &kp Q        &kp W       &kp E       &kp R       &kp T                                                                        &kp Y   &kp U   &kp I       &kp O       &kp P       &kp BSLH
+            &mkp LCLK      &kp A        &kp S       &kp D       &kp F       &lt L_G G                                                                    &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
+            &trans         &kp Z        &kp X       &kp C       &kp V       &kp B   &shift_caps LSHFT CAPS &kp LCTRL &kp LGUI  &game_cmd RGUI 0  &kp RCTRL &shift_caps RSHFT CAPS   &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp PG_UP
             &trans         &trans       &trans      &trans      &trans                    &trans &none &kp TAB &trans &trans &trans &trans &trans &trans &trans &kp PG_DN
+            >;
+        };
+
+        // =====================================================================
+        // MOUSE — hold G, tap J to toggle. Bottom row moves (overrides M/, layers).
+        // F/J: tap = lock/unlock LCLK; hold = Primary apps / Browser.
+        // Z left  X up  C down  V right | M up-left  , up-right  . down-left  / down-right
+        // B LCLK  N RCLK
+        // =====================================================================
+        mouse_layer {
+            bindings = <
+            &trans         &trans       &trans      &trans      &trans                                                                                         &trans  &trans      &trans      &trans      &trans
+            &trans         &trans       &trans      &trans      &trans      &trans                                                                      &trans  &trans  &trans      &trans      &trans      &trans
+            &trans         &trans       &trans      &trans      &trans      &trans                                                                      &trans  &trans  &trans      &trans      &trans      &trans
+            &trans         &trans       &trans      &trans      &mouse_s L_S 0 &trans                                                                      &trans  &mouse_h L_H 0 &trans    &trans      &trans      &trans
+            &trans         &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp LCLK   &trans &trans &trans  &trans &trans &trans    &mkp RCLK &mmv MOVE(-600,-600) &mmv MOVE(600,-600) &mmv MOVE(-600,600) &mmv MOVE(600,600) &trans
+            &trans         &trans       &trans      &msc SCRL_LEFT &msc SCRL_RIGHT                    &trans &trans &trans &trans &trans &trans &msc SCRL_UP &msc SCRL_DOWN &trans &trans &trans
             >;
         };
 

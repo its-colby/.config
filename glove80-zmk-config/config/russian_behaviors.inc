@@ -24,20 +24,39 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&m_ru_stress>;
         };
-        // RT3: hold = RGUI (Cmd); tap = toggle game layer (plain keys, no holds)
+        // RT3: hold = RGUI (Cmd); tap = toggle game (F13-hyper HUD + tog L_GAME)
         game_cmd: game_cmd_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&tog>;
+            bindings = <&kp>, <&m_game_tog>;
         };
-        // LT1/RT1: hold = Shift; tap = Caps Lock
+        // LT1/RT1: tap = Caps (same keycode that worked on old LT6); hold = Shift.
+        // tap-preferred + 280ms — same as letter &lt; otherwise a normal tap is a Shift blip.
         shift_caps: shift_caps_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <180>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <280>;
             bindings = <&kp>, <&kp>;
         };
+        // Mouse layer S/H: tap = lock/unlock LCLK; hold = Primary apps / Browser.
+        mouse_s: mouse_s_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <280>;
+            bindings = <&mo>, <&m_lclk_down>;
+        };
+        mouse_h: mouse_h_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <280>;
+            bindings = <&mo>, <&m_lclk_up>;
+        };
+

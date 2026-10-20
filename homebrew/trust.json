@@ -1,5 +1,6 @@
 {
   "trustedformulae": [
+    "anomalyco/tap/opencode",
     "stripe/stripe-cli/stripe",
     "tursodatabase/tap/turso"
   ]

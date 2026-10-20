@@ -1,39 +1,40 @@
 KEY BINDINGS
 ============
-Keys are Graphite unless noted. Layer blocks: 4 stacked rows + thumb last.
+Keys are QWERTY. Layer blocks: 4 stacked rows + thumb last.
+Finger positions match the old Graphite layout (e.g. Primary apps = left index = F).
 
 
 --------------------------------------------------------------------------------
 1. KEYBOARDS
 --------------------------------------------------------------------------------
 Internal (Mac builtin)
-  Graphite via Karabiner + Goku
+  Stock QWERTY · layers via Karabiner + Goku
 
 External (Glove80)
-  Graphite via ZMK firmware (flash after keymap changes)
+  QWERTY via ZMK firmware (flash after keymap changes)
 
 Both use Mac apps
   MonitorControl, Hammerspoon, Aerospace
 
 OS input source
-  U.S. QWERTY (not OS Graphite)
+  U.S. QWERTY
 
-Cmd/Ctrl/Opt + Graphite letter = normal Mac shortcut (Cmd+S save, Cmd+V paste, …).
+Cmd/Ctrl/Opt + letter = normal Mac shortcut (Cmd+S save, Cmd+V paste, …).
 
 
 --------------------------------------------------------------------------------
 2. SETUP (what must be running)
 --------------------------------------------------------------------------------
   • MonitorControl  (Audio layer)
-  • Hammerspoon     (S, T, W, D, L, F, O, U layers; Russian)
-  • Aerospace       (N layer)
+  • Hammerspoon     (F, D, R, E, W, U, I, O layers; Russian)
+  • Aerospace       (A layer)
   • Karabiner+Goku  (all layers; internal keyboard only)
 
 
 --------------------------------------------------------------------------------
 3. HOW TO READ LAYERS
 --------------------------------------------------------------------------------
-  Hold Graphite KEY (QWERTY phys) — momentary layer name
+  Hold KEY — momentary layer name
   Each layer is 4 stacked rows (upper, home, bottom, thumb), keys inward → outward.
   Unmapped = unused. “thumb” = opposite-hand Space on that layer:
     left-hand hold → RT4; right-hand hold → LT4 (Mac: either Space).
@@ -48,37 +49,38 @@ Labels = what the key types / does. * = hold opens a momentary layer.
 
   esc   F1  F2  F3  F4  F5  F6  F7  F8  F9  F10 F11 F12
   `     1   2   3   4   5   6   7   8   9   0   -   =     delete
-  tab   B   L*  D*  W*  Z   ,   F*  O*  U*  J   ?   [   ]
-  caps  N*  R*  T*  S*  G   Y   H*  A*  E*  I*  /         return
-  shift Q   X*  M*  C   V   K   P*  .*  -   ;       shift
+  tab   Q   W*  E*  R*  T   Y   U*  I*  O*  P   [   ]   \
+  caps  A*  S*  D*  F*  G*  H   J*  K*  L*  ;*  '         return
+  shift Z   X   C*  V   B   N   M*  ,*  .   /       shift
   fn ctrl opt cmd              space                 cmd opt
 
   Arrow cluster (stock): left  up/down  right
 
 Holds
-  W Dual punct · D Solo punct · L Logic
-  F Math rel · O Math ops · U IPA
-  S Primary apps · T Secondary apps · R App nav · N Window
-  H Browser · A Clipboard · E Selection · I Find
-  P Word-Del · PERIOD Word-Nav · M Audio · X Vestnik (tap H = Russian toggle)
+  R Dual punct · E Solo punct · W Logic
+  U Math rel · I Math ops · O IPA
+  F Primary apps · D Secondary apps · S App nav · A Window
+  J Browser · K Clipboard · L Selection · SEMICOLON Find
+  M Word-Del · COMMA Word-Nav · C Audio
+  G then J = mouse · G then K = Russian toggle
 
 Other
   Shift = Shift layer (§7)
   Function row = stock Apple (not remapped)
-  Cmd / Ctrl / Opt + Graphite letter = normal Mac shortcut (Cmd+S save, Cmd+V paste, …)
+  Cmd / Ctrl / Opt + letter = normal Mac shortcut
 
 
 --------------------------------------------------------------------------------
 5. GLOVE80 — DEFAULT KEYS
 --------------------------------------------------------------------------------
-Labels = what the key types / does (Graphite). * = hold opens a momentary layer.
+Labels = what the key types / does (QWERTY). * = hold opens a momentary layer.
 Thumbs omitted from the diagram — listed below.
 
   F1  F2  F3  F4  F5                            F6  F7  F8  F9  F10
   ·   1   2   3   4   5                     6   7   8   9   0   =
-  esc B   L*  D*  W*  Z                     ,   F*  O*  U*  J   ?
-  clk N*  R*  T*  S*  G                     Y   H*  A*  E*  I   /
-  ·   Q   X   M   C   V                     K   P*  .*  -   ;  PgUp
+  esc Q   W*  E*  R*  T                     Y   U*  I*  O*  P   \
+  clk A*  S*  D*  F*  G*                    H   J*  K*  L*  ;   '
+  ·   Z   X   C   V   B                     N   M*  ,*  .   /  PgUp
   MG  ·   ·   ←   →                             ↑   ↓   [   ]  PgDn
 
 Thumbs (outer → inner; top then bottom) — between the halves, not shown above
@@ -97,166 +99,166 @@ F1–F10
   F6 = Next   F7 = Play/Pause   F8 = Mute   F9 = Vol↓   F10 = Vol↑
 
 Holds (same letter layers as Mac)
-  W Dual punct · D Solo punct · L Logic
-  F Math rel · O Math ops · U IPA
-  S Primary apps · T Secondary apps · R App nav · N Window
-  H Browser · A Clipboard · E Selection · I Find
-  P Word-Del · PERIOD Word-Nav · LT5 Audio
+  R Dual punct · E Solo punct · W Logic
+  U Math rel · I Math ops · O IPA
+  F Primary apps · D Secondary apps · S App nav · A Window
+  J Browser · K Clipboard · L Selection · SEMICOLON Find
+  M Word-Del · COMMA Word-Nav · LT5 Audio
+  G then J = mouse · G then K = Russian
   LT1/RT1 Shift (hold) / Caps (tap)
 
 Other
   · = none · MG = MAGIC (BT / RGB / bootloader)
   clk = left mouse click (under Esc)
-  PgUp / PgDn = right of SEMICOLON / RBKT
+  PgUp / PgDn = right of FSLH / RBKT
 
 
 --------------------------------------------------------------------------------
 6. DIFF (Mac vs Glove80)
 --------------------------------------------------------------------------------
-  Graphite source      Mac: Goku remap          Glove80: ZMK HID
-  Audio hold           Mac: M                   Glove80: LT5 (M types alone)
-  Russian toggle       Mac: hold X, tap H       Glove80: tap RT2
-  Game mode            Mac: (none)              Glove80: tap RT3 (hold = RCmd)
-  Modifiers / Space    Mac: stock keys          Glove80: LT/RT thumbs (§5)
-  Esc                  Mac: stock Esc           Glove80: left of B
-  Arrows / edges       Mac: stock only          Glove80: under M/C/P/PERIOD; PgUp/PgDn; click under Esc
-  Function row         Mac: stock Apple         Glove80: F1–F10 (§5)
-  Brackets             Mac: phys RBKT / BSLH    Glove80: LBKT / RBKT cluster
-  Layer Space          Mac: either Space key    Glove80: opp. thumb (RT4 / LT4)
+  QWERTY source         Mac: stock                  Glove80: ZMK HID
+  Audio hold            Mac: C                      Glove80: LT5 (C types alone)
+  Russian toggle        Mac: hold G, tap K          Glove80: hold G, tap K (RT2 still works)
+  Mouse                 both: hold G, tap J
+  Game mode             Mac: (none)                 Glove80: tap RT3 (hold = RCmd)
+  Modifiers / Space     Mac: stock keys             Glove80: LT/RT thumbs (§5)
+  Esc                   Mac: stock Esc              Glove80: left of Q
+  Arrows / edges        Mac: stock only             Glove80: under C/V/M/COMMA; PgUp/PgDn; click under Esc
+  Function row          Mac: stock Apple            Glove80: F1–F10 (§5)
+  Brackets              Mac: stock [ ]              Glove80: LBKT / RBKT cluster
+  Layer Space           Mac: either Space key       Glove80: opp. thumb (RT4 / LT4)
 
 
 --------------------------------------------------------------------------------
 7. MOMENTARY LAYERS (hold → opposite-hand taps)
 --------------------------------------------------------------------------------
 
-UPPER LEFT (inward → outward: W, D, L)
+UPPER LEFT (inward → outward: R, E, W)
 
---- W: Dual Punctuation (Graphite W, QWERTY R) ---
-COMMA = unused , F = [] , O = {} , U = ⟨⟩ , J = ``
-Y = unused , H = "" , A = " , E = '' , I = '
-K = unused , P = ( , PERIOD = ) , HYPHEN = [ , SEMICOLON = ]
+--- R: Dual Punctuation (QWERTY R) ---
+COMMA = unused , U = [] , I = {} , O = ⟨⟩ , P = ``
+Y = unused , J = "" , K = " , L = '' , SEMICOLON = '
+N = unused , M = ( , COMMA = ) , PERIOD = [ , FSLH = ]
 thumb = ()
 
---- D: Solo Punctuation (Graphite D, QWERTY E) ---
-COMMA = unused , F = % , O = ~ , U = ^ , J = $
-Y = * , H = … , A = # , E = & , I = @
-K = unused , P = ∅ , PERIOD = ∞ , HYPHEN = unused , SEMICOLON = unused
+--- E: Solo Punctuation (QWERTY E) ---
+COMMA = unused , U = % , I = ~ , O = ^ , P = $
+Y = * , J = … , K = # , L = & , SEMICOLON = @
+N = unused , M = ∅ , COMMA = ∞ , PERIOD = unused , FSLH = unused
 thumb = —
 
---- L: Logic (Graphite L, QWERTY W) ---
-COMMA = unused , F = ⊤ , O = ⊥ , U = ⊨ , J = unused
-Y = ¬ , H = ∧ , A = ∨ , E = ∃ , I = ∀
-K = unused , P = unused , PERIOD = unused , HYPHEN = unused , SEMICOLON = unused
+--- W: Logic (QWERTY W) ---
+COMMA = unused , U = ⊤ , I = ⊥ , O = ⊨ , P = unused
+Y = ¬ , J = ∧ , K = ∨ , L = ∃ , SEMICOLON = ∀
+N = unused , M = unused , COMMA = unused , PERIOD = unused , FSLH = unused
 thumb = ∴
 
 
-UPPER RIGHT (inward → outward: F, O, U)
+UPPER RIGHT (inward → outward: U, I, O)
 
---- F: Math Relations (Graphite F, QWERTY U) ---
-B = ≤ , L = ≥ , D = ≅ , W = ≇ , Z = ∝
-N = < , R = > , T = = , S = ≠ , G = ≈
-Q = ⊂ , X = ⊃ , M = ∈ , C = ∉ , V = ∼
+--- U: Math Relations (QWERTY U) ---
+Q = ≤ , W = ≥ , E = ≅ , R = ≇ , T = ∝
+A = < , S = > , D = = , F = ≠ , G = ≈
+Z = ⊂ , X = ⊃ , C = ∈ , V = ∉ , B = ∼
 thumb = ≔
 
---- O: Math Operators (Graphite O, QWERTY I) ---
-B = ∖ , L = × , D = ∩ , W = ∪ , Z = ∘
-N = ÷ , R = · , T = - , S = + , G = √
-Q = ∂ , X = ∫ , M = ∏ , C = ∑ , V = ↦
+--- I: Math Operators (QWERTY I) ---
+Q = ∖ , W = × , E = ∩ , R = ∪ , T = ∘
+A = ÷ , S = · , D = - , F = + , G = √
+Z = ∂ , X = ∫ , C = ∏ , V = ∑ , B = ↦
 thumb = ±
 
---- U: IPA (Graphite U, QWERTY O) ---
-B = ŋ , L = ɔ , D = ɛ , W = ʲ , Z = ø
-N = ɪ , R = ɐ , T = ɨ , S = ə , G = ʊ
-Q = ʁ , X = ɕ , M = ʒ , C = ʃ , V = ç
+--- O: IPA (QWERTY O) ---
+Q = ŋ , W = ɔ , E = ɛ , R = ʲ , T = ø
+A = ɪ , S = ɐ , D = ɨ , F = ə , G = ʊ
+Z = ʁ , X = ɕ , C = ʒ , V = ʃ , B = ç
 thumb = ː
 
 
-HOME LEFT (inward → outward: S, T, R, N)
+HOME LEFT (inward → outward: F, D, S, A)
 
---- S: Primary Apps (Graphite S, QWERTY F) ---
-COMMA = unused , F = unused , O = unused , U = unused , J = unused
-Y = Cursor ~/projects/itscolby , H = Cursor ~/projects/mopaverse , A = Cursor ~/.config , E = Ghostty , I = unused
-K = unused , P = unused , PERIOD = unused , HYPHEN = unused , SEMICOLON = unused
+--- F: Primary Apps (QWERTY F) ---
+COMMA = unused , U = unused , I = unused , O = unused , P = unused
+Y = Cursor ~/projects/itscolby , J = Cursor ~/projects/mopaverse , K = Cursor ~/.config , L = Ghostty , SEMICOLON = unused
+N = unused , M = unused , COMMA = unused , PERIOD = unused , FSLH = unused
 thumb = Shift+Opt+Space (close window)
 
---- T: Secondary Apps (Graphite T, QWERTY D) ---
+--- D: Secondary Apps (QWERTY D) ---
 Hyper → Hammerspoon open-or-focus. Arc: focus Favorites tab if match, else any tab, else new.
-COMMA = Spotify , F = WhatsApp , O = GitHub , U = Gmail , J = Google Calendar
-Y = Messages , H = ChatGPT , A = YouTube , E = openrussian.org , I = life.itscolby.com
-K = unused , P = unused , PERIOD = unused , HYPHEN = unused , SEMICOLON = unused
+COMMA = Spotify , U = WhatsApp , I = GitHub , O = Gmail , P = Google Calendar
+Y = Messages , J = ChatGPT , K = YouTube , L = openrussian.org , SEMICOLON = life.itscolby.com
+N = unused , M = unused , COMMA = unused , PERIOD = unused , FSLH = unused
 thumb = Delete
 
---- R: App Nav (Graphite R, QWERTY S) ---
-COMMA = unused , F = Cmd+= , O = Cmd+- , U = Page Up , J = Page Down
-Y = unused , H = Cmd+B , A = Cmd+Opt+B , E = Cmd+J , I = unused
-K = unused , P = unused , PERIOD = unused , HYPHEN = unused , SEMICOLON = unused
+--- S: App Nav (QWERTY S) ---
+COMMA = unused , U = Cmd+= , I = Cmd+- , O = Page Up , P = Page Down
+Y = focus editor , J = left sidebar , K = right sidebar , L = panel , SEMICOLON = unused
+  (J/K/L in Cursor: open+focus, or close if already focused)
+N = unused , M = unused , COMMA = unused , PERIOD = unused , FSLH = unused
 thumb = unused
 
---- N: Window / Aerospace (Graphite N, QWERTY A) ---
-COMMA = unused , F = send ws 1 , O = send ws 2 , U = go ws 1 , J = go ws 2
-Y = swap , H = focus left , A = focus right , E = accordion , I = tiles
-K = unused , P = resize− , PERIOD = resize+ , HYPHEN = unused , SEMICOLON = unused
+--- A: Window / Aerospace (QWERTY A) ---
+COMMA = unused , U = send ws 1 , I = send ws 2 , O = go ws 1 , P = go ws 2
+Y = swap , J = focus left , K = focus right , L = accordion , SEMICOLON = tiles
+N = unused , M = resize− , COMMA = resize+ , PERIOD = unused , FSLH = unused
 thumb = unused
 
 
-HOME RIGHT (inward → outward: H, A, E, I)
+HOME RIGHT (inward → outward: J, K, L, SEMICOLON)
 
---- H: Browser (Graphite H, QWERTY J) ---
-B = unused , L = Ctrl+Opt+E , D = Cmd+[ , W = Cmd+] , Z = unused
-N = Ctrl+Opt+Q , R = Ctrl+Opt+G , T = Ctrl+Opt+D , S = Ctrl+Opt+F , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- J: Browser (QWERTY J) ---
+Q = unused , W = Ctrl+Opt+E , E = Cmd+[ , R = Cmd+] , T = unused
+A = Ctrl+Opt+Q , S = Ctrl+Opt+G , D = Ctrl+Opt+D , F = Ctrl+Opt+F , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = Ctrl+Opt+W (close tab)
 
---- A: Clipboard (Graphite A, QWERTY K) ---
-B = unused , L = unused , D = Cmd+Shift+V , W = Cmd+Shift+Z , Z = unused
-N = Cmd+C , R = Cmd+X , T = Cmd+V , S = Cmd+Z , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- K: Clipboard (QWERTY K) ---
+Q = unused , W = unused , E = Cmd+Shift+V , R = Cmd+Shift+Z , T = unused
+A = Cmd+C , S = Cmd+X , D = Cmd+V , F = Cmd+Z , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = Cmd+/ (comment)
 
---- E: Selection (Graphite E, QWERTY L) ---
-B = Shift+Up , L = Shift+Down , D = Shift+Right , W = Shift+Left , Z = unused
-N = Shift+Opt+Left , R = Shift+Opt+Right , T = Shift+Cmd+Left , S = Shift+Cmd+Right , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- L: Selection (QWERTY L) ---
+Q = Shift+Up , W = Shift+Down , E = Shift+Right , R = Shift+Left , T = unused
+A = Shift+Opt+Left , S = Shift+Opt+Right , D = Shift+Cmd+Left , F = Shift+Cmd+Right , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = Cmd+A (select all)
 
---- I: Find (Graphite I, QWERTY SEMICOLON) ---
-B = unused , L = F12 , D = Cmd+Opt+F , W = Cmd+F , Z = unused
-N = F2 , R = Cmd+Shift+G , T = Cmd+G , S = Cmd+S , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- SEMICOLON: Find (QWERTY ;) ---
+Q = unused , W = F12 , E = Cmd+Opt+F , R = Cmd+F , T = unused
+A = F2 , S = Cmd+Shift+G , D = Cmd+G , F = Cmd+S , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = Escape
 
 
 LOWER ROW
 
---- Word-Nav (hold Graphite PERIOD) ---
-B = Down , L = Up , D = Left , W = Right , Z = unused
-N = Opt+Left , R = Opt+Right , T = Cmd+Left , S = Cmd+Right , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- Word-Nav (hold COMMA) ---
+Q = Down , W = Up , E = Left , R = Right , T = unused
+A = Opt+Left , S = Opt+Right , D = Cmd+Left , F = Cmd+Right , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = unused
 
---- Word-Del (hold Graphite P) ---
-B = unused , L = unused , D = Cmd+[ , W = Cmd+] , Z = unused
-N = Opt+Backspace , R = Opt+Delete , T = Cmd+Backspace , S = Cmd+Delete , G = unused
-Q = unused , X = unused , M = unused , C = unused , V = unused
+--- Word-Del (hold M) ---
+Q = unused , W = unused , E = Cmd+[ , R = Cmd+] , T = unused
+A = Opt+Backspace , S = Opt+Delete , D = Cmd+Backspace , F = Cmd+Delete , G = unused
+Z = unused , X = unused , C = unused , V = unused , B = unused
 thumb = Delete
-
---- Vestnik (hold Graphite X — Mac only) ---
-H = F18 (toggle Russian)
 
 
 THUMB
 
 --- Shift (hold LT1/RT1 Glove80; Mac Shift keys) ---
 Letters = uppercase
-COMMA = " , PERIOD = ! , HYPHEN = _ , SEMICOLON = :
-QUOTE = \ , QUESTION = |
+COMMA = < , PERIOD = > , HYPHEN = _ , FSLH = ?
+QUOTE = " , SEMICOLON = :
 LBKT = { , RBKT = } , EQUAL = +
 (Glove80 LT1/RT1 tap = Caps Lock)
 
---- Audio (hold LT5 Glove80 / Graphite M Mac) ---
-COMMA = unused , F = Bri↑ , O = Bri↓ , U = Cmd+L , J = unused
-Y = unused , H = Cmd+= , A = Cmd+- , E = Vol↑ , I = Vol↓
-K = unused , P = unused , PERIOD = unused , HYPHEN = unused , SEMICOLON = unused
+--- Audio (hold LT5 Glove80 / QWERTY C Mac) ---
+COMMA = unused , U = Bri↑ , I = Bri↓ , O = Cmd+L , P = unused
+Y = unused , J = Cmd+= , K = Cmd+- , L = Vol↑ , SEMICOLON = Vol↓
+N = unused , M = unused , COMMA = unused , PERIOD = unused , FSLH = unused
 thumb = unused
 
 
@@ -267,16 +269,29 @@ thumb = unused
 --- Game (Glove80 only) ---
 Enable / leave: tap RT3 (hold RT3 = RCmd). Mac: none.
 
-On: plain Graphite letters/punct (no hold layers). F-row bri/vol/media,
+On: plain QWERTY letters/punct (no hold layers). F-row bri/vol/media,
 numbers, Magic, mods, Space/Enter/arrows unchanged. LT5 = none (no Audio).
-LT6 = Tab. RT2 = plain RCtrl (no Russian). P / PERIOD = plain (no
+LT6 = Tab. RT2 = plain RCtrl (no Russian). M / COMMA = plain (no
 Word-Del / Word-Nav). PgUp/PgDn + click under Esc still work.
+
+
+--- Mouse ---
+Enable / leave: hold G, tap J (Mac + Glove80).
+
+Bottom row (hold to keep moving)
+  Z left · X up · C down · V right
+  M up-left · COMMA up-right · PERIOD down-left · FSLH down-right
+  B left click · N right click
+Arrows: ↑ scroll up · ↓ scroll down · ← scroll left · → scroll right
+Home: tap F = lock left click · tap J = release
+  hold F / J = Primary apps / Browser (same as off mouse)
+Bottom row holds (Word-Del, Word-Nav, Mac C-audio) are off — those keys move the pointer.
 
 
 --- Russian / Vestnik ---
 Enable
-  Glove80: tap RT2 (hold = RCtrl); tap again to leave
-  Mac: hold X, tap H (Graphite)
+  both: hold G, tap K
+  Glove80 also: tap RT2 (hold = RCtrl); tap again to leave
   Requires Hammerspoon (vestnik.lua). Reload HS after edits; Accessibility on.
 
 · = unchanged from English. * = hold → different letter (or stress).
@@ -286,22 +301,22 @@ Letter holds still open the same momentary layers (tap = Cyrillic).
 MAC — Russian on
   ·     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
   ·     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·     ·
-  ·     ц   д   р   г   х   ф   п   а   я   э*  .   «   »
-  ·     с   т   н   к   б   ь*  в   о   е   и   ,         ·
+  ·     ц   д   р   г   х   ф   п   а   я   э*  [   ]   \
+  ·     с   т   н   к   б   ь*  в   о   е   и   '         ·
   ·     ш*  з   л   м   ч   ж   й   ы   у   ю       ·
   ·   ·   ·   ·              space*                ·   ·
 
   ш*→щ · ь*→ъ · э*→ё  (Shift+hold = caps)
   space* = stress ́ (previous letter)
-  punctuation = PERIOD (Shift ;), COMMA (Shift —), LBKT («), RBKT (»)
+  [ = « · ] = » · ' = COMMA (Shift —) · \ = PERIOD (Shift ;)
 
 
 GLOVE80 — Russian on
 
       ·   ·   ·   ·   ·                     ·   ·   ·   ·   ·
   ·   ·   ·   ·   ·   ·                     ·   ·   ·   ·   ·   ·
-  ·   ц   д   р   г   х                     ф   п   а   я   э*  .
-  ·   с   т   н   к   б                     ь*  в   о   е   и   ,
+  ·   ц   д   р   г   х                     ф   п   а   я   э*  \
+  ·   с   т   н   к   б                     ь*  в   о   е   и   '
   ·   ш*  з   л   м   ч                     ж   й   ы   у   ю   ·
   ·   ·   ·   ·   ·                         ·   ·   «   »   ·
 
@@ -310,7 +325,7 @@ Thumbs (only what changed; rest ·)
   RT2 = Ctrl / tap = leave Russian
 
   ш*→щ · ь*→ъ · э*→ё  (Shift+hold = caps)
-  punctuation = PERIOD (Shift ;), COMMA (Shift —), LBKT («), RBKT (»)
+  [ = « · ] = »
 
 
 Math / IPA / logic glyphs: Glove80 F15+hex → Hammerspoon (unicode_leader.lua)

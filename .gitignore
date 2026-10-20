@@ -4,3 +4,9 @@
 agda/**
 # Stripe CLI credentials (API keys)
 stripe/
+
+# Foundry toolchain (forge/cast/anvil binaries — install via foundryup)
+.foundry/
+
+# Node deps
+**/node_modules/

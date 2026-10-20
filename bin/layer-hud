@@ -1,0 +1,5 @@
+#!/bin/bash
+# Center-screen Hammerspoon alert. Usage: layer-hud Mouse
+set -euo pipefail
+msg=${1:?}
+/usr/bin/osascript -e "tell application \"Hammerspoon\" to execute lua code \"layerHud(\\\"${msg}\\\")\""

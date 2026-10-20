@@ -2,11 +2,15 @@
 --
 -- Enable / disable:
 --   Glove80 Russian layer → F16 on / F17 off (firmware)
---   Mac builtin → hold Graphite X, tap Graphite H (phys J) → F18 (Goku) → toggle
+--   Mac builtin → hold G, tap K → F18 (Goku) → toggle
 --
--- Extras (no layer keys): hold ш(Q)→щ, ь(Y)→ъ, э(J)→ё (Shift+hold → caps)
--- Stress: Mac hold Space → ́ ; Glove80 Tab-thumb tap → ́ (hold Tab = Audio)
--- Layer keys (WDLFOUSTTRNHAEI): tap → letter, hold → silence so layers still work
+-- QWERTY finger map (same positions as the old Graphite Vestnik):
+--   QWERTY QWERT YUIOP → цдргих фпая э*
+--   ASDFGHJKL;         → стнкб ь*воеи
+--   ZXCVBNM,./         → ш*злмч жйыую
+-- Extras: hold ш(Z)→щ, ь(H)→ъ, э(P)→ё (Shift+hold → caps)
+-- Stress: Mac hold Space → ́ ; Glove80 LT5 tap → ́
+-- Layer keys: tap → Cyrillic, hold → silence so layers still work
 
 local M = {}
 
@@ -23,35 +27,37 @@ local holdState = nil
 local function buildMap()
   local kc = hs.keycodes.map
   return {
-    [kc.b] = { "ц", "Ц" },
-    [kc.l] = { "д", "Д" },
-    [kc.d] = { "р", "Р" },
-    [kc.w] = { "г", "Г" },
-    [kc.z] = { "х", "Х" },
-    [kc[","]] = { "ф", "Ф" },
-    [kc.f] = { "п", "П" },
-    [kc.o] = { "а", "А" },
-    [kc.u] = { "я", "Я" },
-    -- j: hold-tap э/ё (see holdExtras)
-    [kc.n] = { "с", "С" },
-    [kc.r] = { "т", "Т" },
-    [kc.t] = { "н", "Н" },
-    [kc.s] = { "к", "К" },
+    -- top: Q W E R T Y U I O (P = hold-extra э)
+    [kc.q] = { "ц", "Ц" },
+    [kc.w] = { "д", "Д" },
+    [kc.e] = { "р", "Р" },
+    [kc.r] = { "г", "Г" },
+    [kc.t] = { "х", "Х" },
+    [kc.y] = { "ф", "Ф" },
+    [kc.u] = { "п", "П" },
+    [kc.i] = { "а", "А" },
+    [kc.o] = { "я", "Я" },
+    -- home: A S D F G (H = hold-extra ь) J K L ;
+    [kc.a] = { "с", "С" },
+    [kc.s] = { "т", "Т" },
+    [kc.d] = { "н", "Н" },
+    [kc.f] = { "к", "К" },
     [kc.g] = { "б", "Б" },
-    -- y / q: hold-tap extras
-    [kc.h] = { "в", "В" },
-    [kc.a] = { "о", "О" },
-    [kc.e] = { "е", "Е" },
-    [kc.i] = { "и", "И" },
+    [kc.j] = { "в", "В" },
+    [kc.k] = { "о", "О" },
+    [kc.l] = { "е", "Е" },
+    [kc[";"]] = { "и", "И" },
+    -- bottom: (Z = hold-extra ш) X C V B N M , . /
     [kc.x] = { "з", "З" },
-    [kc.m] = { "л", "Л" },
-    [kc.c] = { "м", "М" },
-    [kc.v] = { "ч", "Ч" },
-    [kc.k] = { "ж", "Ж" },
-    [kc.p] = { "й", "Й" },
-    [kc["."]] = { "ы", "Ы" },
-    [kc["-"]] = { "у", "У" },
-    [kc[";"]] = { "ю", "Ю" },
+    [kc.c] = { "л", "Л" },
+    [kc.v] = { "м", "М" },
+    [kc.b] = { "ч", "Ч" },
+    [kc.n] = { "ж", "Ж" },
+    [kc.m] = { "й", "Й" },
+    [kc[","]] = { "ы", "Ы" },
+    [kc["."]] = { "у", "У" },
+    [kc["/"]] = { "ю", "Ю" },
+    -- punct (unchanged keys)
     [kc["["]] = { "«", "«" },
     [kc["]"]] = { "»", "»" },
     [kc["'"]] = { ",", "—" },
@@ -62,22 +68,23 @@ end
 local function buildHoldExtras()
   local kc = hs.keycodes.map
   return {
-    [kc.q] = { tap = { "ш", "Ш" }, hold = { "щ", "Щ" } },
-    [kc.y] = { tap = { "ь", "Ь" }, hold = { "ъ", "Ъ" } },
-    [kc.j] = { tap = { "э", "Э" }, hold = { "ё", "Ё" } }, -- э has no layer
+    [kc.z] = { tap = { "ш", "Ш" }, hold = { "щ", "Щ" } },
+    [kc.h] = { tap = { "ь", "Ь" }, hold = { "ъ", "Ъ" } },
+    [kc.p] = { tap = { "э", "Э" }, hold = { "ё", "Ё" } },
   }
 end
 
 local function buildLayerKeys()
   local kc = hs.keycodes.map
-  -- Graphite letter holds that open layers (must not emit Cyrillic on hold)
+  -- QWERTY holds that open layers (must not emit Cyrillic on hold)
   local list = {
-    kc.w, kc.d, kc.l, -- dual/solo/logic
-    kc.f, kc.o, kc.u, -- math / IPA
-    kc.s, kc.t, kc.r, kc.n, -- apps / nav / window
-    kc.h, kc.a, kc.e, kc.i, -- browser / clipboard / selection / find
-    kc.p, -- Word-Del hold
-    kc["."], -- Word-Nav hold
+    kc.r, kc.e, kc.w, -- dual/solo/logic
+    kc.u, kc.i, kc.o, -- math / IPA
+    kc.f, kc.d, kc.s, kc.a, -- apps / nav / window
+    kc.j, kc.k, kc.l, kc[";"], -- browser / clipboard / selection / find
+    kc.g, -- G-leader (mouse / vestnik)
+    kc.m, -- Word-Del hold
+    kc[","], -- Word-Nav hold
   }
   local set = {}
   for _, code in ipairs(list) do
@@ -277,7 +284,8 @@ function M.enable()
     }, onEvent)
   end
   tap:start()
-  hs.alert.show("RU Vestnik", 0.6)
+  hs.alert.closeAll()
+  hs.alert.show("Russian", 0.6)
 end
 
 function M.disable()
@@ -289,7 +297,8 @@ function M.disable()
   if tap then
     tap:stop()
   end
-  hs.alert.show("EN", 0.6)
+  hs.alert.closeAll()
+  hs.alert.show("English", 0.6)
 end
 
 function M.isEnabled()
